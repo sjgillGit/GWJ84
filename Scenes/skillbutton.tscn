@@ -21,6 +21,7 @@ offset_bottom = 87.0
 script = ExtResource("1_f87j1")
 
 [node name="button_show" type="Panel" parent="."]
+layout_mode = 0
 offset_right = 42.0
 offset_bottom = 40.0
 pivot_offset = Vector2(21, 21)
@@ -41,6 +42,7 @@ vertical_alignment = 1
 
 [node name="TextureButton" type="Button" parent="."]
 custom_minimum_size = Vector2(42, 42)
+layout_mode = 0
 offset_top = 44.0
 offset_right = 42.0
 offset_bottom = 86.0
