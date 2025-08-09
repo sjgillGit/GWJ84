@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://b17prwi2b3x1f"]
+
+[ext_resource type="PackedScene" uid="uid://dko2mapcxs0y3" path="res://Scenes/Player/Player.tscn" id="1_q6fdj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q6fdj"]
+
+[sub_resource type="Sky" id="Sky_8smnd"]
+sky_material = SubResource("ProceduralSkyMaterial_q6fdj")
+
+[sub_resource type="Environment" id="Environment_q6fdj"]
+background_mode = 2
+sky = SubResource("Sky_8smnd")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nl7fu"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6fdj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q6fdj"]
+material = SubResource("StandardMaterial3D_q6fdj")
+size = Vector3(60, 2, 60)
+
+[node name="TestScene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_q6fdj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_nl7fu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_q6fdj")
+
+[node name="Player" parent="." instance=ExtResource("1_q6fdj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.638035, 2.63182, -0.151434)
+
+[node name="Camera3D" type="Camera3D" parent="Player/CameraRoot/CameraHorizontal/CameraVertical" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 4)
+current = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.010221, 0.999948, 0, -0.999948, 0.010221, 19.9048, 4.36204, 19.8765)
+light_color = Color(1, 0.160784, 0.0588235, 1)
+spot_angle = 54.5883
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.010221, 0.999948, 0, -0.999948, 0.010221, 18.3979, 4.36204, -13.4468)
+light_color = Color(0.132512, 0.54412, 0.99643, 1)
+spot_angle = 54.5883
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.010221, 0.999948, 0, -0.999948, 0.010221, -18.12, 4.36204, 18.0729)
+light_color = Color(0.272489, 0.646092, 0.214691, 1)
+spot_angle = 54.5883
+
+[editable path="Player"]
