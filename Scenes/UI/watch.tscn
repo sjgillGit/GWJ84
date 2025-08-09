@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://pb3r7j6qiy0p"]
 
-[ext_resource type="Script" uid="uid://3d5sme4jx83g" path="res://Scripts/watchmovement.gd" id="1_grf1r"]
+[ext_resource type="Script" uid="uid://3d5sme4jx83g" path="res://Scripts/ui/watchmovement.gd" id="1_grf1r"]
 [ext_resource type="Material" uid="uid://dx4bc07v38fdk" path="res://Assets/watch/vibrations.tres" id="1_tbxsg"]
 [ext_resource type="Texture2D" uid="uid://cs4svnfgmcv66" path="res://Assets/watch/watchbottom.png" id="1_wrxlp"]
 [ext_resource type="Texture2D" uid="uid://dq8knos66o8ki" path="res://Assets/ui/textframe.png" id="2_5pu0e"]

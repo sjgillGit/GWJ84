@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b17prwi2b3x1f"]
 
-[ext_resource type="PackedScene" uid="uid://dko2mapcxs0y3" path="res://Scenes/Player/Player.tscn" id="1_q6fdj"]
+[ext_resource type="PackedScene" uid="uid://dko2mapcxs0y3" path="res://Scenes/Player/Player.tscn" id="1_yx46w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q6fdj"]
 
@@ -35,7 +35,7 @@ shape = SubResource("BoxShape3D_nl7fu")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("BoxMesh_q6fdj")
 
-[node name="Player" parent="." instance=ExtResource("1_q6fdj")]
+[node name="Player" parent="." instance=ExtResource("1_yx46w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.638035, 2.63182, -0.151434)
 
 [node name="Camera3D" type="Camera3D" parent="Player/CameraRoot/CameraHorizontal/CameraVertical" index="0"]

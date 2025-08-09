@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dlx736lntigtc"]
 
-[ext_resource type="PackedScene" uid="uid://rb3823ijm27r" path="res://Scenes/skillbutton.tscn" id="1_6kcwd"]
+[ext_resource type="PackedScene" uid="uid://rb3823ijm27r" path="res://Scenes/UI/skillbutton.tscn" id="1_6kcwd"]
 
 [node name="skill_box" type="HBoxContainer"]
 anchors_preset = 15

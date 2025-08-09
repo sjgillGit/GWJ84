@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://rb3823ijm27r"]
 
-[ext_resource type="Script" uid="uid://ddsp2jytbdhlt" path="res://Scripts/skillbutton.gd" id="1_f87j1"]
+[ext_resource type="Script" uid="uid://ddsp2jytbdhlt" path="res://Scripts/ui/skillbutton.gd" id="1_f87j1"]
 [ext_resource type="Texture2D" uid="uid://dq8knos66o8ki" path="res://Assets/ui/textframe.png" id="1_jqccm"]
 [ext_resource type="FontFile" uid="uid://b2d7ii78bv5cw" path="res://Assets/font/Long_Shot.ttf" id="2_mkuxo"]
 [ext_resource type="Texture2D" uid="uid://mtr22qnov5f" path="res://Assets/ui/skillicon.png" id="3_mkuxo"]
-[ext_resource type="Script" uid="uid://dmbug4tme2cqn" path="res://Scripts/button_show.gd" id="3_tj54v"]
+[ext_resource type="Script" uid="uid://dmbug4tme2cqn" path="res://Scripts/ui/button_show.gd" id="3_tj54v"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f87j1"]
 texture = ExtResource("1_jqccm")

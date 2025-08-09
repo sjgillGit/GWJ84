@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5vmy52in51ot"]
 
-[ext_resource type="PackedScene" uid="uid://dlx736lntigtc" path="res://Scenes/skill_box.tscn" id="1_ntq5t"]
-[ext_resource type="PackedScene" uid="uid://pb3r7j6qiy0p" path="res://Scenes/watch.tscn" id="2_ihkuc"]
-[ext_resource type="PackedScene" uid="uid://drylow4dc4o3f" path="res://Scenes/hel_sta_bars.tscn" id="3_ovrc7"]
+[ext_resource type="PackedScene" uid="uid://dlx736lntigtc" path="res://Scenes/UI/skill_box.tscn" id="1_ntq5t"]
+[ext_resource type="PackedScene" uid="uid://pb3r7j6qiy0p" path="res://Scenes/UI/watch.tscn" id="2_ihkuc"]
+[ext_resource type="PackedScene" uid="uid://drylow4dc4o3f" path="res://Scenes/UI/hel_sta_bars.tscn" id="3_ovrc7"]
 
 [node name="Control" type="CanvasLayer"]
 

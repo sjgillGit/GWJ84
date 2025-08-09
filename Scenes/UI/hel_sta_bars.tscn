@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://drylow4dc4o3f"]
 
-[ext_resource type="Script" uid="uid://6b2cexsfwgwn" path="res://Scripts/hel_sta_bars.gd" id="1_0lv2c"]
+[ext_resource type="Script" uid="uid://6b2cexsfwgwn" path="res://Scripts/ui/hel_sta_bars.gd" id="1_0lv2c"]
 [ext_resource type="Texture2D" uid="uid://bbe6buhmucjwv" path="res://Assets/ui/barover.png" id="1_n6yse"]
 [ext_resource type="Texture2D" uid="uid://n8p1bx0o1ba6" path="res://Assets/ui/barback.png" id="1_vgpqe"]
 [ext_resource type="Texture2D" uid="uid://dpj6fl55p7fpe" path="res://Assets/ui/barprogress.png" id="3_0lv2c"]
