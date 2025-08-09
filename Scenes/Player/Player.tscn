@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://dko2mapcxs0y3"]
+
+[ext_resource type="Script" uid="uid://c8akvpoxkacfl" path="res://Scripts/Player/player.gd" id="1_488fn"]
+[ext_resource type="Script" uid="uid://b0anjxmo528ot" path="res://Scripts/Player/player_actions.gd" id="3_h54ih"]
+[ext_resource type="Script" uid="uid://cms4epxb8dh3k" path="res://Scripts/Player/camera_controller.gd" id="3_rlgqx"]
+[ext_resource type="Script" uid="uid://b1d7g85ltcc1v" path="res://Scripts/Player/Actions/player_melee_action.gd" id="4_ude3g"]
+[ext_resource type="Script" uid="uid://dih6bmq8e1vtv" path="res://Scripts/Player/Actions/player_deploy_turret_action.gd" id="5_jmcll"]
+[ext_resource type="Script" uid="uid://bjb4np2yjqmqv" path="res://Scripts/Components/entity_health_handler.gd" id="6_4wape"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4wape"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_t26db"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wggva"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("mesh_root", "camera_controller", "health_handler")]
+script = ExtResource("1_488fn")
+move_speed = 20.0
+sprint_multiplier = 1.5
+mesh_root = NodePath("MeshRoot")
+camera_controller = NodePath("CameraRoot")
+health_handler = NodePath("PlayerHealthHandler")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_4wape")
+
+[node name="MeshRoot" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshRoot"]
+mesh = SubResource("CapsuleMesh_t26db")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+mesh = SubResource("BoxMesh_wggva")
+skeleton = NodePath("../..")
+
+[node name="CameraRoot" type="Node3D" parent="." node_paths=PackedStringArray("camera_horizontal", "camera_vertical")]
+script = ExtResource("3_rlgqx")
+camera_horizontal = NodePath("CameraHorizontal")
+camera_vertical = NodePath("CameraHorizontal/CameraVertical")
+
+[node name="CameraHorizontal" type="Node3D" parent="CameraRoot"]
+
+[node name="CameraVertical" type="Node3D" parent="CameraRoot/CameraHorizontal"]
+
+[node name="PlayerActions" type="Node3D" parent="."]
+script = ExtResource("3_h54ih")
+
+[node name="PlayerMeleeAction" type="Node3D" parent="PlayerActions"]
+script = ExtResource("4_ude3g")
+melee_cooldown = 2.0
+metadata/_custom_type_script = "uid://b1d7g85ltcc1v"
+
+[node name="PlayerDeployTurrentAction" type="Node3D" parent="PlayerActions"]
+script = ExtResource("5_jmcll")
+deploy_cooldown = 10.0
+metadata/_custom_type_script = "uid://dih6bmq8e1vtv"
+
+[node name="PlayerHealthHandler" type="Node3D" parent="."]
+script = ExtResource("6_4wape")
+max_health = 100.0
+immunity_frame_duration = 0.05
