@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://dko2mapcxs0y3"]
 
-[ext_resource type="Script" uid="uid://c8akvpoxkacfl" path="res://Scenes/Player/player.gd" id="1_488fn"]
-[ext_resource type="Script" uid="uid://b0anjxmo528ot" path="res://Scenes/Player/player_actions.gd" id="3_h54ih"]
-[ext_resource type="Script" uid="uid://cms4epxb8dh3k" path="res://Scenes/Player/camera_controller.gd" id="3_rlgqx"]
-[ext_resource type="Script" uid="uid://b1d7g85ltcc1v" path="res://Scenes/Player/Actions/player_melee_action.gd" id="4_ude3g"]
-[ext_resource type="Script" uid="uid://dih6bmq8e1vtv" path="res://Scenes/Player/Actions/player_deploy_turret_action.gd" id="5_jmcll"]
-[ext_resource type="Script" uid="uid://bjb4np2yjqmqv" path="res://Scenes/Player/player_health_handler.gd" id="6_4wape"]
+[ext_resource type="Script" uid="uid://c8akvpoxkacfl" path="res://Scripts/Player/player.gd" id="1_488fn"]
+[ext_resource type="Script" uid="uid://b0anjxmo528ot" path="res://Scripts/Player/player_actions.gd" id="3_h54ih"]
+[ext_resource type="Script" uid="uid://cms4epxb8dh3k" path="res://Scripts/Player/camera_controller.gd" id="3_rlgqx"]
+[ext_resource type="Script" uid="uid://b1d7g85ltcc1v" path="res://Scripts/Player/Actions/player_melee_action.gd" id="4_ude3g"]
+[ext_resource type="Script" uid="uid://dih6bmq8e1vtv" path="res://Scripts/Player/Actions/player_deploy_turret_action.gd" id="5_jmcll"]
+[ext_resource type="Script" uid="uid://bjb4np2yjqmqv" path="res://Scripts/Components/entity_health_handler.gd" id="6_4wape"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4wape"]
 
