@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://dko2mapcxs0y3"]
+
+[ext_resource type="Script" uid="uid://c8akvpoxkacfl" path="res://Scenes/Player/player.gd" id="1_488fn"]
+[ext_resource type="Script" uid="uid://cms4epxb8dh3k" path="res://Scenes/Player/camera_controller.gd" id="3_rlgqx"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xi7xm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_488fn"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_488fn"]
+material = SubResource("StandardMaterial3D_488fn")
+
+[sub_resource type="BoxMesh" id="BoxMesh_wggva"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("modelRoot")]
+script = ExtResource("1_488fn")
+move_speed = 100.0
+modelRoot = NodePath("MeshRoot")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_xi7xm")
+
+[node name="MeshRoot" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshRoot"]
+mesh = SubResource("CylinderMesh_488fn")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+mesh = SubResource("BoxMesh_wggva")
+skeleton = NodePath("../..")
+
+[node name="CameraRoot" type="Node3D" parent="." node_paths=PackedStringArray("camera_horizontal", "camera_vertical")]
+script = ExtResource("3_rlgqx")
+camera_horizontal = NodePath("CameraHorizontal")
+camera_vertical = NodePath("CameraHorizontal/CameraVertical")
+
+[node name="CameraHorizontal" type="Node3D" parent="CameraRoot"]
+
+[node name="CameraVertical" type="Node3D" parent="CameraRoot/CameraHorizontal"]
