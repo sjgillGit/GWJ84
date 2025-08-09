@@ -32,7 +32,7 @@ func _input(event: InputEvent) -> void:
 		return;
 	event = event as InputEventMouseMotion;
 	horizontal_movement += -event.relative.x * horizontal_sensitivity;
-	vertical_movement += event.relative.y * vertical_sensitivity;
+	vertical_movement += -event.relative.y * vertical_sensitivity;
 	vertical_movement = clamp(vertical_movement, vertical_min, vertical_max);
 	
 
