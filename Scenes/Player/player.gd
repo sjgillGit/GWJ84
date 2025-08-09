@@ -1,10 +1,6 @@
 extends CharacterBody3D
 class_name Player
 
-## Emitted when player loses all Health points
-## [br][param player] Player node reference
-signal player_died(player: Player);
-
 @export
 var move_speed: float;
 
@@ -16,6 +12,9 @@ var mesh_root: Node3D;
 
 @export
 var camera_controller: CameraController;
+
+@export
+var health_handler: EntityHealthHandler;
 
 func _physics_process(_delta: float) -> void:
 	var input: Vector2 = Input.get_vector("MoveLeft", "MoveRight", "MoveForward", "MoveBack");
@@ -33,4 +32,4 @@ func _physics_process(_delta: float) -> void:
 	self.move_and_slide();
 
 func take_damage(damage: float) -> void:
-	player_died.emit(self);
+	health_handler.take_damage(self, damage);
