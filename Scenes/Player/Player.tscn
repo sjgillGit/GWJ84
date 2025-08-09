@@ -13,10 +13,11 @@ material = SubResource("StandardMaterial3D_488fn")
 [sub_resource type="BoxMesh" id="BoxMesh_wggva"]
 size = Vector3(0.5, 0.5, 0.5)
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("modelRoot")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("mesh_root", "camera_controller")]
 script = ExtResource("1_488fn")
 move_speed = 100.0
-modelRoot = NodePath("MeshRoot")
+mesh_root = NodePath("MeshRoot")
+camera_controller = NodePath("CameraRoot")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_xi7xm")
