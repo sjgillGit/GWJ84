@@ -20,15 +20,9 @@ func add_max_value(value:float,bar:TextureProgressBar):
 	bar.value += value
 	bar.custom_minimum_size.x += value/10
 
-
 func change_value(value:float,bar:TextureProgressBar):
 	var tween = get_tree().create_tween()
 	tween.tween_property(bar,"value",bar.value+value,abs(value)/bar.max_value)
-
-func _on_button_pressed() -> void:
-	var rand = -(randi() % 50)
-	$Button.text = str(rand)
-	change_hp(rand)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Shift") && sprint == false:
@@ -54,7 +48,6 @@ func _process(delta: float) -> void:
 func _on_hp_bar_value_changed(value: float) -> void:
 	if value == 0:
 		pass #death
-
 
 func _on_stam_bar_value_changed(value: float) -> void:
 	if value == 0:
