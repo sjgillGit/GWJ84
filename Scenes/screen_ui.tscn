@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5vmy52in51ot"]
+
+[ext_resource type="PackedScene" uid="uid://dlx736lntigtc" path="res://Scenes/skill_box.tscn" id="1_ntq5t"]
+[ext_resource type="PackedScene" uid="uid://pb3r7j6qiy0p" path="res://Scenes/watch.tscn" id="2_ihkuc"]
+
+[node name="Control" type="CanvasLayer"]
+
+[node name="skill_box" parent="." instance=ExtResource("1_ntq5t")]
+offset_left = 822.0
+offset_top = 544.0
+offset_right = -9.0
+offset_bottom = -13.0
+alignment = 2
+
+[node name="watch" parent="." instance=ExtResource("2_ihkuc")]
