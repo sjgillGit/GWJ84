@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://rb3823ijm27r"]
+
+[ext_resource type="Script" uid="uid://ddsp2jytbdhlt" path="res://Scripts/skillbutton.gd" id="1_f87j1"]
+[ext_resource type="Texture2D" uid="uid://dq8knos66o8ki" path="res://Assets/ui/textframe.png" id="1_jqccm"]
+[ext_resource type="FontFile" uid="uid://b2d7ii78bv5cw" path="res://Assets/font/Long_Shot.ttf" id="2_mkuxo"]
+[ext_resource type="Texture2D" uid="uid://mtr22qnov5f" path="res://Assets/ui/skillicon.png" id="3_mkuxo"]
+[ext_resource type="Script" uid="uid://dmbug4tme2cqn" path="res://Scripts/button_show.gd" id="3_tj54v"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f87j1"]
+texture = ExtResource("1_jqccm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tj54v"]
+texture = ExtResource("1_jqccm")
+
+[node name="skillbutton" type="Control"]
+custom_minimum_size = Vector2(42, 87)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 42.0
+offset_bottom = 87.0
+script = ExtResource("1_f87j1")
+
+[node name="button_show" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 42.0
+offset_bottom = 40.0
+pivot_offset = Vector2(21, 21)
+theme_override_styles/panel = SubResource("StyleBoxTexture_f87j1")
+script = ExtResource("3_tj54v")
+
+[node name="input_name_lbl" type="Label" parent="button_show"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 42.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("2_mkuxo")
+theme_override_font_sizes/font_size = 33
+text = "RMB"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="Button" parent="."]
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 0
+offset_top = 44.0
+offset_right = 42.0
+offset_bottom = 86.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_tj54v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tj54v")
+theme_override_styles/normal = SubResource("StyleBoxTexture_tj54v")
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="TextureButton"]
+modulate = Color(0, 0, 0, 1)
+show_behind_parent = true
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_mkuxo")
+expand_mode = 1
+
+[node name="cooldownparent" type="Control" parent="TextureButton"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="cooldownback" type="TextureRect" parent="TextureButton/cooldownparent"]
+self_modulate = Color(1, 1, 1, 0.111)
+show_behind_parent = true
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 0
+offset_right = 42.0
+offset_bottom = 42.0
+texture = ExtResource("3_mkuxo")
+expand_mode = 1
+
+[node name="cooldown" type="Label" parent="TextureButton/cooldownparent"]
+show_behind_parent = true
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 0
+offset_right = 43.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("2_mkuxo")
+theme_override_font_sizes/font_size = 27
+text = "30.9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
