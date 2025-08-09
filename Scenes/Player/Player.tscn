@@ -60,3 +60,4 @@ metadata/_custom_type_script = "uid://dih6bmq8e1vtv"
 [node name="PlayerHealthHandler" type="Node3D" parent="."]
 script = ExtResource("6_4wape")
 max_health = 100.0
+immunity_frame_duration = 0.05

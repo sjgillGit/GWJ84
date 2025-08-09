@@ -12,9 +12,27 @@ signal entity_took_damage(entity: Node3D, handler: EntityHealthHandler);
 @export_range(1, 100)
 var max_health: float;
 
+@export
+var immunity_frame_duration: float;
+
 var health: float;
+var current_immunity_frame_timer: float;
+var is_immune_to_damage: bool = false;
+
+func _ready() -> void:
+	health = max_health;
+	set_process(false);
+
+func _process(delta: float) -> void:
+	current_immunity_frame_timer += delta;
+	if current_immunity_frame_timer >= immunity_frame_duration:
+		is_immune_to_damage = false;
+		set_process(false);
 
 func take_damage(entity: Node3D, amount: float) -> void:
+	if is_immune_to_damage:
+		return;
+
 	if health <= 0.0:
 		return;
 
@@ -26,4 +44,14 @@ func take_damage(entity: Node3D, amount: float) -> void:
 		return;
 	
 	health = new_health;
+	enable_immunity();
 	entity_took_damage.emit(entity, self);
+
+func enable_immunity():
+	# no duration - no immunity logic at all
+	if immunity_frame_duration <= 0.0:
+		return;
+
+	is_immune_to_damage = true;
+	current_immunity_frame_timer = 0;
+	set_process(true);
