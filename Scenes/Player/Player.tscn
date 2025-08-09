@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dko2mapcxs0y3"]
+[gd_scene load_steps=10 format=3 uid="uid://dko2mapcxs0y3"]
 
 [ext_resource type="Script" uid="uid://c8akvpoxkacfl" path="res://Scenes/Player/player.gd" id="1_488fn"]
 [ext_resource type="Script" uid="uid://b0anjxmo528ot" path="res://Scenes/Player/player_actions.gd" id="3_h54ih"]
@@ -7,31 +7,28 @@
 [ext_resource type="Script" uid="uid://dih6bmq8e1vtv" path="res://Scenes/Player/Actions/player_deploy_turret_action.gd" id="5_jmcll"]
 [ext_resource type="Script" uid="uid://bjb4np2yjqmqv" path="res://Scenes/Player/player_health_handler.gd" id="6_4wape"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_xi7xm"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4wape"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_488fn"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_488fn"]
-material = SubResource("StandardMaterial3D_488fn")
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_t26db"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_wggva"]
 size = Vector3(0.5, 0.5, 0.5)
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("mesh_root", "camera_controller", "health_handler")]
 script = ExtResource("1_488fn")
-move_speed = 100.0
+move_speed = 20.0
 sprint_multiplier = 1.5
 mesh_root = NodePath("MeshRoot")
 camera_controller = NodePath("CameraRoot")
 health_handler = NodePath("PlayerHealthHandler")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CylinderShape3D_xi7xm")
+shape = SubResource("CapsuleShape3D_4wape")
 
 [node name="MeshRoot" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshRoot"]
-mesh = SubResource("CylinderMesh_488fn")
+mesh = SubResource("CapsuleMesh_t26db")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshRoot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)

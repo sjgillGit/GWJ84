@@ -37,8 +37,6 @@ mesh = SubResource("BoxMesh_q6fdj")
 
 [node name="Player" parent="." instance=ExtResource("1_q6fdj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.638035, 2.63182, -0.151434)
-move_speed = 20.0
-sprint_multiplier = 1.5
 
 [node name="Camera3D" type="Camera3D" parent="Player/CameraRoot/CameraHorizontal/CameraVertical" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 4)
