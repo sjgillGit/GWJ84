@@ -25,11 +25,11 @@ func change_value(value:float,bar:TextureProgressBar):
 	tween.tween_property(bar,"value",bar.value+value,abs(value)/bar.max_value)
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Shift") && sprint == false:
+	if event.is_action_pressed("Sprint") && sprint == false:
 		var move_tween = get_tree().create_tween()
 		move_tween.tween_property(button_show,"scale",Vector2(1.1,1.1),0.05)
 		sprint = true
-	elif event.is_action_released("Shift") && sprint == true:
+	elif event.is_action_released("Sprint") && sprint == true:
 		var move_tween = get_tree().create_tween()
 		move_tween.tween_property(button_show,"scale",Vector2(1,1),0.1)
 		stam_recuperation_breaker = stam_recuperation * 1.5

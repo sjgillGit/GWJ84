@@ -12,11 +12,13 @@ func _ready() -> void:
 	fill_button(cooldown,input_name)
 
 
-func fill_button(_cooldown:float,_input:StringName):
+func fill_button(_cooldown:float,_inputed:StringName):
 	cooldown = _cooldown
 	timer.wait_time = cooldown
-	input_name = _input
-	input_name_lbl.text = input_name
+	input_name = _inputed
+	match input_name:
+		"PerformAction": input_name_lbl.text = "LMB"
+		_: input_name_lbl.text = input_name
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed(input_name):
@@ -34,5 +36,5 @@ func _on_timer_timeout() -> void:
 	counting = false
 	cooldownparent.visible = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if counting: cooldown_lbl.text = str(snapped(timer.time_left,0.1))

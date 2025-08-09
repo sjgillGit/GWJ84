@@ -44,10 +44,6 @@ func _input(event: InputEvent) -> void:
 		back_tween = get_tree().create_tween()
 		back_tween.tween_property(button,"scale",Vector2(1,1),0.1)
 		back_tween.tween_property(self,"position",watch_positioning,0.5).set_trans(Tween.TRANS_CIRC)
-func button_clicked():
-	var tween = get_tree().create_tween()
-	
-	
 
 func _on_timer_timeout() -> void:
 	odliczanie = false
