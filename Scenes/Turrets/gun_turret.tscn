@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://chxvqa83wi22n"]
+
+[ext_resource type="PackedScene" uid="uid://bv34vqk33k0xm" path="res://Assets/Models/Turret.glb" id="1_2ii4k"]
+[ext_resource type="Script" uid="uid://d0pcmdw8cllbp" path="res://Scripts/StateMachine/state_machine.gd" id="2_kvwe8"]
+[ext_resource type="Script" uid="uid://t3v6impgoh38" path="res://Scripts/Turrets/entity_detect_area.gd" id="2_qxqcr"]
+[ext_resource type="Script" uid="uid://dgb724wodvqty" path="res://Scripts/Turrets/GunTurret/gun_turret_idle.gd" id="3_i5s4a"]
+[ext_resource type="Script" uid="uid://qlum1po6mmh4" path="res://Scripts/Turrets/GunTurret/gun_turret_attack.gd" id="4_u6y7j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7job0"]
+size = Vector3(2, 3, 1.646)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2ii4k"]
+radius = 11.0
+
+[node name="GunTurret" type="StaticBody3D" groups=["Entity"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.14)
+visible = false
+shape = SubResource("BoxShape3D_7job0")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="MeshRoot" type="Node3D" parent="."]
+
+[node name="Turret" parent="MeshRoot" instance=ExtResource("1_2ii4k")]
+
+[node name="Skeleton3D" parent="MeshRoot/Turret/Armature" index="0"]
+bones/0/position = Vector3(0, 0, 0)
+bones/2/position = Vector3(0, 0, 0)
+bones/3/rotation = Quaternion(-0.0145631, 0.0278547, 0.272376, 0.961677)
+bones/4/rotation = Quaternion(-0.632064, -0.026182, -0.350648, 0.690548)
+bones/6/position = Vector3(0, 0, 0)
+bones/7/rotation = Quaternion(-0.100238, -0.0134335, -0.139725, 0.985012)
+bones/8/rotation = Quaternion(-0.625361, 0.151361, -0.165114, 0.747497)
+bones/10/position = Vector3(0, 0, 0)
+bones/10/rotation = Quaternion(-0.0232951, 0.746766, 0.664162, 0.0261987)
+bones/11/rotation = Quaternion(-0.0583382, 1.98054e-06, 0.0351188, 0.997679)
+bones/15/position = Vector3(0.0100355, 1.5698, -0.00814863)
+bones/15/rotation = Quaternion(-2.98023e-08, 1.19209e-07, 2.11758e-22, 1)
+bones/19/position = Vector3(0.010036, 1.5698, -0.00814858)
+bones/19/rotation = Quaternion(1.21928e-07, 0.779654, 0.626211, 1.51804e-07)
+bones/21/rotation = Quaternion(-1.42108e-14, 5.68434e-14, -3.55271e-15, 1)
+bones/22/rotation = Quaternion(-1.42108e-14, -4.21296e-35, 8.47033e-22, 1)
+
+[node name="AnimationPlayer" parent="MeshRoot/Turret" index="1"]
+autoplay = "Default_pose_001"
+
+[node name="EnemyDetectArea" type="Area3D" parent="."]
+script = ExtResource("2_qxqcr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyDetectArea"]
+shape = SubResource("SphereShape3D_2ii4k")
+
+[node name="StateMachine" type="Node3D" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_kvwe8")
+initial_state = NodePath("GunTurretIdle")
+
+[node name="GunTurretIdle" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("entity_detector", "animation_player")]
+script = ExtResource("3_i5s4a")
+entity_detector = NodePath("../../EnemyDetectArea")
+animation_player = NodePath("../../MeshRoot/Turret/AnimationPlayer")
+
+[node name="GunTurrentAttack" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("entity_detector", "animation_player")]
+script = ExtResource("4_u6y7j")
+entity_detector = NodePath("../../EnemyDetectArea")
+animation_player = NodePath("../../MeshRoot/Turret/AnimationPlayer")
+
+[editable path="MeshRoot/Turret"]
