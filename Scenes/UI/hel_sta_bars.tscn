@@ -16,30 +16,30 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -702.0
-offset_bottom = -574.0
+offset_right = -952.0
+offset_bottom = -448.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 6.28319
+pivot_offset = Vector2(100, 100)
 script = ExtResource("1_0lv2c")
 
 [node name="hp_bar" type="TextureProgressBar" parent="."]
+show_behind_parent = true
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 200.0
-max_value = 200.0
-value = 200.0
+max_value = 500.0
+value = 500.0
 fill_mode = 4
-stretch_margin_left = 10
-stretch_margin_top = 10
-stretch_margin_right = 10
-stretch_margin_bottom = 10
 texture_under = ExtResource("2_wagrs")
 texture_over = ExtResource("3_fauln")
 texture_progress = ExtResource("2_wagrs")
-tint_under = Color(0.231373, 0.231373, 0.231373, 1)
+tint_under = Color(0.419, 0.09, 0.137, 1)
 tint_progress = Color(0.320985, 0.657838, 0.215516, 1)
 
 [node name="stam_bar" type="TextureProgressBar" parent="."]
+show_behind_parent = true
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 200.0

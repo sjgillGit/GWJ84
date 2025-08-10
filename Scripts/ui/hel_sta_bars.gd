@@ -18,7 +18,7 @@ func add_max_stam(value:float):
 func add_max_value(value:float,bar:TextureProgressBar):
 	bar.max_value += value
 	bar.value += value
-	bar.custom_minimum_size.x += value/10
+	queue_redraw()
 
 func change_value(value:float,bar:TextureProgressBar):
 	var tween = get_tree().create_tween()
@@ -36,6 +36,10 @@ func _input(event: InputEvent) -> void:
 		sprint = false
 
 func _process(delta: float) -> void:
+	hp_bar.tint_over = Color.RED.lerp(Color.WHITE, hp_bar.value / hp_bar.max_value)
+	hp_bar.tint_under = Color(0.419, 0.09, 0.137).lerp(Color(0.23, 0.23, 0.23), hp_bar.value / hp_bar.max_value)
+	stam_bar.tint_progress = Color.GRAY.lerp(Color(0.85, 0.632, 0.196), stam_bar.value / stam_bar.max_value)
+	
 	if sprint == false && stam_bar.value != stam_bar.max_value: 
 		var stam_tween = get_tree().create_tween()
 		stam_tween.tween_property(stam_bar,"value",stam_bar.value+(max(0,stam_recuperation-stam_recuperation_breaker)),delta)
@@ -43,7 +47,6 @@ func _process(delta: float) -> void:
 	elif sprint == true: 
 		var stam_tween = get_tree().create_tween()
 		stam_tween.tween_property(stam_bar,"value",stam_bar.value-stam_usage,delta)
-
 
 func _on_hp_bar_value_changed(value: float) -> void:
 	if value == 0:
@@ -55,3 +58,27 @@ func _on_stam_bar_value_changed(value: float) -> void:
 		move_tween.tween_property(button_show,"scale",Vector2(1,1),0.1)
 		stam_recuperation_breaker = stam_recuperation * 1.5
 		sprint = false
+
+func _draw() -> void:
+	var m_value = hp_bar.max_value
+	for n in int(m_value/10):
+		var procent = (n*10) / m_value
+		var x : float = 80 *sin(deg_to_rad(360*procent)) + 100
+		var y : float = 80 *cos(deg_to_rad(360*procent)) + 100
+		
+		var x_down : float = 70 *sin(deg_to_rad(360*procent)) + 100
+		var y_down : float = 70 *cos(deg_to_rad(360*procent)) + 100
+		print(360*procent," ",x,y)
+		
+		draw_line(Vector2(x_down,y_down),Vector2(x,y),Color(1,1,1,1),2)
+		
+	for n in int(m_value/50):
+		var procent = (n*50) / m_value
+		var x : float = 90 *sin(deg_to_rad(360*procent)) + 100
+		var y : float = 90 *cos(deg_to_rad(360*procent)) + 100
+		
+		var x_down : float = 70 *sin(deg_to_rad(360*procent)) + 100
+		var y_down : float = 70 *cos(deg_to_rad(360*procent)) + 100
+		print(360*procent," ",x,y)
+		
+		draw_line(Vector2(x_down,y_down),Vector2(x,y),Color(1,1,1,1),2)
