@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=3 uid="uid://nbkvr20vhw44"]
+
+[ext_resource type="Terrain3DAssets" uid="uid://dal3jhw6241qg" path="res://demo/data/assets.tres" id="1_md68i"]
+[ext_resource type="PackedScene" uid="uid://cx2rpesjr050y" path="res://PrivateDevRoom/rat.tscn" id="2_iixdh"]
+[ext_resource type="PackedScene" uid="uid://domhm87hbhbg1" path="res://demo/components/Player.tscn" id="2_j3r6d"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_j3r6d"]
+vertices = PackedVector3Array(96.096, 4.004, 20.02, 102.102, 4.004, 16.016, 105.105, 4.004, 10.01, 135.135, 4.004, 20.02, 136.136, 4.004, 24.024, 144.144, 4.004, 30.03, 151.151, 4.004, 30.03, 159.159, 4.004, 27.027, -45.045, 4.004, -155.155, -43.043, 4.004, -150.15, -37.037, 4.004, -144.144, 240.24, 4.004, -279.279, 234.234, 4.004, -282.282, 226.226, 4.004, -282.282, 178.178, 4.004, -261.261, 281.281, 4.004, -184.184, 70.07, 4.004, -318.318, 64.064, 4.004, -316.316, 58.058, 4.004, -310.31, 38.038, 4.004, -282.282, 148.148, 4.004, -266.266, 85.085, 4.004, -313.313, 209.209, 4.004, 15.015, 215.215, 4.004, 15.015, 223.223, 4.004, 10.01, 234.234, 4.004, -21.021, 192.192, 4.004, 9.009, 248.248, 4.004, -51.051, 256.256, 4.004, -54.054, 261.261, 4.004, -59.059, 275.275, 4.004, -96.096, 173.173, 4.004, -261.261, -48.048, 4.004, -219.219, -56.056, 4.004, -212.212, -58.058, 4.004, -206.206, -55.055, 4.004, -194.194, -42.042, 4.004, -173.173, 300.3, 4.004, -169.169, 297.297, 4.004, -174.174, 286.286, 4.004, -179.179, 298.298, 4.004, -152.152, 17.017, 4.004, -273.273, 8.008, 4.004, -272.272, 0, 4.004, -266.266, -10.01, 4.004, -248.248, -36.036, 4.004, -131.131, -32.032, 4.004, -118.118, -26.026, 4.004, -114.114, -10.01, 4.004, -114.114, -32.032, 4.004, -246.246, -43.043, 4.004, -242.242, -48.048, 4.004, -234.234, 242.242, 4.004, -26.026, 250.25, 4.004, -36.036, 307.307, 4.004, -131.131, 304.304, 4.004, -144.144, 303.303, 4.004, -121.121, 28.028, 4.004, -283.283, -4.004, 4.004, -106.106, 114.114, 4.004, -9.009, 163.163, 4.004, -268.268, 39.039, 4.004, -32.032, 109.109, 4.004, -7.007, 33.033, 4.004, -38.038, 33.033, 4.004, -18.018, 25.025, 4.004, -17.017, 25.025, 4.004, 6.006, 78.078, 4.004, 19.019, 38.038, 4.004, -23.023, 132.132, 4.004, 18.018, 185.185, 4.004, 9.009, -19.019, 4.004, -36.036, 18.018, 4.004, -33.033, 23.023, 4.004, -38.038, -23.023, 4.004, -11.011, -20.02, 4.004, -5.005, -11.011, 4.004, -1.001, -23.023, 4.004, -21.021, 16.016, 4.004, -23.023, 16.016, 4.004, -30.03, 20.02, 4.004, -18.018, 22.022, 8.008, -28.028, 22.022, 8.008, -25.025, 25.025, 8.008, -23.023, 31.031, 8.008, -24.024, 33.033, 8.008, -27.027, 31.031, 8.008, -32.032, 25.025, 8.008, -32.032)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 6), PackedInt32Array(6, 3, 7), PackedInt32Array(10, 9, 8), PackedInt32Array(12, 11, 13), PackedInt32Array(13, 11, 14), PackedInt32Array(14, 11, 15), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 21), PackedInt32Array(18, 21, 19), PackedInt32Array(19, 21, 20), PackedInt32Array(23, 22, 24), PackedInt32Array(24, 22, 26), PackedInt32Array(24, 26, 25), PackedInt32Array(28, 27, 29), PackedInt32Array(29, 27, 30), PackedInt32Array(31, 14, 15), PackedInt32Array(33, 32, 34), PackedInt32Array(34, 32, 35), PackedInt32Array(35, 32, 36), PackedInt32Array(38, 37, 39), PackedInt32Array(39, 37, 40), PackedInt32Array(42, 41, 43), PackedInt32Array(43, 41, 44), PackedInt32Array(46, 45, 47), PackedInt32Array(47, 45, 10), PackedInt32Array(47, 10, 48), PackedInt32Array(50, 49, 51), PackedInt32Array(51, 49, 32), PackedInt32Array(32, 49, 44), PackedInt32Array(53, 52, 25), PackedInt32Array(55, 54, 40), PackedInt32Array(40, 54, 56), PackedInt32Array(40, 56, 30), PackedInt32Array(41, 57, 19), PackedInt32Array(15, 27, 31), PackedInt32Array(31, 27, 59), PackedInt32Array(31, 59, 58), PackedInt32Array(31, 58, 19), PackedInt32Array(31, 20, 60), PackedInt32Array(62, 61, 59), PackedInt32Array(59, 61, 63), PackedInt32Array(59, 63, 58), PackedInt32Array(66, 65, 64), PackedInt32Array(19, 20, 31), PackedInt32Array(0, 67, 2), PackedInt32Array(2, 67, 62), PackedInt32Array(62, 67, 68), PackedInt32Array(62, 68, 61), PackedInt32Array(3, 69, 7), PackedInt32Array(7, 69, 70), PackedInt32Array(8, 36, 10), PackedInt32Array(10, 36, 48), PackedInt32Array(19, 44, 41), PackedInt32Array(72, 71, 73), PackedInt32Array(73, 71, 58), PackedInt32Array(48, 36, 58), PackedInt32Array(58, 36, 32), PackedInt32Array(58, 32, 44), PackedInt32Array(58, 44, 19), PackedInt32Array(25, 26, 70), PackedInt32Array(63, 73, 58), PackedInt32Array(64, 68, 66), PackedInt32Array(66, 68, 67), PackedInt32Array(53, 25, 27), PackedInt32Array(27, 25, 70), PackedInt32Array(27, 70, 69), PackedInt32Array(27, 69, 59), PackedInt32Array(39, 40, 15), PackedInt32Array(15, 40, 30), PackedInt32Array(15, 30, 27), PackedInt32Array(76, 75, 74), PackedInt32Array(74, 77, 76), PackedInt32Array(76, 77, 71), PackedInt32Array(76, 71, 78), PackedInt32Array(78, 71, 79), PackedInt32Array(80, 65, 66), PackedInt32Array(80, 66, 78), PackedInt32Array(78, 66, 76), PackedInt32Array(71, 72, 79), PackedInt32Array(83, 82, 81), PackedInt32Array(85, 84, 86), PackedInt32Array(86, 84, 87), PackedInt32Array(87, 84, 81), PackedInt32Array(81, 84, 83)]
+cell_size = 1.0
+cell_height = 4.0
+agent_height = 4.0
+agent_radius = 3.0
+agent_max_climb = 0.4
+agent_max_slope = 60.0
+
+[sub_resource type="Gradient" id="Gradient_e6lj2"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_c7s6e"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wijl4"]
+seamless = true
+color_ramp = SubResource("Gradient_e6lj2")
+noise = SubResource("FastNoiseLite_c7s6e")
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_e0an3"]
+_shader_parameters = {
+&"bias_distance": 512.0,
+&"blend_sharpness": 0.5,
+&"depth_blur": 0.0,
+&"enable_macro_variation": true,
+&"enable_projection": true,
+&"flat_terrain_normals": false,
+&"macro_variation1": Color(1, 1, 1, 1),
+&"macro_variation2": Color(1, 1, 1, 1),
+&"macro_variation_slope": 0.333,
+&"mipmap_bias": 1.0,
+&"noise1_angle": 0.0,
+&"noise1_offset": Vector2(0.5, 0.5),
+&"noise1_scale": 0.04,
+&"noise2_scale": 0.076,
+&"noise_texture": SubResource("NoiseTexture2D_wijl4"),
+&"projection_threshold": 0.8
+}
+
+[node name="map" type="Node3D"]
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 5, -40)
+
+[node name="Player" parent="." instance=ExtResource("2_j3r6d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.73, 1, -2.55343)
+collision_layer = 7
+collision_mask = 7
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_j3r6d")
+navigation_layers = 2
+
+[node name="Terrain3D" type="Terrain3D" parent="NavigationRegion3D"]
+data_directory = "res://"
+material = SubResource("Terrain3DMaterial_e0an3")
+assets = ExtResource("1_md68i")
+collision_layer = 2
+collision_mask = 5
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+
+[node name="rat" parent="." node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("2_iixdh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 5, -7)
+floor_stop_on_slope = false
+platform_floor_layers = 4294967042
+end_patrol_position = NodePath("../Marker3D")
