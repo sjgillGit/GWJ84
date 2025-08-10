@@ -12,7 +12,7 @@ func _ready() -> void:
 	states = {};
 	for state in get_children().filter(func(x): return x is StateBase):
 		state.state_machine = self;
-		states[state._s_get_state_name()] = state;
+		states[state._get_state_name()] = state;
 	current_state = initial_state;
 	current_state._on_enter();
 
