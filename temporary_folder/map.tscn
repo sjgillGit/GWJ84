@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://nbkvr20vhw44"]
 
 [ext_resource type="Terrain3DAssets" uid="uid://dal3jhw6241qg" path="res://demo/data/assets.tres" id="1_md68i"]
-[ext_resource type="PackedScene" uid="uid://cx2rpesjr050y" path="res://PrivateDevRoom/rat.tscn" id="2_iixdh"]
+[ext_resource type="PackedScene" uid="uid://cx2rpesjr050y" path="res://temporary_folder/rat.tscn" id="2_iixdh"]
 [ext_resource type="PackedScene" uid="uid://domhm87hbhbg1" path="res://demo/components/Player.tscn" id="2_j3r6d"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_j3r6d"]
