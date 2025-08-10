@@ -18,4 +18,4 @@ func _on_exit() -> void:
 	entity_detector.entity_detected.disconnect(_on_entity_detected);
 
 func _on_entity_detected(node: Node3D) -> void:
-	transition_to_state(GunTurretAttack._get_state_name(), func update_attack_state(state: GunTurretAttack) -> void: state.target = node);
+	transition_to_state(GunTurretAttack._get_state_name(), func(state: GunTurretAttack) -> void: state.target = node);
