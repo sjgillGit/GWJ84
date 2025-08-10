@@ -34,7 +34,6 @@ func _perform_action() -> void:
 		return;
 	current_cooldown = deploy_cooldown;
 	can_be_performed = false;
-	print("Turret deployed!");
 	set_process(true);
 
 func _try_deploy_turret() -> bool:
