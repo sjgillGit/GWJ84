@@ -9,14 +9,16 @@ var animation_player: AnimationPlayer;
 
 var target: Node3D;
 
-func _get_state_name() -> String:
+static func _get_state_name() -> String:
 	return "gun_turret_attack";
 
 func _on_enter() -> void:
-	pass;
-
-func _on_process(delta: float) -> void:
-	pass;
+	entity_detector.entity_lost.connect(_on_entity_lost);
 
 func _on_exit() -> void:
-	pass;
+	entity_detector.entity_lost.connect(_on_entity_lost);
+
+func _on_entity_lost(node: Node3D) -> void:
+	if node != target:
+		return;
+	transition_to_state(GunTurretIdle._get_state_name());
