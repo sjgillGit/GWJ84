@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlx736lntigtc"]
+[gd_scene load_steps=7 format=3 uid="uid://dlx736lntigtc"]
 
 [ext_resource type="PackedScene" uid="uid://rb3823ijm27r" path="res://Scenes/UI/skillbutton.tscn" id="1_6kcwd"]
+[ext_resource type="PackedScene" uid="uid://fijuc7gifjf6" path="res://Scenes/UI/tower_box.tscn" id="2_7xwh1"]
+[ext_resource type="Texture2D" uid="uid://dq8knos66o8ki" path="res://Assets/ui/textframe.png" id="3_iva1f"]
+[ext_resource type="Script" uid="uid://dmbug4tme2cqn" path="res://Scripts/ui/button_show.gd" id="4_py6gq"]
+[ext_resource type="FontFile" uid="uid://b2d7ii78bv5cw" path="res://Assets/font/Long_Shot.ttf" id="5_n3e7w"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6kqrh"]
+texture = ExtResource("3_iva1f")
 
 [node name="skill_box" type="HBoxContainer"]
 anchors_preset = 15
@@ -13,15 +20,29 @@ grow_vertical = 2
 
 [node name="skillbutton" parent="." instance=ExtResource("1_6kcwd")]
 layout_mode = 2
-cooldown = 1.0
+cooldown = 0.5
 input_name = &"PerformAction"
 
-[node name="skillbutton2" parent="." instance=ExtResource("1_6kcwd")]
+[node name="Control" parent="." instance=ExtResource("2_7xwh1")]
 layout_mode = 2
-cooldown = 3.0
-input_name = &"RMB"
 
-[node name="skillbutton3" parent="." instance=ExtResource("1_6kcwd")]
-layout_mode = 2
-cooldown = 6.0
-input_name = &"SPC"
+[node name="button_show" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 46.0
+offset_right = 88.0
+offset_bottom = 40.0
+pivot_offset = Vector2(21, 21)
+theme_override_styles/panel = SubResource("StyleBoxTexture_6kqrh")
+script = ExtResource("4_py6gq")
+
+[node name="input_name_lbl" type="Label" parent="Control/button_show"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 42.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("5_n3e7w")
+theme_override_font_sizes/font_size = 33
+text = "RMB"
+horizontal_alignment = 1
+vertical_alignment = 1

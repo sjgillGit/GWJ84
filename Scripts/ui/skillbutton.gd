@@ -31,7 +31,6 @@ func skill_activate():
 	timer.start()
 	cooldownparent.visible = true
 
-
 func _on_timer_timeout() -> void:
 	counting = false
 	cooldownparent.visible = false

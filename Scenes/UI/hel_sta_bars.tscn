@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://drylow4dc4o3f"]
+[gd_scene load_steps=9 format=3 uid="uid://drylow4dc4o3f"]
 
 [ext_resource type="Script" uid="uid://6b2cexsfwgwn" path="res://Scripts/ui/hel_sta_bars.gd" id="1_0lv2c"]
-[ext_resource type="Texture2D" uid="uid://bbe6buhmucjwv" path="res://Assets/ui/barover.png" id="1_n6yse"]
-[ext_resource type="Texture2D" uid="uid://n8p1bx0o1ba6" path="res://Assets/ui/barback.png" id="1_vgpqe"]
-[ext_resource type="Texture2D" uid="uid://dpj6fl55p7fpe" path="res://Assets/ui/barprogress.png" id="3_0lv2c"]
+[ext_resource type="Texture2D" uid="uid://dcono1pipel3q" path="res://Assets/ui/hp_inside.png" id="2_wagrs"]
+[ext_resource type="Texture2D" uid="uid://240tbxttfhkc" path="res://Assets/ui/hp_outside.png" id="3_fauln"]
+[ext_resource type="Texture2D" uid="uid://boxikeqcr5eoq" path="res://Assets/ui/stam_inside.png" id="4_wagrs"]
 [ext_resource type="Texture2D" uid="uid://dq8knos66o8ki" path="res://Assets/ui/textframe.png" id="5_6lhcu"]
+[ext_resource type="Texture2D" uid="uid://dtecdqdesqda0" path="res://Assets/ui/stam_outside.png" id="5_fauln"]
 [ext_resource type="FontFile" uid="uid://b2d7ii78bv5cw" path="res://Assets/font/Long_Shot.ttf" id="7_wjitq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f00il"]
@@ -22,45 +23,45 @@ grow_vertical = 2
 script = ExtResource("1_0lv2c")
 
 [node name="hp_bar" type="TextureProgressBar" parent="."]
-custom_minimum_size = Vector2(440, 0)
 layout_mode = 0
-offset_right = 440.0
-offset_bottom = 20.0
+offset_right = 200.0
+offset_bottom = 200.0
 max_value = 200.0
 value = 200.0
-nine_patch_stretch = true
+fill_mode = 4
 stretch_margin_left = 10
 stretch_margin_top = 10
 stretch_margin_right = 10
 stretch_margin_bottom = 10
-texture_under = ExtResource("1_vgpqe")
-texture_over = ExtResource("1_n6yse")
-texture_progress = ExtResource("3_0lv2c")
-tint_progress = Color(0.67, 0.1273, 0.1273, 1)
+texture_under = ExtResource("2_wagrs")
+texture_over = ExtResource("3_fauln")
+texture_progress = ExtResource("2_wagrs")
+tint_under = Color(0.231373, 0.231373, 0.231373, 1)
+tint_progress = Color(0.320985, 0.657838, 0.215516, 1)
 
 [node name="stam_bar" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_top = 25.0
-offset_right = 195.0
-offset_bottom = 63.0
+offset_right = 200.0
+offset_bottom = 200.0
 step = 0.01
 value = 100.0
-nine_patch_stretch = true
+fill_mode = 4
 stretch_margin_left = 10
 stretch_margin_top = 10
 stretch_margin_right = 10
 stretch_margin_bottom = 10
-texture_under = ExtResource("1_vgpqe")
-texture_over = ExtResource("1_n6yse")
-texture_progress = ExtResource("3_0lv2c")
+texture_under = ExtResource("4_wagrs")
+texture_over = ExtResource("5_fauln")
+texture_progress = ExtResource("4_wagrs")
+tint_under = Color(0.23, 0.23, 0.23, 1)
 tint_progress = Color(0.85, 0.631833, 0.1955, 1)
 
 [node name="button_show" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 202.0
-offset_top = 24.0
-offset_right = 260.0
-offset_bottom = 64.0
+offset_left = 195.0
+offset_top = 5.0
+offset_right = 253.0
+offset_bottom = 45.0
 pivot_offset = Vector2(21, 21)
 theme_override_styles/panel = SubResource("StyleBoxTexture_f00il")
 

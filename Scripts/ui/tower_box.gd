@@ -1,0 +1,67 @@
+extends Control
+@onready var temp: HBoxContainer = $SubViewportContainer/SubViewport/temp
+@onready var towerlist: HBoxContainer = $SubViewportContainer/SubViewport/towerscroll/towerlist
+@onready var towerscroll: ScrollContainer = $SubViewportContainer/SubViewport/towerscroll
+@onready var button_show: Panel = $button_show
+@export var inputed: StringName
+@export var scroll_x := 46
+@export var cooldown: float
+@onready var counting: bool
+@onready var timer: Timer = $Timer
+@onready var fulltowerlist: HBoxContainer = $SubViewportContainer/SubViewport/fulltowerlist
+@onready var chosen_tower
+const TOWERSELECT = preload("res://Scenes/UI/towerselect.tscn")
+
+func _input(event: InputEvent) -> void:
+	
+	if event.is_action_pressed(inputed): button_show.button_clicked()
+	
+	if event.is_action_pressed(inputed) && counting != true:
+		timer.wait_time = cooldown
+		counting = true
+		timer.start()
+		for n in towerlist.get_children():
+			n.activate_timer(cooldown)
+	
+	if event.is_action_pressed("ScrollActionUp"):
+		for n in towerlist.get_children().size() -1:
+			towerlist.get_child(0).reparent(temp)
+		for n in temp.get_children():
+			n.reparent(towerlist)
+		towerscroll.scroll_horizontal = 92
+		var tween = get_tree().create_tween()
+		tween.tween_property(towerscroll,"scroll_horizontal",46,0.05)
+
+
+	if event.is_action_pressed("ScrollActionDown"):
+		towerlist.get_child(0).reparent(temp)
+		temp.get_child(0).reparent(towerlist)
+		towerscroll.scroll_horizontal = 0
+		var tween = get_tree().create_tween()
+		tween.tween_property(towerscroll,"scroll_horizontal",46,0.05)
+	
+	chosen_tower = towerlist.get_child(2)
+
+func _ready() -> void:
+	for n in towerlist.get_children():
+		n.queue_free()
+	var ile: int = 0
+	while ile <= 3:
+		for n in fulltowerlist.get_children().size():
+			var tower = TOWERSELECT.instantiate()
+			towerlist.add_child(tower)
+			tower.fill_button(fulltowerlist.get_child(n).tower)
+			ile += 1
+
+func _on_towerlist_child_entered_tree(node: Node) -> void:
+	pass
+	#for n in towerlist.get_children():
+	#	n.queue_free()
+	#var ile: int = 0
+	#while ile <= 3:
+	#	for n in fulltowerlist.get_children().size():
+	#		towerlist.add_child(fulltowerlist.get_child(n))
+	#		ile += 1
+
+func _on_timer_timeout() -> void:
+	counting = false
