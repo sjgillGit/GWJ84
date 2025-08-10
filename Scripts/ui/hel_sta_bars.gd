@@ -68,7 +68,6 @@ func _draw() -> void:
 		
 		var x_down : float = 70 *sin(deg_to_rad(360*procent)) + 100
 		var y_down : float = 70 *cos(deg_to_rad(360*procent)) + 100
-		print(360*procent," ",x,y)
 		
 		draw_line(Vector2(x_down,y_down),Vector2(x,y),Color(1,1,1,1),2)
 		
@@ -79,6 +78,5 @@ func _draw() -> void:
 		
 		var x_down : float = 70 *sin(deg_to_rad(360*procent)) + 100
 		var y_down : float = 70 *cos(deg_to_rad(360*procent)) + 100
-		print(360*procent," ",x,y)
 		
 		draw_line(Vector2(x_down,y_down),Vector2(x,y),Color(1,1,1,1),2)

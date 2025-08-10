@@ -170,6 +170,7 @@ offset_right = 482.0
 offset_bottom = 561.0
 text = "Close"
 
+[connection signal="pressed" from="VBoxContainer/startgame" to="VBoxContainer" method="_on_startgame_pressed"]
 [connection signal="pressed" from="VBoxContainer/settings" to="VBoxContainer" method="_on_settings_pressed"]
 [connection signal="toggled" from="settings/Container/HBoxContainer/column2/hotkeyhelp/hotkeyhelpcheck" to="settings" method="_on_hotkeyhelpcheck_toggled"]
 [connection signal="pressed" from="settings/close_button" to="settings" method="_on_close_button_pressed"]
