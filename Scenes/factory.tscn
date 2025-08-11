@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dl28s67tllawc"]
+[gd_scene load_steps=4 format=3 uid="uid://dt8yogkj8s7rq"]
 
-[ext_resource type="Script" uid="uid://d2mdqi63vvnaq" path="res://temporary_folder/factory.gd" id="1_n15qu"]
+[ext_resource type="Script" path="res://Scripts/factory.gd" id="1_0u02i"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xufhy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_htedc"]
 
 [node name="factory" type="Node3D"]
-script = ExtResource("1_n15qu")
+script = ExtResource("1_0u02i")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_xufhy")

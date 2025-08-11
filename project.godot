@@ -93,3 +93,7 @@ Shift={
 3d_navigation/layer_1="player_layer"
 3d_navigation/layer_2="terrain_layer"
 3d_navigation/layer_3="npc_layer"
+
+[physics]
+
+common/max_physics_steps_per_frame=1

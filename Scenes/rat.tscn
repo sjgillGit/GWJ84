@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cx2rpesjr050y"]
+[gd_scene load_steps=8 format=3 uid="uid://cx2rpesjr050y"]
 
 [ext_resource type="Script" uid="uid://bvajwkct35pyo" path="res://Scripts/rat.gd" id="1_uth6r"]
 [ext_resource type="PackedScene" uid="uid://dqnxxopxk0ox0" path="res://Assets/RATSbutwithappliedmodifiers.glb" id="2_jmrqy"]
@@ -12,6 +12,9 @@ size = Vector3(20, 20, 20)
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_qaslg"]
 length = 2.97685
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_qaslg"]
+size = Vector3(10, 10, 10)
+
 [node name="rat" type="CharacterBody3D" node_paths=PackedStringArray("nav") groups=["Entity"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0745, 0)
 collision_layer = 4
@@ -20,7 +23,8 @@ script = ExtResource("1_uth6r")
 nav = NodePath("NavigationAgent3D")
 
 [node name="player_detector" type="Area3D" parent="."]
-collision_layer = 4
+visible = false
+collision_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player_detector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.301025, 0, 0)
@@ -57,7 +61,18 @@ metadata/_custom_type_script = "uid://bjb4np2yjqmqv"
 transform = Transform3D(1, 0, 0, 0, 0.0039096, -0.999992, 0, 0.999992, 0.0039096, 0, 0, 0)
 shape = SubResource("SeparationRayShape3D_qaslg")
 
+[node name="rat_detector" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rat_detector"]
+transform = Transform3D(5.49966, 0, 0, 0, 1, 0, 0, 0, 4.21765, 0, 0, 0)
+shape = SubResource("BoxShape3D_qaslg")
+debug_color = Color(0.682117, 0.0294534, 0.480016, 0.42)
+
 [connection signal="body_shape_entered" from="player_detector" to="." method="_on_player_detector_body_shape_entered"]
 [connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
 [connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="cooldown_timer" to="." method="_on_cooldown_timer_timeout"]
+[connection signal="body_entered" from="rat_detector" to="." method="_on_rat_detector_body_entered"]
+[connection signal="body_exited" from="rat_detector" to="." method="_on_rat_detector_body_exited"]

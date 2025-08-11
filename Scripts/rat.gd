@@ -67,15 +67,31 @@ func attack_behaviour(delta):
 	move_and_slide()
 
 
+func get_alignment_force():
+	var avg_velocity = Vector3.ZERO
+	var count =0
+	for other in neighbors:
+		avg_velocity += other.velocity
+		count +=1
+	if count >0:
+		avg_velocity /= count
+		avg_velocity =  (avg_velocity.normalized()*speed) - velocity
+	return avg_velocity
 
 
 func swarm_behaviour(delta):
 	var seek_force = (leader.global_position - global_position).normalized() * speed
 	var separation_force = get_separation_force()
-	var total_force = (seek_force * 2) + (separation_force * 4.0)
+	var alignment_force = get_alignment_force()
+	var total_force = (seek_force * 2) + (separation_force * 4.0) + (alignment_force * 2.0)
 	if velocity.length() > speed:
 		total_force = total_force.normalized() * speed
-	move_with_navmesh(delta,leader.current_target + total_force)
+	# Keep Y velocity for gravity
+	velocity.y += -10 * delta  
+	# Apply horizontal steering
+	velocity.x = lerp(velocity.x, total_force.x, 0.01)
+	velocity.z = lerp(velocity.z, total_force.z, 0.01)
+	move_and_slide()
 
 func _on_navigation_agent_3d_navigation_finished():
 	state.on_navigation_agent_3d_navigation_finished()
@@ -108,3 +124,13 @@ func _on_death():
 		new_leader = neighbors[0]
 		new_leader.start_in_leader_status()
 	killed.emit(self,new_leader)
+
+
+func _on_rat_detector_body_entered(body):
+	if body != self and neighbors.has(body):
+		neighbors.append(body)
+
+
+func _on_rat_detector_body_exited(body):
+	if neighbors.has(body):
+		neighbors.erase(body)
