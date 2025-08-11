@@ -16,7 +16,7 @@
 size = Vector3(0.5, 0.5, 0.5)
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("mesh_root", "camera_controller", "health_handler") groups=["Entity"]]
-collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_488fn")
 move_speed = 20.0
 sprint_multiplier = 1.5
@@ -37,14 +37,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 mesh = SubResource("BoxMesh_wggva")
 skeleton = NodePath("../..")
 
-[node name="CameraRoot" type="Node3D" parent="." node_paths=PackedStringArray("camera_horizontal", "camera_vertical")]
+[node name="CameraRoot" type="Node3D" parent="." node_paths=PackedStringArray("camera", "camera_horizontal", "camera_vertical")]
 script = ExtResource("3_rlgqx")
+camera = NodePath("CameraHorizontal/CameraVertical/Camera3D")
 camera_horizontal = NodePath("CameraHorizontal")
 camera_vertical = NodePath("CameraHorizontal/CameraVertical")
 
 [node name="CameraHorizontal" type="Node3D" parent="CameraRoot"]
 
 [node name="CameraVertical" type="Node3D" parent="CameraRoot/CameraHorizontal"]
+
+[node name="Camera3D" type="Camera3D" parent="CameraRoot/CameraHorizontal/CameraVertical"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08397, 1.58674)
 
 [node name="PlayerActions" type="Node3D" parent="."]
 script = ExtResource("3_h54ih")
