@@ -47,7 +47,7 @@ func _on_entity_lost(node: Node3D) -> void:
 	transition_to_state(GunTurretIdle._get_state_name());
 
 
-func _on_death() -> void:
+func _on_death(_entity: Node3D, _handler: EntityHealthHandler) -> void:
 	transition_to_state(GunTurretDeactivated._get_state_name());
 
 func look_at_target() -> void:

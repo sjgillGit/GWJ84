@@ -25,5 +25,5 @@ func _on_exit() -> void:
 func _on_entity_detected(node: Node3D) -> void:
 	transition_to_state(GunTurretAttack._get_state_name(), func(state: GunTurretAttack) -> void: state.target = node);
 
-func _on_death() -> void:
+func _on_death(_entity: Node3D, _handler: EntityHealthHandler) -> void:
 	transition_to_state(GunTurretDeactivated._get_state_name());
