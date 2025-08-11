@@ -8,7 +8,7 @@ var current_action_index: int = 0;
 
 func _ready() -> void:
 	actions.assign(get_children().filter(func (child): return child is PlayerActionBase));
-	try_activate_current_action();
+	#try_activate_current_action();
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is not InputEventMouseButton:

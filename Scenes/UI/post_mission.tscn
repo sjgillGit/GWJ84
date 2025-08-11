@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddl41xrijeh6u"]
+
+[ext_resource type="PackedScene" uid="uid://usoe2lk6q8vf" path="res://Scenes/UI/mission_completed.tscn" id="1_j1l2h"]
+[ext_resource type="PackedScene" uid="uid://cgquenm3v3687" path="res://Scenes/UI/goblin.tscn" id="1_maiub"]
+[ext_resource type="Script" uid="uid://dkmrwxosv7v3b" path="res://Scripts/ui/post_mission.gd" id="1_tofs2"]
+[ext_resource type="Script" uid="uid://2kyj44aq7djn" path="res://Scenes/UI/goblin_dance.gd" id="2_31x6l"]
+[ext_resource type="PackedScene" uid="uid://7ypegi6l54k0" path="res://Scenes/UI/reward_menu.tscn" id="2_sj55a"]
+
+[sub_resource type="Environment" id="Environment_31x6l"]
+background_mode = 1
+background_color = Color(0.900784, 0.622207, 0.733264, 1)
+background_energy_multiplier = 0.66
+ambient_light_color = Color(0.783524, 0.783523, 0.783523, 1)
+
+[node name="post_mission" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tofs2")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1152, 650)
+render_target_update_mode = 4
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_31x6l")
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.982336, 0, 0.187124, 0, 1, 0, -0.187124, 0, 0.982336, 18.4901, 0.950464, 3.44744)
+
+[node name="Goblin" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_maiub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9344, 0, 2.20221)
+script = ExtResource("2_31x6l")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.911687, 0.402323, -0.0834428, -0.326121, 0.832067, 0.448675, 0.249942, -0.381839, 0.889791, 10.3396, 3.54818, 8.33115)
+light_energy = 3.0
+light_indirect_energy = 5.202
+light_angular_distance = 35.45
+
+[node name="Control2" parent="." instance=ExtResource("2_sj55a")]
+visible = false
+layout_mode = 1
+offset_left = 40.0
+offset_top = 32.0
+offset_right = -613.0
+offset_bottom = -37.0
+
+[node name="Control" parent="." instance=ExtResource("1_j1l2h")]
+layout_mode = 1
+offset_left = 40.0
+offset_top = 32.0
+offset_right = -613.0
+offset_bottom = -37.0
+pivot_offset = Vector2(249.5, 289.5)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0

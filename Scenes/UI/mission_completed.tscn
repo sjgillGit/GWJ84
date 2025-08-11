@@ -1,0 +1,192 @@
+[gd_scene load_steps=12 format=3 uid="uid://usoe2lk6q8vf"]
+
+[ext_resource type="Theme" uid="uid://dr6wcdv73nca2" path="res://Assets/ui/menu.tres" id="1_ex6yg"]
+[ext_resource type="Script" uid="uid://48w30akk01b4" path="res://Scripts/ui/mission_completed.gd" id="2_ubabg"]
+[ext_resource type="Shader" uid="uid://o6nqtc50wh3o" path="res://Scenes/UI/yippie.gdshader" id="2_v30fq"]
+[ext_resource type="Shader" uid="uid://bceililma81gt" path="res://Scenes/UI/tower_box.gdshader" id="3_741e0"]
+[ext_resource type="FontFile" uid="uid://xcvklgi06ik4" path="res://Assets/font/Megadeth.ttf" id="3_v30fq"]
+[ext_resource type="Texture2D" uid="uid://bdwbhi6at65cv" path="res://Assets/ui/gradient.png" id="3_vy2uj"]
+[ext_resource type="Texture2D" uid="uid://bomlm0367nyw7" path="res://Assets/ui/gradientmask.png" id="4_ubabg"]
+[ext_resource type="Shader" uid="uid://ddnsifq4k6mfa" path="res://Scenes/UI/gradient.gdshader" id="4_vy2uj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vy2uj"]
+shader = ExtResource("2_v30fq")
+shader_parameter/strength = 0.5
+shader_parameter/speed = 0.5
+shader_parameter/angle = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3htfl"]
+shader = ExtResource("3_741e0")
+shader_parameter/mask = ExtResource("4_ubabg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6i8uf"]
+shader = ExtResource("4_vy2uj")
+shader_parameter/gradient = ExtResource("3_vy2uj")
+shader_parameter/circle_color = Color(0.332, 0.602, 0.289, 0.585)
+shader_parameter/circle_multiplier = 4.735
+shader_parameter/speed = 1.0
+shader_parameter/direction = Vector2(1, 1)
+shader_parameter/rotation = Transform2D(1.815, -1, -2.09, 1, 0, 0)
+
+[node name="Control" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -653.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ex6yg")
+script = ExtResource("2_ubabg")
+mission_time = 220.0
+turrets_number = 55.0
+enemies_number = 777.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 488.0
+offset_bottom = 568.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+material = SubResource("ShaderMaterial_vy2uj")
+layout_mode = 2
+theme_override_font_sizes/font_size = 88
+text = "YIPPIE!"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+
+[node name="time" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/time"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Time"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/time"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 44
+text = "00:00"
+horizontal_alignment = 2
+
+[node name="separator2" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 10)
+layout_mode = 2
+
+[node name="towers_placed" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/towers_placed"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Turrets deployed"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/towers_placed"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "0"
+horizontal_alignment = 2
+
+[node name="separator" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 10)
+layout_mode = 2
+
+[node name="enemies_killed" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/enemies_killed"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Enemies Killed"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/enemies_killed"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "0"
+horizontal_alignment = 2
+
+[node name="separator3" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 10)
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_3htfl")
+layout_mode = 0
+offset_left = 310.0
+offset_top = 379.0
+offset_right = 477.0
+offset_bottom = 544.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(167, 165)
+render_target_update_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport"]
+self_modulate = Color(0.406616, 0.754161, 0.383711, 1)
+top_level = true
+offset_left = 2.0
+offset_right = 167.0
+offset_bottom = 165.0
+texture = ExtResource("3_vy2uj")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="SubViewportContainer/SubViewport/TextureRect"]
+self_modulate = Color(0.406616, 0.754161, 0.383711, 1)
+material = SubResource("ShaderMaterial_6i8uf")
+layout_mode = 0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 171.0
+offset_bottom = 168.0
+texture = ExtResource("3_vy2uj")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/TextureRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 13.0
+offset_right = 133.0
+offset_bottom = 181.0
+rotation = -0.174533
+theme_override_fonts/font = ExtResource("3_v30fq")
+theme_override_font_sizes/font_size = 190
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 97.0
+offset_right = 358.0
+offset_bottom = 139.0
+theme_override_font_sizes/font_size = 40
+text = "MISSION CLEARED"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.7

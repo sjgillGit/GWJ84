@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://d042hsexsntwv"]
+
+[ext_resource type="Script" uid="uid://cmsfmt20kf3s5" path="res://Scenes/UI/towerselect.gd" id="1_uyf6x"]
+[ext_resource type="Texture2D" uid="uid://dq8knos66o8ki" path="res://Assets/ui/textframe.png" id="2_uhy2l"]
+[ext_resource type="FontFile" uid="uid://b2d7ii78bv5cw" path="res://Assets/font/Long_Shot.ttf" id="4_3ldct"]
+[ext_resource type="Texture2D" uid="uid://mtr22qnov5f" path="res://Assets/ui/skillicon.png" id="5_oiurf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tj54v"]
+texture = ExtResource("2_uhy2l")
+
+[node name="skillbutton" type="Control"]
+custom_minimum_size = Vector2(42, 87)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 42.0
+offset_bottom = 87.0
+script = ExtResource("1_uyf6x")
+
+[node name="TextureButton" type="Button" parent="."]
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 0
+offset_top = 44.0
+offset_right = 42.0
+offset_bottom = 86.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_tj54v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tj54v")
+theme_override_styles/normal = SubResource("StyleBoxTexture_tj54v")
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="TextureButton"]
+modulate = Color(0, 0, 0, 1)
+show_behind_parent = true
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_oiurf")
+expand_mode = 1
+
+[node name="cooldownparent" type="Control" parent="TextureButton"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="cooldownback" type="TextureRect" parent="TextureButton/cooldownparent"]
+self_modulate = Color(1, 1, 1, 0.111)
+show_behind_parent = true
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 0
+offset_right = 42.0
+offset_bottom = 42.0
+texture = ExtResource("5_oiurf")
+expand_mode = 1
+
+[node name="cooldown" type="Label" parent="TextureButton/cooldownparent"]
+show_behind_parent = true
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 0
+offset_right = 43.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("4_3ldct")
+theme_override_font_sizes/font_size = 27
+text = "30.9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -5.0
+offset_top = -6.0
+offset_right = 47.0
+offset_bottom = 94.0
+texture = ExtResource("2_uhy2l")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 9
+patch_margin_bottom = 9

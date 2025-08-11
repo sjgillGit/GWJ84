@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://fijuc7gifjf6"]
+
+[ext_resource type="PackedScene" uid="uid://d042hsexsntwv" path="res://Scenes/UI/towerselect.tscn" id="1_2k6yk"]
+[ext_resource type="Script" uid="uid://dykrxsjod4o6f" path="res://Scripts/ui/tower_box.gd" id="1_10edh"]
+[ext_resource type="Shader" uid="uid://bceililma81gt" path="res://Scenes/UI/tower_box.gdshader" id="3_2jh5i"]
+[ext_resource type="Texture2D" uid="uid://wnd51orttw5" path="res://Assets/ui/hide.png" id="3_3k674"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w7252"]
+shader = ExtResource("3_2jh5i")
+shader_parameter/mask = ExtResource("3_3k674")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jh5i"]
+
+[node name="Control" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(137, 60)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 137.0
+offset_bottom = 88.0
+script = ExtResource("1_10edh")
+inputed = &"RMB"
+cooldown = 10.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_w7252")
+layout_mode = 0
+offset_right = 135.0
+offset_bottom = 88.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(135, 88)
+render_target_update_mode = 4
+
+[node name="towerscroll" type="ScrollContainer" parent="SubViewportContainer/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 9.0
+offset_right = 12.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+scroll_deadzone = 46
+
+[node name="towerlist" type="HBoxContainer" parent="SubViewportContainer/SubViewport/towerscroll"]
+layout_mode = 2
+
+[node name="temp" type="HBoxContainer" parent="SubViewportContainer/SubViewport"]
+offset_left = -42.0
+offset_top = -87.0
+
+[node name="fulltowerlist" type="HBoxContainer" parent="SubViewportContainer/SubViewport"]
+offset_left = -55.0
+offset_top = -93.0
+offset_right = 217.0
+offset_bottom = -6.0
+
+[node name="skillbutton" parent="SubViewportContainer/SubViewport/fulltowerlist" instance=ExtResource("1_2k6yk")]
+modulate = Color(1, 0.13, 0.13, 1)
+layout_mode = 2
+action_icon = SubResource("AtlasTexture_2jh5i")
+
+[node name="skillbutton2" parent="SubViewportContainer/SubViewport/fulltowerlist" instance=ExtResource("1_2k6yk")]
+modulate = Color(0, 0.79, 0.158, 1)
+layout_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="child_entered_tree" from="SubViewportContainer/SubViewport/fulltowerlist" to="." method="_on_towerlist_child_entered_tree"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
