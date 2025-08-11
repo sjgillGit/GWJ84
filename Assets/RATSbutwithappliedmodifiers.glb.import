@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dwhn4og7ic3jg"
-path="res://.godot/imported/Turret.glb-f06e8ed11031d4b0a72aa15591e09313.scn"
+uid="uid://dqnxxopxk0ox0"
+path="res://.godot/imported/RATSbutwithappliedmodifiers.glb-afd53f0cf5ae8b18b022a4c3a1e5411a.scn"
 
 [deps]
 
-source_file="res://temporary_folder/Turret.glb"
-dest_files=["res://.godot/imported/Turret.glb-f06e8ed11031d4b0a72aa15591e09313.scn"]
+source_file="res://Assets/RATSbutwithappliedmodifiers.glb"
+dest_files=["res://.godot/imported/RATSbutwithappliedmodifiers.glb-afd53f0cf5ae8b18b022a4c3a1e5411a.scn"]
 
 [params]
 
