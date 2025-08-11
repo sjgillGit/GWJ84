@@ -2,7 +2,7 @@
 
 [ext_resource type="Terrain3DAssets" uid="uid://dal3jhw6241qg" path="res://demo/data/assets.tres" id="1_md68i"]
 [ext_resource type="PackedScene" uid="uid://cx2rpesjr050y" path="res://Scenes/rat.tscn" id="2_iixdh"]
-[ext_resource type="Script" uid="uid://cvet4ojd3l7lk" path="res://Scripts/swarm_manager.gd" id="3_qldgr"]
+[ext_resource type="Script" path="res://Scripts/swarm_manager.gd" id="3_qldgr"]
 [ext_resource type="PackedScene" uid="uid://dko2mapcxs0y3" path="res://Scenes/Player/Player.tscn" id="5_q0mm3"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_j3r6d"]
