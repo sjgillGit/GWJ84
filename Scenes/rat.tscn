@@ -7,12 +7,13 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_uth6r"]
 size = Vector3(20, 20, 20)
 
-[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_3krw6"]
-length = 2.4623
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3krw6"]
 
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_qaslg"]
+length = 2.97685
+
 [node name="rat" type="CharacterBody3D" node_paths=PackedStringArray("nav") groups=["Entity"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0745, 0)
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_uth6r")
@@ -26,6 +27,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.301025, 0, 0)
 shape = SubResource("BoxShape3D_uth6r")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_height_offset = -3.0
 navigation_layers = 2
 simplify_path = true
 avoidance_enabled = true
@@ -42,19 +44,18 @@ one_shot = true
 [node name="RATSbutwithappliedmodifiers" parent="." instance=ExtResource("2_jmrqy")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, -0.0302706, -10.6513)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.999373, 0.0354052, 0, -0.0354052, 0.999373, 0, -3.3861, -1.55309)
-shape = SubResource("SeparationRayShape3D_3krw6")
-debug_color = Color(0.490196, 0.4, 0.0666667, 1)
-
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.346229, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.102221, 0)
 shape = SubResource("CapsuleShape3D_3krw6")
 
 [node name="EntityHealthHandler" type="Node3D" parent="."]
 script = ExtResource("3_qaslg")
 max_health = 50.0
 metadata/_custom_type_script = "uid://bjb4np2yjqmqv"
+
+[node name="separation_ray" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0039096, -0.999992, 0, 0.999992, 0.0039096, 0, 0, 0)
+shape = SubResource("SeparationRayShape3D_qaslg")
 
 [connection signal="body_shape_entered" from="player_detector" to="." method="_on_player_detector_body_shape_entered"]
 [connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
