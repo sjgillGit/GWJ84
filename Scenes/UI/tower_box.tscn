@@ -24,20 +24,22 @@ cooldown = 10.0
 material = SubResource("ShaderMaterial_w7252")
 layout_mode = 0
 offset_right = 135.0
-offset_bottom = 112.0
+offset_bottom = 88.0
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
 handle_input_locally = false
-size = Vector2i(135, 112)
+size = Vector2i(135, 88)
 render_target_update_mode = 4
 
 [node name="towerscroll" type="ScrollContainer" parent="SubViewportContainer/SubViewport"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 9.0
 offset_right = 12.0
-offset_bottom = -25.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -54,9 +56,9 @@ offset_top = -87.0
 
 [node name="fulltowerlist" type="HBoxContainer" parent="SubViewportContainer/SubViewport"]
 offset_left = -55.0
-offset_top = -90.0
-offset_right = -13.0
-offset_bottom = -3.0
+offset_top = -93.0
+offset_right = 217.0
+offset_bottom = -6.0
 
 [node name="skillbutton" parent="SubViewportContainer/SubViewport/fulltowerlist" instance=ExtResource("1_2k6yk")]
 modulate = Color(1, 0.13, 0.13, 1)

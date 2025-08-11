@@ -2,7 +2,6 @@ extends Control
 @onready var temp: HBoxContainer = $SubViewportContainer/SubViewport/temp
 @onready var towerlist: HBoxContainer = $SubViewportContainer/SubViewport/towerscroll/towerlist
 @onready var towerscroll: ScrollContainer = $SubViewportContainer/SubViewport/towerscroll
-@onready var button_show: Panel = $button_show
 @export var inputed: StringName
 @export var scroll_x := 46
 @export var cooldown: float
@@ -13,8 +12,6 @@ extends Control
 const TOWERSELECT = preload("res://Scenes/UI/towerselect.tscn")
 
 func _input(event: InputEvent) -> void:
-	
-	if event.is_action_pressed(inputed): button_show.button_clicked()
 	
 	if event.is_action_pressed(inputed) && counting != true:
 		timer.wait_time = cooldown
