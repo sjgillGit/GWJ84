@@ -12,19 +12,16 @@ var skeleton: Skeleton3D;
 
 var target: Node3D;
 var bone_idx: int;
-var bone_default_position: Vector3;
 
 static func _get_state_name() -> String:
 	return "gun_turret_attack";
 
 func _ready() -> void:
 	bone_idx = skeleton.find_bone("central_bone");
-	bone_default_position = skeleton.get_bone_pose_position(bone_idx);
 
 func _on_enter() -> void:
 	entity_detector.entity_lost.connect(_on_entity_lost);
 	animation_player.stop();
-	bone_default_position = skeleton.get_bone_pose_position(bone_idx);
 
 func _on_process(_delta: float):
 	var bone_transform: Transform3D = skeleton.global_transform * skeleton.get_bone_global_pose(bone_idx);
