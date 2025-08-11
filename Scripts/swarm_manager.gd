@@ -30,8 +30,8 @@ func get_neighbors(radius,rat):
 	return neighbors
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var count =0 
-var max_count = 50
-func _process(delta):
+var max_count = 35
+func _physics_process(delta):
 	count +=1
 	for rat in rat_list:
 		if count==max_count:

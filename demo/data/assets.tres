@@ -1,10 +1,27 @@
-[gd_resource type="Terrain3DAssets" load_steps=11 format=3 uid="uid://dal3jhw6241qg"]
+[gd_resource type="Terrain3DAssets" load_steps=13 format=3 uid="uid://dal3jhw6241qg"]
 
 [ext_resource type="PackedScene" uid="uid://bn5nf4esciwex" path="res://demo/assets/models/LODExample.tscn" id="1_4jrdu"]
+[ext_resource type="PackedScene" uid="uid://bo8d4wik6gkjb" path="res://Scenes/Trees.glb" id="1_adagb"]
 [ext_resource type="Texture2D" uid="uid://c88j3oj0lf6om" path="res://demo/assets/textures/rock023_alb_ht.png" id="2_pog6b"]
 [ext_resource type="Texture2D" uid="uid://ddprscrpsofah" path="res://demo/assets/textures/ground037_alb_ht.png" id="3_g8f2m"]
 [ext_resource type="Texture2D" uid="uid://c307hdmos4gtm" path="res://demo/assets/textures/rock023_nrm_rgh.png" id="3_wncaf"]
 [ext_resource type="Texture2D" uid="uid://c1ots7w6i0i1q" path="res://demo/assets/textures/ground037_nrm_rgh.png" id="4_aw5y1"]
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_e6edf"]
+name = "Trees"
+scene_file = ExtResource("1_adagb")
+density = 0.908483
+last_lod = 2
+last_shadow_lod = 2
+lod2_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_or12t"]
+name = "LODExample"
+id = 1
+scene_file = ExtResource("1_4jrdu")
+height_offset = 0.5
+last_lod = 3
+last_shadow_lod = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2vqk"]
 transparency = 4
@@ -18,20 +35,13 @@ distance_fade_max_distance = 96.0
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_2qf8x"]
 name = "TextureCard"
+id = 2
 generated_type = 1
 height_offset = 0.5
 material_override = SubResource("StandardMaterial3D_b2vqk")
 last_lod = 0
 last_shadow_lod = 0
 lod0_range = 128.0
-
-[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_or12t"]
-name = "LODExample"
-id = 1
-scene_file = ExtResource("1_4jrdu")
-height_offset = 0.5
-last_lod = 3
-last_shadow_lod = 3
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_lha57"]
 name = "Cliff"
@@ -53,5 +63,5 @@ uv_scale = 0.2
 detiling_rotation = 0.161
 
 [resource]
-mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_2qf8x"), SubResource("Terrain3DMeshAsset_or12t")])
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_e6edf"), SubResource("Terrain3DMeshAsset_or12t"), SubResource("Terrain3DMeshAsset_2qf8x")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_lha57"), SubResource("Terrain3DTextureAsset_od0q7")])

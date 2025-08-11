@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bjb4np2yjqmqv" path="res://Scripts/Components/entity_health_handler.gd" id="3_qaslg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uth6r"]
-size = Vector3(20, 20, 20)
+size = Vector3(10, 10, 10)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3krw6"]
 
