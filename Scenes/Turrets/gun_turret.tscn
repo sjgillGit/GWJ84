@@ -528,3 +528,4 @@ script = ExtResource("4_u6y7j")
 entity_detector = NodePath("../../EnemyDetectArea")
 animation_player = NodePath("../../MeshRoot/Turret/AnimationPlayer")
 skeleton = NodePath("../../MeshRoot/Turret/Armature/Skeleton3D")
+shoot_interval = 1.0
