@@ -29,3 +29,7 @@ func add_rat(rat,position):
 	add_child(rat)
 	rat.global_position = position
 	rat_list.append(rat)
+
+
+func _on_rat_killed(dead_rat):
+	rat_list.erase(dead_rat)

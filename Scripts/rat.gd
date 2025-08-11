@@ -2,11 +2,10 @@ extends CharacterBody3D
 class_name Rat
 var speed = 10
 var acceleration = 10 
-
+signal killed
 @export var nav: NavigationAgent3D
 @export var end_patrol_position: Marker3D
 @export var attack_damage:int = 10
-@export var health_points:int = 50
 var begin_patrol_position: Vector3
 var current_target: Vector3
 var state:RatState
@@ -20,6 +19,7 @@ func _ready():
 	nav.target_desired_distance = 0.5
 	nav.path_desired_distance = 0.5
 	state = PatrolRatState.new(self)
+	$EntityHealthHandler.entity_died.connect(_on_death)
 
 func update_neighbors(new_neighbors):
 	neighbors = new_neighbors
@@ -80,7 +80,6 @@ func swarm_behaviour(delta):
 func _on_navigation_agent_3d_navigation_finished():
 	state.on_navigation_agent_3d_navigation_finished()
 
-
 func _on_player_detector_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	state = ChaseRatState.new(self)
 	current_target = body.global_position
@@ -89,10 +88,23 @@ func _on_player_detector_body_shape_entered(body_rid, body, body_shape_index, lo
 func start_in_swarm_status(assigned_leader):
 	state = SwarmRatState.new(self)
 	leader = assigned_leader
+	leader.killed.connect(_on_leader_killed)
 
 func start_in_leader_status():
 	state = PatrolRatState.new(self)
 
-
 func _on_cooldown_timer_timeout():
 	can_attack = true
+
+func take_damage(damage):
+	$EntityHealthHandler.take_damage(damage)
+
+func _on_leader_killed(leader,new_leader):
+	leader=new_leader
+
+func _on_death():
+	var new_leader = null
+	if neighbors.size() > 1:
+		new_leader = neighbors[0]
+		new_leader.start_in_leader_status()
+	killed.emit(self,new_leader)
