@@ -97,7 +97,7 @@ func _on_cooldown_timer_timeout():
 	can_attack = true
 
 func take_damage(damage):
-	$EntityHealthHandler.take_damage(damage)
+	$EntityHealthHandler.take_damage(self,damage)
 
 func _on_leader_killed(leader,new_leader):
 	leader=new_leader

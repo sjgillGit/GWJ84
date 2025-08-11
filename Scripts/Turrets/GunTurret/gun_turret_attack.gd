@@ -61,4 +61,6 @@ func shoot_at_target(delta: float) -> void:
 	shoot_interval_timer += delta;
 	if shoot_interval_timer >= shoot_interval:
 		print("turret shoots at the target");
+		assert(target.is_in_group("take_damage"), "Target has no take_damage method");
+		target.take_damage(100)
 		shoot_interval_timer = 0.0;
