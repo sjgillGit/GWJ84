@@ -15,9 +15,15 @@ run/main_scene="uid://b17prwi2b3x1f"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+<<<<<<< HEAD
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
+=======
+[global_group]
+
+Entity=""
+>>>>>>> develop
 
 [input]
 

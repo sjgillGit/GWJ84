@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://x34e4v60vdmy"]
 
-[ext_resource type="Script" path="res://demo/src/DemoScene.gd" id="1_po4vw"]
+[ext_resource type="Script" uid="uid://chstoagn42gbr" path="res://demo/src/DemoScene.gd" id="1_po4vw"]
 [ext_resource type="PackedScene" uid="uid://bb2lp50sjndus" path="res://demo/components/Environment.tscn" id="2_i74wg"]
 [ext_resource type="PackedScene" uid="uid://dwnhqfjq7v1pq" path="res://demo/components/Borders.tscn" id="3_3upu0"]
 [ext_resource type="PackedScene" uid="uid://domhm87hbhbg1" path="res://demo/components/Player.tscn" id="4_fk3ul"]
@@ -47,7 +47,7 @@ _shader_parameters = {
 "dual_scale_texture": 0,
 "enable_macro_variation": true,
 "enable_projection": true,
-"height_blending": true,
+&"flat_terrain_normals": false,
 "macro_variation1": Color(0.878431, 0.862745, 0.901961, 1),
 "macro_variation2": Color(0.898039, 0.898039, 0.803922, 1),
 "macro_variation_slope": 0.333,
@@ -56,9 +56,7 @@ _shader_parameters = {
 "noise1_offset": Vector2(0.5, 0.5),
 "noise1_scale": 0.04,
 "noise2_scale": 0.076,
-"noise3_scale": 0.225,
 "noise_texture": SubResource("NoiseTexture2D_bov7h"),
-"projection_angular_division": 1.436,
 "projection_threshold": 0.8,
 "tri_scale_reduction": 0.3
 }
