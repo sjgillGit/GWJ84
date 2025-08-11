@@ -1,6 +1,6 @@
 extends Node3D
 @export var swarm_manager:Node3D 
-@onready var rat_scene = preload("res://temporary_folder/rat.tscn")
+@onready var rat_scene = preload("res://Scenes/rat.tscn")
 @export var patrol_end:Marker3D 
 
 func _on_timer_timeout():

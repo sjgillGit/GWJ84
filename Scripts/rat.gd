@@ -5,6 +5,8 @@ var acceleration = 10
 
 @export var nav: NavigationAgent3D
 @export var end_patrol_position: Marker3D
+@export var attack_damage:int = 10
+@export var health_points:int = 50
 var begin_patrol_position: Vector3
 var current_target: Vector3
 var state:RatState
@@ -12,7 +14,6 @@ var can_attack: bool = true
 var player
 var leader 
 var neighbors 
-
 func _ready():
 	begin_patrol_position = global_position
 	current_target = end_patrol_position.global_position
@@ -57,6 +58,10 @@ func patrol_behaviour(delta):
 
 func chase_behaviour(delta):
 	move_with_navmesh(delta,player.global_position)
+	if (player.global_position - global_position).length() < 5 and can_attack:
+		player.take_damage(attack_damage)
+		can_attack = false
+		$cooldown_timer.start()
 
 func attack_behaviour(delta):
 	move_and_slide()
@@ -87,3 +92,7 @@ func start_in_swarm_status(assigned_leader):
 
 func start_in_leader_status():
 	state = PatrolRatState.new(self)
+
+
+func _on_cooldown_timer_timeout():
+	can_attack = true

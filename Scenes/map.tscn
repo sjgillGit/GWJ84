@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://nbkvr20vhw44"]
 
 [ext_resource type="Terrain3DAssets" uid="uid://dal3jhw6241qg" path="res://demo/data/assets.tres" id="1_md68i"]
-[ext_resource type="PackedScene" uid="uid://cx2rpesjr050y" path="res://temporary_folder/rat.tscn" id="2_iixdh"]
-[ext_resource type="PackedScene" uid="uid://domhm87hbhbg1" path="res://demo/components/Player.tscn" id="2_j3r6d"]
-[ext_resource type="Script" uid="uid://cvet4ojd3l7lk" path="res://temporary_folder/swarm_manager.gd" id="3_qldgr"]
-[ext_resource type="PackedScene" uid="uid://dl28s67tllawc" path="res://temporary_folder/factory.tscn" id="5_dpjep"]
+[ext_resource type="PackedScene" uid="uid://cx2rpesjr050y" path="res://Scenes/rat.tscn" id="2_iixdh"]
+[ext_resource type="Script" uid="uid://cvet4ojd3l7lk" path="res://Scripts/swarm_manager.gd" id="3_qldgr"]
+[ext_resource type="PackedScene" uid="uid://dl28s67tllawc" path="res://Scenes/factory.tscn" id="5_dpjep"]
+[ext_resource type="PackedScene" uid="uid://dko2mapcxs0y3" path="res://Scenes/Player/Player.tscn" id="5_q0mm3"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_j3r6d"]
 vertices = PackedVector3Array(36.036, 3.003, -285.285, 24.024, 3.003, -285.285, 15.015, 3.003, -273.273, -51.051, 3.003, -219.219, -60.06, 3.003, -213.213, -60.06, 3.003, -195.195, -39.039, 3.003, -123.123, -33.033, 3.003, -114.114, -15.015, 3.003, -114.114, -39.039, 3.003, -141.141, -45.045, 3.003, -171.171, -48.048, 3.003, -150.15, -15.015, 3.003, -249.249, 63.063, 3.003, -57.057, 81.081, 3.003, -42.042, 150.15, 3.003, -267.267, 3.003, 3.003, -273.273, -51.051, 3.003, -240.24, -6.006, 3.003, -105.105, 45.045, 3.003, -57.057, 87.087, 3.003, -315.315, 60.06, 3.003, -318.318, -18.018, 3.003, -54.054, 33.033, 3.003, -48.048, 234.234, 3.003, -21.021, 249.249, 3.003, -30.03, 249.249, 3.003, -48.048, 183.183, 3.003, -264.264, 165.165, 3.003, -270.27, 183.183, 3.003, 9.009, 207.207, 3.003, 15.015, 222.222, 3.003, 12.012, 81.081, 3.003, -39.039, 114.114, 3.003, -6.006, 135.135, 3.003, 27.027, 159.159, 3.003, 27.027, 264.264, 3.003, -60.06, 276.276, 3.003, -96.096, 282.282, 3.003, -183.183, 240.24, 3.003, -282.282, 216.216, 3.003, -282.282, 306.306, 3.003, -123.123, 300.3, 3.003, -174.174, -27.027, 3.003, -24.024, -27.027, 3.003, -9.009, -18.018, 3.003, 0, 72.072, 3.003, 18.018, 102.102, 3.003, 18.018, 108.108, 3.003, -3.003, 72.072, 3.003, -27.027, 42.042, 3.003, -27.027, 30.03, 3.003, -39.039, 45.045, 6.006, -51.051, 36.036, 6.006, -45.045, 42.042, 6.006, -33.033, 75.075, 6.006, -36.036, 75.075, 6.006, -45.045, 63.063, 6.006, -51.051)
@@ -62,11 +62,6 @@ _shader_parameters = {
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 5, -40)
 
-[node name="Player" parent="." instance=ExtResource("2_j3r6d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.73, 1, -2.55343)
-collision_layer = 7
-collision_mask = 7
-
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_j3r6d")
 navigation_layers = 2
@@ -94,3 +89,6 @@ end_patrol_position = NodePath("../../Marker3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61, 1, 8)
 swarm_manager = NodePath("../swarm_manager")
 patrol_end = NodePath("../Marker3D")
+
+[node name="Player" parent="." instance=ExtResource("5_q0mm3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.4673, 3.86652, -9.04273)
