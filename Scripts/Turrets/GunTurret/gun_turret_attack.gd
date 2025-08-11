@@ -13,6 +13,9 @@ var skeleton: Skeleton3D;
 @export
 var shoot_interval: float;
 
+@export
+var health_handler: EntityHealthHandler;
+
 var target: Node3D;
 var bone_idx: int;
 var shoot_interval_timer: float;
@@ -25,6 +28,7 @@ func _ready() -> void:
 
 func _on_enter() -> void:
 	entity_detector.entity_lost.connect(_on_entity_lost);
+	health_handler.entity_died.connect(_on_death);
 	animation_player.stop();
 	shoot_interval_timer = 0.0;
 
@@ -34,12 +38,17 @@ func _on_process(delta: float) -> void:
 
 func _on_exit() -> void:
 	entity_detector.entity_lost.disconnect(_on_entity_lost);
+	health_handler.entity_died.disconnect(_on_death);
 	skeleton.clear_bones_global_pose_override();
 
 func _on_entity_lost(node: Node3D) -> void:
 	if node != target:
 		return;
 	transition_to_state(GunTurretIdle._get_state_name());
+
+
+func _on_death() -> void:
+	transition_to_state(GunTurretDeactivated._get_state_name());
 
 func look_at_target() -> void:
 	var bone_transform: Transform3D = skeleton.global_transform * skeleton.get_bone_global_pose(bone_idx);

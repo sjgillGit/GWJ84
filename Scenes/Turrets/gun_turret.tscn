@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=4 uid="uid://chxvqa83wi22n"]
+[gd_scene load_steps=30 format=4 uid="uid://chxvqa83wi22n"]
 
 [ext_resource type="Texture2D" uid="uid://bi01rhhalam8e" path="res://Assets/Models/Turret_turret body 2.png" id="1_e14yu"]
+[ext_resource type="Script" uid="uid://bjb4np2yjqmqv" path="res://Scripts/Components/entity_health_handler.gd" id="1_tq01m"]
 [ext_resource type="Texture2D" uid="uid://bwk0jcc7xfdnu" path="res://Assets/Models/Turret_bandage.png" id="2_65jeh"]
 [ext_resource type="Script" uid="uid://d0pcmdw8cllbp" path="res://Scripts/StateMachine/state_machine.gd" id="2_kvwe8"]
 [ext_resource type="Script" uid="uid://t3v6impgoh38" path="res://Scripts/Turrets/entity_detect_area.gd" id="2_qxqcr"]
@@ -11,6 +12,7 @@
 [ext_resource type="Animation" uid="uid://c5uxjjvdyf1ew" path="res://Assets/Models/Default_pose_001.res" id="5_tq01m"]
 [ext_resource type="Animation" uid="uid://20ppiv56461i" path="res://Assets/Models/Idle.res" id="6_daxfm"]
 [ext_resource type="Animation" uid="uid://bwmtgexf4eu8f" path="res://Assets/Models/Shut_down.res" id="8_xjxxp"]
+[ext_resource type="Script" uid="uid://biimwfm4ed6n2" path="res://Scripts/Turrets/GunTurret/gun_turret_deactivated.gd" id="12_asa65"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7job0"]
 size = Vector3(1.5, 2, 1.25)
@@ -354,6 +356,12 @@ radius = 11.0
 
 [node name="GunTurret" type="StaticBody3D" groups=["Entity"]]
 
+[node name="EntityHealthHandler" type="Node3D" parent="."]
+script = ExtResource("1_tq01m")
+max_health = 50.0
+immunity_frame_duration = 0.05
+metadata/_custom_type_script = "uid://bjb4np2yjqmqv"
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.14)
 shape = SubResource("BoxShape3D_7job0")
@@ -518,14 +526,20 @@ shape = SubResource("SphereShape3D_2ii4k")
 script = ExtResource("2_kvwe8")
 initial_state = NodePath("GunTurretIdle")
 
-[node name="GunTurretIdle" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("entity_detector", "animation_player")]
+[node name="GunTurretIdle" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("entity_detector", "animation_player", "health_handler")]
 script = ExtResource("3_i5s4a")
 entity_detector = NodePath("../../EnemyDetectArea")
 animation_player = NodePath("../../MeshRoot/Turret/AnimationPlayer")
+health_handler = NodePath("../../EntityHealthHandler")
 
-[node name="GunTurrentAttack" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("entity_detector", "animation_player", "skeleton")]
+[node name="GunTurrentAttack" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("entity_detector", "animation_player", "skeleton", "health_handler")]
 script = ExtResource("4_u6y7j")
 entity_detector = NodePath("../../EnemyDetectArea")
 animation_player = NodePath("../../MeshRoot/Turret/AnimationPlayer")
 skeleton = NodePath("../../MeshRoot/Turret/Armature/Skeleton3D")
 shoot_interval = 1.0
+health_handler = NodePath("../../EntityHealthHandler")
+
+[node name="GunTurretDeactivated" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("12_asa65")
+animation_player = NodePath("../../MeshRoot/Turret/AnimationPlayer")
