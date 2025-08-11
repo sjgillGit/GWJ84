@@ -20,6 +20,7 @@ func _can_perform_action() -> bool:
 	return can_be_performed;
 
 func _perform_action() -> void:
+	state_changed.emit("Turret", animations, 0, false)
 	current_cooldown = deploy_cooldown;
 	can_be_performed = false;
 	print("Turret deployed!");
