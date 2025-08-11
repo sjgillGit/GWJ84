@@ -5431,10 +5431,10 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": 0
 },
-"Shooting": {
+"Shut_down": {
 "save_to_file/enabled": true,
 "save_to_file/keep_custom_tracks": true,
-"save_to_file/path": "res://Assets/Models/Shooting.res",
+"save_to_file/path": "res://Assets/Models/Shut_down.res",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
@@ -7230,10 +7230,10 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": 0
 },
-"Shut_down": {
+"shooting": {
 "save_to_file/enabled": true,
 "save_to_file/keep_custom_tracks": true,
-"save_to_file/path": "res://Assets/Models/Shut_down.res",
+"save_to_file/path": "",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
