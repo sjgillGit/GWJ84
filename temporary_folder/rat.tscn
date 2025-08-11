@@ -13,7 +13,7 @@ length = 2.4623
 
 [node name="rat" type="CharacterBody3D" node_paths=PackedStringArray("nav")]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_uth6r")
 nav = NodePath("NavigationAgent3D")
 

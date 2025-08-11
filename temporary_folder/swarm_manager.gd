@@ -23,3 +23,9 @@ func _process(delta):
 		var current_rat_neighbors = get_neighbors(5.0,rat)
 		rat.update_neighbors(current_rat_neighbors)
 		rat.state.on_physics_process(delta)
+		
+
+func add_rat(rat,position):
+	add_child(rat)
+	rat.global_position = position
+	rat_list.append(rat)
