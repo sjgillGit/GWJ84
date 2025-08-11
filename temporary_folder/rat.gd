@@ -10,6 +10,8 @@ var current_target: Vector3
 var state:RatState
 var can_attack: bool = true
 var player
+var leader 
+var neighbors 
 
 func _ready():
 	begin_patrol_position = global_position
@@ -17,6 +19,29 @@ func _ready():
 	nav.target_desired_distance = 0.5
 	nav.path_desired_distance = 0.5
 	state = PatrolRatState.new(self)
+
+func update_neighbors(new_neighbors):
+	neighbors = new_neighbors
+
+func flip_patrol_target():
+	if current_target==begin_patrol_position:
+		current_target = end_patrol_position.global_position
+	else:
+		current_target = begin_patrol_position
+
+func get_separation_force():
+	var separation_force = Vector3.ZERO
+	var neighbor_count = 0
+	for neighbor_rat in neighbors:
+		var distance = (neighbor_rat.global_position - global_position).length()
+		if distance > 0 and distance < 7.0:
+			separation_force += (global_position - neighbor_rat.global_position).normalized()
+			neighbor_count +=1
+	if neighbor_count > 0:
+		separation_force /= neighbor_count
+	separation_force = separation_force.normalized() *speed
+	return separation_force
+
 
 func move_with_navmesh(delta,target_position):
 	var direction = Vector3()
@@ -36,19 +61,16 @@ func chase_behaviour(delta):
 func attack_behaviour(delta):
 	move_and_slide()
 
+
+
+
 func swarm_behaviour(delta):
-	pass
-
-func _physics_process(delta):
-	state.on_physics_process(delta)
-
-
-
-func flip_patrol_target():
-	if current_target==begin_patrol_position:
-		current_target = end_patrol_position.global_position
-	else:
-		current_target = begin_patrol_position
+	var seek_force = (leader.global_position - global_position).normalized() * speed
+	var separation_force = get_separation_force()
+	var total_force = (seek_force * 2) + (separation_force * 4.0)
+	if velocity.length() > speed:
+		total_force = total_force.normalized() * speed
+	move_with_navmesh(delta,leader.current_target + total_force)
 
 func _on_navigation_agent_3d_navigation_finished():
 	state.on_navigation_agent_3d_navigation_finished()
@@ -58,3 +80,10 @@ func _on_player_detector_body_shape_entered(body_rid, body, body_shape_index, lo
 	state = ChaseRatState.new(self)
 	current_target = body.global_position
 	player = body
+
+func start_in_swarm_status(assigned_leader):
+	state = SwarmRatState.new(self)
+	leader = assigned_leader
+
+func start_in_leader_status():
+	state = PatrolRatState.new(self)

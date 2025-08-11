@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cx2rpesjr050y"]
+[gd_scene load_steps=6 format=3 uid="uid://cx2rpesjr050y"]
 
 [ext_resource type="Script" uid="uid://bvajwkct35pyo" path="res://temporary_folder/rat.gd" id="1_uth6r"]
 [ext_resource type="PackedScene" uid="uid://dqnxxopxk0ox0" path="res://temporary_folder/RATSbutwithappliedmodifiers.glb" id="2_jmrqy"]
@@ -6,12 +6,14 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_uth6r"]
 size = Vector3(20, 20, 20)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jmrqy"]
-size = Vector3(3.80914, 3.26587, 4.56781)
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_3krw6"]
+length = 2.4623
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3krw6"]
 
 [node name="rat" type="CharacterBody3D" node_paths=PackedStringArray("nav")]
 collision_layer = 4
-collision_mask = 5
+collision_mask = 3
 script = ExtResource("1_uth6r")
 nav = NodePath("NavigationAgent3D")
 
@@ -20,12 +22,14 @@ collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player_detector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.301025, 0, 0)
+visible = false
 shape = SubResource("BoxShape3D_uth6r")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 navigation_layers = 2
 simplify_path = true
 avoidance_enabled = true
+avoidance_mask = 6
 debug_enabled = true
 
 [node name="attack_timer" type="Timer" parent="."]
@@ -38,8 +42,18 @@ one_shot = true
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, -0.0302706, -10.6513)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.07607, -0.108551, -0.0632007, -0.0955505)
-shape = SubResource("BoxShape3D_jmrqy")
+transform = Transform3D(1, 0, 0, 0, 0.999373, 0.0354052, 0, -0.0354052, 0.999373, 0, -3.3861, -1.55309)
+shape = SubResource("SeparationRayShape3D_3krw6")
+debug_color = Color(0.490196, 0.4, 0.0666667, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionShape3D"]
+transform = Transform3D(0.0655773, 0.0706137, -0.995346, -0.035329, 0.997031, 0.0684057, 0.997222, 0.0306787, 0.0678774, -0.378237, -0.473965, 0.848163)
+shape = SubResource("SeparationRayShape3D_3krw6")
+debug_color = Color(0.490196, 0.4, 0.0666667, 1)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.76102, 0, 0, 0, 3.07466, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_3krw6")
 
 [connection signal="body_shape_entered" from="player_detector" to="." method="_on_player_detector_body_shape_entered"]
 [connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
