@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://xx7lw2b3gnsp"]
+
+[ext_resource type="PackedScene" uid="uid://cgquenm3v3687" path="res://Scenes/UI/goblin.tscn" id="1_kkxyq"]
+[ext_resource type="PackedScene" uid="uid://ddl41xrijeh6u" path="res://Scenes/UI/post_mission.tscn" id="2_21y40"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6572, 1.8691, 1.70434)
+
+[node name="Goblin" parent="." instance=ExtResource("1_kkxyq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.03673, 0.900976, 0.514899)
+
+[node name="post_mission" parent="." instance=ExtResource("2_21y40")]

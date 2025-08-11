@@ -11,7 +11,6 @@ var smash_count:= 0
 @onready var gpu_particles_2d_2: GPUParticles2D = $MarginContainer/VBoxContainer/Label/GPUParticles2D2
 var values = [20,-15,-20,25,17,-13]
 func _on_smash_button_pressed() -> void:
-	print(smash_1)
 	match smash_count:
 		0:
 			smash_me(smash_1)
@@ -46,7 +45,11 @@ func _on_smash_button_pressed() -> void:
 			gpu_particles_2d_2.emitting = true
 			await tween.finished
 			separator.visible = false
-			
+		4:
+			var tween = get_tree().create_tween().set_parallel(true)
+			tween.tween_property(self,"scale",Vector2(0.01,0.01),1).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+			await tween.finished
+			self.queue_free()
 	smash_count += 1
 
 func smash_me(label: Label):

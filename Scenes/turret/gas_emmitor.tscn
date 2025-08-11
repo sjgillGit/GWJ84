@@ -2,36 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://c2nch4qcc1iuo" path="res://Assets/turret/gas emmitor.glb" id="1_0xaqf"]
 [ext_resource type="Script" uid="uid://bl8s0f0snn31l" path="res://Scripts/TURRET/gas_emmitor.gd" id="2_gpsuc"]
-[ext_resource type="Material" uid="uid://bfwun5i27sedn" path="res://Assets/ui/gas_emmitor1.tres" id="3_41u0g"]
+[ext_resource type="PackedScene" uid="uid://cq7ncscf0fq8b" path="res://Scenes/3dstuff/gas_scene.tscn" id="3_l4c48"]
 [ext_resource type="Texture2D" uid="uid://dv8s2tfo5jb2r" path="res://Assets/turret/gas emmitor_!turret.png" id="4_l4c48"]
 [ext_resource type="Material" uid="uid://30qlnr66xsmd" path="res://Assets/ui/gas_emmitor.tres" id="5_euadp"]
 [ext_resource type="Material" uid="uid://x7nyyv46elex" path="res://Assets/ui/gas_emmitor2.tres" id="6_02wff"]
-
-[sub_resource type="FogMaterial" id="FogMaterial_gpsuc"]
-density = 0.1
-albedo = Color(0.912289, 0.912289, 0.912289, 1)
-emission = Color(0.454525, 0.454524, 0.454524, 1)
-height_falloff = 2e-05
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41u0g"]
-next_pass = SubResource("FogMaterial_gpsuc")
-transparency = 3
-alpha_hash_scale = 2.0
-alpha_antialiasing_mode = 0
-blend_mode = 1
-cull_mode = 2
-shading_mode = 2
-albedo_color = Color(0.926, 0.514, 0.603, 1)
-metallic = 0.3
-metallic_specular = 0.0
-rim_tint = 0.0
-refraction_texture_channel = 3
-shadow_to_opacity = true
-
-[sub_resource type="SphereMesh" id="SphereMesh_0q65i"]
-material = SubResource("StandardMaterial3D_41u0g")
-radius = 1.5
-height = 3.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytej1"]
 resource_name = "Material.001"
@@ -74,27 +48,37 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lkcwv")
 
+[sub_resource type="FogMaterial" id="FogMaterial_gpsuc"]
+density = 0.1
+albedo = Color(0.912289, 0.912289, 0.912289, 1)
+emission = Color(0.454525, 0.454524, 0.454524, 1)
+height_falloff = 2e-05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41u0g"]
+next_pass = SubResource("FogMaterial_gpsuc")
+transparency = 3
+alpha_hash_scale = 2.0
+alpha_antialiasing_mode = 0
+blend_mode = 1
+cull_mode = 2
+shading_mode = 2
+albedo_color = Color(0.926, 0.514, 0.603, 1)
+metallic = 0.3
+metallic_specular = 0.0
+rim_tint = 0.0
+refraction_texture_channel = 3
+shadow_to_opacity = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_0q65i"]
+material = SubResource("StandardMaterial3D_41u0g")
+radius = 1.5
+height = 3.0
+
 [node name="gas emmitor" instance=ExtResource("1_0xaqf")]
 script = ExtResource("2_gpsuc")
 
-[node name="GPUParticles3D1" type="GPUParticles3D" parent="." index="1"]
+[node name="GPUParticles3D1" parent="." index="1" instance=ExtResource("3_l4c48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00528815, 1.62968, -0.0798993)
-emitting = false
-amount = 500
-speed_scale = 0.7
-randomness = 1.0
-fixed_fps = 60
-interpolate = false
-trail_lifetime = 1.35
-process_material = ExtResource("3_41u0g")
-draw_pass_1 = SubResource("SphereMesh_0q65i")
-
-[node name="GPUParticlesAttractorSphere3D" type="GPUParticlesAttractorSphere3D" parent="GPUParticles3D1" index="0"]
-transform = Transform3D(0.753581, 0, 0, 0, -3.29401e-08, -0.753581, 0, 0.753581, -3.29401e-08, 0.0154143, -3.78096, 0.0151038)
-strength = 390.9
-attenuation = 3.86374
-directionality = 1.0
-radius = 10.0
 
 [node name="Cylinder2" type="MeshInstance3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3313, 1.32067, 0)

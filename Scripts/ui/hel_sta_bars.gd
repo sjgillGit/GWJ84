@@ -7,6 +7,10 @@ extends Control
 @export var stam_recuperation: float = 1
 @export var stam_usage: float = 0.5
 @export var stam_recuperation_breaker: float = stam_recuperation * 1.5
+@onready var player_health_handler: EntityHealthHandler = $"../../PlayerHealthHandler"
+func _ready() -> void:
+	hp_bar.max_value = player_health_handler.max_health
+	hp_bar.value = player_health_handler.max_health
 
 func change_hp(value:float):
 	change_value(value,hp_bar)
@@ -41,6 +45,7 @@ func _input(event: InputEvent) -> void:
 		move_tween.tween_property(button_show,"scale",Vector2(1,1),0.1)
 		stam_recuperation_breaker = stam_recuperation * 1.5
 		sprint = false
+		
 
 func _process(delta: float) -> void:
 	if aptitude > 0:

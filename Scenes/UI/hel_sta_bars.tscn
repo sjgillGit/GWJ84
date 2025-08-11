@@ -86,22 +86,4 @@ text = "Shift"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 276.0
-offset_top = 121.999
-offset_right = 362.0
-offset_bottom = 182.999
-text = "50-200 dmg"
-
-[node name="Button2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 276.0
-offset_top = 51.9992
-offset_right = 370.0
-offset_bottom = 112.999
-text = "50-200 heal"
-
 [connection signal="value_changed" from="stam_bar" to="." method="_on_stam_bar_value_changed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

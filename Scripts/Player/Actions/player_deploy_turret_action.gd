@@ -1,5 +1,6 @@
 extends PlayerActionBase
 class_name PlayerDeployTurrentAction
+@onready var skill_box: HBoxContainer = $"../../CanvasLayer/skill_box"
 
 @export
 var deploy_cooldown: float;
@@ -20,6 +21,7 @@ func _can_perform_action() -> bool:
 	return can_be_performed;
 
 func _perform_action() -> void:
+	skill_box.deploy_perform()
 	current_cooldown = deploy_cooldown;
 	can_be_performed = false;
 	print("Turret deployed!");

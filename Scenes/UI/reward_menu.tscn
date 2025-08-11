@@ -430,6 +430,7 @@ vertical_alignment = 1
 [node name="smash_2" type="Label" parent="MarginContainer/VBoxContainer/separator"]
 material = SubResource("ShaderMaterial_njr36")
 use_parent_material = true
+layout_mode = 0
 offset_left = -106.0
 offset_top = 22.0
 offset_right = 571.0
@@ -442,6 +443,7 @@ vertical_alignment = 1
 [node name="smash_3" type="Label" parent="MarginContainer/VBoxContainer/separator"]
 material = SubResource("ShaderMaterial_jbpmu")
 use_parent_material = true
+layout_mode = 0
 offset_left = -106.0
 offset_top = 122.0
 offset_right = 571.0
@@ -451,15 +453,6 @@ text = "SMASH ME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="smash_button" type="Button" parent="MarginContainer/VBoxContainer/separator"]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -24.0
-offset_top = -120.0
-offset_right = 481.0
-offset_bottom = 470.0
-flat = true
-
 [node name="new sepatator" type="Control" parent="MarginContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
@@ -467,6 +460,7 @@ layout_mode = 2
 [node name="new_turret" type="Label" parent="MarginContainer/VBoxContainer/new sepatator"]
 material = SubResource("ShaderMaterial_scebn")
 use_parent_material = true
+layout_mode = 0
 offset_left = -106.0
 offset_top = -77.0
 offset_right = 571.0
@@ -479,6 +473,7 @@ vertical_alignment = 1
 [node name="smash_5" type="Label" parent="MarginContainer/VBoxContainer/new sepatator"]
 material = SubResource("ShaderMaterial_njr36")
 use_parent_material = true
+layout_mode = 0
 offset_left = -106.0
 offset_top = 22.0
 offset_right = 571.0
@@ -491,6 +486,7 @@ vertical_alignment = 1
 [node name="smash_6" type="Label" parent="MarginContainer/VBoxContainer/new sepatator"]
 material = SubResource("ShaderMaterial_jbpmu")
 use_parent_material = true
+layout_mode = 0
 offset_left = -106.0
 offset_top = 122.0
 offset_right = 571.0
@@ -523,12 +519,6 @@ render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 0.919383, 0.393364, 0, -0.393364, 0.919383, 0, 2.57759, 2.89375)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport"]
-transform = Transform3D(0.911687, 0.402323, -0.0834428, -0.326121, 0.832067, 0.448676, 0.249942, -0.381839, 0.889791, 0.106462, 3.54818, 3.95438)
-light_energy = 3.0
-light_indirect_energy = 5.202
-light_angular_distance = 35.45
 
 [node name="reward3" type="MeshInstance3D" parent="MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32067, 0)
@@ -689,4 +679,13 @@ horizontal_alignment = 1
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.7
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/separator/smash_button" to="." method="_on_smash_button_pressed"]
+[node name="smash_button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -3.0
+offset_top = -8.0
+offset_right = 502.0
+offset_bottom = 582.0
+flat = true
+
+[connection signal="pressed" from="smash_button" to="." method="_on_smash_button_pressed"]

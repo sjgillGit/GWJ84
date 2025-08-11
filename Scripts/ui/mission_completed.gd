@@ -21,6 +21,8 @@ var min_temp: float = 0
 func _ready() -> void:
 	timer.start()
 	await timer.timeout
+	await timer.timeout
+	await timer.timeout
 	var tween = get_tree().create_tween()
 	tween.tween_property(time,"modulate",Color(1,1,1,1),0.5)
 	couting_up = true
