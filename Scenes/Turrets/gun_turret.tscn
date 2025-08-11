@@ -355,6 +355,7 @@ _data = {
 radius = 11.0
 
 [node name="GunTurret" type="StaticBody3D" groups=["Entity"]]
+collision_mask = 5
 
 [node name="EntityHealthHandler" type="Node3D" parent="."]
 script = ExtResource("1_tq01m")
@@ -516,7 +517,7 @@ autoplay = "Default_pose"
 
 [node name="EnemyDetectArea" type="Area3D" parent="."]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 4
 script = ExtResource("2_qxqcr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyDetectArea"]

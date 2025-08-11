@@ -12,7 +12,7 @@ length = 2.4623
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3krw6"]
 
-[node name="rat" type="CharacterBody3D" node_paths=PackedStringArray("nav")]
+[node name="rat" type="CharacterBody3D" node_paths=PackedStringArray("nav") groups=["Entity"]]
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_uth6r")
@@ -47,13 +47,8 @@ transform = Transform3D(1, 0, 0, 0, 0.999373, 0.0354052, 0, -0.0354052, 0.999373
 shape = SubResource("SeparationRayShape3D_3krw6")
 debug_color = Color(0.490196, 0.4, 0.0666667, 1)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionShape3D"]
-transform = Transform3D(0.0655773, 0.0706137, -0.995346, -0.035329, 0.997031, 0.0684057, 0.997222, 0.0306787, 0.0678774, -0.378237, -0.473965, 0.848163)
-shape = SubResource("SeparationRayShape3D_3krw6")
-debug_color = Color(0.490196, 0.4, 0.0666667, 1)
-
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.76102, 0, 0, 0, 3.07466, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.346229, 0)
 shape = SubResource("CapsuleShape3D_3krw6")
 
 [node name="EntityHealthHandler" type="Node3D" parent="."]

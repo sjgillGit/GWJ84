@@ -59,7 +59,7 @@ func patrol_behaviour(delta):
 func chase_behaviour(delta):
 	move_with_navmesh(delta,player.global_position)
 	if (player.global_position - global_position).length() < 5 and can_attack:
-		player.take_damage(attack_damage)
+		#player.take_damage(attack_damage)
 		can_attack = false
 		$cooldown_timer.start()
 
