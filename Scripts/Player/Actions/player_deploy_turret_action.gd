@@ -34,6 +34,7 @@ func _perform_action() -> void:
 	if !_try_deploy_turret():
 		return;
 	skill_box.deploy_perform()
+	state_changed.emit("Turret", animations, 0, false)
 	current_cooldown = deploy_cooldown;
 	can_be_performed = false;
 	set_process(true);
