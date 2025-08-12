@@ -16,6 +16,12 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 "<<<<<<<HEAD[editor_plugins]enabled"=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
 
+[debug]
+
+settings/stdout/print_fps=true
+settings/stdout/print_gpu_profile=true
+settings/stdout/verbose_stdout=true
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
@@ -96,5 +102,5 @@ Shift={
 
 [physics]
 
-common/physics_ticks_per_second=25
+common/physics_ticks_per_second=30
 common/max_physics_steps_per_frame=1

@@ -83,7 +83,7 @@ func swarm_behaviour(delta):
 	var seek_force = (leader.global_position - global_position).normalized() * speed
 	var separation_force = get_separation_force()
 	var alignment_force = get_alignment_force()
-	var total_force = (seek_force * 2) + (separation_force * 4.0) + (alignment_force * 2.0)
+	var total_force = (seek_force * 2) + (separation_force * 8.0) + (alignment_force * 2.0)
 	if velocity.length() > speed:
 		total_force = total_force.normalized() * speed
 	# Keep Y velocity for gravity
@@ -126,11 +126,11 @@ func _on_death():
 	killed.emit(self,new_leader)
 
 
-func _on_rat_detector_body_entered(body):
-	if body != self and neighbors.has(body):
-		neighbors.append(body)
-
-
-func _on_rat_detector_body_exited(body):
-	if neighbors.has(body):
-		neighbors.erase(body)
+#func _on_rat_detector_body_entered(body):
+#	if body != self and neighbors.has(body):
+#		neighbors.append(body)
+#
+#
+#func _on_rat_detector_body_exited(body):
+#	if neighbors.has(body):
+#		neighbors.erase(body)
