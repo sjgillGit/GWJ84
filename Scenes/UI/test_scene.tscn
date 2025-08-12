@@ -39,13 +39,6 @@ mesh = SubResource("BoxMesh_q6fdj")
 [node name="Player" parent="." instance=ExtResource("1_q6fdj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.638035, 2, 28.239)
 
-[node name="CameraRoot" parent="Player" index="3" node_paths=PackedStringArray("camera")]
-camera = NodePath("CameraHorizontal/CameraVertical/Camera3D")
-
-[node name="Camera3D" type="Camera3D" parent="Player/CameraRoot/CameraHorizontal/CameraVertical" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 4)
-current = true
-
 [node name="GunTurret" parent="." instance=ExtResource("2_r5l72")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.31018, 1.13006, -1.05959)
 

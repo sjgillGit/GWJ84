@@ -1916,7 +1916,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_1vhaw")
 }
 
-[node name="CameraRoot" type="Node3D" parent="." node_paths=PackedStringArray("camera_horizontal", "camera_vertical")]
+[node name="CameraRoot" type="Node3D" parent="." node_paths=PackedStringArray("camera", "camera_horizontal", "camera_vertical")]
 script = ExtResource("3_rlgqx")
 camera = NodePath("CameraHorizontal/CameraVertical/Camera3D")
 camera_horizontal = NodePath("CameraHorizontal")
