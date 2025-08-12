@@ -73,11 +73,14 @@ func take_damage(damage: float) -> void:
 func _on_state_changed(new_state, anims, index = 0, can_be_interrupt = true) -> void:
 	if anims.is_empty():
 		printerr("The animations' array from the signal's emitter is empty.")
+	
 	var new_animation: Animation = anims[index]
-	var animation_string: String = new_animation.resource_name
-	if new_state != previous_state or animation_string != anim_player.assigned_animation:
+	var path: String = new_animation.resource_path
+	var file: String = path.right(path.length() - path.rfind("/") - 1)
+	var file_name: String = file.left(file.find("."))
+	if new_state != previous_state or file_name != anim_player.assigned_animation:
 		if is_waiting_animation_end:
 			return
-		anim_player.play(new_state, 0.3)
+		anim_player.play(file_name, 0.3)
 		previous_state = new_state
 		is_waiting_animation_end = !can_be_interrupt
