@@ -23,6 +23,7 @@ func _on_exit() -> void:
 	health_handler.entity_died.disconnect(_on_death);
 
 func _on_entity_detected(node: Node3D) -> void:
+	entity_detector.enter_follow_target_mode(node);
 	transition_to_state(GunTurretAttack._get_state_name(), func(state: GunTurretAttack) -> void: state.target = node);
 
 func _on_death(_entity: Node3D, _handler: EntityHealthHandler) -> void:

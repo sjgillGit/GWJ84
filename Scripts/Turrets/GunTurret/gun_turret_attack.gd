@@ -28,6 +28,7 @@ func _ready() -> void:
 
 func _on_enter() -> void:
 	entity_detector.entity_lost.connect(_on_entity_lost);
+	entity_detector.target_changed.connect(_on_entity_target_changed);
 	health_handler.entity_died.connect(_on_death);
 	animation_player.stop();
 	shoot_interval_timer = 0.0;
@@ -38,6 +39,7 @@ func _on_process(delta: float) -> void:
 
 func _on_exit() -> void:
 	entity_detector.entity_lost.disconnect(_on_entity_lost);
+	entity_detector.target_changed.disconnect(_on_entity_target_changed);
 	health_handler.entity_died.disconnect(_on_death);
 	skeleton.clear_bones_global_pose_override();
 
@@ -46,6 +48,8 @@ func _on_entity_lost(node: Node3D) -> void:
 		return;
 	transition_to_state(GunTurretIdle._get_state_name());
 
+func _on_entity_target_changed(node: Node3D) -> void:
+	target = node;
 
 func _on_death(_entity: Node3D, _handler: EntityHealthHandler) -> void:
 	transition_to_state(GunTurretDeactivated._get_state_name());
