@@ -78,6 +78,6 @@ func _on_state_changed(new_state, anims, index = 0, can_be_interrupt = true) -> 
 	if new_state != previous_state or animation_string != anim_player.assigned_animation:
 		if is_waiting_animation_end:
 			return
-		anim_player.play(animation_string, 0.3)
+		anim_player.play(new_state, 0.3)
 		previous_state = new_state
 		is_waiting_animation_end = !can_be_interrupt
