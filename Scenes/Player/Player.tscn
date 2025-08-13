@@ -1312,8 +1312,13 @@ animations = Array[Animation]([ExtResource("2_epg6k"), ExtResource("3_0u84n"), E
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="watch" parent="CanvasLayer" instance=ExtResource("2_t26db")]
+position = Vector2(0, 14)
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("3_825xp")]
+offset_left = 8.0
+offset_top = 7.0
+offset_right = -944.0
+offset_bottom = -441.0
 
 [node name="skill_box" parent="CanvasLayer" instance=ExtResource("4_ji083")]
 offset_left = 965.0

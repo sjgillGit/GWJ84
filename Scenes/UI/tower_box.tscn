@@ -1,15 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://fijuc7gifjf6"]
+[gd_scene load_steps=9 format=3 uid="uid://fijuc7gifjf6"]
 
 [ext_resource type="PackedScene" uid="uid://d042hsexsntwv" path="res://Scenes/UI/towerselect.tscn" id="1_2k6yk"]
 [ext_resource type="Script" uid="uid://dykrxsjod4o6f" path="res://Scripts/ui/tower_box.gd" id="1_10edh"]
 [ext_resource type="Shader" uid="uid://bceililma81gt" path="res://Scenes/UI/tower_box.gdshader" id="3_2jh5i"]
 [ext_resource type="Texture2D" uid="uid://wnd51orttw5" path="res://Assets/ui/hide.png" id="3_3k674"]
+[ext_resource type="Texture2D" uid="uid://cjm3086dj0htn" path="res://Assets/ui/unchecked.png" id="5_w7252"]
+[ext_resource type="Texture2D" uid="uid://lyrvst3o3o" path="res://Assets/ui/button_cursed_1.png" id="6_emtg6"]
+[ext_resource type="AudioStream" uid="uid://bpqpx4wtsplc0" path="res://Assets/ui/audio/menu rollover.wav" id="7_17d23"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w7252"]
 shader = ExtResource("3_2jh5i")
 shader_parameter/mask = ExtResource("3_3k674")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2jh5i"]
 
 [node name="Control" type="Control"]
 clip_contents = true
@@ -63,16 +64,23 @@ offset_right = 217.0
 offset_bottom = -6.0
 
 [node name="skillbutton" parent="SubViewportContainer/SubViewport/fulltowerlist" instance=ExtResource("1_2k6yk")]
-modulate = Color(1, 0.13, 0.13, 1)
 layout_mode = 2
-action_icon = SubResource("AtlasTexture_2jh5i")
+action_icon = ExtResource("5_w7252")
 
 [node name="skillbutton2" parent="SubViewportContainer/SubViewport/fulltowerlist" instance=ExtResource("1_2k6yk")]
-modulate = Color(0, 0.79, 0.158, 1)
 layout_mode = 2
+
+[node name="skillbutton3" parent="SubViewportContainer/SubViewport/fulltowerlist" instance=ExtResource("1_2k6yk")]
+layout_mode = 2
+action_icon = ExtResource("6_emtg6")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="child_entered_tree" from="SubViewportContainer/SubViewport/fulltowerlist" to="." method="_on_towerlist_child_entered_tree"]
+[node name="scroll" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_17d23")
+volume_db = -10.0
+pitch_scale = 2.0
+bus = &"SFX"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
