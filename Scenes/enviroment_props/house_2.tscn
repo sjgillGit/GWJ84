@@ -47,6 +47,7 @@ shadow_mesh = SubResource("ArrayMesh_d0trg")
 size = Vector3(3.59958, 1.66602, 2.64822)
 
 [node name="house_2" type="StaticBody3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 
 [node name="mesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_pdc0k")
