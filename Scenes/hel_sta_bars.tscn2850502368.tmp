@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://drylow4dc4o3f"]
+
+[ext_resource type="Script" uid="uid://6b2cexsfwgwn" path="res://Scripts/hel_sta_bars.gd" id="1_0lv2c"]
+[ext_resource type="Texture2D" uid="uid://bbe6buhmucjwv" path="res://Assets/ui/barover.png" id="1_n6yse"]
+[ext_resource type="Texture2D" uid="uid://n8p1bx0o1ba6" path="res://Assets/ui/barback.png" id="1_vgpqe"]
+[ext_resource type="Texture2D" uid="uid://dpj6fl55p7fpe" path="res://Assets/ui/barprogress.png" id="3_0lv2c"]
+[ext_resource type="Texture2D" uid="uid://dq8knos66o8ki" path="res://Assets/ui/textframe.png" id="5_6lhcu"]
+[ext_resource type="Script" uid="uid://dmbug4tme2cqn" path="res://Scripts/button_show.gd" id="6_twmfi"]
+[ext_resource type="FontFile" uid="uid://b2d7ii78bv5cw" path="res://Assets/font/Long_Shot.ttf" id="7_wjitq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f00il"]
+texture = ExtResource("5_6lhcu")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -702.0
+offset_bottom = -593.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0lv2c")
+
+[node name="hp_bar" type="TextureProgressBar" parent="."]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 0
+offset_right = 440.0
+offset_bottom = 20.0
+max_value = 200.0
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 10
+stretch_margin_top = 10
+stretch_margin_right = 10
+stretch_margin_bottom = 10
+texture_under = ExtResource("1_vgpqe")
+texture_over = ExtResource("1_n6yse")
+texture_progress = ExtResource("3_0lv2c")
+tint_progress = Color(0.67, 0.1273, 0.1273, 1)
+
+[node name="stam_bar" type="TextureProgressBar" parent="."]
+offset_top = 25.0
+offset_right = 260.0
+offset_bottom = 45.0
+nine_patch_stretch = true
+stretch_margin_left = 10
+stretch_margin_top = 10
+stretch_margin_right = 10
+stretch_margin_bottom = 10
+texture_under = ExtResource("1_vgpqe")
+texture_over = ExtResource("1_n6yse")
+texture_progress = ExtResource("3_0lv2c")
+tint_progress = Color(0.85, 0.631833, 0.1955, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 573.0
+offset_top = 6.0
+offset_right = 710.0
+offset_bottom = 105.0
+text = "random damage"
+
+[node name="button_show" type="Panel" parent="."]
+offset_left = 5.0
+offset_top = 50.0
+offset_right = 63.0
+offset_bottom = 90.0
+pivot_offset = Vector2(21, 21)
+theme_override_styles/panel = SubResource("StyleBoxTexture_f00il")
+script = ExtResource("6_twmfi")
+
+[node name="input_name_lbl" type="Label" parent="button_show"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 6.0
+offset_right = 57.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("7_wjitq")
+theme_override_font_sizes/font_size = 33
+text = "Shift"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dofjwyc7vxaip"]
+
+[ext_resource type="PackedScene" uid="uid://6tdug21cewou" path="res://Assets/ui/lockpick/wrench (1).glb" id="1_d4cof"]
+
+[node name="wrench (1)" instance=ExtResource("1_d4cof")]

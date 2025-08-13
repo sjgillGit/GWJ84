@@ -1,0 +1,199 @@
+[gd_scene load_steps=10 format=3 uid="uid://bfxkpfx0qgb37"]
+
+[ext_resource type="Theme" uid="uid://csus3mgu2hjxc" path="res://Assets/ui/button.tres" id="1_bc0kk"]
+[ext_resource type="Script" uid="uid://dkahuk48vf0oi" path="res://Scripts/ui/menu_buttons.gd" id="1_mqm0m"]
+[ext_resource type="Theme" uid="uid://dr6wcdv73nca2" path="res://Assets/ui/menu.tres" id="2_ow0sh"]
+[ext_resource type="Texture2D" uid="uid://dq8knos66o8ki" path="res://Assets/ui/textframe.png" id="3_32vij"]
+[ext_resource type="Script" uid="uid://oawc1qo1qaoi" path="res://Scripts/settings/settings.gd" id="3_vdb2n"]
+[ext_resource type="Script" uid="uid://dmbug4tme2cqn" path="res://Scripts/ui/button_show.gd" id="4_vdb2n"]
+[ext_resource type="FontFile" uid="uid://b2d7ii78bv5cw" path="res://Assets/font/Long_Shot.ttf" id="5_mqm0m"]
+[ext_resource type="AudioStream" uid="uid://csbvwt2ux40d6" path="res://Assets/ui/audio/menu click.wav" id="9_x3wks"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m6rdh"]
+texture = ExtResource("3_32vij")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 340.0
+offset_right = 377.0
+offset_bottom = 392.0
+script = ExtResource("1_mqm0m")
+
+[node name="startgame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_bc0kk")
+text = "Start game"
+
+[node name="settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_bc0kk")
+text = "settings"
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_bc0kk")
+text = "quit"
+
+[node name="settings" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 562.0
+offset_top = 33.0
+offset_right = 1064.0
+offset_bottom = 612.0
+theme = ExtResource("2_ow0sh")
+script = ExtResource("3_vdb2n")
+
+[node name="Container" type="MarginContainer" parent="settings"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 491.0
+offset_bottom = 568.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="settings/Container"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="column" type="VBoxContainer" parent="settings/Container/HBoxContainer"]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+
+[node name="master" type="Label" parent="settings/Container/HBoxContainer/column"]
+layout_mode = 2
+text = "Master volume"
+
+[node name="master_slide" type="HSlider" parent="settings/Container/HBoxContainer/column"]
+texture_filter = 1
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="music" type="Label" parent="settings/Container/HBoxContainer/column"]
+layout_mode = 2
+text = "Music volume"
+
+[node name="music_slide" type="HSlider" parent="settings/Container/HBoxContainer/column"]
+texture_filter = 1
+layout_mode = 2
+value = 100.0
+
+[node name="sfx" type="Label" parent="settings/Container/HBoxContainer/column"]
+layout_mode = 2
+text = "SFX volume"
+
+[node name="sfx_slide" type="HSlider" parent="settings/Container/HBoxContainer/column"]
+texture_filter = 1
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="column2" type="VBoxContainer" parent="settings/Container/HBoxContainer"]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+
+[node name="hotkeyhelp" type="HBoxContainer" parent="settings/Container/HBoxContainer/column2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="settings/Container/HBoxContainer/column2/hotkeyhelp"]
+layout_mode = 2
+text = "Hotkey help"
+
+[node name="Control" type="Control" parent="settings/Container/HBoxContainer/column2/hotkeyhelp"]
+custom_minimum_size = Vector2(7, 0)
+layout_mode = 2
+
+[node name="button_show" type="Panel" parent="settings/Container/HBoxContainer/column2/hotkeyhelp"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_m6rdh")
+script = ExtResource("4_vdb2n")
+
+[node name="input_name_lbl" type="Label" parent="settings/Container/HBoxContainer/column2/hotkeyhelp/button_show"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 34.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("5_mqm0m")
+theme_override_font_sizes/font_size = 26
+text = "h"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="settings/Container/HBoxContainer/column2/hotkeyhelp"]
+custom_minimum_size = Vector2(7, 0)
+layout_mode = 2
+
+[node name="hotkeyhelpcheck" type="CheckBox" parent="settings/Container/HBoxContainer/column2/hotkeyhelp"]
+texture_filter = 1
+layout_mode = 2
+button_pressed = true
+action_mode = 0
+
+[node name="Control" type="Control" parent="settings/Container/HBoxContainer/column2"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="sensitive" type="Label" parent="settings/Container/HBoxContainer/column2"]
+layout_mode = 2
+text = "Camera rotation"
+
+[node name="sensitive_slide" type="HSlider" parent="settings/Container/HBoxContainer/column2"]
+texture_filter = 1
+layout_mode = 2
+value = 50.0
+
+[node name="sensitive_value" type="Label" parent="settings/Container/HBoxContainer/column2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "11.0"
+horizontal_alignment = 2
+clip_text = true
+
+[node name="close_button" type="Button" parent="settings"]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 487.0
+offset_right = 482.0
+offset_bottom = 561.0
+text = "Close"
+
+[node name="click" type="AudioStreamPlayer" parent="settings"]
+stream = ExtResource("9_x3wks")
+bus = &"SFX"
+
+[node name="roll" type="AudioStreamPlayer" parent="settings"]
+stream = ExtResource("9_x3wks")
+volume_db = -10.0
+pitch_scale = 2.0
+bus = &"SFX"
+
+[connection signal="pressed" from="VBoxContainer/startgame" to="VBoxContainer" method="_on_startgame_pressed"]
+[connection signal="pressed" from="VBoxContainer/settings" to="VBoxContainer" method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="VBoxContainer" method="_on_quit_pressed"]
+[connection signal="drag_ended" from="settings/Container/HBoxContainer/column/master_slide" to="settings" method="_on_master_slide_drag_ended"]
+[connection signal="value_changed" from="settings/Container/HBoxContainer/column/master_slide" to="settings" method="_on_master_slide_value_changed"]
+[connection signal="drag_ended" from="settings/Container/HBoxContainer/column/music_slide" to="settings" method="_on_music_slide_drag_ended"]
+[connection signal="value_changed" from="settings/Container/HBoxContainer/column/music_slide" to="settings" method="_on_music_slide_value_changed"]
+[connection signal="drag_ended" from="settings/Container/HBoxContainer/column/sfx_slide" to="settings" method="_on_sfx_slide_drag_ended"]
+[connection signal="value_changed" from="settings/Container/HBoxContainer/column/sfx_slide" to="settings" method="_on_sfx_slide_value_changed"]
+[connection signal="toggled" from="settings/Container/HBoxContainer/column2/hotkeyhelp/hotkeyhelpcheck" to="settings" method="_on_hotkeyhelpcheck_toggled"]
+[connection signal="value_changed" from="settings/Container/HBoxContainer/column2/sensitive_slide" to="settings" method="_on_sensitive_slide_value_changed"]
+[connection signal="pressed" from="settings/close_button" to="settings" method="_on_close_button_pressed"]

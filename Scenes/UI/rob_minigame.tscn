@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv7v484uv5hjr"]
+
+[ext_resource type="Script" uid="uid://7inut645ftmo" path="res://Scripts/ui/rob_minigame.gd" id="1_bmsoc"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bmsoc")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_left = -80.0
+offset_top = -24.0
+offset_right = 1220.0
+offset_bottom = 676.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1300, 700)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0196891, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0120778, 0.0141553, 1.2845)
+light_energy = 2.0
+
+[node name="nail_parent" type="Node3D" parent="SubViewportContainer/SubViewport/Camera3D"]
+transform = Transform3D(1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, 0.007, 0.01, 0.957)
+
+[node name="step" type="Button" parent="."]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 31.0
+text = "step"
+
+[node name="error" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_top = 38.0
+offset_right = 48.0
+offset_bottom = 69.0
+text = "error"
+
+[connection signal="pressed" from="step" to="." method="_on_step_pressed"]
+[connection signal="pressed" from="error" to="." method="_on_error_pressed"]

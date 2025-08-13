@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt8yogkj8s7rq"]
+
+[ext_resource type="Script" path="res://Scripts/factory.gd" id="1_0u02i"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xufhy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_htedc"]
+
+[node name="factory" type="Node3D"]
+script = ExtResource("1_0u02i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_xufhy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_htedc")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

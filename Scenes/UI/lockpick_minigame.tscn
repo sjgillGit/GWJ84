@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmmhya010lr13"]
+
+[ext_resource type="Script" uid="uid://3r3bqm1uke02" path="res://Scripts/ui/lockpick_minigame.gd" id="1_5sqr4"]
+[ext_resource type="PackedScene" uid="uid://cw7vhp8hb4jck" path="res://Scenes/UI/lockpick/lock.tscn" id="2_5sqr4"]
+[ext_resource type="PackedScene" uid="uid://sv8rebfvyek4" path="res://Scenes/UI/lockpick/board_alternative.tscn" id="2_6h58e"]
+[ext_resource type="PackedScene" uid="uid://dofjwyc7vxaip" path="res://Assets/ui/lockpick/wrench_(1).tscn" id="5_6h58e"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5sqr4")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_left = 235.0
+offset_top = -24.0
+offset_right = 935.0
+offset_bottom = 676.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(700, 700)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.980601, -0.196015, 0, 0.196015, 0.980601, 0.00502235, -0.188488, -0.0762012)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Camera3D"]
+transform = Transform3D(0.786019, 0, 0.618203, 0, 1, 0, -0.618203, 0, 0.786019, 1.46727, 0.0141553, 1.2845)
+light_energy = 2.0
+
+[node name="board" type="Node3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 1.74846e-07, 0, -1.74846e-07, 1, 0, 0, 0, 1, 0, 0.0653001, -1.28)
+
+[node name="Nail" parent="SubViewportContainer/SubViewport/board" instance=ExtResource("2_6h58e")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.00731245, -0.553108, -0.0833632)
+
+[node name="nail_parent" type="Node3D" parent="SubViewportContainer/SubViewport/board"]
+transform = Transform3D(1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, 0.007, 0.01, 0.957)
+
+[node name="middle" type="Node3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, 0, 0.0653001, -1.177)
+
+[node name="Lock" parent="SubViewportContainer/SubViewport/middle" instance=ExtResource("2_5sqr4")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.00386377, -0.131581, 0)
+
+[node name="wrench (1)" parent="SubViewportContainer/SubViewport/middle" instance=ExtResource("5_6h58e")]
+transform = Transform3D(0, 3.49691e-09, -0.08, 0.08, -3.49691e-09, 0, -3.49691e-09, -0.08, -3.49691e-09, -0.438136, -0.00158107, 0)

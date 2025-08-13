@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://l4x3a6n5ystt"]
+
+[ext_resource type="PackedScene" uid="uid://df6bx0plq2ckt" path="res://Assets/ui/lockpick/Board.glb" id="1_xhpnr"]
+
+[node name="Board" instance=ExtResource("1_xhpnr")]

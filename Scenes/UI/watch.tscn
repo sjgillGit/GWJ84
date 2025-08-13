@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://pb3r7j6qiy0p"]
+
+[ext_resource type="Script" uid="uid://3d5sme4jx83g" path="res://Scripts/ui/watchmovement.gd" id="1_grf1r"]
+[ext_resource type="Material" uid="uid://dx4bc07v38fdk" path="res://Assets/watch/vibrations.tres" id="1_tbxsg"]
+[ext_resource type="Texture2D" uid="uid://blt6nggsy7j2e" path="res://Assets/watch/watchprogress.png" id="2_7bhln"]
+[ext_resource type="Texture2D" uid="uid://dkd2s5fwedamt" path="res://Assets/watch/watchback.png" id="3_wsq6c"]
+[ext_resource type="Texture2D" uid="uid://bwixoin044xxv" path="res://Assets/watch/new_watch_over.png" id="5_5axtw"]
+[ext_resource type="Texture2D" uid="uid://cprygyqp2klkr" path="res://Assets/watch/hand.png" id="10_jyt67"]
+
+[node name="watch" type="CanvasGroup"]
+material = ExtResource("1_tbxsg")
+position = Vector2(0, 17)
+
+[node name="watch" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 997.0
+offset_top = 6.0
+offset_right = 1037.0
+offset_bottom = 46.0
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_grf1r")
+mission_time = 240.0
+
+[node name="TextureRect2" type="TextureRect" parent="watch"]
+layout_mode = 0
+offset_left = 61.133
+offset_top = 96.337
+offset_right = 217.133
+offset_bottom = 258.337
+mouse_filter = 2
+texture = ExtResource("3_wsq6c")
+
+[node name="progressbar" type="TextureProgressBar" parent="watch"]
+layout_mode = 0
+offset_left = 61.133
+offset_top = 96.3368
+offset_right = 218.133
+offset_bottom = 259.337
+max_value = 360.0
+step = 0.1
+value = 120.0
+fill_mode = 4
+texture_under = ExtResource("3_wsq6c")
+texture_progress = ExtResource("2_7bhln")
+tint_progress = Color(1, 1, 1, 0)
+
+[node name="TextureRect" type="TextureRect" parent="watch"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = -30.0
+offset_right = 300.0
+offset_bottom = 365.0
+mouse_filter = 2
+texture = ExtResource("5_5axtw")
+
+[node name="hand" type="TextureRect" parent="watch"]
+layout_mode = 0
+offset_left = 128.475
+offset_top = 122.373
+offset_right = 148.475
+offset_bottom = 179.373
+pivot_offset = Vector2(10, 56)
+texture = ExtResource("10_jyt67")
+
+[node name="Timer" type="Timer" parent="watch"]
+one_shot = true
+
+[connection signal="timeout" from="watch/Timer" to="watch" method="_on_timer_timeout"]
