@@ -14,6 +14,17 @@ config/name="GWJ84"
 run/main_scene="uid://bfxkpfx0qgb37"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+"<<<<<<<HEAD[editor_plugins]enabled"=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
+
+[debug]
+
+settings/stdout/print_fps=true
+settings/stdout/print_gpu_profile=true
+settings/stdout/verbose_stdout=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
 
 [input]
 
@@ -72,3 +83,14 @@ HideKeyIndicators={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":72,"key_label":0,"unicode":104,"location":0,"echo":false,"script":null)
 ]
 }
+
+[layer_names]
+
+3d_navigation/layer_1="player_layer"
+3d_navigation/layer_2="terrain_layer"
+3d_navigation/layer_3="npc_layer"
+
+[physics]
+
+common/physics_ticks_per_second=30
+common/max_physics_steps_per_frame=1

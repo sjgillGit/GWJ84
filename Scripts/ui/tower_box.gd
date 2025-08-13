@@ -12,15 +12,14 @@ extends Control
 @onready var scroll: AudioStreamPlayer = $scroll
 const TOWERSELECT = preload("res://Scenes/UI/towerselect.tscn")
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ScrollActionUp"):
+func scroll_up():
 		scroll.play()
 		for n in towerlist.get_children().size() -1:
 			towerlist.get_child(0).reparent(temp)
 		for n in temp.get_children():
 			n.reparent(towerlist)
 		towerscroll.scroll_horizontal = 92
-	elif event.is_action_pressed("ScrollActionDown"):
+func scroll_down():
 		scroll.play()
 		towerlist.get_child(0).reparent(temp)
 		temp.get_child(0).reparent(towerlist)

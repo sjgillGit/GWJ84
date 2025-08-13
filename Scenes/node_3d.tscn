@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2gqff21gdysg"]
+
+[ext_resource type="PackedScene" uid="uid://cx2rpesjr050y" path="res://Scenes/rat.tscn" id="1_acg34"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_hh2br"]
+vertices = PackedVector3Array(-11.54, 3.5, -17.44, -11.54, 3.5, 17.56, 11.46, 3.5, 17.56, 11.46, 3.5, -17.44)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+cell_height = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_x5dme"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_hh2br")
+navigation_layers = 2
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="NavigationRegion3D"]
+transform = Transform3D(24.08, 0, 0, 0, 1, 0, 0, 0, 35.88, 0, 0, 0)
+layers = 2
+mesh = SubResource("BoxMesh_x5dme")
+
+[node name="rat" parent="." node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("1_acg34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0)
+end_patrol_position = NodePath("../Marker3D")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 11)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 4, 19)
