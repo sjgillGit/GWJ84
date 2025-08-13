@@ -6,11 +6,11 @@ var close: bool = false
 @export var speed: float
 var opened: bool = false
 var combination
-
+var won: bool
 
 func _ready() -> void:
 	GlobalSignals.enter_combination_objective_available.connect(Callable(self, "on_close_up"))
-	GlobalSignals.enter_combination_objective_unavailable.connect(Callable(self, "on_close_up"))
+	GlobalSignals.enter_combination_objective_unavailable.connect(Callable(self, "on_far_away"))
 	GlobalSignals.objective_completed.connect(Callable(self, "on_win"))
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Interact") && close == true && opened == false:
@@ -26,9 +26,11 @@ func on_close_up(objective):
 	combination = objective.combination
 	
 func on_far_away(objective):
+	lock.spin_spped = 0
 	opened = false
 	close = false
-	lock.error()
+	
+	if !won: lock.error()
 	lock_layer.visible = false
 
 func _on_field_objective_base_player_input_error() -> void:
@@ -37,8 +39,8 @@ func _on_field_objective_base_player_input_error() -> void:
 func _on_field_objective_base_player_input_made_progress() -> void:
 	lock.next_step()
 func on_win(objective):
-	var timer = get_tree().create_timer(0.5)
+	won = true
+	var timer = get_tree().create_timer(0.6)
 	await timer.timeout
-	on_far_away(objective)
 	self.queue_free()
 	

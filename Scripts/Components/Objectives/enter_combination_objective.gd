@@ -42,6 +42,7 @@ func _on_player_left():
 	GlobalSignals.enter_combination_objective_unavailable.emit(self);
 
 func start_objective_progress():
+	current_input_idx = 0
 	set_process_unhandled_key_input(true);
 
 func generate_combination():
