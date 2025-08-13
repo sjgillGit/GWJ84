@@ -102,7 +102,7 @@ normal_texture = ExtResource("4_w7jjh")
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_np2xp")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_6q3n4"), SubResource("Terrain3DTextureAsset_4c2oa")])
 
-[sub_resource type="Resource" id="Resource_riaky"]
+[sub_resource type="Resource" id="Resource_vtkp8"]
 script = ExtResource("8_vtkp8")
 amount = 14
 enabled = true
@@ -111,7 +111,7 @@ custom_seed = 30
 restrict_height = false
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_vtkp8"]
+[sub_resource type="Resource" id="Resource_rg57b"]
 script = ExtResource("10_macow")
 iterations = 5
 offset_step = 0.1
@@ -123,7 +123,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_rg57b"]
+[sub_resource type="Resource" id="Resource_macow"]
 script = ExtResource("11_ltf6m")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 10.0
@@ -139,7 +139,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_macow"]
+[sub_resource type="Resource" id="Resource_ltf6m"]
 script = ExtResource("9_rg57b")
 position = Vector3(0, 0, 0)
 rotation = Vector3(0, 0, 0)
@@ -150,9 +150,9 @@ custom_seed = 30
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_ltf6m"]
+[sub_resource type="Resource" id="Resource_tuwt4"]
 script = ExtResource("6_j4oe2")
-stack = Array[ExtResource("7_riaky")]([SubResource("Resource_riaky"), SubResource("Resource_vtkp8"), SubResource("Resource_rg57b"), SubResource("Resource_macow")])
+stack = Array[ExtResource("7_riaky")]([SubResource("Resource_vtkp8"), SubResource("Resource_rg57b"), SubResource("Resource_macow"), SubResource("Resource_ltf6m")])
 
 [sub_resource type="Curve3D" id="Curve3D_ltf6m"]
 _data = {
@@ -167,7 +167,7 @@ closed = true
 thickness = 0.0
 curve = SubResource("Curve3D_ltf6m")
 
-[sub_resource type="Resource" id="Resource_tuwt4"]
+[sub_resource type="Resource" id="Resource_1ye5v"]
 script = ExtResource("8_vtkp8")
 amount = 14
 enabled = true
@@ -176,7 +176,7 @@ custom_seed = 30
 restrict_height = false
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_1ye5v"]
+[sub_resource type="Resource" id="Resource_8cxpi"]
 script = ExtResource("10_macow")
 iterations = 5
 offset_step = 0.1
@@ -188,7 +188,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_8cxpi"]
+[sub_resource type="Resource" id="Resource_078fj"]
 script = ExtResource("11_ltf6m")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 10.0
@@ -204,7 +204,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_078fj"]
+[sub_resource type="Resource" id="Resource_unquq"]
 script = ExtResource("9_rg57b")
 position = Vector3(0, 0, 0)
 rotation = Vector3(0, 0, 0)
@@ -215,9 +215,9 @@ custom_seed = 30
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_unquq"]
+[sub_resource type="Resource" id="Resource_pptwf"]
 script = ExtResource("6_j4oe2")
-stack = Array[ExtResource("7_riaky")]([SubResource("Resource_tuwt4"), SubResource("Resource_1ye5v"), SubResource("Resource_8cxpi"), SubResource("Resource_078fj")])
+stack = Array[ExtResource("7_riaky")]([SubResource("Resource_1ye5v"), SubResource("Resource_8cxpi"), SubResource("Resource_078fj"), SubResource("Resource_unquq")])
 
 [sub_resource type="Resource" id="Resource_wpvg5"]
 script = ExtResource("14_1ye5v")
@@ -260,7 +260,7 @@ process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64893, 0, -0.774464)
 script = ExtResource("5_k63oc")
 render_mode = 1
-modifier_stack = SubResource("Resource_ltf6m")
+modifier_stack = SubResource("Resource_tuwt4")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -280,7 +280,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1843, 0, -0.774464)
 visible = false
 script = ExtResource("5_k63oc")
 render_mode = 1
-modifier_stack = SubResource("Resource_unquq")
+modifier_stack = SubResource("Resource_pptwf")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
