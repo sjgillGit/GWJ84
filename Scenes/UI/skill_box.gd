@@ -9,8 +9,8 @@ func _ready() -> void:
 	control.cooldown = player_deploy_turrent_action.deploy_cooldown
 	skillbutton.fill_button(player_melee_action.melee_cooldown,skillbutton.input_name)
 
-func meleeaction_performed():
-	skillbutton.skill_activate()
+func meleeaction_performed(cooldown):
+	skillbutton.skill_activate(cooldown)
 
-func deploy_perform():
-	control.skill_activate()
+func deploy_perform(cooldown):
+	control.skill_activate(cooldown)

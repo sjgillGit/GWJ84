@@ -26,7 +26,8 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("RMB"):
 		button_show_2.button_clicked()
 	
-func skill_activate():
+func skill_activate(_cooldown: float):
+	cooldown = _cooldown
 	counting = true
 	timer.start()
 	cooldownparent.visible = true

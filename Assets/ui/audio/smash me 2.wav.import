@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bc3c14fctggxr"
+path="res://.godot/imported/smash me 2.wav-cfd4132e820d031cc3d9e2c63cc401ae.sample"
+
+[deps]
+
+source_file="res://Assets/ui/audio/smash me 2.wav"
+dest_files=["res://.godot/imported/smash me 2.wav-cfd4132e820d031cc3d9e2c63cc401ae.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

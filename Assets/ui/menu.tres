@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=31 format=4 uid="uid://dr6wcdv73nca2"]
+[gd_resource type="Theme" load_steps=32 format=4 uid="uid://dr6wcdv73nca2"]
 
 [ext_resource type="FontFile" uid="uid://b2d7ii78bv5cw" path="res://Assets/font/Long_Shot.ttf" id="1_owcxu"]
 [ext_resource type="Texture2D" uid="uid://c3efpifrxsouf" path="res://Assets/ui/checked.png" id="2_3uewy"]
@@ -13,19 +13,22 @@ texture_margin_left = 8.0
 texture_margin_top = 8.0
 texture_margin_right = 8.0
 texture_margin_bottom = 8.0
-modulate_color = Color(0.847474, 0.847474, 0.847474, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sqwl"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gjmix"]
+texture = ExtResource("2_gjmix")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+modulate_color = Color(0.674813, 0.674815, 0.674814, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x60oh"]
+texture = ExtResource("2_gjmix")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+modulate_color = Color(0.572987, 0.572989, 0.572988, 1)
 
 [sub_resource type="Image" id="Image_mchg0"]
 data = {
@@ -1152,9 +1155,9 @@ Button/font_sizes/font_size = 55
 Button/fonts/font = ExtResource("1_owcxu")
 Button/styles/disabled = SubResource("StyleBoxTexture_wght2")
 Button/styles/focus = SubResource("StyleBoxTexture_wght2")
-Button/styles/hover = SubResource("StyleBoxTexture_wght2")
+Button/styles/hover = SubResource("StyleBoxTexture_gjmix")
 Button/styles/normal = SubResource("StyleBoxTexture_wght2")
-Button/styles/pressed = SubResource("StyleBoxFlat_7sqwl")
+Button/styles/pressed = SubResource("StyleBoxTexture_x60oh")
 CheckBox/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 CheckBox/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 CheckBox/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://sv8rebfvyek4"]
+
+[ext_resource type="PackedScene" uid="uid://ctirhf1835hbk" path="res://Assets/ui/lockpick/Nail.glb" id="1_tnavf"]
+
+[node name="Nail" instance=ExtResource("1_tnavf")]

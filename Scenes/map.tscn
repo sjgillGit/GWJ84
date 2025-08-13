@@ -68,6 +68,28 @@ _shader_parameters = {
 &"noise_texture": SubResource("NoiseTexture2D_p3ir5"),
 &"projection_threshold": 0.8
 }
+show_checkered = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_26yhd"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_p3ir5"]
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_26yhd")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_myvm1"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_p3ir5")])
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q0mm3"]
 transparency = 4
@@ -252,6 +274,7 @@ material = SubResource("Terrain3DMaterial_myvm1")
 assets = SubResource("Terrain3DAssets_w7jjh")
 collision_mode = 4
 collision_layer = 2
+
 top_level = true
 metadata/_edit_lock_ = true
 
