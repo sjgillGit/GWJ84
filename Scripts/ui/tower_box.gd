@@ -9,19 +9,19 @@ extends Control
 @onready var timer: Timer = $Timer
 @onready var fulltowerlist: HBoxContainer = $SubViewportContainer/SubViewport/fulltowerlist
 @onready var chosen_tower
+@onready var scroll: AudioStreamPlayer = $scroll
 const TOWERSELECT = preload("res://Scenes/UI/towerselect.tscn")
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ScrollActionUp"):
+		scroll.play()
 		for n in towerlist.get_children().size() -1:
 			towerlist.get_child(0).reparent(temp)
 		for n in temp.get_children():
 			n.reparent(towerlist)
 		towerscroll.scroll_horizontal = 92
-		#var tween = get_tree().create_tween()
-		#tween.tween_property(towerscroll,"scroll_horizontal",46,0.05)
-		#chosen_tower = towerlist.get_child(2)
 	elif event.is_action_pressed("ScrollActionDown"):
+		scroll.play()
 		towerlist.get_child(0).reparent(temp)
 		temp.get_child(0).reparent(towerlist)
 		towerscroll.scroll_horizontal = 0
@@ -54,7 +54,6 @@ func _on_timer_timeout() -> void:
 			n.desactivate_timer()
 			
 func _process(_delta: float) -> void:
-	print(towerlist.get_child(2))
 	if counting: 
 		var time_amount = str(snapped(timer.time_left,0.1))
 		for n in towerlist.get_children():

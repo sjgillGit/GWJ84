@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://7ypegi6l54k0"]
+[gd_scene load_steps=76 format=4 uid="uid://7ypegi6l54k0"]
 
 [ext_resource type="Theme" uid="uid://dr6wcdv73nca2" path="res://Assets/ui/menu.tres" id="1_s6urc"]
 [ext_resource type="Script" uid="uid://ctxrfdcmw1k7o" path="res://Scenes/UI/reward_menu.gd" id="2_scebn"]
@@ -25,6 +25,11 @@
 [ext_resource type="Texture2D" uid="uid://jx13se0e11x" path="res://Assets/ui/goblin/Goblin_g_hair.png" id="23_hegug"]
 [ext_resource type="Texture2D" uid="uid://gkd40ygyvw4i" path="res://Assets/ui/goblin/Goblin_g_head.png" id="24_uchec"]
 [ext_resource type="Texture2D" uid="uid://dc4xvtvkouxka" path="res://Assets/ui/goblin/Goblin_G_coller.png" id="25_cipjo"]
+[ext_resource type="AudioStream" uid="uid://ccpdoodmiac5q" path="res://Assets/ui/audio/smash me 1.wav" id="26_qyme5"]
+[ext_resource type="AudioStream" uid="uid://bc3c14fctggxr" path="res://Assets/ui/audio/smash me 2.wav" id="27_iyuv5"]
+[ext_resource type="AudioStream" uid="uid://dmlyc6txulbl5" path="res://Assets/ui/audio/smash me 3.wav" id="28_i8aym"]
+[ext_resource type="AudioStream" uid="uid://cc4qrduoxtnrq" path="res://Assets/ui/audio/smash me 4.wav" id="29_22nng"]
+[ext_resource type="AudioStream" uid="uid://pijbr23ynv0o" path="res://Assets/ui/audio/menu woosh.wav" id="30_iyuv5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vy2uj"]
 shader = ExtResource("3_njr36")
@@ -1872,5 +1877,28 @@ offset_top = -8.0
 offset_right = 502.0
 offset_bottom = 582.0
 flat = true
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="smash" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("26_qyme5")
+bus = &"SFX"
+
+[node name="smash2" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("27_iyuv5")
+bus = &"SFX"
+
+[node name="smash3" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("28_i8aym")
+bus = &"SFX"
+
+[node name="smash4" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("29_22nng")
+bus = &"SFX"
+
+[node name="woosh" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("30_iyuv5")
+bus = &"SFX"
 
 [connection signal="pressed" from="smash_button" to="." method="_on_smash_button_pressed"]

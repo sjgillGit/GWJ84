@@ -17,27 +17,39 @@ var smash_count:= 0
 @onready var origin_pos: Vector2 = self.position
 @onready var gpu_particles_2d: GPUParticles2D = $Label/GPUParticles2D
 @onready var gpu_particles_2d_2: GPUParticles2D = $Label/GPUParticles2D2
+@onready var s_smash: AudioStreamPlayer = $Control/smash
+@onready var s_smash_2: AudioStreamPlayer = $Control/smash2
+@onready var s_smash_3: AudioStreamPlayer = $Control/smash3
+@onready var s_smash_4: AudioStreamPlayer = $Control/smash4
+@onready var woosh: AudioStreamPlayer = $Control/woosh
+
+
+
 
 var values = [20,-15,-20,25,17,-13]
 func _on_smash_button_pressed() -> void:
 	match smash_count:
 		0:
+			s_smash.play()
 			smash_me(smash_1,choose)
 			var tween = get_tree().create_tween().set_parallel(true)
 			#tween.tween_property(self,"position",origin_pos + Vector2(5,15),0.5).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 			tween.tween_property(self,"scale",Vector2(1.02,1.02),0.5).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 		1:
+			s_smash_2.play()
 			smash_me(smash_2,choose_2)
 			var tween = get_tree().create_tween().set_parallel(true)
 			#tween.tween_property(self,"position",origin_pos + Vector2(13,-3),0.5).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 			tween.tween_property(self,"scale",Vector2(1.04,1.04),0.5).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 		2:
+			s_smash_3.play()
 			smash_me(smash_3,choose_3)
 			var tween = get_tree().create_tween().set_parallel(true)
 			#tween.tween_property(self,"position",origin_pos + Vector2(-10,7),0.5).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 			tween.tween_property(self,"scale",Vector2(1.08,1.08),0.5).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 			smash_button.visible = false
 		3:
+			woosh.play()
 			var tween = get_tree().create_tween().set_parallel(true)
 			tween.tween_property(self,"scale",Vector2(0.01,0.01),1).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 			await tween.finished
@@ -52,6 +64,7 @@ func reward_chosen(number_chosen:int,object):
 			goblin.visible = true
 		"turret":
 			turret.visible = true
+	s_smash_4.play()
 	choose_separator.pivot_offset = Vector2(230,200)
 	show_reward.scale = Vector2(0.01,0.01)
 	new_sepatator.pivot_offset = Vector2(230,200)

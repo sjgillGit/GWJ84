@@ -1,9 +1,13 @@
 extends Control
 @onready var czesc2: Panel = $Control2
 @onready var czesc1: Panel = $Control
+@onready var woosh: AudioStreamPlayer = $woosh
+
 var czesc2show:= false
 func _input(event: InputEvent) -> void:
 	if event.is_pressed() && czesc2show == false:
+			woosh.play()
+			czesc1.pip.volume_db = -200.0
 			czesc2show = true
 			czesc2.scale = Vector2(0.01,0.01)
 			czesc2.visible = true
@@ -12,6 +16,7 @@ func _input(event: InputEvent) -> void:
 			tween.tween_property(czesc1,"scale",Vector2(0.01,0.01),1).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 			await tween.finished
 			czesc1.visible = false
+			
 func _ready() -> void:
 	var upgrade_list = [["GAS RANGE UP","+20 range","normal","gas"],["HEAVY DAMAGE UP","shot speed down","curse","turret"],["SPRINT SPEED UP","doubles sprint speed","normal","player"]]
 	for n in 3:

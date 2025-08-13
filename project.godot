@@ -15,10 +15,6 @@ run/main_scene="uid://bfxkpfx0qgb37"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
-[debug]
-
-settings/stdout/print_fps=true
-
 [input]
 
 MoveLeft={
