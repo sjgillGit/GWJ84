@@ -11,10 +11,12 @@ var start_angle = 150
 
 const NAIL = preload("res://Scenes/UI/lockpick/nail.tscn")
 func start(speed):
+	board.rotation_degrees = Vector3(0,0,0)
+	middle.rotation_degrees = Vector3(0,0,0)
 	spin_spped = speed
 	nail_spread = 360 / sequence.size()
-	#for n in nail_parent.get_children():
-	#	n.queue_free()
+	for n in nail_parent.get_children():
+		n.queue_free()
 	for n in sequence.size():
 		var nail_angle = start_angle - n * nail_spread
 		var nail_position = get_nail_position(nail_angle)
@@ -22,6 +24,7 @@ func start(speed):
 		nail_parent.add_child(nail_inst)
 		nail_inst.position = nail_position
 		nail_inst.set_nail(str(sequence[n]),spin_spped)
+	await get_tree().process_frame
 	nail_parent.get_child(0).first()
 		
 func get_nail_position(angle:float):
@@ -35,6 +38,7 @@ func _process(delta: float) -> void:
 func error():
 	for n in nail_parent.get_children():
 		n.unlight()
+	print("uwu")
 	var tween = get_tree().create_tween()
 	tween.tween_property(middle,"rotation_degrees",Vector3(0,0,0),0.1*step).set_trans(Tween.TRANS_CIRC)
 	step = 0
