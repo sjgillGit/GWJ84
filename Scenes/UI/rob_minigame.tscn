@@ -33,3 +33,18 @@ light_energy = 2.0
 
 [node name="nail_parent" type="Node3D" parent="SubViewportContainer/SubViewport/Camera3D"]
 transform = Transform3D(1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, 0.007, 0.01, 0.957)
+
+[node name="step" type="Button" parent="."]
+offset_right = 100.0
+offset_bottom = 31.0
+text = "step"
+
+[node name="error" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 0)
+offset_top = 38.0
+offset_right = 48.0
+offset_bottom = 69.0
+text = "error"
+
+[connection signal="pressed" from="step" to="." method="_on_step_pressed"]
+[connection signal="pressed" from="error" to="." method="_on_error_pressed"]

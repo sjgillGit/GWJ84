@@ -56,3 +56,20 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.00386377, -0.131581, 
 
 [node name="wrench (1)" parent="SubViewportContainer/SubViewport/Camera3D/middle" instance=ExtResource("5_6h58e")]
 transform = Transform3D(0, 3.49691e-09, -0.08, 0.08, -3.49691e-09, 0, -3.49691e-09, -0.08, -3.49691e-09, -0.438136, -0.00158107, 0)
+
+[node name="step" type="Button" parent="."]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 31.0
+text = "step"
+
+[node name="error" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_top = 38.0
+offset_right = 48.0
+offset_bottom = 69.0
+text = "error"
+
+[connection signal="pressed" from="step" to="." method="_on_step_pressed"]
+[connection signal="pressed" from="error" to="." method="_on_error_pressed"]

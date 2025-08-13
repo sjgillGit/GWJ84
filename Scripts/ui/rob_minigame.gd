@@ -13,7 +13,7 @@ func _ready() -> void:
 		nail_parent.add_child(nail_inst)
 		nail_inst.position = nail_position
 		nail_inst.set_nail(sequence[n],0)
-		
+	nail_parent.get_child(0).first()
 func get_nail_position(number):
 	var is_even = is_even(number)
 	var y
@@ -29,7 +29,18 @@ func is_even(x: int):
 func error():
 	for n in nail_parent.get_children():
 		n.unlight()
+	nail_parent.get_child(0).first()
+	step = 0
 	
 func next_step():
 	nail_parent.get_child(step).light_up()
 	step += 1
+	if !nail_parent.get_children().size() == step: nail_parent.get_child(step).first()
+
+
+func _on_error_pressed() -> void:
+	error()
+
+
+func _on_step_pressed() -> void:
+	next_step()

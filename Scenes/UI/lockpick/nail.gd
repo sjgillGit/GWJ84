@@ -9,9 +9,11 @@ func set_nail(symbol: String, difficulty):
 
 func _process(delta: float) -> void:
 	if spin_speed != 0:
-		self.rotation_degrees += Vector3(0,0,-(delta*spin_speed))
+		self.rotation_degrees += Vector3(0,0,(delta*spin_speed))
 
 func light_up():
-	sprite_3d.modulate = Color(0.0, 0.762, 0.142)
+	sprite_3d.modulate = Color(0.174, 0.58, 0.28)
 func unlight():
 	sprite_3d.modulate = Color(1,1,1)
+func first():
+	sprite_3d.modulate = Color(0.827, 0.818, 0.375)
