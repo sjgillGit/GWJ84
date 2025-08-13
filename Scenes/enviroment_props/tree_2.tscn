@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://2u4sw88viuux"]
+[gd_scene load_steps=7 format=4 uid="uid://b50ha3xhpbxhv"]
 
-[ext_resource type="Texture2D" uid="uid://vakyk6ydwqfv" path="res://Scenes/Trees_tree.png" id="1_0jmig"]
+[ext_resource type="Texture2D" uid="uid://vakyk6ydwqfv" path="res://Scenes/Trees_tree.png" id="1_av6yr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4f5r"]
 resource_name = "Material"
 cull_mode = 2
-albedo_texture = ExtResource("1_0jmig")
+albedo_texture = ExtResource("1_av6yr")
 texture_repeat = false
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_lfr5u"]

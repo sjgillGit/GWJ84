@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp2truhn4ua6y"]
+
+[ext_resource type="PackedScene" uid="uid://62hfucc3l4co" path="res://Assets/Street lamp.glb" id="1_rs6ie"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0jmig"]
+radius = 0.324122
+height = 3.77564
+
+[node name="tree" type="Node3D"]
+
+[node name="Street lamp" parent="." instance=ExtResource("1_rs6ie")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.05042, 0, 0, 0, 1.00268, 0, 0, 0, 1.00268, 0, 1.84639, 0)
+shape = SubResource("CapsuleShape3D_0jmig")

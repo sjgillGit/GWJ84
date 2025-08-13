@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://nbkvr20vhw44"]
+[gd_scene load_steps=45 format=3 uid="uid://nbkvr20vhw44"]
 
 [ext_resource type="Texture2D" uid="uid://dh4bnoaafbe4e" path="res://Assets/Grass.webp" id="1_p3ir5"]
 [ext_resource type="Texture2D" uid="uid://bv5234husy11v" path="res://Assets/ground037_nrm_rgh.png" id="2_np2xp"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://vnqmhm8ffrps" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="11_ltf6m"]
 [ext_resource type="Script" uid="uid://b16weukog7005" path="res://addons/proton_scatter/src/scatter_item.gd" id="12_uus22"]
 [ext_resource type="Script" uid="uid://dp5r3h73tcqai" path="res://addons/proton_scatter/src/scatter_shape.gd" id="13_tuwt4"]
+[ext_resource type="Script" uid="uid://nbneoyxk8c6q" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="14_1ye5v"]
 [ext_resource type="Script" uid="uid://dvuv786xfsuui" path="res://addons/proton_scatter/src/shapes/path_shape.gd" id="14_k63oc"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_myvm1"]
@@ -162,6 +163,63 @@ closed = true
 thickness = 0.0
 curve = SubResource("Curve3D_ltf6m")
 
+[sub_resource type="Resource" id="Resource_macow"]
+script = ExtResource("8_vtkp8")
+amount = 14
+enabled = true
+override_global_seed = true
+custom_seed = 30
+restrict_height = false
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_ltf6m"]
+script = ExtResource("10_macow")
+iterations = 5
+offset_step = 0.1
+consecutive_step_multiplier = 0.5
+use_computeshader = true
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_tuwt4"]
+script = ExtResource("11_ltf6m")
+ray_direction = Vector3(0, -1, 0)
+ray_length = 10.0
+ray_offset = 1.0
+remove_points_on_miss = true
+align_with_collision_normal = false
+max_slope = 90.0
+collision_mask = 2
+exclude_mask = 0
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_1ye5v"]
+script = ExtResource("9_rg57b")
+position = Vector3(0, 0, 0)
+rotation = Vector3(0, 0, 0)
+scale = Vector3(3, 3, 3)
+enabled = true
+override_global_seed = true
+custom_seed = 30
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_8cxpi"]
+script = ExtResource("6_j4oe2")
+stack = Array[ExtResource("7_riaky")]([SubResource("Resource_macow"), SubResource("Resource_ltf6m"), SubResource("Resource_tuwt4"), SubResource("Resource_1ye5v")])
+
+[sub_resource type="Resource" id="Resource_wpvg5"]
+script = ExtResource("14_1ye5v")
+radius = 10.0
+metadata/_custom_type_script = "uid://nbneoyxk8c6q"
+
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_w7jjh"]
 panorama = ExtResource("5_np2xp")
 
@@ -208,6 +266,25 @@ path = "uid://2u4sw88viuux"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0376822, 0, -0.0782702)
 script = ExtResource("13_tuwt4")
 shape = SubResource("Resource_uus22")
+
+[node name="lamps" type="Node3D" parent="NavigationRegion3D"]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1843, 0, -0.774464)
+script = ExtResource("5_k63oc")
+render_mode = 1
+modifier_stack = SubResource("Resource_8cxpi")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+
+[node name="ScatterItem" type="Node3D" parent="NavigationRegion3D/lamps"]
+script = ExtResource("12_uus22")
+source_scale_multiplier = 0.4
+path = "uid://cp2truhn4ua6y"
+
+[node name="PathShape" type="Node3D" parent="NavigationRegion3D/lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0376816, 0, 1.78003)
+script = ExtResource("13_tuwt4")
+shape = SubResource("Resource_wpvg5")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4c2oa")
