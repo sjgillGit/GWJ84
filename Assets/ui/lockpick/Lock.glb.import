@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bqx0grdovsxes"
-path="res://.godot/imported/Turret.glb-4294e74421f87bfa635115966769a69a.scn"
+uid="uid://og8scul42xma"
+path="res://.godot/imported/Lock.glb-d90e547b27041914f495042686e080cc.scn"
 
 [deps]
 
-source_file="res://Assets/turret/Turret.glb"
-dest_files=["res://.godot/imported/Turret.glb-4294e74421f87bfa635115966769a69a.scn"]
+source_file="res://Assets/ui/lockpick/Lock.glb"
+dest_files=["res://.godot/imported/Lock.glb-d90e547b27041914f495042686e080cc.scn"]
 
 [params]
 

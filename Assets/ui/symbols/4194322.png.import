@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di7tqkig62twu"
-path.s3tc="res://.godot/imported/Turret_turret head 2.png-d7cea17a0d8992b32dd30bffc46fffa5.s3tc.ctex"
+uid="uid://0ooay35rvxcw"
+path.s3tc="res://.godot/imported/4194322.png-ed5b6bd30fe8d9adbf905d764e7c4f29.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "8009949fc4b8606c2bb7c290663c88fe"
-}
 
 [deps]
 
-source_file="res://Assets/turret/Turret_turret head 2.png"
-dest_files=["res://.godot/imported/Turret_turret head 2.png-d7cea17a0d8992b32dd30bffc46fffa5.s3tc.ctex"]
+source_file="res://Assets/ui/symbols/4194322.png"
+dest_files=["res://.godot/imported/4194322.png-ed5b6bd30fe8d9adbf905d764e7c4f29.s3tc.ctex"]
 
 [params]
 

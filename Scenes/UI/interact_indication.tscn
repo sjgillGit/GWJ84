@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://crcyrd566npe8"]
+
+[ext_resource type="Script" uid="uid://cshfopsb1aw4p" path="res://Scripts/ui/interact_indication.gd" id="1_jl613"]
+[ext_resource type="FontFile" uid="uid://b2d7ii78bv5cw" path="res://Assets/font/Long_Shot.ttf" id="1_tqhqu"]
+[ext_resource type="Texture2D" uid="uid://dq8knos66o8ki" path="res://Assets/ui/textframe.png" id="2_jl613"]
+[ext_resource type="Script" uid="uid://dmbug4tme2cqn" path="res://Scripts/ui/button_show.gd" id="3_edq6u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wrben"]
+texture = ExtResource("2_jl613")
+
+[node name="interact_indication" type="Control"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -952.0
+offset_bottom = -608.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jl613")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 46.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("1_tqhqu")
+theme_override_font_sizes/font_size = 24
+text = "press"
+
+[node name="button_show" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_right = 98.0
+offset_bottom = 40.0
+pivot_offset = Vector2(21, 21)
+theme_override_styles/panel = SubResource("StyleBoxTexture_wrben")
+script = ExtResource("3_edq6u")
+
+[node name="input_name_lbl" type="Label" parent="button_show"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 42.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("1_tqhqu")
+theme_override_font_sizes/font_size = 33
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 8.0
+offset_right = 210.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("1_tqhqu")
+theme_override_font_sizes/font_size = 24
+text = "to interact"

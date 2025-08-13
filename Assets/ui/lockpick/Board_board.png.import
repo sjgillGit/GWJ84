@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7vsn8mjjxq06"
-path.s3tc="res://.godot/imported/Turret_turret body 2.png-31373c126f1e2fe5e3ab6bead878cdbe.s3tc.ctex"
+uid="uid://xtrqemdp7hxp"
+path.s3tc="res://.godot/imported/Board_board.png-237cd102943bc3c88b948aa9f52c2cac.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "86129c631def8cdc76b97759eaacdc26"
+"md5": "a9b4dbc039e750f598a3bf94e3338a5f"
 }
 
 [deps]
 
-source_file="res://Assets/turret/Turret_turret body 2.png"
-dest_files=["res://.godot/imported/Turret_turret body 2.png-31373c126f1e2fe5e3ab6bead878cdbe.s3tc.ctex"]
+source_file="res://Assets/ui/lockpick/Board_board.png"
+dest_files=["res://.godot/imported/Board_board.png-237cd102943bc3c88b948aa9f52c2cac.s3tc.ctex"]
 
 [params]
 
