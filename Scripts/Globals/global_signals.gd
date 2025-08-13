@@ -1,0 +1,4 @@
+extends Node
+
+signal enter_combination_objective_available(objective: EnterCombinationObjective);
+signal enter_combination_objective_unavailable(objective: EnterCombinationObjective);
