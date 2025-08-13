@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0ooay35rvxcw"
-path.s3tc="res://.godot/imported/down.png-75d9baa94a08772abb85cf2a39a95204.s3tc.ctex"
+uid="uid://xtrqemdp7hxp"
+path.s3tc="res://.godot/imported/Board_board.png-237cd102943bc3c88b948aa9f52c2cac.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "a9b4dbc039e750f598a3bf94e3338a5f"
+}
 
 [deps]
 
-source_file="res://Assets/ui/symbols/down.png"
-dest_files=["res://.godot/imported/down.png-75d9baa94a08772abb85cf2a39a95204.s3tc.ctex"]
+source_file="res://Assets/ui/lockpick/Board_board.png"
+dest_files=["res://.godot/imported/Board_board.png-237cd102943bc3c88b948aa9f52c2cac.s3tc.ctex"]
 
 [params]
 
