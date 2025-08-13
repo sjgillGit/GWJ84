@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://nbkvr20vhw44"]
+[gd_scene load_steps=47 format=3 uid="uid://nbkvr20vhw44"]
 
 [ext_resource type="Texture2D" uid="uid://dh4bnoaafbe4e" path="res://Assets/Grass.webp" id="1_p3ir5"]
 [ext_resource type="Texture2D" uid="uid://bv5234husy11v" path="res://Assets/ground037_nrm_rgh.png" id="2_np2xp"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://dp5r3h73tcqai" path="res://addons/proton_scatter/src/scatter_shape.gd" id="13_tuwt4"]
 [ext_resource type="Script" uid="uid://nbneoyxk8c6q" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="14_1ye5v"]
 [ext_resource type="Script" uid="uid://dvuv786xfsuui" path="res://addons/proton_scatter/src/shapes/path_shape.gd" id="14_k63oc"]
+[ext_resource type="PackedScene" uid="uid://cx2rpesjr050y" path="res://Scenes/rat.tscn" id="18_vtkp8"]
 [ext_resource type="PackedScene" uid="uid://cp2truhn4ua6y" path="res://Scenes/enviroment_props/lamp.tscn" id="19_riaky"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_myvm1"]
@@ -298,6 +299,2054 @@ environment = SubResource("Environment_4c2oa")
 
 [node name="swarm_manager" type="Node3D" parent="."]
 script = ExtResource("3_qldgr")
+
+[node name="rat" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4606, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat2" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.5928, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat3" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4606, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat4" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.5928, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat5" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.216, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat6" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.348, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat7" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.216, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat8" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.348, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat9" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.397, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat10" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.53, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat11" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.397, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat12" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.53, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat13" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.153, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat14" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.285, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat15" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.153, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat16" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.285, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat17" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4606, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat18" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.5928, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat19" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4606, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat20" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.5928, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat21" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.216, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat22" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.348, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat23" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.216, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat24" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.348, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat25" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.397, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat26" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.53, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat27" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.397, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat28" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.53, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat29" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.153, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat30" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.285, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat31" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.153, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat32" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.285, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat33" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4606, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat34" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.5928, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat35" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4606, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat36" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.5928, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat37" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.216, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat38" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.348, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat39" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.216, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat40" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.348, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat41" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.397, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat42" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.53, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat43" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.397, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat44" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.53, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat45" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.153, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat46" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.285, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat47" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.153, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat48" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.285, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat49" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4606, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat50" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.5928, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat51" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4606, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat52" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.5928, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat53" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.216, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat54" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.348, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat55" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.216, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat56" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.348, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat57" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.397, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat58" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.53, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat59" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.397, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat60" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.53, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat61" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.153, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat62" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.285, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat63" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.153, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat64" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.285, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat65" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.268, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat66" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.136, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat67" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.268, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat68" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.136, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat69" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.513, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat70" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.381, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat71" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.513, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat72" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.381, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat73" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.332, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat74" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.199, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat75" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.332, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat76" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.199, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat77" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.576, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat78" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.444, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat79" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.576, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat80" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.444, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat81" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.268, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat82" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.136, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat83" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.268, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat84" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.136, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat85" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.513, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat86" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.381, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat87" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.513, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat88" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.381, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat89" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.332, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat90" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.199, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat91" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.332, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat92" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.199, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat93" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.576, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat94" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.444, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat95" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.576, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat96" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.444, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat97" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.268, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat98" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.136, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat99" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.268, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat100" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.136, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat101" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.513, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat102" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.381, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat103" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.513, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat104" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.381, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat105" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.332, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat106" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.199, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat107" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.332, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat108" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.199, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat109" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.576, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat110" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.444, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat111" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.576, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat112" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.444, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat113" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.268, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat114" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.136, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat115" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.268, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat116" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.136, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat117" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.513, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat118" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.381, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat119" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.513, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat120" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.381, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat121" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.332, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat122" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.199, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat123" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.332, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat124" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.199, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat125" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.576, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat126" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.444, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat127" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.576, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat128" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.444, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat129" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4606, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat130" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.5928, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat131" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4606, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat132" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.5928, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat133" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.216, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat134" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.348, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat135" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.216, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat136" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.348, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat137" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.397, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat138" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.53, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat139" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.397, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat140" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.53, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat141" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.153, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat142" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.285, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat143" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.153, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat144" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.285, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat145" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4606, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat146" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.5928, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat147" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4606, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat148" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.5928, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat149" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.216, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat150" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.348, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat151" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.216, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat152" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.348, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat153" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.397, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat154" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.53, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat155" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.397, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat156" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.53, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat157" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.153, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat158" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.285, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat159" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.153, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat160" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.285, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat161" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4606, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat162" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.5928, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat163" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4606, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat164" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.5928, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat165" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.216, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat166" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.348, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat167" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.216, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat168" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.348, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat169" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.397, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat170" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.53, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat171" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.397, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat172" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.53, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat173" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.153, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat174" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.285, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat175" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.153, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat176" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.285, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat177" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4606, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat178" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.5928, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat179" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4606, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat180" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.5928, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat181" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.216, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat182" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.348, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat183" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.216, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat184" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.348, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat185" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.397, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat186" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.53, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat187" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.397, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat188" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.53, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat189" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.153, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat190" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.285, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat191" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.153, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat192" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.285, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat193" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.268, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat194" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.136, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat195" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.268, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat196" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.136, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat197" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.513, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat198" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.381, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat199" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.513, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat200" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.381, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat201" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.332, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat202" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.199, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat203" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.332, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat204" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.199, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat205" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.576, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat206" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.444, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat207" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.576, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat208" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.444, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat209" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.268, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat210" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.136, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat211" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.268, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat212" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.136, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat213" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.513, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat214" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.381, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat215" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.513, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat216" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.381, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat217" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.332, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat218" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.199, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat219" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.332, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat220" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.199, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat221" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.576, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat222" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.444, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat223" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.576, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat224" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.444, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat225" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.268, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat226" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.136, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat227" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.268, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat228" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.136, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat229" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.513, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat230" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.381, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat231" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.513, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat232" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.381, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat233" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.332, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat234" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.199, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat235" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.332, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat236" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.199, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat237" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.576, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat238" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.444, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat239" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.576, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat240" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.444, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat241" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.268, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat242" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.136, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat243" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.268, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat244" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.136, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat245" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.513, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat246" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.381, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat247" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.513, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat248" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.381, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat249" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.332, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat250" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.199, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat251" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.332, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat252" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.199, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat253" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.576, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat254" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.444, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat255" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.576, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat256" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.444, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat257" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.509, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat258" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 439.376, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat259" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.509, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat260" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 439.376, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat261" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 409.753, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat262" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416.621, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat263" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 409.753, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat264" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416.621, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat265" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.572, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat266" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.44, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat267" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.572, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat268" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.44, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat269" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.817, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat270" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376.684, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat271" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.817, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat272" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376.684, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat273" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.509, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat274" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 439.376, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat275" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.509, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat276" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 439.376, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat277" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 409.753, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat278" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416.621, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat279" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 409.753, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat280" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416.621, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat281" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.572, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat282" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.44, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat283" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.572, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat284" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.44, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat285" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.817, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat286" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376.684, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat287" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.817, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat288" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376.684, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat289" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.509, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat290" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 439.376, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat291" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.509, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat292" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 439.376, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat293" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 409.753, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat294" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416.621, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat295" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 409.753, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat296" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416.621, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat297" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.572, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat298" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.44, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat299" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.572, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat300" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.44, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat301" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.817, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat302" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376.684, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat303" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.817, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat304" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376.684, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat305" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.509, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat306" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 439.376, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat307" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.509, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat308" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 439.376, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat309" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 409.753, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat310" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416.621, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat311" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 409.753, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat312" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416.621, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat313" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.572, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat314" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.44, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat315" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.572, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat316" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.44, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat317" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.817, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat318" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376.684, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat319" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.817, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat320" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376.684, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat321" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 683.237, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat322" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 690.105, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat323" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 683.237, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat324" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 690.105, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat325" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 660.482, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat326" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 667.35, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat327" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 660.482, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat328" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 667.35, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat329" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 643.301, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat330" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 650.168, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat331" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 643.301, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat332" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 650.168, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat333" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 620.545, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat334" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 627.413, 3.0745, -36.3038)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat335" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 620.545, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat336" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 627.413, 3.0745, -32.8076)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat337" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 683.237, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat338" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 690.105, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat339" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 683.237, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat340" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 690.105, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat341" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 660.482, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat342" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 667.35, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat343" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 660.482, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat344" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 667.35, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat345" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 643.301, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat346" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 650.168, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat347" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 643.301, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat348" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 650.168, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat349" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 620.545, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat350" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 627.413, 3.0745, -58.3941)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat351" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 620.545, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat352" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 627.413, 3.0745, -54.8978)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat353" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 683.237, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat354" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 690.105, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat355" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 683.237, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat356" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 690.105, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat357" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 660.482, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat358" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 667.35, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat359" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 660.482, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat360" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 667.35, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat361" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 643.301, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat362" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 650.168, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat363" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 643.301, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat364" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 650.168, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat365" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 620.545, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat366" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 627.413, 3.0745, -78.1392)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat367" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 620.545, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat368" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 627.413, 3.0745, -74.643)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat369" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 683.237, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat370" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 690.105, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat371" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 683.237, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat372" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 690.105, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat373" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 660.482, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat374" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 667.35, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat375" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 660.482, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat376" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 667.35, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat377" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 643.301, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat378" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 650.168, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat379" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 643.301, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat380" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 650.168, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat381" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 620.545, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat382" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 627.413, 3.0745, -100.229)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat383" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 620.545, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat384" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 627.413, 3.0745, -96.7332)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat385" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.509, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat386" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 439.376, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat387" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.509, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat388" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 439.376, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat389" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 409.753, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat390" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416.621, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat391" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 409.753, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat392" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416.621, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat393" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.572, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat394" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.44, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat395" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.572, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat396" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.44, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat397" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.817, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat398" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376.684, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat399" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.817, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat400" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376.684, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat401" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.509, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat402" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 439.376, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat403" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.509, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat404" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 439.376, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat405" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 409.753, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat406" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416.621, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat407" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 409.753, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat408" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416.621, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat409" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.572, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat410" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.44, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat411" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.572, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat412" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.44, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat413" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.817, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat414" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376.684, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat415" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.817, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat416" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376.684, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat417" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.509, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat418" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 439.376, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat419" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.509, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat420" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 439.376, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat421" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 409.753, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat422" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416.621, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat423" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 409.753, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat424" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416.621, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat425" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.572, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat426" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.44, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat427" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.572, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat428" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.44, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat429" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.817, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat430" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376.684, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat431" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.817, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat432" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376.684, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat433" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.509, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat434" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 439.376, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat435" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.509, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat436" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 439.376, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat437" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 409.753, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat438" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416.621, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat439" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 409.753, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat440" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 416.621, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat441" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.572, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat442" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.44, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat443" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.572, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat444" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 399.44, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat445" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.817, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat446" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376.684, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat447" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.817, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat448" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376.684, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat449" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 683.237, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat450" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 690.105, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat451" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 683.237, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat452" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 690.105, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat453" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 660.482, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat454" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 667.35, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat455" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 660.482, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat456" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 667.35, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat457" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 643.301, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat458" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 650.168, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat459" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 643.301, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat460" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 650.168, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat461" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 620.545, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat462" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 627.413, 3.0745, 193.07)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat463" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 620.545, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat464" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 627.413, 3.0745, 196.566)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat465" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 683.237, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat466" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 690.105, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat467" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 683.237, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat468" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 690.105, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat469" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 660.482, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat470" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 667.35, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat471" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 660.482, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat472" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 667.35, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat473" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 643.301, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat474" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 650.168, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat475" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 643.301, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat476" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 650.168, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat477" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 620.545, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat478" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 627.413, 3.0745, 170.98)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat479" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 620.545, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat480" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 627.413, 3.0745, 174.476)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat481" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 683.237, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat482" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 690.105, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat483" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 683.237, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat484" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 690.105, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat485" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 660.482, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat486" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 667.35, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat487" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 660.482, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat488" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 667.35, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat489" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 643.301, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat490" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 650.168, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat491" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 643.301, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat492" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 650.168, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat493" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 620.545, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat494" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 627.413, 3.0745, 151.235)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat495" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 620.545, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat496" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 627.413, 3.0745, 154.731)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat497" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 683.237, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat498" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 690.105, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat499" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 683.237, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat500" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 690.105, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat501" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 660.482, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat502" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 667.35, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat503" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 660.482, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat504" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 667.35, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat505" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 643.301, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat506" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 650.168, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat507" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 643.301, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat508" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 650.168, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat509" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 620.545, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat510" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 627.413, 3.0745, 129.145)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat511" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 620.545, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat512" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 627.413, 3.0745, 132.641)
+end_patrol_position = NodePath("../../Marker3D")
 
 [node name="Player" parent="." instance=ExtResource("7_w7jjh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72818, 4.83935)
