@@ -11,17 +11,20 @@ func _cell_coords(pos: Vector2) -> Vector2i:
 func clear():
 	buckets.clear()
 
-func insert(obj, pos: Vector2):
+func insert(obj):
+	var pos: Vector2 = Vector2i(obj.global_position.x,obj.global_position.z)
 	var cell = _cell_coords(pos)
 	if not buckets.has(cell):
 		buckets[cell] = []
 	buckets[cell].append(obj)
 
-func query(pos: Vector2) -> Array:
+func query(position:Vector3,radius:int) -> Array:
+	var pos: Vector2 = Vector2i(position.x,position.z)
 	var cell = _cell_coords(pos)
 	var results := []
-	for dx in range(-1,2):
-		for dy in range(-1,2):
+	for dx in range(-radius,radius):
+		for dy in range(-radius,radius):
+			if dx==0 and dy==0: continue
 			var neighbor_cell = cell + Vector2i(dx, dy)
 			if buckets.has(neighbor_cell):
 				results.append_array(buckets[neighbor_cell])

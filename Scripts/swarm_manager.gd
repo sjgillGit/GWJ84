@@ -32,18 +32,18 @@ func get_neighbors(radius,rat):
 	return neighbors
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var count =0 
-var max_count = 12
+var max_count = 3
 func _physics_process(delta):
 	count +=1
 	spatial_hash.clear()
 	for rat in rat_list:
-		spatial_hash.insert(rat,Vector2(rat.global_position.x,rat.global_position.y))
+		spatial_hash.insert(rat)
 	for rat in rat_list:
 		if count==max_count:
-			var neighbors = spatial_hash.query(Vector2(rat.global_position.x,rat.global_position.y))
+			var neighbors = spatial_hash.query(rat.global_position,5)
 			rat.update_neighbors(neighbors)
 			rat.state.on_physics_process(delta)
-		if count % 6 ==0:
+		else:
 			rat.move_and_slide()
 			
 	if count==max_count:

@@ -54,12 +54,27 @@ func move_with_navmesh(delta,target_position):
 	move_and_slide()
 
 func patrol_behaviour(delta):
-	move_with_navmesh(delta,current_target)
+	boid_calculation((current_target - global_position).normalized() * speed,delta)
+	move_and_slide()
+
+
+func boid_calculation(seek_force,delta):
+	var separation_force = get_separation_force()
+	var alignment_force = get_alignment_force()
+	var total_force = (seek_force * 2) + (separation_force * 8.0) + (alignment_force * 2.0)
+	if velocity.length() > speed:
+		total_force = total_force.normalized() * speed
+	# Keep Y velocity for gravity
+	velocity.y += -10 * delta  
+	# Apply horizontal steering
+	velocity.x = lerp(velocity.x, total_force.x, 0.01)
+	velocity.z = lerp(velocity.z, total_force.z, 0.01)
 
 func chase_behaviour(delta):
-	move_with_navmesh(delta,player.global_position)
+	boid_calculation((player.global_position - global_position).normalized()*speed,delta)
+	move_and_slide()
 	if (player.global_position - global_position).length() < 5 and can_attack:
-		#player.take_damage(attack_damage)
+		player.take_damage(attack_damage)
 		can_attack = false
 		$cooldown_timer.start()
 
@@ -80,17 +95,7 @@ func get_alignment_force():
 
 
 func swarm_behaviour(delta):
-	var seek_force = (leader.global_position - global_position).normalized() * speed
-	var separation_force = get_separation_force()
-	var alignment_force = get_alignment_force()
-	var total_force = (seek_force * 2) + (separation_force * 8.0) + (alignment_force * 2.0)
-	if velocity.length() > speed:
-		total_force = total_force.normalized() * speed
-	# Keep Y velocity for gravity
-	velocity.y += -10 * delta  
-	# Apply horizontal steering
-	velocity.x = lerp(velocity.x, total_force.x, 0.01)
-	velocity.z = lerp(velocity.z, total_force.z, 0.01)
+	boid_calculation((leader.global_position - global_position).normalized() * speed,delta)
 	move_and_slide()
 
 func _on_navigation_agent_3d_navigation_finished():
