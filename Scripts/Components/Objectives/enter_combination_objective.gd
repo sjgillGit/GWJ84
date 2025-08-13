@@ -5,7 +5,6 @@ class_name EnterCombinationObjective
 signal player_input_error();
 signal player_input_made_progress();
 
-
 static var possible_keys: Array[int] = [KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT];
 
 var combination: Array[int];
@@ -17,7 +16,6 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return;
 	generate_combination();
-	
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event is not InputEventKey:
