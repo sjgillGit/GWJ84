@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b17prwi2b3x1f"]
+[gd_scene load_steps=9 format=3 uid="uid://b17prwi2b3x1f"]
 
-[ext_resource type="PackedScene" uid="uid://dko2mapcxs0y3" path="res://Scenes/Player/Player.tscn" id="1_yx46w"]
+[ext_resource type="PackedScene" uid="uid://dko2mapcxs0y3" path="res://Scenes/Player/Player.tscn" id="1_q6fdj"]
+[ext_resource type="PackedScene" uid="uid://chxvqa83wi22n" path="res://Scenes/Turrets/gun_turret.tscn" id="2_r5l72"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q6fdj"]
 
@@ -27,20 +28,19 @@ environment = SubResource("Environment_q6fdj")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Floor" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("BoxShape3D_nl7fu")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 mesh = SubResource("BoxMesh_q6fdj")
 
-[node name="Player" parent="." instance=ExtResource("1_yx46w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.638035, 2.63182, -0.151434)
+[node name="Player" parent="." instance=ExtResource("1_q6fdj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.638035, 2, 28.239)
 
-[node name="Camera3D" type="Camera3D" parent="Player/CameraRoot/CameraHorizontal/CameraVertical" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 4)
-current = true
+[node name="GunTurret" parent="." instance=ExtResource("2_r5l72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.31018, 1.13006, -1.05959)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.010221, 0.999948, 0, -0.999948, 0.010221, 19.9048, 4.36204, 19.8765)

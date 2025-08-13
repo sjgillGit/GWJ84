@@ -1,6 +1,9 @@
 extends Node3D
 class_name CameraController
 
+@export
+var camera: Camera3D;
+
 @export_group("Horizontal settings")
 @export
 var camera_horizontal: Node3D;
@@ -35,7 +38,7 @@ var default_camera_offset: Vector3;
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
-	default_camera_offset = position;
+	default_camera_offset = camera.position;
 
 func _input(event: InputEvent) -> void:
 	if event is not InputEventMouseMotion:
