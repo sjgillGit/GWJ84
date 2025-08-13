@@ -28,7 +28,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		return;
 	current_input_idx += 1;
 	if current_input_idx >= combination.size():
-		objective_completed.emit(self);
+		_emit_objective_completed();
 		set_process_unhandled_key_input(false);
 	else:
 		player_input_made_progress.emit();

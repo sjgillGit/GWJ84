@@ -34,3 +34,7 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 func _on_child_order_changed():
 	update_configuration_warnings();
+
+func _emit_objective_completed():
+	objective_completed.emit(self);
+	GlobalSignals.objective_completed.emit(self);
