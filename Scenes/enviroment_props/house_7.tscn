@@ -47,6 +47,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ll5ba")
 
 [node name="house_7" type="StaticBody3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.933968, 0, -0.357358, 0, 1, 0, 0.357358, 0, 0.933968, 0.781549, 0.711997, -1.06242)
