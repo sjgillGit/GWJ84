@@ -27,7 +27,7 @@ func _input(event: InputEvent) -> void:
 		towerscroll.scroll_horizontal = 0
 		
 		#chosen_tower = towerlist.get_child(2)
-func skill_activate():
+func skill_activate(cooldown):
 	timer.wait_time = cooldown
 	counting = true
 	timer.start()

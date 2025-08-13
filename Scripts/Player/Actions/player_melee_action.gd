@@ -21,7 +21,7 @@ func _can_perform_action() -> bool:
 	return can_be_performed;
 
 func _perform_action() -> void:
-	skill_box.meleeaction_performed()
+	skill_box.meleeaction_performed(melee_cooldown)
 	current_cooldown = melee_cooldown;
 	can_be_performed = false;
 	print("Melee action performed");

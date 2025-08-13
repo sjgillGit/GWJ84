@@ -21,7 +21,7 @@ func _can_perform_action() -> bool:
 	return can_be_performed;
 
 func _perform_action() -> void:
-	skill_box.deploy_perform()
+	skill_box.deploy_perform(deploy_cooldown)
 	current_cooldown = deploy_cooldown;
 	can_be_performed = false;
 	print("Turret deployed!");
