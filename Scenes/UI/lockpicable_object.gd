@@ -7,13 +7,16 @@ var close: bool = false
 var opened: bool = false
 var combination
 var won: bool
+@onready var interact_indication: Node3D = $interact_indication
 
 func _ready() -> void:
+	interact_indication.hide_ind()
 	GlobalSignals.enter_combination_objective_available.connect(Callable(self, "on_close_up"))
 	GlobalSignals.enter_combination_objective_unavailable.connect(Callable(self, "on_far_away"))
 	GlobalSignals.objective_completed.connect(Callable(self, "on_win"))
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Interact") && close == true && opened == false:
+		interact_indication.false_ind()
 		field_objective_base.start_objective_progress()
 		opened = true
 		lock.sequence = combination
@@ -21,11 +24,13 @@ func _input(event: InputEvent) -> void:
 		lock_layer.visible = true
 
 func on_close_up(objective):
+	interact_indication.show_ind()
 	opened = false
 	close = true
 	combination = objective.combination
 	
 func on_far_away(objective):
+	interact_indication.hide_ind()
 	lock.spin_spped = 0
 	opened = false
 	close = false

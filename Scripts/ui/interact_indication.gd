@@ -1,5 +1,11 @@
-extends Control
-@onready var input_name_lbl: Label = $button_show/input_name_lbl
+extends Node3D
+@onready var label_2: Label3D = $Label2
+@onready var button_show: Sprite3D = $button_show
 
-func indication_fill(button_visual:String):
-	input_name_lbl.text = button_visual
+func show_ind():
+	label_2.visible = true
+	button_show.visible = true
+
+func hide_ind():
+	label_2.visible = false
+	button_show.visible = false

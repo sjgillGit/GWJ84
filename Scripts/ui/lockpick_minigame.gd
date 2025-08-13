@@ -38,11 +38,10 @@ func _process(delta: float) -> void:
 func error():
 	for n in nail_parent.get_children():
 		n.unlight()
-	print("uwu")
 	var tween = get_tree().create_tween()
 	tween.tween_property(middle,"rotation_degrees",Vector3(0,0,0),0.1*step).set_trans(Tween.TRANS_CIRC)
 	step = 0
-	nail_parent.get_child(0).first()
+	if nail_parent.get_children().size() != 0: nail_parent.get_child(0).first()
 func next_step():
 	nail_parent.get_child(step).light_up()
 	step += 1
