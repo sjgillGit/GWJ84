@@ -2,6 +2,7 @@ extends Node3D
 class_name PlayerActions
 
 signal selected_action_changed(action: PlayerActionBase, index: int);
+@onready var skill_box: HBoxContainer = $"../CanvasLayer/skill_box"
 
 var actions: Array[PlayerActionBase];
 var current_action_index: int = 0;
@@ -29,12 +30,14 @@ func try_activate_current_action():
 	action._perform_action();
 
 func scroll_selection_action_up():
+	skill_box.control.scroll_down()
 	var next_index = current_action_index - 1;
 	if next_index <= 0:
 		next_index = actions.size() - 1;
 	update_selected_index(next_index);
 
 func scroll_selection_action_down():
+	skill_box.control.scroll_up()
 	var next_index = current_action_index + 1;
 	if next_index >= actions.size():
 		next_index = 0;

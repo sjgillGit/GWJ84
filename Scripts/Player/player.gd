@@ -55,7 +55,7 @@ func _physics_process(_delta: float) -> void:
 	var movement_velocity = movement_direction * move_speed;
 	if input != Vector2.ZERO:
 		mesh_root.look_at(global_position + Vector3(movement_direction.x, 0.0, movement_direction.z), Vector3.UP, true);
-		if Input.is_action_pressed("Sprint"):
+		if control.sprint:
 			movement_velocity *= sprint_multiplier;
 			state_changed.emit("Run", animations, 2)
 		else:
