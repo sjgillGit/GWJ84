@@ -2,11 +2,10 @@ extends Button
 @onready var main: Label = $MarginContainer/main
 @onready var sub: Label = $MarginContainer/sub
 @onready var sub_viewport: SubViewport = $MarginContainer/SubViewportContainer/SubViewport
-@onready var turret: Node3D =$MarginContainer/SubViewportContainer/SubViewport/Node3D/turret
+@onready var turret: StaticBody3D = $MarginContainer/SubViewportContainer/SubViewport/Node3D/turret
 @onready var gas: MeshInstance3D = $MarginContainer/SubViewportContainer/SubViewport/Node3D/gas
 @onready var goblin: Node3D = $MarginContainer/SubViewportContainer/SubViewport/Node3D/goblin
 @onready var node_3d: Node3D = $MarginContainer/SubViewportContainer/SubViewport/Node3D
-
 
 @onready var control: Panel = $"../../../.."
 var object

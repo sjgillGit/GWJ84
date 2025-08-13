@@ -3,6 +3,7 @@ var lock_radius = 0.394
 var sequence: Array = ["Z","left","right","down","up","left","right","down","up","P"]
 var spin_spped = 10
 var nail_spread: float
+var step: int = 0
 var start_angle = 180
 @onready var middle: Node3D = $SubViewportContainer/SubViewport/Camera3D/middle
 @onready var board: Node3D = $SubViewportContainer/SubViewport/Camera3D/board
@@ -28,3 +29,9 @@ func _process(delta: float) -> void:
 	if spin_spped != 0: board.rotation_degrees += Vector3(0,0,fmod((delta*spin_spped),360))
 	if spin_spped != 0: middle.rotation_degrees += Vector3(0,0,-fmod((delta*spin_spped),360))
 	#nail_parent.rotation_degrees += Vector3(0,0,fmod((delta*10),360))
+func error():
+	for n in nail_parent.get_children():
+		n.unlight()
+func next_step():
+	nail_parent.get_child(step).light_up()
+	step += 1

@@ -1,7 +1,7 @@
 extends Panel
 var smash_count:= 0
 @onready var gas: MeshInstance3D = $MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport/reward/gas
-@onready var turret: Node3D = $MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport/reward/turret
+@onready var turret: StaticBody3D = $MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport/reward/turret
 @onready var goblin: Node3D = $MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport/reward/goblin
 @onready var choose_separator: Control = $MarginContainer/VBoxContainer/choose_separator
 @onready var smash_button: Button = $smash_button
