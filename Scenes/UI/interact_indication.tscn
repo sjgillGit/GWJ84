@@ -21,6 +21,7 @@ grow_vertical = 2
 script = ExtResource("1_jl613")
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_top = 8.0
 offset_right = 46.0
 offset_bottom = 35.0
@@ -29,6 +30,7 @@ theme_override_font_sizes/font_size = 24
 text = "press"
 
 [node name="button_show" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 56.0
 offset_right = 98.0
 offset_bottom = 40.0

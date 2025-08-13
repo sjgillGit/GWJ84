@@ -4,6 +4,7 @@ var sequence: Array = ["Z","left","right","down","up","left","right","down","up"
 var spin_spped = 10
 var nail_spread: float
 var start_angle = 180
+@onready var middle: Node3D = $SubViewportContainer/SubViewport/Camera3D/middle
 @onready var board: Node3D = $SubViewportContainer/SubViewport/Camera3D/board
 const NAIL = preload("res://Scenes/UI/lockpick/nail.tscn")
 @onready var nail_parent: Node3D = $SubViewportContainer/SubViewport/Camera3D/board/nail_parent
@@ -25,4 +26,5 @@ func get_nail_position(angle:float):
 	
 func _process(delta: float) -> void:
 	if spin_spped != 0: board.rotation_degrees += Vector3(0,0,fmod((delta*spin_spped),360))
+	if spin_spped != 0: middle.rotation_degrees += Vector3(0,0,-fmod((delta*spin_spped),360))
 	#nail_parent.rotation_degrees += Vector3(0,0,fmod((delta*10),360))
