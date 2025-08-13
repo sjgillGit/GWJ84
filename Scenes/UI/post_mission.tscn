@@ -43,7 +43,7 @@ script = ExtResource("2_31x6l")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.911687, 0.402323, -0.0834428, -0.326121, 0.832067, 0.448675, 0.249942, -0.381839, 0.889791, 10.3396, 3.54818, 8.33115)
-light_energy = 3.0
+light_energy = 2.0
 light_indirect_energy = 5.202
 light_angular_distance = 35.45
 
@@ -62,8 +62,3 @@ offset_top = 32.0
 offset_right = -613.0
 offset_bottom = -37.0
 pivot_offset = Vector2(249.5, 289.5)
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
