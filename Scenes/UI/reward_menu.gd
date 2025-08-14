@@ -4,7 +4,6 @@ var smash_count:= 0
 @onready var turret: StaticBody3D = $MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport/reward/turret
 @onready var goblin: Node3D = $MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport/reward/goblin
 @onready var choose_separator: Control = $MarginContainer/VBoxContainer/choose_separator
-@onready var smash_button: Button = $smash_button
 @onready var show_reward: Control = $MarginContainer/VBoxContainer/show_reward
 @onready var smash_1: Label = $MarginContainer/VBoxContainer/separator/smash_1
 @onready var separator: Control = $MarginContainer/VBoxContainer/separator
@@ -22,12 +21,8 @@ var smash_count:= 0
 @onready var s_smash_3: AudioStreamPlayer = $Control/smash3
 @onready var s_smash_4: AudioStreamPlayer = $Control/smash4
 @onready var woosh: AudioStreamPlayer = $Control/woosh
-
-
-
-
 var values = [20,-15,-20,25,17,-13]
-func _on_smash_button_pressed() -> void:
+func smash() -> void:
 	match smash_count:
 		0:
 			s_smash.play()
@@ -47,8 +42,7 @@ func _on_smash_button_pressed() -> void:
 			var tween = get_tree().create_tween().set_parallel(true)
 			#tween.tween_property(self,"position",origin_pos + Vector2(-10,7),0.5).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 			tween.tween_property(self,"scale",Vector2(1.08,1.08),0.5).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
-			smash_button.visible = false
-		3:
+		4:
 			woosh.play()
 			var tween = get_tree().create_tween().set_parallel(true)
 			tween.tween_property(self,"scale",Vector2(0.01,0.01),1).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
@@ -56,7 +50,19 @@ func _on_smash_button_pressed() -> void:
 			self.queue_free()
 	smash_count += 1
 
+func _input(event: InputEvent) -> void:
+	if smash_count == 3:
+		if event.is_action_pressed("option_1"):
+			choose.chosen()
+		elif event.is_action_pressed("option_2"):
+			choose_2.chosen()
+		elif event.is_action_pressed("option_3"):
+			choose_3.chosen()
+	else:
+		if event.is_action_pressed("PerformAction"):
+			smash()
 func reward_chosen(number_chosen:int,object):
+	smash_count += 1
 	match object:
 		"gas":
 			gas.visible = true
@@ -82,7 +88,6 @@ func reward_chosen(number_chosen:int,object):
 	gpu_particles_2d_2.emitting = true
 	await tween.finished
 	choose_separator.visible = false
-	smash_button.visible = true
 
 func smash_me(label: Label,reward:Button):
 	reward.scale = Vector2(0.01,0.01)

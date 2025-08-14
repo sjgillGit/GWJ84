@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://bn6383273wrbo"]
+[gd_scene load_steps=46 format=4 uid="uid://bn6383273wrbo"]
 
 [ext_resource type="Theme" uid="uid://bru454lvs5pxy" path="res://Assets/ui/menu_green.tres" id="1_hj23c"]
 [ext_resource type="Script" uid="uid://cnamfmtci7tx8" path="res://Scripts/ui/choose_reward_window.gd" id="2_3avek"]
@@ -16,7 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://bcl6o1p4hto41" path="res://Assets/ui/goblin/Goblin_G_eyes.png" id="16_tfxd8"]
 [ext_resource type="Texture2D" uid="uid://jx13se0e11x" path="res://Assets/ui/goblin/Goblin_g_hair.png" id="17_4vqk0"]
 [ext_resource type="Texture2D" uid="uid://gkd40ygyvw4i" path="res://Assets/ui/goblin/Goblin_g_head.png" id="18_1pe21"]
+[ext_resource type="Theme" uid="uid://dr6wcdv73nca2" path="res://Assets/ui/menu.tres" id="18_hj23c"]
 [ext_resource type="Texture2D" uid="uid://dc4xvtvkouxka" path="res://Assets/ui/goblin/Goblin_G_coller.png" id="19_c6d47"]
+[ext_resource type="Texture2D" uid="uid://btyuqtvr7acjq" path="res://Assets/ui/button_option_1.png" id="19_i4hno"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytej1"]
 resource_name = "Material.001"
@@ -617,6 +619,13 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kex2p"]
+texture = ExtResource("19_i4hno")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
 [node name="new_turret2" type="Button"]
 custom_minimum_size = Vector2(405, 97)
 offset_left = 28.0
@@ -624,6 +633,7 @@ offset_top = 43.0
 offset_right = 433.0
 offset_bottom = 140.0
 pivot_offset = Vector2(202.5, 43.5)
+mouse_filter = 2
 theme = ExtResource("1_hj23c")
 script = ExtResource("2_3avek")
 
@@ -650,6 +660,7 @@ size = Vector2i(250, 250)
 render_target_update_mode = 4
 
 [node name="Node3D" type="Node3D" parent="MarginContainer/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -24.9568, 0)
 
 [node name="Camera3D" type="Camera3D" parent="MarginContainer/SubViewportContainer/SubViewport/Node3D"]
 transform = Transform3D(-0.671721, -0.291406, 0.681083, 3.68458e-09, 0.919383, 0.393364, -0.740804, 0.264231, -0.617569, -10.4732, 2.4716, 2.97865)
@@ -657,6 +668,7 @@ current = true
 
 [node name="turret" parent="MarginContainer/SubViewportContainer/SubViewport/Node3D" instance=ExtResource("3_2d2up")]
 transform = Transform3D(-0.251276, 0, 1.68133, 0, 1.7, 0, -1.68133, 0, -0.251276, -12.596, -0.110232, 5.194)
+visible = false
 
 [node name="gas" type="MeshInstance3D" parent="MarginContainer/SubViewportContainer/SubViewport/Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9392, 1.38575, 6.15122)
@@ -1265,4 +1277,14 @@ theme_override_font_sizes/font_size = 20
 text = "BONUS DESCRIPTION"
 horizontal_alignment = 2
 
-[connection signal="pressed" from="." to="." method="_on_pressed"]
+[node name="numb_lbl" type="Label" parent="."]
+layout_mode = 0
+offset_left = -106.0
+offset_right = -14.0
+offset_bottom = 97.0
+theme = ExtResource("18_hj23c")
+theme_override_font_sizes/font_size = 66
+theme_override_styles/normal = SubResource("StyleBoxTexture_kex2p")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 2

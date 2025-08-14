@@ -786,24 +786,27 @@ layout_mode = 2
 [node name="choose" parent="MarginContainer/VBoxContainer/choose_separator" instance=ExtResource("7_dbk6b")]
 visible = false
 layout_mode = 2
-offset_left = 31.0
-offset_right = 436.0
+offset_left = 77.0
+offset_right = 482.0
+pivot_offset = Vector2(156, 43.5)
 
 [node name="choose2" parent="MarginContainer/VBoxContainer/choose_separator" instance=ExtResource("7_dbk6b")]
 visible = false
 layout_mode = 0
-offset_left = 31.0
+offset_left = 77.0
 offset_top = 148.0
-offset_right = 436.0
+offset_right = 482.0
 offset_bottom = 245.0
+pivot_offset = Vector2(156, 43.5)
 
 [node name="choose3" parent="MarginContainer/VBoxContainer/choose_separator" instance=ExtResource("7_dbk6b")]
 visible = false
 layout_mode = 0
-offset_left = 31.0
+offset_left = 77.0
 offset_top = 253.0
-offset_right = 436.0
+offset_right = 482.0
 offset_bottom = 350.0
+pivot_offset = Vector2(156, 43.5)
 
 [node name="new sepatator" type="Control" parent="MarginContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -871,22 +874,23 @@ size = Vector2i(550, 350)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 0.919383, 0.393364, 0, -0.393364, 0.919383, 0, 2.57759, 2.89375)
+transform = Transform3D(1, 0, 0, 0, 0.919383, 0.393364, 0, -0.393364, 0.919383, 0, -56.437, 3.48735)
 
 [node name="reward" type="Node3D" parent="MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -44.4649, 0)
 
 [node name="gas" type="MeshInstance3D" parent="MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport/reward"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32067, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.1554, 0)
 visible = false
 mesh = SubResource("ArrayMesh_2pnfp")
 skeleton = NodePath("")
 
 [node name="turret" parent="MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport/reward" instance=ExtResource("8_didp5")]
-transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, -0.094682, -0.199101)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, -15.171, -0.199101)
 visible = false
 
 [node name="goblin" type="Node3D" parent="MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport/reward"]
-transform = Transform3D(1.69885, 0, 0.0625315, -0.0115757, 1.67062, 0.314487, -0.0614507, -0.3147, 1.66949, 0.1941, -1.23036, 0.466197)
+transform = Transform3D(1.69885, 0, 0.0625315, -0.0115757, 1.67062, 0.314487, -0.0614507, -0.3147, 1.66949, 0.1941, -15.5279, -0.455641)
 visible = false
 
 [node name="Skeleton3D" type="Skeleton3D" parent="MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport/reward/goblin"]
@@ -1501,15 +1505,6 @@ process_material = SubResource("ParticleProcessMaterial_jbpmu")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.7
 
-[node name="smash_button" type="Button" parent="."]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = -3.0
-offset_top = -8.0
-offset_right = 502.0
-offset_bottom = 582.0
-flat = true
-
 [node name="Control" type="Control" parent="."]
 anchors_preset = 0
 
@@ -1532,5 +1527,3 @@ bus = &"SFX"
 [node name="woosh" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("30_iyuv5")
 bus = &"SFX"
-
-[connection signal="pressed" from="smash_button" to="." method="_on_smash_button_pressed"]

@@ -8,18 +8,20 @@
 script = ExtResource("1_jl613")
 
 [node name="Label2" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.294403, 4.75866, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.294403, 2.31242, 0)
+pixel_size = 0.003
 billboard = 2
+modulate = Color(1, 1, 1, 0)
+outline_modulate = Color(0, 0, 0, 0)
 text = "press  E  to interact"
 font = ExtResource("1_tqhqu")
 font_size = 128
 outline_size = 6
 
 [node name="button_show" type="Sprite3D" parent="."]
-transform = Transform3D(0.271834, 0, 0, 0, 0.271834, 0, 0, 0, 0.271834, 0.294322, 4.75972, 0)
-visible = false
-offset = Vector2(-60.04, 3)
-pixel_size = 0.04
+transform = Transform3D(0.271834, 0, 0, 0, 0.271834, 0, 0, 0, 0.271834, 0.294322, 2.31348, 0)
+offset = Vector2(-71.14, 5.335)
+modulate = Color(1, 1, 1, 0)
+pixel_size = 0.02
 billboard = 2
 texture = ExtResource("2_jl613")

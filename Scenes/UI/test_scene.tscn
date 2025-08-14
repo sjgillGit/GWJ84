@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b17prwi2b3x1f"]
+[gd_scene load_steps=10 format=3 uid="uid://b17prwi2b3x1f"]
 
 [ext_resource type="PackedScene" uid="uid://dko2mapcxs0y3" path="res://Scenes/Player/Player.tscn" id="1_q6fdj"]
 [ext_resource type="PackedScene" uid="uid://chxvqa83wi22n" path="res://Scenes/Turrets/gun_turret.tscn" id="2_r5l72"]
-[ext_resource type="ArrayMesh" uid="uid://cubumbhb61vqo" path="res://Scenes/turret/gas_emmitor.tres" id="3_olygr"]
-[ext_resource type="PackedScene" uid="uid://ub1qjjsm3f6m" path="res://Scenes/UI/lockpick/lockpicable.tscn" id="4_lp5fo"]
+[ext_resource type="PackedScene" uid="uid://cgqxhlqkv4776" path="res://Scenes/3dstuff/treasure_chest.tscn" id="3_i8snt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q6fdj"]
 
@@ -59,11 +58,7 @@ transform = Transform3D(1, 0, 0, 0, 0.010221, 0.999948, 0, -0.999948, 0.010221, 
 light_color = Color(0.272489, 0.646092, 0.214691, 1)
 spot_angle = 54.5883
 
-[node name="object" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 17.9816, 1.40096, -13.5577)
-mesh = ExtResource("3_olygr")
-
-[node name="lockpicable" parent="object" instance=ExtResource("4_lp5fo")]
-speed = 20.0
+[node name="treasure chest" parent="." instance=ExtResource("3_i8snt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6114, 0.990946, -13.6223)
 
 [editable path="Player"]

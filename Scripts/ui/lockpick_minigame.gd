@@ -8,6 +8,8 @@ var start_angle = 150
 @onready var middle: Node3D = $SubViewportContainer/SubViewport/middle
 @onready var nail_parent: Node3D = $SubViewportContainer/SubViewport/board/nail_parent
 @onready var board: Node3D = $SubViewportContainer/SubViewport/board
+@onready var error_sfx: AudioStreamPlayer = $error
+@onready var next_step_sfx: AudioStreamPlayer = $next_step
 
 const NAIL = preload("res://Scenes/UI/lockpick/nail.tscn")
 func start(speed):
@@ -35,7 +37,9 @@ func get_nail_position(angle:float):
 	
 func _process(delta: float) -> void:
 	if spin_spped != 0: board.rotation_degrees += Vector3(0,0,-fmod((delta*spin_spped),360))
+	
 func error():
+	error_sfx.play()
 	for n in nail_parent.get_children():
 		n.unlight()
 	var tween = get_tree().create_tween()
@@ -43,6 +47,7 @@ func error():
 	step = 0
 	if nail_parent.get_children().size() != 0: nail_parent.get_child(0).first()
 func next_step():
+	next_step_sfx.play()
 	nail_parent.get_child(step).light_up()
 	step += 1
 	var tween = get_tree().create_tween()

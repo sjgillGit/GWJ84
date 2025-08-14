@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmmhya010lr13"]
+[gd_scene load_steps=7 format=3 uid="uid://bmmhya010lr13"]
 
 [ext_resource type="Script" uid="uid://3r3bqm1uke02" path="res://Scripts/ui/lockpick_minigame.gd" id="1_5sqr4"]
 [ext_resource type="PackedScene" uid="uid://cw7vhp8hb4jck" path="res://Scenes/UI/lockpick/lock.tscn" id="2_5sqr4"]
 [ext_resource type="PackedScene" uid="uid://sv8rebfvyek4" path="res://Scenes/UI/lockpick/board_alternative.tscn" id="2_6h58e"]
 [ext_resource type="PackedScene" uid="uid://dofjwyc7vxaip" path="res://Assets/ui/lockpick/wrench_(1).tscn" id="5_6h58e"]
+[ext_resource type="AudioStream" uid="uid://buulk7mxubbp8" path="res://Assets/ui/audio/Vent Bar GWJ 84 - squeaky screw B.wav" id="5_lta54"]
+[ext_resource type="AudioStream" uid="uid://ds8hb7itfhgt0" path="res://Assets/ui/audio/Vent Bar GWJ 84 - wrong button.wav" id="6_a35bp"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -51,3 +53,12 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.00386377, -0.131581, 
 
 [node name="wrench (1)" parent="SubViewportContainer/SubViewport/middle" instance=ExtResource("5_6h58e")]
 transform = Transform3D(0, 3.49691e-09, -0.08, 0.08, -3.49691e-09, 0, -3.49691e-09, -0.08, -3.49691e-09, -0.438136, -0.00158107, 0)
+
+[node name="next_step" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_lta54")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="error" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_a35bp")
+bus = &"SFX"

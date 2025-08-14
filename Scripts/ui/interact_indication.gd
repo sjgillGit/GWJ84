@@ -3,9 +3,11 @@ extends Node3D
 @onready var button_show: Sprite3D = $button_show
 
 func show_ind():
-	label_2.visible = true
-	button_show.visible = true
+	label_2.modulate = Color(1,1,1,1)
+	label_2.outline_modulate = Color(1,1,1,1)
+	button_show.modulate = Color(1,1,1,1)
 
 func hide_ind():
-	label_2.visible = false
-	button_show.visible = false
+	label_2.modulate = Color(1,1,1,0)
+	label_2.outline_modulate = Color(1,1,1,0)
+	button_show.modulate = Color(1,1,1,0)
