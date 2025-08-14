@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ctirhf1835hbk" path="res://Assets/ui/lockpick/Nail.glb" id="1_gu45n"]
 [ext_resource type="Script" uid="uid://djjput7hciphv" path="res://Scenes/UI/lockpick/nail.gd" id="2_4jckc"]
-[ext_resource type="Texture2D" uid="uid://c8gfjs1udbume" path="res://Assets/ui/symbols/P.png" id="3_4jckc"]
+[ext_resource type="Texture2D" uid="uid://c8gfjs1udbume" path="res://Assets/ui/symbols/80.png" id="3_4jckc"]
 
 [node name="Nail" instance=ExtResource("1_gu45n")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)

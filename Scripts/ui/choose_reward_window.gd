@@ -6,11 +6,13 @@ extends Button
 @onready var gas: MeshInstance3D = $MarginContainer/SubViewportContainer/SubViewport/Node3D/gas
 @onready var goblin: Node3D = $MarginContainer/SubViewportContainer/SubViewport/Node3D/goblin
 @onready var node_3d: Node3D = $MarginContainer/SubViewportContainer/SubViewport/Node3D
+@onready var numb_lbl: Label = $numb_lbl
 
 @onready var control: Panel = $"../../../.."
 var object
 var number:int
 func button_set(_number:int,main_text,sub_text,type,_object):
+	numb_lbl.text = str(_number+1) 
 	object = _object
 	number = _number
 	node_3d.position.x -= 21 * number
@@ -26,5 +28,5 @@ func button_set(_number:int,main_text,sub_text,type,_object):
 			goblin.visible = true
 	if type == "curse":
 		self.theme = load("res://Assets/ui/menu_curse.tres")
-func _on_pressed() -> void:
+func chosen() -> void:
 	control.reward_chosen(number,object)

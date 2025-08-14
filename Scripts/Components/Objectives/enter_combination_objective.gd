@@ -15,14 +15,12 @@ func _ready() -> void:
 	set_process_unhandled_key_input(false);
 	if Engine.is_editor_hint():
 		return;
-	generate_combination();
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event is not InputEventKey || !event.is_pressed():
 		return;
 	event = event as InputEventKey;
 	var next_value = combination[current_input_idx];
-	print(next_value,"   ",event.keycode," ",current_input_idx)
 	if event.keycode != next_value:
 		current_input_idx = 0;
 		player_input_error.emit();
@@ -37,6 +35,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 func _on_player_entered():
 	GlobalSignals.enter_combination_objective_available.emit(self);
+
 
 func _on_player_left():
 	GlobalSignals.enter_combination_objective_unavailable.emit(self);

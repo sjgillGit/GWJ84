@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bv7v484uv5hjr"]
+[gd_scene load_steps=6 format=3 uid="uid://bv7v484uv5hjr"]
 
 [ext_resource type="Script" uid="uid://7inut645ftmo" path="res://Scripts/ui/rob_minigame.gd" id="1_bmsoc"]
+[ext_resource type="PackedScene" uid="uid://cnmo3p6m0xf31" path="res://Scenes/3dstuff/rectangle.tscn" id="2_8c581"]
+[ext_resource type="PackedScene" uid="uid://l3sg0dgw3oyl" path="res://Scenes/3dstuff/wrench_(2).tscn" id="3_x43od"]
+[ext_resource type="AudioStream" uid="uid://68kq1k2nwmof" path="res://Assets/ui/audio/Vent Bar GWJ 84 - big light switch click.wav" id="4_bj78a"]
+[ext_resource type="AudioStream" uid="uid://ds8hb7itfhgt0" path="res://Assets/ui/audio/Vent Bar GWJ 84 - wrong button.wav" id="4_x43od"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -25,28 +29,29 @@ size = Vector2i(1300, 700)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0196891, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0120778, 0.0141553, 1.2845)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0120778, 0.0141553, 2.1303)
+visible = false
 light_energy = 2.0
 
 [node name="nail_parent" type="Node3D" parent="SubViewportContainer/SubViewport/Camera3D"]
 transform = Transform3D(1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, 0.007, 0.01, 0.957)
 
-[node name="step" type="Button" parent="."]
-layout_mode = 0
-offset_right = 100.0
-offset_bottom = 31.0
-text = "step"
+[node name="rectangle" parent="SubViewportContainer/SubViewport/Camera3D" instance=ExtResource("2_8c581")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.629736, -0.209755, -1.1942)
 
-[node name="error" type="Button" parent="."]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 0
-offset_top = 38.0
-offset_right = 48.0
-offset_bottom = 69.0
-text = "error"
+[node name="rectangle2" parent="SubViewportContainer/SubViewport/Camera3D" instance=ExtResource("2_8c581")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00843, -0.209755, -1.1942)
 
-[connection signal="pressed" from="step" to="." method="_on_step_pressed"]
-[connection signal="pressed" from="error" to="." method="_on_error_pressed"]
+[node name="Wrench" parent="SubViewportContainer/SubViewport/Camera3D" instance=ExtResource("3_x43od")]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, -0.523, -0.586, -0.584)
+
+[node name="next_step" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bj78a")
+volume_db = 10.0
+bus = &"SFX"
+
+[node name="error" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_x43od")
+bus = &"SFX"

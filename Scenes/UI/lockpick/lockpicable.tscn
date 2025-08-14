@@ -5,11 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://bmmhya010lr13" path="res://Scenes/UI/lockpick_minigame.tscn" id="3_ug3wi"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_olygr"]
-radius = 3.0
+radius = 4.0
 
 [node name="lockpicable" type="Node3D"]
 script = ExtResource("1_2wnir")
-speed = 10.0
 
 [node name="FieldObjectiveBase" type="Node3D" parent="." groups=["FieldObjective"]]
 script = ExtResource("2_ug3wi")
