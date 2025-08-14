@@ -16,12 +16,11 @@ extends Panel
 @onready var time: HBoxContainer = $MarginContainer/VBoxContainer/time
 @onready var towers_placed: HBoxContainer = $MarginContainer/VBoxContainer/towers_placed
 @onready var enemies_killed: HBoxContainer = $MarginContainer/VBoxContainer/enemies_killed
+@onready var pip: AudioStreamPlayer = $pip
 var sec_temp: float = 0
 var min_temp: float = 0
 func _ready() -> void:
 	timer.start()
-	await timer.timeout
-	await timer.timeout
 	await timer.timeout
 	var tween = get_tree().create_tween()
 	tween.tween_property(time,"modulate",Color(1,1,1,1),0.5)
@@ -38,11 +37,12 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if couting_up: time_count(delta)
-	if enemies_count: 
+	if enemies_number != enem_temp && enemies_count: 
 		enem_temp = count_up(delta,enem_temp,enemies_number,enemies_lbl,enemies_count)
-	if turrets_count: 
+	if turret_temp != turrets_number && turrets_count: 
 		turret_temp = count_up(delta,turret_temp,turrets_number,turrets_lbl,turrets_count)
 func time_count(delta):
+	pip.play()
 	sec_temp = min(sec_temp+delta*(time_seconds/3),time_seconds)
 	min_temp = min(min_temp+delta*(time_minutes/3),time_minutes)
 	time_lbl.text = "%02d:%02d" % [min_temp,sec_temp]
@@ -51,6 +51,7 @@ func time_count(delta):
 		time_count_finished(time_lbl)
 		
 func count_up(delta,temp,_final,text_box,_iffer):
+	pip.play()
 	text_box.text = str(int(temp))
 	temp = min(temp+delta*(_final/3),_final)
 	if temp == _final:

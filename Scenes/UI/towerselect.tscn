@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d042hsexsntwv"]
+[gd_scene load_steps=7 format=3 uid="uid://d042hsexsntwv"]
 
 [ext_resource type="Script" uid="uid://cmsfmt20kf3s5" path="res://Scenes/UI/towerselect.gd" id="1_uyf6x"]
 [ext_resource type="Texture2D" uid="uid://dq8knos66o8ki" path="res://Assets/ui/textframe.png" id="2_uhy2l"]
+[ext_resource type="Texture2D" uid="uid://d2tjdrsynqciv" path="res://Assets/ui/slider_grabber.png" id="2_uyf6x"]
 [ext_resource type="FontFile" uid="uid://b2d7ii78bv5cw" path="res://Assets/font/Long_Shot.ttf" id="4_3ldct"]
 [ext_resource type="Texture2D" uid="uid://mtr22qnov5f" path="res://Assets/ui/skillicon.png" id="5_oiurf"]
 
@@ -15,6 +16,7 @@ anchors_preset = 0
 offset_right = 42.0
 offset_bottom = 87.0
 script = ExtResource("1_uyf6x")
+action_icon = ExtResource("2_uyf6x")
 
 [node name="TextureButton" type="Button" parent="."]
 custom_minimum_size = Vector2(42, 42)
@@ -28,7 +30,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_tj54v")
 expand_icon = true
 
 [node name="TextureRect" type="TextureRect" parent="TextureButton"]
-modulate = Color(0, 0, 0, 1)
 show_behind_parent = true
 custom_minimum_size = Vector2(42, 42)
 layout_mode = 0
@@ -65,16 +66,3 @@ theme_override_font_sizes/font_size = 27
 text = "30.9"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="TextureRect" type="NinePatchRect" parent="."]
-visible = false
-layout_mode = 0
-offset_left = -5.0
-offset_top = -6.0
-offset_right = 47.0
-offset_bottom = 94.0
-texture = ExtResource("2_uhy2l")
-patch_margin_left = 10
-patch_margin_top = 10
-patch_margin_right = 9
-patch_margin_bottom = 9
