@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgqxhlqkv4776"]
+[gd_scene load_steps=8 format=3 uid="uid://cgqxhlqkv4776"]
 
 [ext_resource type="PackedScene" uid="uid://gpk77oe1cbvc" path="res://Assets/Models/chest/treasure chest.glb" id="1_fi0sf"]
 [ext_resource type="Script" uid="uid://dcv6sqhe1m8e4" path="res://Scenes/3dstuff/treasure_chest.gd" id="2_bihi5"]
 [ext_resource type="PackedScene" uid="uid://ub1qjjsm3f6m" path="res://Scenes/UI/lockpick/lockpicable.tscn" id="2_mi2mm"]
 [ext_resource type="PackedScene" uid="uid://crcyrd566npe8" path="res://Scenes/UI/interact_indication.tscn" id="4_7jop6"]
 [ext_resource type="AudioStream" uid="uid://bm4oudxtvnv56" path="res://Assets/ui/audio/Vent Bar GWJ 84 - lock open.wav" id="5_au4no"]
-[ext_resource type="PackedScene" uid="uid://7ypegi6l54k0" path="res://Scenes/UI/reward_menu.tscn" id="6_nwopx"]
 [ext_resource type="AudioStream" uid="uid://pijbr23ynv0o" path="res://Assets/ui/audio/menu woosh.wav" id="7_redbf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jop6"]
@@ -13,6 +12,7 @@ size = Vector3(0.817505, 0.528084, 0.423584)
 
 [node name="treasure chest" instance=ExtResource("1_fi0sf")]
 script = ExtResource("2_bihi5")
+speed = 100.0
 
 [node name="Cube" parent="." index="0"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -37,8 +37,6 @@ bus = &"SFX"
 
 [node name="reward_choose" type="CanvasLayer" parent="." index="6"]
 visible = false
-
-[node name="Control" parent="reward_choose" index="0" instance=ExtResource("6_nwopx")]
 
 [node name="woosh" type="AudioStreamPlayer" parent="." index="7"]
 stream = ExtResource("7_redbf")

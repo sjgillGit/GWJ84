@@ -1,17 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://ub1qjjsm3f6m"]
+[gd_scene load_steps=5 format=3 uid="uid://bsm1p6nxcrmcm"]
 
-[ext_resource type="Script" uid="uid://olctk281bkdw" path="res://Scenes/UI/lockpicable_object.gd" id="1_2wnir"]
-[ext_resource type="Script" uid="uid://j1hh82g70nrw" path="res://Scripts/Components/Objectives/enter_combination_objective.gd" id="2_ug3wi"]
-[ext_resource type="PackedScene" uid="uid://bmmhya010lr13" path="res://Scenes/UI/lockpick_minigame.tscn" id="3_ug3wi"]
+[ext_resource type="Script" uid="uid://dj7meocloc86r" path="res://Scenes/UI/lockpick/robbable_object.gd" id="1_4prv8"]
+[ext_resource type="Script" uid="uid://j1hh82g70nrw" path="res://Scripts/Components/Objectives/enter_combination_objective.gd" id="2_eldgd"]
+[ext_resource type="PackedScene" uid="uid://bv7v484uv5hjr" path="res://Scenes/UI/rob_minigame.tscn" id="3_4prv8"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_olygr"]
 radius = 4.0
 
-[node name="lockpicable" type="Node3D"]
-script = ExtResource("1_2wnir")
+[node name="robbable" type="Node3D"]
+script = ExtResource("1_4prv8")
 
 [node name="FieldObjectiveBase" type="Node3D" parent="."]
-script = ExtResource("2_ug3wi")
+script = ExtResource("2_eldgd")
 metadata/_custom_type_script = "uid://bs8ndwpx6qqw4"
 
 [node name="Area3D" type="Area3D" parent="FieldObjectiveBase"]
@@ -19,10 +19,10 @@ metadata/_custom_type_script = "uid://bs8ndwpx6qqw4"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FieldObjectiveBase/Area3D"]
 shape = SubResource("SphereShape3D_olygr")
 
-[node name="lock_layer" type="CanvasLayer" parent="."]
+[node name="rob_layer" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="lock" parent="lock_layer" instance=ExtResource("3_ug3wi")]
+[node name="robbery" parent="rob_layer" instance=ExtResource("3_4prv8")]
 
 [connection signal="player_input_error" from="FieldObjectiveBase" to="." method="_on_field_objective_base_player_input_error"]
 [connection signal="player_input_made_progress" from="FieldObjectiveBase" to="." method="_on_field_objective_base_player_input_made_progress"]

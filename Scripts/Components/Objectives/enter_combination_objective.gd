@@ -15,7 +15,6 @@ func _ready() -> void:
 	set_process_unhandled_key_input(false);
 	if Engine.is_editor_hint():
 		return;
-	generate_combination();
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event is not InputEventKey || !event.is_pressed():

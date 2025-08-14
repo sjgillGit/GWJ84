@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://b17prwi2b3x1f"]
+[gd_scene load_steps=11 format=3 uid="uid://b17prwi2b3x1f"]
 
 [ext_resource type="PackedScene" uid="uid://dko2mapcxs0y3" path="res://Scenes/Player/Player.tscn" id="1_q6fdj"]
 [ext_resource type="PackedScene" uid="uid://chxvqa83wi22n" path="res://Scenes/Turrets/gun_turret.tscn" id="2_r5l72"]
 [ext_resource type="PackedScene" uid="uid://cgqxhlqkv4776" path="res://Scenes/3dstuff/treasure_chest.tscn" id="3_i8snt"]
+[ext_resource type="PackedScene" uid="uid://0ejdu0l0x56m" path="res://Scenes/3dstuff/bank.tscn" id="4_olygr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q6fdj"]
 
@@ -59,6 +60,10 @@ light_color = Color(0.272489, 0.646092, 0.214691, 1)
 spot_angle = 54.5883
 
 [node name="treasure chest" parent="." instance=ExtResource("3_i8snt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6114, 0.990946, -13.6223)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.7148, 0.88412, -7.78796)
+speed = -10.0
+
+[node name="bank" parent="." instance=ExtResource("4_olygr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5574, 0.941281, 20.6608)
 
 [editable path="Player"]

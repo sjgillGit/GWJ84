@@ -1,13 +1,18 @@
 extends Node3D
-@export var speed: float
-@onready var lockpicable: Node3D = $lockpicable
+@export var level: int
+@onready var robbable: Node3D = $robbable
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var interact_indication: Node3D = $interact_indication
 @onready var lock_clock: AudioStreamPlayer = $lock_clock
 @onready var reward_choose: CanvasLayer = $reward_choose
 @onready var woosh: AudioStreamPlayer = $woosh
 const REWARD_MENU = preload("res://Scenes/UI/reward_menu.tscn")
-func _on_lockpicable_win() -> void:
+
+func _ready() -> void:
+	interact_indication.hide_ind()
+	robbable.level = level
+	robbable.start()
+func _on_robbable_win() -> void:
 	animation_player.play("opening")
 	lock_clock.play()
 	var rewards = REWARD_MENU.instantiate()
@@ -20,7 +25,3 @@ func _on_lockpicable_win() -> void:
 	var tween = get_tree().create_tween().set_parallel(true)
 	woosh.play()
 	tween.tween_property(rewards,"scale",Vector2(1,1),0.5).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
-func _ready() -> void:
-	lockpicable.speed = speed
-	lockpicable.start()
-	interact_indication.hide_ind()
