@@ -16,8 +16,6 @@ var neighbors
 func _ready():
 	begin_patrol_position = global_position
 	current_target = end_patrol_position.global_position
-	nav.target_desired_distance = 0.5
-	nav.path_desired_distance = 0.5
 	state = PatrolRatState.new(self)
 	$EntityHealthHandler.entity_died.connect(_on_death)
 
@@ -43,20 +41,11 @@ func get_separation_force():
 	separation_force = separation_force.normalized() *speed
 	return separation_force
 
-
-func move_with_navmesh(delta,target_position):
-	var direction = Vector3()
-	# Navigation & movement
-	nav.target_position = target_position
-	direction = nav.get_next_path_position() - global_position
-	direction = direction.normalized()
-	velocity = velocity.lerp(direction * speed, acceleration * delta)
-	move_and_slide()
-
 func patrol_behaviour(delta):
 	boid_calculation((current_target - global_position).normalized() * speed,delta)
+	if abs(current_target.x + current_target.z - global_position.x - global_position.z) < 2:
+		flip_patrol_target()
 	move_and_slide()
-
 
 func boid_calculation(seek_force,delta):
 	var separation_force = get_separation_force()
@@ -72,15 +61,10 @@ func boid_calculation(seek_force,delta):
 
 func chase_behaviour(delta):
 	boid_calculation((player.global_position - global_position).normalized()*speed,delta)
-	move_and_slide()
 	if (player.global_position - global_position).length() < 5 and can_attack:
 		player.take_damage(attack_damage)
 		can_attack = false
 		$cooldown_timer.start()
-
-func attack_behaviour(delta):
-	move_and_slide()
-
 
 func get_alignment_force():
 	var avg_velocity = Vector3.ZERO
@@ -93,18 +77,15 @@ func get_alignment_force():
 		avg_velocity =  (avg_velocity.normalized()*speed) - velocity
 	return avg_velocity
 
-
 func swarm_behaviour(delta):
 	boid_calculation((leader.global_position - global_position).normalized() * speed,delta)
 	move_and_slide()
-
-func _on_navigation_agent_3d_navigation_finished():
-	state.on_navigation_agent_3d_navigation_finished()
 
 func _on_player_detector_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	state = ChaseRatState.new(self)
 	current_target = body.global_position
 	player = body
+	velocity = Vector3.ZERO
 
 func start_in_swarm_status(assigned_leader):
 	state = SwarmRatState.new(self)
@@ -129,13 +110,3 @@ func _on_death():
 		new_leader = neighbors[0]
 		new_leader.start_in_leader_status()
 	killed.emit(self,new_leader)
-
-
-#func _on_rat_detector_body_entered(body):
-#	if body != self and neighbors.has(body):
-#		neighbors.append(body)
-#
-#
-#func _on_rat_detector_body_exited(body):
-#	if neighbors.has(body):
-#		neighbors.erase(body)

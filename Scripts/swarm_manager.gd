@@ -32,7 +32,7 @@ func get_neighbors(radius,rat):
 	return neighbors
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var count =0 
-var max_count = 3
+var max_count = 4
 func _physics_process(delta):
 	count +=1
 	spatial_hash.clear()

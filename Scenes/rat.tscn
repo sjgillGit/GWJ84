@@ -12,12 +12,11 @@ radius = 10.0
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_qaslg"]
 length = 2.97685
 
-[node name="rat" type="CharacterBody3D" node_paths=PackedStringArray("nav") groups=["Entity"]]
+[node name="rat" type="CharacterBody3D" groups=["Entity"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0745, 0)
 collision_layer = 4
-collision_mask = 7
+collision_mask = 3
 script = ExtResource("1_uth6r")
-nav = NodePath("NavigationAgent3D")
 
 [node name="player_detector" type="Area3D" parent="."]
 collision_layer = 0
@@ -25,14 +24,6 @@ collision_layer = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player_detector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.301025, 0, 0)
 shape = SubResource("SphereShape3D_qaslg")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_height_offset = -3.0
-navigation_layers = 2
-simplify_path = true
-avoidance_enabled = true
-avoidance_mask = 6
-debug_enabled = true
 
 [node name="attack_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -58,6 +49,5 @@ transform = Transform3D(1, 0, 0, 0, 0.0039096, -0.999992, 0, 0.999992, 0.0039096
 shape = SubResource("SeparationRayShape3D_qaslg")
 
 [connection signal="body_shape_entered" from="player_detector" to="." method="_on_player_detector_body_shape_entered"]
-[connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
 [connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="cooldown_timer" to="." method="_on_cooldown_timer_timeout"]
