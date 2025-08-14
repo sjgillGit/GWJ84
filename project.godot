@@ -30,6 +30,10 @@ settings/stdout/verbose_stdout=true
 
 enabled=PackedStringArray("res://addons/proton_scatter/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 MoveLeft={
