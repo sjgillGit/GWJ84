@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dko2mapcxs0y3" path="res://Scenes/Player/Player.tscn" id="1_q6fdj"]
 [ext_resource type="PackedScene" uid="uid://chxvqa83wi22n" path="res://Scenes/Turrets/gun_turret.tscn" id="2_r5l72"]
-[ext_resource type="ArrayMesh" uid="uid://cubumbhb61vqo" path="res://Scenes/turret/gas_emmitor.tres" id="3_olygr"]
+[ext_resource type="ArrayMesh" uid="uid://iqwjl88fi2xg" path="res://Scenes/turret/gas_emmitor.tres" id="3_olygr"]
 [ext_resource type="PackedScene" uid="uid://ub1qjjsm3f6m" path="res://Scenes/UI/lockpick/lockpicable.tscn" id="4_lp5fo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q6fdj"]

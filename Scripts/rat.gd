@@ -43,13 +43,11 @@ func patrol_behaviour(delta):
 
 func chase_behaviour(delta):
 	velocity = Vector3.ZERO
-	killed.emit(self)
-	#chasing.emit()
-	#current_target = player.global_position
-	#boid_calculation((player.global_position - global_position).normalized()*speed,delta)
-	#if (player.global_position - global_position).length() < attack_radius:
-	#	state = AttackRatState.new(self)
-
+	chasing.emit()
+	current_target = player.global_position
+	boid_calculation((player.global_position - global_position).normalized()*speed,delta)
+	if (player.global_position - global_position).length() < attack_radius:
+		state = AttackRatState.new(self)
 
 func attack_behaviour(delta):
 	if can_attack:
@@ -100,7 +98,7 @@ func boid_calculation(seek_force,delta):
 	var alignment_force = get_alignment_force()
 	var avoidance_force = get_avoidance_force()
 	#var break_force = Vector3.ZERO
-	var total_force = (seek_force * 2.0) + (separation_force * 6.0) + (alignment_force * 1.0) + (avoidance_force * 1.5)
+	var total_force = (seek_force * 2.0) + (separation_force * 2.0) + (alignment_force * 1.0) + (avoidance_force * 1.5)
 	if velocity.length() > speed:
 		total_force = total_force.normalized() * speed
 	# Keep Y velocity for gravity
@@ -114,6 +112,9 @@ func boid_calculation(seek_force,delta):
 	move_and_slide()
 
 func _on_player_detector_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	state.try_chase_player(body_rid, body, body_shape_index, local_shape_index)
+
+func chase_player(body_rid, body, body_shape_index, local_shape_index):
 	state = ChaseRatState.new(self)
 	current_target = body.global_position
 	player = body
@@ -123,11 +124,19 @@ func start_in_leader_status():
 	state = PatrolRatState.new(self)
 
 func _on_cooldown_timer_timeout():
+	state.try_restart_attack()
+
+func restart_attack():
 	can_attack = true
 	state = ChaseRatState.new(self)
 
 func take_damage(damage):
 	$EntityHealthHandler.take_damage(self,damage)
+
+func get_stunned():
+	state = StunnedRatState.new(self,state)
+	$stunned_cooldown.start()
+	$Rat/AnimationPlayer.play("Stunned")
 
 func _on_death():
 	velocity = Vector3.ZERO
@@ -137,3 +146,7 @@ func _on_death():
 
 func _on_animation_player_death_animation_finished():
 	killed.emit(self)
+
+
+func _on_stunned_cooldown_timeout():
+	state=state.get_previous_state()

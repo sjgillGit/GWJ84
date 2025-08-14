@@ -11,6 +11,7 @@ func _ready():
 		rat_list.append(rat)
 		rat.update_neighbors(get_neighbors(5.0, rat))
 		rat.start_in_leader_status()
+		rat.get_stunned()
 		leader_list.append(rat)
 
 
@@ -22,12 +23,13 @@ func get_neighbors(radius,rat):
 	return neighbors
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var count =0 
-var max_count = 4
+var max_count = 14
 func _physics_process(delta):
 	count +=1
-	spatial_hash.clear()
-	for rat in rat_list:
-		spatial_hash.insert(rat)
+	if count==max_count:
+		spatial_hash.clear()
+		for rat in rat_list:
+			spatial_hash.insert(rat)
 	for rat in rat_list:
 		if count==max_count:
 			var neighbors = spatial_hash.query(rat.global_position,5)
