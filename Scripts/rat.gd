@@ -98,7 +98,7 @@ func boid_calculation(seek_force,delta):
 	var alignment_force = get_alignment_force()
 	var avoidance_force = get_avoidance_force()
 	#var break_force = Vector3.ZERO
-	var total_force = (seek_force * 4.0) + (separation_force * 1.0) + (alignment_force * 1.0) + (avoidance_force * 1.5)
+	var total_force = (seek_force * 2.0) + (separation_force * 6.0) + (alignment_force * 1.0) + (avoidance_force * 1.5)
 	if velocity.length() > speed:
 		total_force = total_force.normalized() * speed
 	# Keep Y velocity for gravity
