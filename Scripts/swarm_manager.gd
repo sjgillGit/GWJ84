@@ -35,7 +35,6 @@ func _physics_process(delta):
 			rat.state.on_physics_process(delta)
 		else:
 			rat.move_and_slide()
-			
 	if count==max_count:
 			count=0
 

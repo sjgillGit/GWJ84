@@ -1,10 +1,12 @@
 extends CharacterBody3D
 class_name Rat
-var speed = 10
-var acceleration = 10 
+@export var speed = 10
+@export var acceleration = 10 
+@export var attack_radius = 5
 signal killed
 signal patrolling 
 signal chasing 
+signal attacking
 @export var end_patrol_position: Marker3D
 @export var attack_damage:int = 10
 @onready  var raycasts = [
@@ -43,11 +45,17 @@ func chase_behaviour(delta):
 	chasing.emit()
 	current_target = player.global_position
 	boid_calculation((player.global_position - global_position).normalized()*speed,delta)
-	if (player.global_position - global_position).length() < 5 and can_attack:
+	if (player.global_position - global_position).length() < attack_radius:
+		state = AttackRatState.new(self)
+
+
+func attack_behaviour(delta):
+	if can_attack:
+		velocity = Vector3.ZERO
+		$attack_cooldown_timer.start()
+		attacking.emit()
 		player.take_damage(attack_damage)
 		can_attack = false
-		$cooldown_timer.start()
-
 
 func get_alignment_force():
 	var avg_velocity = Vector3.ZERO
@@ -114,13 +122,10 @@ func start_in_leader_status():
 
 func _on_cooldown_timer_timeout():
 	can_attack = true
+	state = ChaseRatState.new(self)
 
 func take_damage(damage):
 	$EntityHealthHandler.take_damage(self,damage)
 
 func _on_death():
-	var new_leader = null
-	if neighbors.size() > 1:
-		new_leader = neighbors[0]
-		new_leader.start_in_leader_status()
-	killed.emit(self,new_leader)
+	killed.emit(self)

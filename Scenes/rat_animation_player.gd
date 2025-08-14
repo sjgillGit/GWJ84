@@ -11,3 +11,8 @@ func _on_rat_patrolling():
 
 func _on_rat_chasing():
 	play("Run")
+
+
+func _on_rat_attacking():
+	play("Attack")
+	play("Getup")
