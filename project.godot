@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalSignals="*res://Scripts/Globals/global_signals.gd"
+ObjectiveTracker="*res://Scripts/Globals/objective_tracker.gd"
 
 [debug]
 
@@ -33,6 +34,11 @@ enabled=PackedStringArray("res://addons/proton_scatter/plugin.cfg", "res://addon
 [filesystem]
 
 import/blender/enabled=false
+
+[global_group]
+
+FieldObjective="Group to mark nodes that are field objectives"
+Entity="Attackable and killable entities"
 
 [input]
 
