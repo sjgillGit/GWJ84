@@ -14,7 +14,7 @@ signal far
 func start() -> void:
 	var bonus_keys : Array[int] = [KEY_F, KEY_9, KEY_L, KEY_Z, KEY_9, KEY_Y, KEY_X, KEY_P, KEY_M, KEY_N];
 	bonus_keys.shuffle()
-	for n in level:
+	for n in min(level,10):
 		field_objective_base.possible_keys.append(bonus_keys.pop_back())
 	field_objective_base.generate_combination();
 	GlobalSignals.enter_combination_objective_available.connect(Callable(self, "on_close_up"))
