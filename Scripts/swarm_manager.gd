@@ -10,19 +10,9 @@ func _ready():
 		var rat = get_child(i)
 		rat_list.append(rat)
 		rat.update_neighbors(get_neighbors(5.0, rat))
-		
-		# Every 10th rat becomes a leader
-		if i % 10 == 0:
-			rat.start_in_leader_status()
-			leader_list.append(rat)
-		else:
-			# Assign nearest leader as target
-			var nearest_leader = leader_list.back()
-			rat.start_in_swarm_status(nearest_leader)
+		rat.start_in_leader_status()
+		leader_list.append(rat)
 
-	# If you still need a "main" leader reference
-	if leader_list.size() > 0:
-		leader = leader_list[0]
 
 func get_neighbors(radius,rat):
 	var neighbors = []

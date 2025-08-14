@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bhkyckjrxcfxn" path="res://Assets/terrain_3d/Grass.webp" id="1_k63oc"]
 [ext_resource type="Texture2D" uid="uid://duqqgm7u1gkww" path="res://Assets/terrain_3d/ground037_nrm_rgh.png" id="2_j4oe2"]
-[ext_resource type="Script" uid="uid://cvet4ojd3l7lk" path="res://Scripts/swarm_manager.gd" id="3_qldgr"]
+[ext_resource type="Script" uid="uid://do153pjy4so2v" path="res://Scripts/swarm_manager.gd" id="3_qldgr"]
 [ext_resource type="Script" uid="uid://bglhvwowc0n14" path="res://addons/proton_scatter/src/scatter.gd" id="5_k63oc"]
 [ext_resource type="Texture2D" uid="uid://c5nwsi8nqbsgc" path="res://Assets/nightsky.webp" id="5_np2xp"]
 [ext_resource type="Script" uid="uid://dv3et0qux61s" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="6_j4oe2"]
@@ -143,9 +143,9 @@ reference_frame = 2
 script = ExtResource("6_j4oe2")
 stack = Array[ExtResource("7_riaky")]([SubResource("Resource_j4oe2"), SubResource("Resource_riaky"), SubResource("Resource_vtkp8"), SubResource("Resource_rg57b")])
 
-[sub_resource type="Curve3D" id="Curve3D_ltf6m"]
+[sub_resource type="Curve3D" id="Curve3D_j4oe2"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -5.18137, -4.76837e-07, 0.742086, 0, 0, 0, 0, 0, 0, -6.91097, -2.38419e-07, -2.62414, 0, 0, 0, 0, 0, 0, 4.23263, 0, -2.10494, 0, 0, 0, 0, 0, 0, 4.13477, 0, -0.306146, 0, 0, 0, 0, 0, 0, -1.36184, 0, 1.16488),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -5.14433, 0, 6.9238, 0, 0, 0, 0, 0, 0, -6.91097, -2.38419e-07, -2.62414, 0, 0, 0, 0, 0, 0, 4.23263, 0, -2.10494, 0, 0, 0, 0, 0, 0, 4.13477, 0, -0.306146, 0, 0, 0, 0, 0, 0, 1.50107, 0, 7.35927),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
@@ -154,7 +154,7 @@ point_count = 5
 script = ExtResource("14_k63oc")
 closed = true
 thickness = 0.0
-curve = SubResource("Curve3D_ltf6m")
+curve = SubResource("Curve3D_j4oe2")
 
 [sub_resource type="Resource" id="Resource_ltf6m"]
 script = ExtResource("8_vtkp8")
@@ -228,7 +228,7 @@ volumetric_fog_albedo = Color(0.432487, 0.451832, 0.883396, 1)
 [node name="map" type="Node3D"]
 
 [node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.7419, 5, -44.7221)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.8237, 2.30863, -35.8736)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_myvm1")
@@ -246,8 +246,7 @@ metadata/_edit_lock_ = true
 
 [node name="Trees" type="Node3D" parent="NavigationRegion3D"]
 process_mode = 3
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64893, 0, -0.774464)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.1177, -0.0308285, -37.9227)
 script = ExtResource("5_k63oc")
 render_mode = 1
 modifier_stack = SubResource("Resource_macow")
@@ -260,14 +259,13 @@ source_scale_multiplier = 0.4
 path = "uid://2u4sw88viuux"
 
 [node name="PathShape" type="Node3D" parent="NavigationRegion3D/Trees"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0376822, 0, -0.0782702)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0294304, 0.139287, 0.77486)
 script = ExtResource("13_tuwt4")
 shape = SubResource("Resource_uus22")
 
 [node name="lamps" type="Node3D" parent="NavigationRegion3D"]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1843, 0, -0.774464)
-visible = false
 script = ExtResource("5_k63oc")
 render_mode = 1
 modifier_stack = SubResource("Resource_078fj")
@@ -291,11 +289,23 @@ environment = SubResource("Environment_4c2oa")
 script = ExtResource("3_qldgr")
 
 [node name="rat" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0406, 3.0745, -36.3038)
+transform = Transform3D(-4.36457e-08, 0, 0.998497, 0, 0.998497, 0, -0.998497, 0, -4.36457e-08, 9.66117, 0.159517, -18.075)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat2" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(-4.36457e-08, 0, 0.998497, 0, 0.998497, 0, -0.998497, 0, -4.36457e-08, 9.66117, 0.159517, -19.0633)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat3" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(-4.36457e-08, 0, 0.998497, 0, 0.998497, 0, -0.998497, 0, -4.36457e-08, 8.32191, 0.159517, -18.075)
+end_patrol_position = NodePath("../../Marker3D")
+
+[node name="rat4" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
+transform = Transform3D(-4.36457e-08, 0, 0.998497, 0, 0.998497, 0, -0.998497, 0, -4.36457e-08, 8.32191, 0.159517, -19.0633)
 end_patrol_position = NodePath("../../Marker3D")
 
 [node name="Player" parent="." instance=ExtResource("7_w7jjh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9662, 1.72818, -16.5051)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9662, 1.72818, 4.4949)
 collision_layer = 1
 collision_mask = 2
 
