@@ -1,9 +1,6 @@
 extends AnimationPlayer
-
-
-func _on_rat_killed():
-	play("Attack")
-
+signal death_animation_finished
+var dead:bool = false
 
 func _on_rat_patrolling():
 	play("Walk")
@@ -15,4 +12,13 @@ func _on_rat_chasing():
 
 func _on_rat_attacking():
 	play("Attack")
-	play("Getup")
+	queue("Getup")
+
+
+func _on_animation_finished(anim_name):
+	if anim_name=="Stunned" and dead:
+		death_animation_finished.emit()
+
+
+func _on_entity_health_handler_entity_died(entity, handler):
+	play_section("Stunned",0.0,5.0)

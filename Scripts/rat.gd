@@ -42,11 +42,13 @@ func patrol_behaviour(delta):
 		flip_patrol_target()
 
 func chase_behaviour(delta):
-	chasing.emit()
-	current_target = player.global_position
-	boid_calculation((player.global_position - global_position).normalized()*speed,delta)
-	if (player.global_position - global_position).length() < attack_radius:
-		state = AttackRatState.new(self)
+	velocity = Vector3.ZERO
+	killed.emit(self)
+	#chasing.emit()
+	#current_target = player.global_position
+	#boid_calculation((player.global_position - global_position).normalized()*speed,delta)
+	#if (player.global_position - global_position).length() < attack_radius:
+	#	state = AttackRatState.new(self)
 
 
 func attack_behaviour(delta):
@@ -128,4 +130,10 @@ func take_damage(damage):
 	$EntityHealthHandler.take_damage(self,damage)
 
 func _on_death():
+	velocity = Vector3.ZERO
+
+
+
+
+func _on_animation_player_death_animation_finished():
 	killed.emit(self)

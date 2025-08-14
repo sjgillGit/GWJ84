@@ -289,24 +289,36 @@ environment = SubResource("Environment_4c2oa")
 script = ExtResource("3_qldgr")
 
 [node name="rat" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
-transform = Transform3D(-4.36457e-08, 0, 0.998497, 0, 0.998497, 0, -0.998497, 0, -4.36457e-08, 9.66117, 0.159517, -18.075)
+transform = Transform3D(-4.36457e-08, 0, 0.998497, 0, 0.998497, 0, -0.998497, 0, -4.36457e-08, 15.1367, 0.159517, -18.075)
 collision_mask = 3
+speed = 10
+acceleration = 10
 end_patrol_position = NodePath("../../Marker3D")
+attack_damage = 10
 
 [node name="rat2" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
-transform = Transform3D(-4.36457e-08, 0, 0.998497, 0, 0.998497, 0, -0.998497, 0, -4.36457e-08, 9.66117, 0.159517, -19.0633)
+transform = Transform3D(-4.36457e-08, 0, 0.998497, 0, 0.998497, 0, -0.998497, 0, -4.36457e-08, 15.1367, 0.159517, -19.0633)
 collision_mask = 3
+speed = 10
+acceleration = 10
 end_patrol_position = NodePath("../../Marker3D")
+attack_damage = 10
 
 [node name="rat3" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
-transform = Transform3D(-4.36457e-08, 0, 0.998497, 0, 0.998497, 0, -0.998497, 0, -4.36457e-08, 8.32191, 0.159517, -18.075)
+transform = Transform3D(-4.36457e-08, 0, 0.998497, 0, 0.998497, 0, -0.998497, 0, -4.36457e-08, 13.7975, 0.159517, -18.075)
 collision_mask = 3
+speed = 10
+acceleration = 10
 end_patrol_position = NodePath("../../Marker3D")
+attack_damage = 10
 
 [node name="rat4" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
-transform = Transform3D(-4.36457e-08, 0, 0.998497, 0, 0.998497, 0, -0.998497, 0, -4.36457e-08, 8.32191, 0.159517, -19.0633)
+transform = Transform3D(-4.36457e-08, 0, 0.998497, 0, 0.998497, 0, -0.998497, 0, -4.36457e-08, 13.7975, 0.159517, -19.0633)
 collision_mask = 3
+speed = 10
+acceleration = 10
 end_patrol_position = NodePath("../../Marker3D")
+attack_damage = 10
 
 [node name="Player" parent="." instance=ExtResource("7_w7jjh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9662, 1.72818, 4.4949)

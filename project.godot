@@ -102,4 +102,5 @@ Interact={
 
 [physics]
 
+common/physics_ticks_per_second=30
 common/max_physics_steps_per_frame=1
