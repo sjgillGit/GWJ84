@@ -30,8 +30,7 @@ func skill_activate(cooldown):
 	timer.wait_time = cooldown
 	counting = true
 	timer.start()
-	for n in towerlist.get_children():
-		n.activate_timer(cooldown)
+	towerlist.get_child(2).activate_timer(cooldown)
 
 func _ready() -> void:
 	var tween = get_tree().create_tween().set_loops()

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dykrxsjod4o6f" path="res://Scripts/ui/tower_box.gd" id="1_10edh"]
 [ext_resource type="Shader" uid="uid://bceililma81gt" path="res://Scenes/UI/tower_box.gdshader" id="3_2jh5i"]
 [ext_resource type="Texture2D" uid="uid://wnd51orttw5" path="res://Assets/ui/hide.png" id="3_3k674"]
-[ext_resource type="Texture2D" uid="uid://cjm3086dj0htn" path="res://Assets/ui/unchecked.png" id="5_w7252"]
+[ext_resource type="Texture2D" uid="uid://3cqiofs3krfl" path="res://Assets/ui/icons/wrench.png" id="5_s2xdr"]
 [ext_resource type="Texture2D" uid="uid://lyrvst3o3o" path="res://Assets/ui/button_cursed_1.png" id="6_emtg6"]
 [ext_resource type="Texture2D" uid="uid://cxe2fxdsjirmg" path="res://Assets/ui/icons/gastank.png" id="6_s2xdr"]
 [ext_resource type="AudioStream" uid="uid://bpqpx4wtsplc0" path="res://Assets/ui/audio/menu rollover.wav" id="7_17d23"]
@@ -66,7 +66,7 @@ offset_bottom = -6.0
 
 [node name="skillbutton" parent="SubViewportContainer/SubViewport/fulltowerlist" instance=ExtResource("1_2k6yk")]
 layout_mode = 2
-action_icon = ExtResource("5_w7252")
+action_icon = ExtResource("5_s2xdr")
 
 [node name="skillbutton2" parent="SubViewportContainer/SubViewport/fulltowerlist" instance=ExtResource("1_2k6yk")]
 layout_mode = 2
