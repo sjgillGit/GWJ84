@@ -31,6 +31,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="godot_logo" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 405.0
 offset_top = 291.0
 offset_right = 1504.0

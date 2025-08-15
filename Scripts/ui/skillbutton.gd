@@ -23,7 +23,7 @@ func fill_button(_cooldown:float,_inputed:StringName):
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed(input_name):
 		button_show.button_clicked()
-	if event.is_action_pressed("RMB"):
+	if event.is_action_pressed("RPerformAction"):
 		button_show_2.button_clicked()
 	
 func skill_activate(_cooldown: float):

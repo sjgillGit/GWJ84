@@ -1,15 +1,19 @@
 extends Node3D
 class_name PlayerActions
 
-signal selected_action_changed(action: PlayerActionBase, index: int);
-@onready var skill_box: HBoxContainer = $"../screen_ui/skill_box"
+enum PlayerActionScrollType 
+{
+	UP,
+	DOWN
+}
+
+signal selected_action_changed(action: PlayerActionBase, index: int, scroll_type: PlayerActionScrollType);
 
 var actions: Array[PlayerActionBase];
 var current_action_index: int = 0;
 
 func _ready() -> void:
 	actions.assign(get_children().filter(func (child): return child is PlayerActionBase));
-	#try_activate_current_action();
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is not InputEventMouseButton:
@@ -30,22 +34,19 @@ func try_activate_current_action():
 	action._perform_action();
 
 func scroll_selection_action_up():
-	skill_box.control.scroll_up()
 	var next_index = current_action_index - 1;
 	if next_index <= 0:
 		next_index = actions.size() - 1;
-	update_selected_index(next_index);
+	update_selected_index(next_index, PlayerActionScrollType.UP);
 
 func scroll_selection_action_down():
-	skill_box.control.scroll_down()
-	
 	var next_index = current_action_index + 1;
 	if next_index >= actions.size():
 		next_index = 0;
-	update_selected_index(next_index);
+	update_selected_index(next_index, PlayerActionScrollType.DOWN);
 
-func update_selected_index(next_index: int):
+func update_selected_index(next_index: int, scroll_type: PlayerActionScrollType):
 	if current_action_index == next_index:
 		return;
 	current_action_index = next_index;
-	selected_action_changed.emit(actions[current_action_index], current_action_index);
+	selected_action_changed.emit(actions[current_action_index], current_action_index, scroll_type);

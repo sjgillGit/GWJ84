@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=69 format=4 uid="uid://dko2mapcxs0y3"]
+[gd_scene load_steps=67 format=4 uid="uid://dko2mapcxs0y3"]
 
 [ext_resource type="Script" uid="uid://c8akvpoxkacfl" path="res://Scripts/Player/player.gd" id="1_488fn"]
 [ext_resource type="Animation" uid="uid://dgu24qkepk5yu" path="res://Assets/characters/player/Idle.res" id="2_epg6k"]
@@ -1475,6 +1474,9 @@ animations = Array[Animation]([ExtResource("2_epg6k"), ExtResource("3_0u84n"), E
 
 [node name="screen_ui" parent="." instance=ExtResource("5_7xdrn")]
 
+[node name="skill_box" parent="screen_ui" index="0" node_paths=PackedStringArray("player_actions")]
+player_actions = NodePath("../../PlayerActions")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_4wape")
@@ -2046,7 +2048,7 @@ bones/77/rotation = Quaternion(0.332372, 0.624241, -0.62391, -0.332548)
 bones/77/scale = Vector3(1, 1, 1)
 
 [node name="Cube" type="BoneAttachment3D" parent="MeshRoot/Goblin/metarig/Skeleton3D"]
-transform = Transform3D(-0.154024, 0.987698, -1.21897, -1.47288, 0.330859, 0.454194, 0.540404, 1.18327, 0.890493, 0.495943, 0.748949, 0.411834)
+transform = Transform3D(-0.154021, 0.987698, -1.21896, -1.47288, 0.330861, 0.454194, 0.540406, 1.18327, 0.890493, 0.495944, 0.748949, 0.411835)
 bone_name = "Cube"
 bone_idx = 18
 
@@ -2135,3 +2137,5 @@ script = ExtResource("6_4wape")
 max_health = 100.0
 immunity_frame_duration = 0.05
 animations = Array[Animation]([ExtResource("21_2avfq")])
+
+[editable path="screen_ui"]
