@@ -41,6 +41,7 @@ size = Vector3(0.5, 0.5, 0.5)
 resource_name = "Material.013"
 cull_mode = 2
 albedo_texture = ExtResource("8_g7gci")
+metallic = 0.637681
 roughness = 0.804348
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ach0b"]
@@ -375,11 +376,13 @@ blend_shape_mode = 0
 resource_name = "Material.007"
 cull_mode = 2
 albedo_texture = ExtResource("12_lw74r")
+roughness = 0.84058
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1jvte"]
 resource_name = "Material.008"
 cull_mode = 2
 albedo_texture = ExtResource("13_tf3ct")
+roughness = 0.73913
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iptjr"]
 resource_name = "Material.009"
@@ -391,6 +394,7 @@ roughness = 0.84058
 resource_name = "Material.010"
 cull_mode = 2
 albedo_texture = ExtResource("15_p7cr0")
+roughness = 0.688406
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0gi5"]
 resource_name = "Material.011"
