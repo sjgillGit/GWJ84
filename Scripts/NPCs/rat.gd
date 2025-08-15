@@ -3,11 +3,11 @@ class_name Rat
 func _ready():
 	super()
 	raycasts = [
-	$Rat/raycasts/forward_raycast,
-	$Rat/raycasts/positive_45_raycast,
-	$Rat/raycasts/minus_45_raycast
+	node_mesh.get_node("raycasts/forward_raycast"),
+	node_mesh.get_node("raycasts/positive_45_raycast"),
+	node_mesh.get_node("raycasts/minus_45_raycast")
 	]
-	animation_player = $Rat/AnimationPlayer
+	animation_player = node_mesh.get_node("AnimationPlayer")
 
 func flip_patrol_target():
 	if current_target==begin_patrol_position:

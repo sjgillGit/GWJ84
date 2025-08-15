@@ -1,7 +1,5 @@
 extends AnimationPlayer
 signal death_animation_finished
-var dead:bool = false
-
 func _on_rat_patrolling():
 	play("Walk")
 
@@ -16,7 +14,7 @@ func _on_rat_attacking():
 
 
 func _on_animation_finished(anim_name):
-	if anim_name=="Stunned" and dead:
+	if anim_name=="Stunned":
 		death_animation_finished.emit()
 
 

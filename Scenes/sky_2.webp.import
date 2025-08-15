@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgc5rl13dopuj"
-path.s3tc="res://.godot/imported/sky_2.png-3246d9ba45b69131effdf515c69428b4.s3tc.ctex"
+uid="uid://d0b6vqc5dplma"
+path.s3tc="res://.godot/imported/sky_2.webp-ef5aed3c74ca14d245f864cb386374a7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/proton_scatter/demos/assets/textures/sky_2.png"
-dest_files=["res://.godot/imported/sky_2.png-3246d9ba45b69131effdf515c69428b4.s3tc.ctex"]
+source_file="res://Scenes/sky_2.webp"
+dest_files=["res://.godot/imported/sky_2.webp-ef5aed3c74ca14d245f864cb386374a7.s3tc.ctex"]
 
 [params]
 

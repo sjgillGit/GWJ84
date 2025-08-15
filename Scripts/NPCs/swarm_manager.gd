@@ -11,7 +11,6 @@ func _ready():
 		rat_list.append(rat)
 		rat.update_neighbors(get_neighbors(5.0, rat))
 		rat.start_in_leader_status()
-		rat.get_stunned()
 		leader_list.append(rat)
 
 

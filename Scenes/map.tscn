@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://duqqgm7u1gkww" path="res://Assets/terrain_3d/ground037_nrm_rgh.png" id="2_j4oe2"]
 [ext_resource type="Script" uid="uid://do153pjy4so2v" path="res://Scripts/NPCs/swarm_manager.gd" id="3_qldgr"]
 [ext_resource type="Script" uid="uid://bglhvwowc0n14" path="res://addons/proton_scatter/src/scatter.gd" id="5_k63oc"]
-[ext_resource type="Texture2D" uid="uid://c5nwsi8nqbsgc" path="res://Assets/nightsky.webp" id="5_np2xp"]
 [ext_resource type="Script" uid="uid://dv3et0qux61s" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="6_j4oe2"]
 [ext_resource type="Script" uid="uid://bybbhye7vnfbc" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="7_riaky"]
 [ext_resource type="PackedScene" uid="uid://dko2mapcxs0y3" path="res://Scenes/Player/Player.tscn" id="7_w7jjh"]
@@ -15,9 +14,10 @@
 [ext_resource type="Script" uid="uid://b16weukog7005" path="res://addons/proton_scatter/src/scatter_item.gd" id="12_uus22"]
 [ext_resource type="Script" uid="uid://dp5r3h73tcqai" path="res://addons/proton_scatter/src/scatter_shape.gd" id="13_tuwt4"]
 [ext_resource type="Script" uid="uid://nbneoyxk8c6q" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="14_1ye5v"]
+[ext_resource type="Texture2D" uid="uid://d0b6vqc5dplma" path="res://Scenes/sky_2.webp" id="14_j4oe2"]
 [ext_resource type="Script" uid="uid://dvuv786xfsuui" path="res://addons/proton_scatter/src/shapes/path_shape.gd" id="14_k63oc"]
-[ext_resource type="PackedScene" uid="uid://cx2rpesjr050y" path="res://Scenes/rat.tscn" id="18_vtkp8"]
 [ext_resource type="PackedScene" uid="uid://cp2truhn4ua6y" path="res://Scenes/enviroment_props/lamp.tscn" id="19_riaky"]
+[ext_resource type="PackedScene" uid="uid://cli3v3ohv5np" path="res://Scenes/mouse.tscn" id="19_vtkp8"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_myvm1"]
 
@@ -212,7 +212,7 @@ radius = 10.0
 metadata/_custom_type_script = "uid://nbneoyxk8c6q"
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_w7jjh"]
-panorama = ExtResource("5_np2xp")
+panorama = ExtResource("14_j4oe2")
 
 [sub_resource type="Sky" id="Sky_6q3n4"]
 sky_material = SubResource("PanoramaSkyMaterial_w7jjh")
@@ -220,6 +220,7 @@ sky_material = SubResource("PanoramaSkyMaterial_w7jjh")
 [sub_resource type="Environment" id="Environment_4c2oa"]
 background_mode = 2
 sky = SubResource("Sky_6q3n4")
+volumetric_fog_enabled = true
 volumetric_fog_density = 0.03
 volumetric_fog_albedo = Color(0.432487, 0.451832, 0.883396, 1)
 
@@ -289,9 +290,8 @@ environment = SubResource("Environment_4c2oa")
 [node name="swarm_manager" type="Node3D" parent="."]
 script = ExtResource("3_qldgr")
 
-[node name="rat" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_vtkp8")]
-transform = Transform3D(-4.36457e-08, 0, 0.998497, 0, 0.998497, 0, -0.998497, 0, -4.36457e-08, 15.1367, 0.159517, -18.075)
-collision_mask = 3
+[node name="rat2" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("19_vtkp8")]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 4.1987, 0, 0)
 end_patrol_position = NodePath("../../Marker3D")
 
 [node name="Player" parent="." instance=ExtResource("7_w7jjh")]

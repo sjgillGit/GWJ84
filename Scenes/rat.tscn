@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://cx2rpesjr050y"]
+[gd_scene load_steps=46 format=4 uid="uid://cx2rpesjr050y"]
 
 [ext_resource type="Script" uid="uid://bvajwkct35pyo" path="res://Scripts/NPCs/rat.gd" id="1_uth6r"]
 [ext_resource type="Texture2D" uid="uid://cv0xycp1wvn3r" path="res://Assets/Rat_R_shirt.png" id="2_qb8n1"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://c3qmsarl1tbp4" path="res://Assets/Rat_R_tail.png" id="5_ju4po"]
 [ext_resource type="Texture2D" uid="uid://b2r2w6mrnxinv" path="res://Assets/Rat_R_pants.png" id="6_h2c06"]
 [ext_resource type="Texture2D" uid="uid://cj2jyrki0n536" path="res://Assets/Rat_R_head.png" id="7_bpg02"]
-[ext_resource type="Script" uid="uid://dsocf54dq318" path="res://Scenes/rat_animation_player.gd" id="8_bvcoi"]
+[ext_resource type="Script" uid="uid://dsocf54dq318" path="res://Scripts/NPCs/rat_animation_player.gd" id="8_bvcoi"]
+[ext_resource type="AudioStream" uid="uid://bgr7jsecj80ya" path="res://Assets/audio/rat_hit.wav" id="10_7i10j"]
+[ext_resource type="Script" uid="uid://bv6a1cjy3ylx" path="res://Scripts/NPCs/audio_stream_player_3d.gd" id="11_ju4po"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a2fv0"]
 resource_name = "Material.028"
@@ -6931,18 +6933,22 @@ height = 1.0
 length = 0.1
 slide_on_slope = true
 
-[node name="rat" type="CharacterBody3D" groups=["Entity"]]
+[node name="rat" type="CharacterBody3D" node_paths=PackedStringArray("node_mesh") groups=["Entity"]]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, 0)
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_uth6r")
+speed = 6
+acceleration = 15
 attack_radius = 2
+attack_damage = 15
+node_mesh = NodePath("Rat")
 
 [node name="Rat" type="Node3D" parent="."]
 transform = Transform3D(1.00151, 0, 0, 0, 1.00151, 0, 0, 0, 1.00151, 0, 0, 0)
 
 [node name="raycasts" type="Node3D" parent="Rat"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.81897, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.81897, 0)
 
 [node name="minus_45_raycast" type="RayCast3D" parent="Rat/raycasts"]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)
@@ -7276,14 +7282,19 @@ metadata/_custom_type_script = "uid://bjb4np2yjqmqv"
 transform = Transform3D(1, 0, 0, 0, 0.0039096, -0.999992, 0, 0.999992, 0.0039096, 0, 0, 0)
 shape = SubResource("SeparationRayShape3D_qb8n1")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("10_7i10j")
+script = ExtResource("11_ju4po")
+
 [connection signal="attacking" from="." to="Rat/AnimationPlayer" method="_on_rat_attacking"]
 [connection signal="chasing" from="." to="Rat/AnimationPlayer" method="_on_rat_chasing"]
+[connection signal="hit" from="." to="AudioStreamPlayer3D" method="_on_hit"]
 [connection signal="killed" from="." to="Rat/AnimationPlayer" method="_on_rat_killed"]
 [connection signal="patrolling" from="." to="Rat/AnimationPlayer" method="_on_rat_patrolling"]
 [connection signal="animation_finished" from="Rat/AnimationPlayer" to="Rat/AnimationPlayer" method="_on_animation_finished"]
 [connection signal="death_animation_finished" from="Rat/AnimationPlayer" to="." method="_on_animation_player_death_animation_finished"]
 [connection signal="body_shape_entered" from="player_detector" to="." method="_on_player_detector_body_shape_entered"]
-[connection signal="timeout" from="stunned_cooldown" to="." method="_on_stunned_cooldown_timeout"]
 [connection signal="timeout" from="stunned_cooldown" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="stunned_cooldown" to="." method="_on_stunned_cooldown_timeout"]
 [connection signal="timeout" from="attack_cooldown_timer" to="." method="_on_cooldown_timer_timeout"]
 [connection signal="entity_died" from="EntityHealthHandler" to="Rat/AnimationPlayer" method="_on_entity_health_handler_entity_died"]

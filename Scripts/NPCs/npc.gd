@@ -7,6 +7,7 @@ signal killed
 signal patrolling 
 signal chasing 
 signal attacking
+signal hit 
 @export var end_patrol_position: Marker3D
 @export var attack_damage:int = 10
 var raycasts 
@@ -17,6 +18,8 @@ var state:RatState
 var can_attack: bool = true
 var player
 var neighbors 
+@export var node_mesh:Node3D
+
 func _ready():
 	begin_patrol_position = global_position
 	current_target = end_patrol_position.global_position
@@ -75,8 +78,8 @@ func boid_calculation(seek_force,delta):
 	velocity.x = lerp(velocity.x, total_force.x, 0.1)
 	velocity.z = lerp(velocity.z, total_force.z, 0.1)
 	var look_pos = Vector3(current_target.x, global_position.y, current_target.z)
-	$Rat.look_at(look_pos, Vector3.UP)
-	$Rat.rotate_y(PI)
+	node_mesh.look_at(look_pos, Vector3.UP)
+	node_mesh.rotate_y(PI)
 	move_and_slide()
 
 func _on_player_detector_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
@@ -98,6 +101,7 @@ func restart_attack():
 	state = ChaseRatState.new(self)
 
 func take_damage(damage):
+	hit.emit()
 	$EntityHealthHandler.take_damage(self,damage)
 
 func get_stunned():
