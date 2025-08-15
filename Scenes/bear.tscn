@@ -2266,7 +2266,8 @@ transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, 
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_txrf0")
-speed = 5
+speed = 1
+acceleration = 1
 attack_radius = 2
 attack_damage = 30
 node_mesh = NodePath("Mouse")
@@ -2623,6 +2624,6 @@ shape = SubResource("SeparationRayShape3D_qb8n1")
 stream = ExtResource("11_umt5h")
 
 [connection signal="body_shape_entered" from="player_detector" to="." method="_on_player_detector_body_shape_entered"]
-[connection signal="timeout" from="stunned_cooldown" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="stunned_cooldown" to="." method="_on_stunned_cooldown_timeout"]
+[connection signal="timeout" from="stunned_cooldown" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="attack_cooldown_timer" to="." method="_on_cooldown_timer_timeout"]

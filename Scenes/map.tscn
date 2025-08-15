@@ -19,8 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://cp2truhn4ua6y" path="res://Scenes/enviroment_props/lamp.tscn" id="19_riaky"]
 [ext_resource type="PackedScene" uid="uid://cli3v3ohv5np" path="res://Scenes/mouse.tscn" id="19_vtkp8"]
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_myvm1"]
-
 [sub_resource type="Gradient" id="Gradient_j4oe2"]
 offsets = PackedFloat32Array(0.2, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -88,6 +86,8 @@ normal_texture = ExtResource("2_j4oe2")
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_8cxpi"]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_ltf6m")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_1ye5v")])
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_myvm1"]
 
 [sub_resource type="Resource" id="Resource_j4oe2"]
 script = ExtResource("8_vtkp8")
@@ -226,14 +226,7 @@ volumetric_fog_albedo = Color(0.432487, 0.451832, 0.883396, 1)
 
 [node name="map" type="Node3D"]
 
-[node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.766, 0, 5.68295)
-
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-navigation_mesh = SubResource("NavigationMesh_myvm1")
-navigation_layers = 2
-
-[node name="Terrain3D" type="Terrain3D" parent="NavigationRegion3D"]
+[node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://Assets/terrain_3d"
 material = SubResource("Terrain3DMaterial_rg57b")
 assets = SubResource("Terrain3DAssets_8cxpi")
@@ -245,6 +238,13 @@ collision_mask = 0
 mesh_lods = 10
 top_level = true
 metadata/_edit_lock_ = true
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.766, 0, 5.68295)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_myvm1")
+navigation_layers = 2
 
 [node name="Trees" type="Node3D" parent="NavigationRegion3D"]
 process_mode = 3

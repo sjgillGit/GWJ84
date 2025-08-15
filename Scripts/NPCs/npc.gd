@@ -16,8 +16,9 @@ var begin_patrol_position: Vector3
 var current_target: Vector3
 var state:RatState
 var can_attack: bool = true
-var player
+@onready var player = get_parent().get_parent().get_node("Player") 
 var neighbors 
+@onready  var terrain:Terrain3D = get_parent().get_parent().get_node("Terrain3D")
 @export var node_mesh:Node3D
 
 func _ready():
@@ -80,7 +81,6 @@ func boid_calculation(seek_force,delta):
 	var look_pos = Vector3(current_target.x, global_position.y, current_target.z)
 	node_mesh.look_at(look_pos, Vector3.UP)
 	node_mesh.rotate_y(PI)
-	move_and_slide()
 
 func _on_player_detector_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	state.try_chase_player(body_rid, body, body_shape_index, local_shape_index)
@@ -117,3 +117,10 @@ func _on_animation_player_death_animation_finished():
 
 func _on_stunned_cooldown_timeout():
 	state=state.get_previous_state()
+
+func move():
+	if (player.global_position - global_position).length() > attack_radius:
+		global_position += velocity
+	else:
+		move_and_slide()
+	global_position.y = terrain.data.get_height(global_position)

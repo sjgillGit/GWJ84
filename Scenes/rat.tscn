@@ -6938,8 +6938,8 @@ transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, 
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_uth6r")
-speed = 6
-acceleration = 15
+speed = 1
+acceleration = 1
 attack_radius = 2
 attack_damage = 15
 node_mesh = NodePath("Rat")
@@ -7294,7 +7294,7 @@ script = ExtResource("11_ju4po")
 [connection signal="animation_finished" from="Rat/AnimationPlayer" to="Rat/AnimationPlayer" method="_on_animation_finished"]
 [connection signal="death_animation_finished" from="Rat/AnimationPlayer" to="." method="_on_animation_player_death_animation_finished"]
 [connection signal="body_shape_entered" from="player_detector" to="." method="_on_player_detector_body_shape_entered"]
-[connection signal="timeout" from="stunned_cooldown" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="stunned_cooldown" to="." method="_on_stunned_cooldown_timeout"]
+[connection signal="timeout" from="stunned_cooldown" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="attack_cooldown_timer" to="." method="_on_cooldown_timer_timeout"]
 [connection signal="entity_died" from="EntityHealthHandler" to="Rat/AnimationPlayer" method="_on_entity_health_handler_entity_died"]

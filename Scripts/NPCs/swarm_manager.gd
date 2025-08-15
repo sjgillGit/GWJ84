@@ -35,7 +35,7 @@ func _physics_process(delta):
 			npc.update_neighbors(neighbors)
 			npc.state.on_physics_process(delta)
 		else:
-			npc.move_and_slide()
+			npc.move()
 	if count==max_count:
 			count=0
 
