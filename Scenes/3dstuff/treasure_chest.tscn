@@ -29,7 +29,6 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.647596, -0.373877)
 [node name="lockpicable" parent="." index="3" instance=ExtResource("2_mi2mm")]
 
 [node name="interact_indication" parent="." index="4" instance=ExtResource("4_7jop6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.279278, -0.458091, 0)
 
 [node name="lock_clock" type="AudioStreamPlayer" parent="." index="5"]
 stream = ExtResource("5_au4no")
