@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bhkyckjrxcfxn" path="res://Assets/terrain_3d/Grass.webp" id="1_k63oc"]
 [ext_resource type="Texture2D" uid="uid://duqqgm7u1gkww" path="res://Assets/terrain_3d/ground037_nrm_rgh.png" id="2_j4oe2"]
-[ext_resource type="Script" uid="uid://do153pjy4so2v" path="res://Scripts/swarm_manager.gd" id="3_qldgr"]
+[ext_resource type="Script" uid="uid://do153pjy4so2v" path="res://Scripts/NPCs/swarm_manager.gd" id="3_qldgr"]
 [ext_resource type="Script" uid="uid://bglhvwowc0n14" path="res://addons/proton_scatter/src/scatter.gd" id="5_k63oc"]
 [ext_resource type="Texture2D" uid="uid://c5nwsi8nqbsgc" path="res://Assets/nightsky.webp" id="5_np2xp"]
 [ext_resource type="Script" uid="uid://dv3et0qux61s" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="6_j4oe2"]
