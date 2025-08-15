@@ -3,6 +3,7 @@ class_name Npc
 @export var speed = 10
 @export var acceleration = 10 
 @export var attack_radius = 5
+signal entity_died
 signal killed
 signal patrolling 
 signal chasing 
@@ -117,7 +118,10 @@ func get_stunned():
 	$stunned_cooldown.start()
 	animation_player.play("Stunned")
 
-func _on_death():
+func _on_death(a,b):
+	state=DeadRatState.new(self)
+	killed.emit()
+	entity_died.emit()
 	velocity = Vector3.ZERO
 
 func _on_animation_player_death_animation_finished():

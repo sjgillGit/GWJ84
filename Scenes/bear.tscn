@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=4 uid="uid://m7dkc6gwcbbx"]
+[gd_scene load_steps=28 format=4 uid="uid://m7dkc6gwcbbx"]
 
 [ext_resource type="Script" uid="uid://bvajwkct35pyo" path="res://Scripts/NPCs/rat.gd" id="1_txrf0"]
 [ext_resource type="Texture2D" uid="uid://w6invqvbpg8l" path="res://Assets/bear_bear.png" id="2_2imu7"]
 [ext_resource type="Script" uid="uid://6fgtcm1u5jhy" path="res://Scripts/NPCs/bear_animation_player.gd" id="3_elcei"]
+[ext_resource type="Script" uid="uid://bv6a1cjy3ylx" path="res://Scripts/NPCs/audio_stream_player_3d.gd" id="6_mlyxe"]
 [ext_resource type="Script" uid="uid://bjb4np2yjqmqv" path="res://Scripts/Components/entity_health_handler.gd" id="10_igqou"]
 [ext_resource type="AudioStream" uid="uid://eetw3r3qibne" path="res://Assets/audio/Vent Bar GWJ 84 - bear hit.wav" id="11_umt5h"]
 
@@ -2360,7 +2361,7 @@ bones/2/parent = 1
 bones/2/rest = Transform3D(1, 2.40759e-08, -2.372e-07, 4.44089e-15, 0.994888, 0.100981, 2.38419e-07, -0.100981, 0.994888, 1.05254e-15, 0.242493, 3.37604e-09)
 bones/2/enabled = true
 bones/2/position = Vector3(1.05254e-15, 0.242493, 3.37604e-09)
-bones/2/rotation = Quaternion(0.0348238, -1.19137e-07, 4.15132e-09, 0.999394)
+bones/2/rotation = Quaternion(0.0348238, -1.19137e-07, 4.15132e-09, 0.999393)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "spine.003"
 bones/3/parent = 2
@@ -2374,7 +2375,7 @@ bones/4/parent = 3
 bones/4/rest = Transform3D(1, -1.58859e-15, 1.60142e-16, 1.58041e-15, 0.999108, 0.0422206, -2.27071e-16, -0.0422206, 0.999108, -1.58819e-22, 0.192579, -9.31323e-10)
 bones/4/enabled = true
 bones/4/position = Vector3(-1.58819e-22, 0.192579, -9.31323e-10)
-bones/4/rotation = Quaternion(-0.228834, 1.07822e-15, 1.94477e-15, 0.973466)
+bones/4/rotation = Quaternion(-0.228834, 1.07822e-15, 1.94477e-15, 0.973465)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/name = "spine.005"
 bones/5/parent = 4
@@ -2388,7 +2389,7 @@ bones/6/parent = 5
 bones/6/rest = Transform3D(1, 1.15833e-08, -2.38137e-07, 1.33227e-15, 0.998819, 0.0485839, 2.38419e-07, -0.0485839, 0.998819, 3.43876e-14, 0.0627015, -7.4273e-08)
 bones/6/enabled = true
 bones/6/position = Vector3(3.43876e-14, 0.0627015, -7.4273e-08)
-bones/6/rotation = Quaternion(-0.140789, -1.15918e-07, -1.7069e-08, 0.99004)
+bones/6/rotation = Quaternion(-0.140789, -1.15918e-07, -1.70689e-08, 0.99004)
 bones/6/scale = Vector3(1, 1, 1)
 bones/7/name = "spine.007.L"
 bones/7/parent = 6
@@ -2647,7 +2648,7 @@ bones/43/parent = -1
 bones/43/rest = Transform3D(1, 0, 0, 0, 0.990342, -0.138648, 0, 0.138648, 0.990342, -2.06592, 1.77656, -0.00372533)
 bones/43/enabled = true
 bones/43/position = Vector3(-0.00728321, 1.00121, -0.0876687)
-bones/43/rotation = Quaternion(-0.201096, -4.14586e-18, -5.95153e-17, 0.979571)
+bones/43/rotation = Quaternion(-0.201097, -4.14587e-18, -5.95153e-17, 0.979571)
 bones/43/scale = Vector3(0.0107189, 0.0107189, 0.010719)
 bones/44/name = "spine.007_end"
 bones/44/parent = 43
@@ -2701,7 +2702,9 @@ shape = SubResource("SeparationRayShape3D_qb8n1")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("11_umt5h")
+script = ExtResource("6_mlyxe")
 
+[connection signal="hit" from="." to="AudioStreamPlayer3D" method="_on_bear_hit"]
 [connection signal="body_shape_entered" from="player_detector" to="." method="_on_player_detector_body_shape_entered"]
 [connection signal="timeout" from="stunned_cooldown" to="." method="_on_stunned_cooldown_timeout"]
 [connection signal="timeout" from="stunned_cooldown" to="." method="_on_attack_timer_timeout"]
