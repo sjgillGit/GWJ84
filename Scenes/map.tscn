@@ -16,8 +16,8 @@
 [ext_resource type="Script" uid="uid://nbneoyxk8c6q" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="14_1ye5v"]
 [ext_resource type="Texture2D" uid="uid://d0b6vqc5dplma" path="res://Scenes/sky_2.webp" id="14_j4oe2"]
 [ext_resource type="Script" uid="uid://dvuv786xfsuui" path="res://addons/proton_scatter/src/shapes/path_shape.gd" id="14_k63oc"]
+[ext_resource type="PackedScene" uid="uid://m7dkc6gwcbbx" path="res://Scenes/bear.tscn" id="18_j4oe2"]
 [ext_resource type="PackedScene" uid="uid://cp2truhn4ua6y" path="res://Scenes/enviroment_props/lamp.tscn" id="19_riaky"]
-[ext_resource type="PackedScene" uid="uid://cli3v3ohv5np" path="res://Scenes/mouse.tscn" id="19_vtkp8"]
 
 [sub_resource type="Gradient" id="Gradient_j4oe2"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -89,7 +89,7 @@ texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_myvm1"]
 
-[sub_resource type="Resource" id="Resource_j4oe2"]
+[sub_resource type="Resource" id="Resource_riaky"]
 script = ExtResource("8_vtkp8")
 amount = 14
 enabled = true
@@ -98,7 +98,7 @@ custom_seed = 30
 restrict_height = false
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_riaky"]
+[sub_resource type="Resource" id="Resource_vtkp8"]
 script = ExtResource("10_macow")
 iterations = 5
 offset_step = 0.1
@@ -110,7 +110,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_vtkp8"]
+[sub_resource type="Resource" id="Resource_rg57b"]
 script = ExtResource("11_ltf6m")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 10.0
@@ -126,7 +126,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_rg57b"]
+[sub_resource type="Resource" id="Resource_macow"]
 script = ExtResource("9_rg57b")
 position = Vector3(0, 0, 0)
 rotation = Vector3(0, 0, 0)
@@ -137,9 +137,9 @@ custom_seed = 30
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_macow"]
+[sub_resource type="Resource" id="Resource_ltf6m"]
 script = ExtResource("6_j4oe2")
-stack = Array[ExtResource("7_riaky")]([SubResource("Resource_j4oe2"), SubResource("Resource_riaky"), SubResource("Resource_vtkp8"), SubResource("Resource_rg57b")])
+stack = Array[ExtResource("7_riaky")]([SubResource("Resource_riaky"), SubResource("Resource_vtkp8"), SubResource("Resource_rg57b"), SubResource("Resource_macow")])
 
 [sub_resource type="Curve3D" id="Curve3D_j4oe2"]
 _data = {
@@ -154,7 +154,7 @@ closed = true
 thickness = 0.0
 curve = SubResource("Curve3D_j4oe2")
 
-[sub_resource type="Resource" id="Resource_ltf6m"]
+[sub_resource type="Resource" id="Resource_tuwt4"]
 script = ExtResource("8_vtkp8")
 amount = 14
 enabled = true
@@ -163,7 +163,7 @@ custom_seed = 30
 restrict_height = false
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_tuwt4"]
+[sub_resource type="Resource" id="Resource_1ye5v"]
 script = ExtResource("10_macow")
 iterations = 5
 offset_step = 0.1
@@ -175,7 +175,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_1ye5v"]
+[sub_resource type="Resource" id="Resource_8cxpi"]
 script = ExtResource("11_ltf6m")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 10.0
@@ -191,7 +191,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_8cxpi"]
+[sub_resource type="Resource" id="Resource_078fj"]
 script = ExtResource("9_rg57b")
 position = Vector3(0, 0, 0)
 rotation = Vector3(0, 0, 0)
@@ -202,9 +202,9 @@ custom_seed = 30
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_078fj"]
+[sub_resource type="Resource" id="Resource_unquq"]
 script = ExtResource("6_j4oe2")
-stack = Array[ExtResource("7_riaky")]([SubResource("Resource_ltf6m"), SubResource("Resource_tuwt4"), SubResource("Resource_1ye5v"), SubResource("Resource_8cxpi")])
+stack = Array[ExtResource("7_riaky")]([SubResource("Resource_tuwt4"), SubResource("Resource_1ye5v"), SubResource("Resource_8cxpi"), SubResource("Resource_078fj")])
 
 [sub_resource type="Resource" id="Resource_wpvg5"]
 script = ExtResource("14_1ye5v")
@@ -251,7 +251,7 @@ process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.1177, -0.0308285, -37.9227)
 script = ExtResource("5_k63oc")
 render_mode = 1
-modifier_stack = SubResource("Resource_macow")
+modifier_stack = SubResource("Resource_ltf6m")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -270,7 +270,7 @@ process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1843, 0, -0.774464)
 script = ExtResource("5_k63oc")
 render_mode = 1
-modifier_stack = SubResource("Resource_078fj")
+modifier_stack = SubResource("Resource_unquq")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -290,8 +290,8 @@ environment = SubResource("Environment_4c2oa")
 [node name="swarm_manager" type="Node3D" parent="."]
 script = ExtResource("3_qldgr")
 
-[node name="rat2" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("19_vtkp8")]
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 4.1987, 0, 0)
+[node name="bear" parent="swarm_manager" node_paths=PackedStringArray("end_patrol_position") instance=ExtResource("18_j4oe2")]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 2.89578, 0, 13.9857)
 end_patrol_position = NodePath("../../Marker3D")
 
 [node name="Player" parent="." instance=ExtResource("7_w7jjh")]
