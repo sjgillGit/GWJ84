@@ -23,13 +23,20 @@ GlobalSettings="*res://Scripts/Globals/global_settings.gd"
 
 [display]
 
-window/size/mode=2
-window/size/resizable=false
-window/size/borderless=true
+ObjectiveTracker="*res://Scripts/Globals/objective_tracker.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
+enabled=PackedStringArray("res://addons/proton_scatter/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
+
+[filesystem]
+
+import/blender/enabled=false
+
+[global_group]
+
+FieldObjective="Group to mark nodes that are field objectives"
+Entity="Attackable and killable entities"
 
 [input]
 
@@ -112,5 +119,5 @@ option_3={
 
 [physics]
 
-common/physics_ticks_per_second=30
 common/max_physics_steps_per_frame=1
+3d/physics_engine="Jolt Physics"

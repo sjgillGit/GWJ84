@@ -5,9 +5,11 @@ class_name FieldObjectiveBase
 signal objective_completed(objective: FieldObjectiveBase);
 
 var player_detector: Area3D;
+var is_complete: bool;
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
+		add_to_group("FieldObjective", true);
 		update_configuration_warnings();
 		child_order_changed.connect(_on_child_order_changed);
 	else:
@@ -36,5 +38,6 @@ func _on_child_order_changed():
 	update_configuration_warnings();
 
 func _emit_objective_completed():
+	is_complete = true;
 	objective_completed.emit(self);
 	GlobalSignals.objective_completed.emit(self);
