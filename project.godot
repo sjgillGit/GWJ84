@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalSignals="*res://Scripts/Globals/global_signals.gd"
+GlobalSettings="*res://Scripts/Globals/global_settings.gd"
+
+[display]
+
 ObjectiveTracker="*res://Scripts/Globals/objective_tracker.gd"
 
 [editor_plugins]

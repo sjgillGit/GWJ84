@@ -2,14 +2,15 @@ extends Control
 @export var mission_time: float
 @onready var hand: TextureRect = $hand
 @onready var progressbar: TextureProgressBar = $progressbar
-@onready var watch_positioning = self.position
 @onready var timer: Timer = $Timer
 @onready var watch: CanvasGroup = $".."
 @onready var odliczanie: bool = false
 func _ready() -> void:
 	timer_reset()
 	timer_start(mission_time)
-	
+	resolution_set()
+func resolution_set():
+	self.position.x = get_viewport().get_visible_rect().size.x - 166
 func timer_reset():
 	progressbar.visible = true
 	odliczanie = true

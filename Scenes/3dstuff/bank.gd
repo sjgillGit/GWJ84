@@ -1,7 +1,6 @@
 extends Node3D
 @export var level: int
 @onready var robbable: Node3D = $robbable
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var interact_indication: Node3D = $interact_indication
 @onready var lock_clock: AudioStreamPlayer = $lock_clock
 @onready var reward_choose: CanvasLayer = $reward_choose
@@ -13,7 +12,6 @@ func _ready() -> void:
 	robbable.level = level
 	robbable.start()
 func _on_robbable_win() -> void:
-	animation_player.play("opening")
 	lock_clock.play()
 	var rewards = REWARD_MENU.instantiate()
 	var upgrade_list = [["GAS RANGE UP","+20 range","normal","gas"],["HEAVY DAMAGE UP","shot speed down","curse","turret"],["SPRINT SPEED UP","doubles sprint speed","normal","player"]]

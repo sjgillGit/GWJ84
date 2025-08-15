@@ -1,15 +1,14 @@
+
 [gd_scene load_steps=69 format=4 uid="uid://dko2mapcxs0y3"]
 
 [ext_resource type="Script" uid="uid://c8akvpoxkacfl" path="res://Scripts/Player/player.gd" id="1_488fn"]
 [ext_resource type="Animation" uid="uid://dgu24qkepk5yu" path="res://Assets/characters/player/Idle.res" id="2_epg6k"]
-[ext_resource type="PackedScene" uid="uid://pb3r7j6qiy0p" path="res://Scenes/UI/watch.tscn" id="2_t26db"]
 [ext_resource type="Animation" uid="uid://bjmixkhjxtquc" path="res://Assets/characters/player/Walk.res" id="3_0u84n"]
-[ext_resource type="PackedScene" uid="uid://drylow4dc4o3f" path="res://Scenes/UI/hel_sta_bars.tscn" id="3_825xp"]
 [ext_resource type="Script" uid="uid://b0anjxmo528ot" path="res://Scripts/Player/player_actions.gd" id="3_h54ih"]
 [ext_resource type="Script" uid="uid://cms4epxb8dh3k" path="res://Scripts/Player/camera_controller.gd" id="3_rlgqx"]
 [ext_resource type="Animation" uid="uid://cwr5oyw4btrle" path="res://Assets/characters/player/Run.res" id="4_esmjy"]
-[ext_resource type="PackedScene" uid="uid://dlx736lntigtc" path="res://Scenes/UI/skill_box.tscn" id="4_ji083"]
 [ext_resource type="Script" uid="uid://b1d7g85ltcc1v" path="res://Scripts/Player/Actions/player_melee_action.gd" id="4_ude3g"]
+[ext_resource type="PackedScene" uid="uid://b5vmy52in51ot" path="res://Scenes/UI/screen_ui.tscn" id="5_7xdrn"]
 [ext_resource type="Script" uid="uid://dih6bmq8e1vtv" path="res://Scripts/Player/Actions/player_deploy_turret_action.gd" id="5_jmcll"]
 [ext_resource type="Script" uid="uid://bjb4np2yjqmqv" path="res://Scripts/Components/entity_health_handler.gd" id="6_4wape"]
 [ext_resource type="PackedScene" uid="uid://chxvqa83wi22n" path="res://Scenes/Turrets/gun_turret.tscn" id="6_t26db"]
@@ -1474,22 +1473,7 @@ health_handler = NodePath("PlayerHealthHandler")
 anim_player = NodePath("MeshRoot/Goblin/AnimationPlayer")
 animations = Array[Animation]([ExtResource("2_epg6k"), ExtResource("3_0u84n"), ExtResource("4_esmjy")])
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="watch" parent="CanvasLayer" instance=ExtResource("2_t26db")]
-position = Vector2(0, 14)
-
-[node name="Control" parent="CanvasLayer" instance=ExtResource("3_825xp")]
-offset_left = 8.0
-offset_top = 7.0
-offset_right = -944.0
-offset_bottom = -441.0
-
-[node name="skill_box" parent="CanvasLayer" instance=ExtResource("4_ji083")]
-offset_left = 965.0
-offset_top = 560.0
-offset_right = 40.0
-offset_bottom = 5.0
+[node name="screen_ui" parent="." instance=ExtResource("5_7xdrn")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)

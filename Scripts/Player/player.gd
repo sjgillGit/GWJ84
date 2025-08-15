@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
-@onready var control: Control = $CanvasLayer/Control
+@onready var control: Control = $screen_ui/Control
 
 ## To emit when a new animation should be triggered. [br]
 ## Tell to the listener:[br][param new_state]: action single keyword -> for humans to understand the origin,[br]

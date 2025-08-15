@@ -21,6 +21,7 @@ func stop():
 		n.queue_free()
 	step = 0
 func start(speed):
+	self.scale = Vector2(1,1) * GlobalSettings.multiplier
 	camera_3d.position = Vector3(0.005,-100.188,-0.076)
 	board.rotation_degrees = Vector3(0,0,0)
 	middle.rotation_degrees = Vector3(0,0,0)

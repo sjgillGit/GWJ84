@@ -17,7 +17,7 @@ func start() -> void:
 	GlobalSignals.enter_combination_objective_unavailable.connect(Callable(self, "on_far_away"))
 	GlobalSignals.objective_completed.connect(Callable(self, "on_win"))
 	
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Interact") && close == true && opened == false:
 		interact_indication.hide_ind()
 		field_objective_base.start_objective_progress()
