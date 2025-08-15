@@ -19,6 +19,7 @@ func scroll_up():
 		for n in temp.get_children():
 			n.reparent(towerlist)
 		towerscroll.scroll_horizontal = 92
+		
 func scroll_down():
 		scroll.play()
 		towerlist.get_child(0).reparent(temp)
@@ -26,11 +27,11 @@ func scroll_down():
 		towerscroll.scroll_horizontal = 0
 		
 		#chosen_tower = towerlist.get_child(2)
-func skill_activate(cooldown):
-	timer.wait_time = cooldown
-	counting = true
-	timer.start()
-	towerlist.get_child(2).activate_timer(cooldown)
+func skill_activate(cooldown: float):
+	timer.wait_time = cooldown;
+	counting = true;
+	timer.start();
+	towerlist.get_child(2).activate_timer(cooldown);
 
 func _ready() -> void:
 	var tween = get_tree().create_tween().set_loops()

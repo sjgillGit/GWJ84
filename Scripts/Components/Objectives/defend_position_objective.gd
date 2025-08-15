@@ -8,6 +8,7 @@ var defend_for_time: float;
 var time_passed: float;
 
 func _ready() -> void:
+	super._ready();
 	set_process(false);
 
 func _process(delta: float) -> void:
