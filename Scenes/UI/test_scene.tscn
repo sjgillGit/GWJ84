@@ -67,3 +67,4 @@ speed = -10.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5574, 0.941281, 20.6608)
 
 [editable path="Player"]
+[editable path="Player/screen_ui"]

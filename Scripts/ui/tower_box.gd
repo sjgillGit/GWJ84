@@ -6,7 +6,6 @@ extends Control
 @export var scroll_x := 46
 @export var cooldown: float
 @onready var counting: bool
-@onready var timer: Timer = $Timer
 @onready var fulltowerlist: HBoxContainer = $SubViewportContainer/SubViewport/fulltowerlist
 @onready var chosen_tower
 @onready var scroll: AudioStreamPlayer = $scroll
@@ -28,10 +27,8 @@ func scroll_down():
 		
 		#chosen_tower = towerlist.get_child(2)
 func skill_activate(cooldown: float):
-	timer.wait_time = cooldown;
 	counting = true;
-	timer.start();
-	towerlist.get_child(2).activate_timer(cooldown);
+	towerlist.get_child(1).activate_timer(cooldown);
 
 func _ready() -> void:
 	var tween = get_tree().create_tween().set_loops()
@@ -40,7 +37,7 @@ func _ready() -> void:
 	for n in towerlist.get_children():
 		n.queue_free()
 	var ile: int = 0
-	while ile <= 5:
+	while ile <= 2:
 		for n in fulltowerlist.get_children().size():
 			var tower = TOWERSELECT.instantiate()
 			towerlist.add_child(tower)
@@ -51,9 +48,3 @@ func _on_timer_timeout() -> void:
 	counting = false
 	for n in towerlist.get_children():
 			n.desactivate_timer()
-			
-func _process(_delta: float) -> void:
-	if counting: 
-		var time_amount = str(snapped(timer.time_left,0.1))
-		for n in towerlist.get_children():
-			n.update_timer(time_amount)
