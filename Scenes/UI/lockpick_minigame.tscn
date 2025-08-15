@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bj6vp8hhh833o"]
 
-[ext_resource type="Script" path="res://Scripts/ui/lockpick_minigame.gd" id="1_5sqr4"]
+[ext_resource type="Script" uid="uid://3r3bqm1uke02" path="res://Scripts/ui/lockpick_minigame.gd" id="1_5sqr4"]
 [ext_resource type="PackedScene" uid="uid://cw7vhp8hb4jck" path="res://Scenes/UI/lockpick/lock.tscn" id="2_5sqr4"]
 [ext_resource type="PackedScene" uid="uid://sv8rebfvyek4" path="res://Scenes/UI/lockpick/board_alternative.tscn" id="2_6h58e"]
 [ext_resource type="PackedScene" uid="uid://dofjwyc7vxaip" path="res://Assets/ui/lockpick/wrench_(1).tscn" id="5_6h58e"]

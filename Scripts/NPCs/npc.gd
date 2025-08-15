@@ -82,13 +82,21 @@ func boid_calculation(seek_force,delta):
 	node_mesh.look_at(look_pos, Vector3.UP)
 	node_mesh.rotate_y(PI)
 
-func _on_player_detector_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+func player_entered_range(body_rid, body, body_shape_index, local_shape_index):
 	state.try_chase_player(body_rid, body, body_shape_index, local_shape_index)
 	alert_neighbors(body_rid, body, body_shape_index, local_shape_index)
 
+func _on_player_detector_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	player_entered_range(body_rid, body, body_shape_index, local_shape_index)
+
 func alert_neighbors(body_rid, body, body_shape_index, local_shape_index):
 	for neighbor in neighbors:
-		neighbor.try_chase_player(body_rid, body, body_shape_index, local_shape_index)
+		neighbor.player_nearby_alert(body_rid, body, body_shape_index, local_shape_index)
+
+func player_nearby_alert(body_rid, body, body_shape_index, local_shape_index):
+	if state.is_threatenning_player(): return
+	else:
+		player_entered_range(body_rid, body, body_shape_index, local_shape_index)
 
 func start_in_leader_status():
 	state = PatrolRatState.new(self)
