@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=7 format=3 uid="uid://bmmhya010lr13"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://bj6vp8hhh833o"]
+>>>>>>> env
 
 [ext_resource type="Script" uid="uid://3r3bqm1uke02" path="res://Scripts/ui/lockpick_minigame.gd" id="1_5sqr4"]
 [ext_resource type="PackedScene" uid="uid://cw7vhp8hb4jck" path="res://Scenes/UI/lockpick/lock.tscn" id="2_5sqr4"]

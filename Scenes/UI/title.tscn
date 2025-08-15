@@ -1,4 +1,8 @@
+<<<<<<<< HEAD:Scenes/UI/title.tscn
 [gd_scene load_steps=14 format=3 uid="uid://bfxkpfx0qgb37"]
+========
+[gd_scene load_steps=10 format=3 uid="uid://3dx0dbg4pk3n"]
+>>>>>>>> env:Scenes/UI/test.tscn
 
 [ext_resource type="Script" uid="uid://xm7cu7ebwvga" path="res://Scenes/UI/startgame.gd" id="1_ddswn"]
 [ext_resource type="Script" uid="uid://dkahuk48vf0oi" path="res://Scripts/ui/menu_buttons.gd" id="1_gfgrl"]

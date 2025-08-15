@@ -147,6 +147,7 @@ shadow_mesh = SubResource("ArrayMesh_ggeda")
 resource_name = "Material.013"
 cull_mode = 2
 albedo_texture = ExtResource("8_g7gci")
+metallic = 0.637681
 roughness = 0.804348
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jsg0v"]
@@ -481,11 +482,13 @@ blend_shape_mode = 0
 resource_name = "Material.007"
 cull_mode = 2
 albedo_texture = ExtResource("12_lw74r")
+roughness = 0.84058
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1014t"]
 resource_name = "Material.008"
 cull_mode = 2
 albedo_texture = ExtResource("13_tf3ct")
+roughness = 0.73913
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c3xfc"]
 resource_name = "Material.009"
@@ -497,6 +500,7 @@ roughness = 0.84058
 resource_name = "Material.010"
 cull_mode = 2
 albedo_texture = ExtResource("15_p7cr0")
+roughness = 0.688406
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0iw0r"]
 resource_name = "Material.011"
@@ -1464,7 +1468,7 @@ _data = {
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("mesh_root", "camera_controller", "health_handler", "anim_player") groups=["Entity"]]
 collision_layer = 3
 script = ExtResource("1_488fn")
-move_speed = 20.0
+move_speed = 5.0
 sprint_multiplier = 1.5
 mesh_root = NodePath("MeshRoot")
 camera_controller = NodePath("CameraRoot")

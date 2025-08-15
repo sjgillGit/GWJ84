@@ -6,3 +6,6 @@ func on_physics_process(delta):
 
 func on_navigation_agent_3d_navigation_finished():
 	rat.flip_patrol_target()
+
+func is_threatenning_player():
+	return false

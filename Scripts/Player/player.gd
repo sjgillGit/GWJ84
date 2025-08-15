@@ -70,6 +70,10 @@ func take_damage(damage: float) -> void:
 	control.change_hp(-damage)
 	health_handler.take_damage(self, damage);
 
+
+
+
+
 func _on_state_changed(new_state, anims, index = 0, can_be_interrupt = true) -> void:
 	if anims.is_empty():
 		printerr("The animations' array from the signal's emitter is empty.")
