@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnmo3p6m0xf31"]
+
+[ext_resource type="PackedScene" uid="uid://dodivbj6dtnwf" path="res://Assets/ui/lockpick/rectangle.glb" id="1_mrgp4"]
+
+[node name="rectangle" instance=ExtResource("1_mrgp4")]

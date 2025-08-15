@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://buulk7mxubbp8"
+path="res://.godot/imported/Vent Bar GWJ 84 - squeaky screw B.wav-a1bbb8e6ce3201c20e9f9e0b7a48fc73.sample"
+
+[deps]
+
+source_file="res://Assets/ui/audio/Vent Bar GWJ 84 - squeaky screw B.wav"
+dest_files=["res://.godot/imported/Vent Bar GWJ 84 - squeaky screw B.wav-a1bbb8e6ce3201c20e9f9e0b7a48fc73.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

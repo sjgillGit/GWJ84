@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsm1p6nxcrmcm"]
+
+[ext_resource type="Script" uid="uid://dj7meocloc86r" path="res://Scenes/UI/lockpick/robbable_object.gd" id="1_4prv8"]
+[ext_resource type="Script" uid="uid://j1hh82g70nrw" path="res://Scripts/Components/Objectives/enter_combination_objective.gd" id="2_eldgd"]
+[ext_resource type="PackedScene" uid="uid://bv7v484uv5hjr" path="res://Scenes/UI/rob_minigame.tscn" id="3_4prv8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4prv8"]
+size = Vector3(4.18497, 2.32373, 3.93604)
+
+[node name="robbable" type="Node3D"]
+script = ExtResource("1_4prv8")
+
+[node name="FieldObjectiveBase" type="Node3D" parent="." groups=["FieldObjective"]]
+script = ExtResource("2_eldgd")
+metadata/_custom_type_script = "uid://bs8ndwpx6qqw4"
+
+[node name="Area3D" type="Area3D" parent="FieldObjectiveBase"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FieldObjectiveBase/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13213, 0.661865, 0.641032)
+shape = SubResource("BoxShape3D_4prv8")
+
+[node name="rob_layer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="robbery" parent="rob_layer" instance=ExtResource("3_4prv8")]
+
+[connection signal="player_input_error" from="FieldObjectiveBase" to="." method="_on_field_objective_base_player_input_error"]
+[connection signal="player_input_made_progress" from="FieldObjectiveBase" to="." method="_on_field_objective_base_player_input_made_progress"]
