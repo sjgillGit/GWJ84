@@ -9,7 +9,7 @@ var camera: Camera3D;
 var camera_horizontal: Node3D;
 
 @export
-var horizontal_sensitivity: float = 0.07;
+var horizontal_sensitivity: float = GlobalSettings.camera_sensivity;
 
 @export
 var horizontal_acceleration: float = 15;
@@ -19,7 +19,7 @@ var horizontal_acceleration: float = 15;
 var camera_vertical: Node3D;
 
 @export
-var vertical_sensitivity: float = 0.07;
+var vertical_sensitivity: float = GlobalSettings.camera_sensivity;
 
 @export
 var vertical_acceleration: float = 15;
