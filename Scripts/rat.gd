@@ -113,6 +113,11 @@ func boid_calculation(seek_force,delta):
 
 func _on_player_detector_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	state.try_chase_player(body_rid, body, body_shape_index, local_shape_index)
+	alert_neighbors(body_rid, body, body_shape_index, local_shape_index)
+
+func alert_neighbors(body_rid, body, body_shape_index, local_shape_index):
+	for neighbor in neighbors:
+		neighbor.try_chase_player(body_rid, body, body_shape_index, local_shape_index)
 
 func chase_player(body_rid, body, body_shape_index, local_shape_index):
 	state = ChaseRatState.new(self)
