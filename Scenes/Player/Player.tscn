@@ -1301,7 +1301,7 @@ _data = {
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("mesh_root", "camera_controller", "health_handler", "anim_player") groups=["Entity"]]
 collision_layer = 3
 script = ExtResource("1_488fn")
-move_speed = 6.0
+move_speed = 5.0
 sprint_multiplier = 1.5
 mesh_root = NodePath("MeshRoot")
 camera_controller = NodePath("CameraRoot")

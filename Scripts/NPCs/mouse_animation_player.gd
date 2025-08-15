@@ -16,7 +16,7 @@ func _on_rat_chasing():
 
 func _on_rat_attacking():
 	play("Attack")
-	queue("Getup")
+	queue("GetUp")
 
 
 func _on_animation_finished(anim_name):
