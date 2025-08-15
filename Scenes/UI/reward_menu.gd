@@ -13,7 +13,7 @@ var smash_count:= 0
 @onready var choose: Button = $MarginContainer/VBoxContainer/choose_separator/choose
 @onready var choose_2: Button = $MarginContainer/VBoxContainer/choose_separator/choose2
 @onready var choose_3: Button = $MarginContainer/VBoxContainer/choose_separator/choose3
-@onready var origin_pos: Vector2 = self.position
+@onready var origin_pos: Vector2
 @onready var gpu_particles_2d: GPUParticles2D = $Label/GPUParticles2D
 @onready var gpu_particles_2d_2: GPUParticles2D = $Label/GPUParticles2D2
 @onready var s_smash: AudioStreamPlayer = $Control/smash
@@ -22,25 +22,25 @@ var smash_count:= 0
 @onready var s_smash_4: AudioStreamPlayer = $Control/smash4
 @onready var woosh: AudioStreamPlayer = $Control/woosh
 var values = [20,-15,-20,25,17,-13]
+func _ready() -> void:
+	self.position.y = (get_viewport().get_visible_rect().size.y - self.size.y) / 2
+	origin_pos = self.position
 func smash() -> void:
 	match smash_count:
 		0:
 			s_smash.play()
 			smash_me(smash_1,choose)
 			var tween = get_tree().create_tween().set_parallel(true)
-			#tween.tween_property(self,"position",origin_pos + Vector2(5,15),0.5).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 			tween.tween_property(self,"scale",Vector2(1.02,1.02),0.5).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 		1:
 			s_smash_2.play()
 			smash_me(smash_2,choose_2)
 			var tween = get_tree().create_tween().set_parallel(true)
-			#tween.tween_property(self,"position",origin_pos + Vector2(13,-3),0.5).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 			tween.tween_property(self,"scale",Vector2(1.04,1.04),0.5).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 		2:
 			s_smash_3.play()
 			smash_me(smash_3,choose_3)
 			var tween = get_tree().create_tween().set_parallel(true)
-			#tween.tween_property(self,"position",origin_pos + Vector2(-10,7),0.5).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 			tween.tween_property(self,"scale",Vector2(1.08,1.08),0.5).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 		4:
 			woosh.play()
@@ -88,6 +88,9 @@ func reward_chosen(number_chosen:int,object):
 	gpu_particles_2d_2.emitting = true
 	await tween.finished
 	choose_separator.visible = false
+	var timer =  get_tree().create_timer(2)
+	await  timer.timeout
+	smash()
 
 func smash_me(label: Label,reward:Button):
 	reward.scale = Vector2(0.01,0.01)

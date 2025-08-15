@@ -2,7 +2,7 @@ extends Node3D
 class_name PlayerActions
 
 signal selected_action_changed(action: PlayerActionBase, index: int);
-@onready var skill_box: HBoxContainer = $"../CanvasLayer/skill_box"
+@onready var skill_box: HBoxContainer = $"../screen_ui/skill_box"
 
 var actions: Array[PlayerActionBase];
 var current_action_index: int = 0;

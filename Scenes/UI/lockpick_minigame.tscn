@@ -18,15 +18,16 @@ script = ExtResource("1_5sqr4")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 0
-offset_left = 235.0
-offset_top = -24.0
-offset_right = 935.0
-offset_bottom = 676.0
+offset_left = 84.0
+offset_top = -63.0
+offset_right = 1846.0
+offset_bottom = 1129.0
+stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(700, 700)
+size = Vector2i(1762, 1192)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]

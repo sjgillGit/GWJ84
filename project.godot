@@ -19,6 +19,13 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalSignals="*res://Scripts/Globals/global_signals.gd"
+GlobalSettings="*res://Scripts/Globals/global_settings.gd"
+
+[display]
+
+window/size/mode=2
+window/size/resizable=false
+window/size/borderless=true
 
 [editor_plugins]
 

@@ -695,15 +695,10 @@ anim_offset_min = 1.0
 anim_offset_max = 1.0
 
 [node name="Control" type="Panel"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 89.0
-offset_top = 37.0
-offset_right = -564.0
-offset_bottom = -32.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 99.0
+offset_top = 469.0
+offset_right = 582.0
+offset_bottom = 992.0
 pivot_offset = Vector2(249.5, 289.5)
 theme = ExtResource("1_s6urc")
 script = ExtResource("2_scebn")
@@ -877,20 +872,20 @@ render_target_update_mode = 4
 transform = Transform3D(1, 0, 0, 0, 0.919383, 0.393364, 0, -0.393364, 0.919383, 0, -56.437, 3.48735)
 
 [node name="reward" type="Node3D" parent="MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -44.4649, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -59.377, 0.399093)
 
 [node name="gas" type="MeshInstance3D" parent="MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport/reward"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.1554, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41547, 0)
 visible = false
 mesh = SubResource("ArrayMesh_2pnfp")
 skeleton = NodePath("")
 
 [node name="turret" parent="MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport/reward" instance=ExtResource("8_didp5")]
-transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, -15.171, -0.199101)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 visible = false
 
 [node name="goblin" type="Node3D" parent="MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport/reward"]
-transform = Transform3D(1.69885, 0, 0.0625315, -0.0115757, 1.67062, 0.314487, -0.0614507, -0.3147, 1.66949, 0.1941, -15.5279, -0.455641)
+transform = Transform3D(1.69885, 0, 0.0625315, -0.0115757, 1.67062, 0.314487, -0.0614507, -0.3147, 1.66949, 0, -0.847858, 0)
 visible = false
 
 [node name="Skeleton3D" type="Skeleton3D" parent="MarginContainer/VBoxContainer/show_reward/SubViewportContainer/SubViewport/reward/goblin"]
@@ -1501,9 +1496,6 @@ explosiveness = 1.0
 randomness = 0.51
 collision_base_size = 0.0
 process_material = SubResource("ParticleProcessMaterial_jbpmu")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.7
 
 [node name="Control" type="Control" parent="."]
 anchors_preset = 0

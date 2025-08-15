@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dko2mapcxs0y3" path="res://Scenes/Player/Player.tscn" id="1_q6fdj"]
 [ext_resource type="PackedScene" uid="uid://chxvqa83wi22n" path="res://Scenes/Turrets/gun_turret.tscn" id="2_r5l72"]
 [ext_resource type="PackedScene" uid="uid://cgqxhlqkv4776" path="res://Scenes/3dstuff/treasure_chest.tscn" id="3_i8snt"]
-[ext_resource type="PackedScene" uid="uid://0ejdu0l0x56m" path="res://Scenes/3dstuff/bank.tscn" id="4_olygr"]
+[ext_resource type="PackedScene" uid="uid://ln51xmv2t25d" path="res://Scenes/3dstuff/bank.tscn" id="4_olygr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q6fdj"]
 

@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://j1hh82g70nrw" path="res://Scripts/Components/Objectives/enter_combination_objective.gd" id="2_eldgd"]
 [ext_resource type="PackedScene" uid="uid://bv7v484uv5hjr" path="res://Scenes/UI/rob_minigame.tscn" id="3_4prv8"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_olygr"]
-radius = 4.0
+[sub_resource type="BoxShape3D" id="BoxShape3D_4prv8"]
+size = Vector3(4.18497, 2.32373, 3.93604)
 
 [node name="robbable" type="Node3D"]
 script = ExtResource("1_4prv8")
@@ -17,7 +17,8 @@ metadata/_custom_type_script = "uid://bs8ndwpx6qqw4"
 [node name="Area3D" type="Area3D" parent="FieldObjectiveBase"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FieldObjectiveBase/Area3D"]
-shape = SubResource("SphereShape3D_olygr")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13213, 0.661865, 0.641032)
+shape = SubResource("BoxShape3D_4prv8")
 
 [node name="rob_layer" type="CanvasLayer" parent="."]
 visible = false

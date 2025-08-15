@@ -9,33 +9,31 @@
 
 [node name="watch" type="CanvasGroup"]
 material = ExtResource("1_tbxsg")
-position = Vector2(0, 17)
 
 [node name="watch" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 997.0
-offset_top = 6.0
-offset_right = 1037.0
-offset_bottom = 46.0
+offset_top = 19.0
+offset_right = 40.0
+offset_bottom = 59.0
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_grf1r")
 mission_time = 240.0
 
 [node name="TextureRect2" type="TextureRect" parent="watch"]
 layout_mode = 0
-offset_left = 61.133
+offset_left = 83.133
 offset_top = 96.337
-offset_right = 217.133
+offset_right = 239.133
 offset_bottom = 258.337
 mouse_filter = 2
 texture = ExtResource("3_wsq6c")
 
 [node name="progressbar" type="TextureProgressBar" parent="watch"]
 layout_mode = 0
-offset_left = 61.133
+offset_left = 83.133
 offset_top = 96.3368
-offset_right = 218.133
+offset_right = 240.133
 offset_bottom = 259.337
 max_value = 360.0
 step = 0.1
@@ -47,18 +45,17 @@ tint_progress = Color(1, 1, 1, 0)
 
 [node name="TextureRect" type="TextureRect" parent="watch"]
 layout_mode = 0
-offset_left = -22.0
 offset_top = -30.0
-offset_right = 300.0
+offset_right = 322.0
 offset_bottom = 365.0
 mouse_filter = 2
 texture = ExtResource("5_5axtw")
 
 [node name="hand" type="TextureRect" parent="watch"]
 layout_mode = 0
-offset_left = 128.475
+offset_left = 150.475
 offset_top = 122.373
-offset_right = 148.475
+offset_right = 170.475
 offset_bottom = 179.373
 pivot_offset = Vector2(10, 56)
 texture = ExtResource("10_jyt67")

@@ -1,6 +1,6 @@
 extends PlayerActionBase
 class_name PlayerMeleeAction
-@onready var skill_box: HBoxContainer = $"../../CanvasLayer/skill_box"
+@onready var skill_box: HBoxContainer = $"../../screen_ui/skill_box"
 
 @export
 var melee_cooldown: float;

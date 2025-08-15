@@ -17,6 +17,8 @@ func stop():
 		n.queue_free()
 	step = 0
 func start(speed):
+	
+	self.scale = Vector2(1,1) * GlobalSettings.multiplier
 	camera_3d.position = Vector3(0,-100,0)
 	var spin_spped = speed
 	nail_spread = 200 / sequence.size()
