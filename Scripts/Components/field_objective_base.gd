@@ -24,10 +24,14 @@ func _on_player_left():
 	pass;
 
 func _on_player_entered_internal(_body: Node3D):
-	_on_player_entered();
+	if _body is Player:
+		_on_player_entered();
+	else:
+		print("Not a Player entered")
 
 func _on_player_exited_internal(_body: Node3D):
-	_on_player_left();
+	if _body is Player:
+		_on_player_left();
 
 func _get_configuration_warnings() -> PackedStringArray:
 	if !get_children().any(func(child) -> bool: return child is Area3D):
