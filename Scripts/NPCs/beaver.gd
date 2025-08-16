@@ -39,7 +39,8 @@ func attack_behaviour(delta):
 		$attacking_sounds.play()
 		attacking.emit()
 		turret.get_node("EntityHealthHandler").take_damage(turret,attack_damage)
-		turret.get_node("EntityHealthHandler").entity_died.connect(_on_turret_disabled)
+		if not turret.get_node("EntityHealthHandler").entity_died.is_connected(_on_turret_disabled):
+			turret.get_node("EntityHealthHandler").entity_died.connect(_on_turret_disabled)
 		can_attack = false
 
 func chase_turret(body_rid, body, body_shape_index, local_shape_index):
@@ -65,4 +66,6 @@ func _on_turret_detector_body_shape_entered(body_rid, body, body_shape_index, lo
 	state.try_chase_player(body_rid, body, body_shape_index, local_shape_index)
 
 func _on_turret_disabled():
-	return 
+	if get_parent().get_node("turrets").get_child_count() >0:
+		turret = get_parent().get_node("turrets").get_child(0)
+		state.try_chase_player(0, turret, 0, 0)

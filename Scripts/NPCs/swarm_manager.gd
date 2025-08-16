@@ -92,7 +92,7 @@ func add_npc(position:Vector3):
 		npc = _fetch_from_pool(mice_pool)
 	elif rnd < unit_ratios[0] + unit_ratios[1]:
 		npc = _fetch_from_pool(rat_pool)
-	elif rnd < unit_ratios[0] + unit_ratios[1] + unit_ratios[2]:
+	elif rnd < unit_ratios[0] + unit_ratios[1] + unit_ratios[2] and  get_parent().get_node("turrets").get_child_count() > 0:
 		npc = _fetch_from_pool(beaver_pool)
 	else:
 		npc = _fetch_from_pool(bear_pool)
@@ -108,10 +108,6 @@ func add_npc(position:Vector3):
 		init_beaver(npc)
 
 func init_beaver(npc):
-	if get_parent().get_node("turrets").get_child_count() == 0:
-		npc.end_patrol_position = player
-		npc.start_in_leader_status()
-	else:
 		npc.turret = get_parent().get_node("turrets").get_child(0)
 		npc.start_in_chasing()
 
@@ -142,11 +138,12 @@ func _on_npc_killed(dead_npc:Npc):
 func increase_difficulty():
 	current_enemies = max(current_enemies+20,MAX_ENEMIES) 
 
-func spawn_enemies(posiiton):
+func spawn_enemies(positon):
 	for i in range(0,current_enemies):
-		add_npc(Vector3.ZERO)
+		add_npc(position)
 
 
 func _on_timer_timeout():
-	spawn_enemies(player.global_position + Vector3(10,0,10))
+	increase_difficulty()
+	spawn_enemies(player.global_position + Vector3(5,0,5))
 	pass

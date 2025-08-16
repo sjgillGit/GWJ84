@@ -10,7 +10,7 @@ func _on_enter() -> void:
 	pass;
 
 func _on_process(delta: float) -> void:
-	pass;
+	pass
 
 func _on_exit() -> void:
 	pass;
