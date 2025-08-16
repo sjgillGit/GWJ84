@@ -37,6 +37,7 @@ var is_waiting_animation_end: bool = false
 
 var gravity: float;
 
+@export var dead_scene:PackedScene
 func _ready() -> void:
 	state_changed.connect(_on_state_changed)
 	var actions: Array[PlayerActionBase] = %PlayerActions.actions
@@ -68,8 +69,9 @@ func _physics_process(_delta: float) -> void:
 
 func take_damage(damage: float) -> void:
 	control.change_hp(-damage)
-	health_handler.take_damage(self, damage);
-
+	health_handler.take_damage(self, damage)
+	if health_handler.health < 0:
+		get_tree().change_scene_to_file("res://Scenes/map.tscn")
 
 
 

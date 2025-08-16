@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=4 uid="uid://bfxkpfx0qgb37"]
 
-[ext_resource type="Script" uid="uid://xm7cu7ebwvga" path="res://Scenes/UI/startgame.gd" id="1_ddswn"]
+[ext_resource type="Script" path="res://Scenes/UI/startgame.gd" id="1_ddswn"]
 [ext_resource type="Script" uid="uid://dkahuk48vf0oi" path="res://Scripts/ui/menu_buttons.gd" id="1_gfgrl"]
 [ext_resource type="Theme" uid="uid://csus3mgu2hjxc" path="res://Assets/ui/button.tres" id="2_ddswn"]
 [ext_resource type="Theme" uid="uid://dr6wcdv73nca2" path="res://Assets/ui/menu.tres" id="3_1r22b"]
@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bpqpx4wtsplc0" path="res://Assets/ui/audio/menu rollover.wav" id="9_1r22b"]
 [ext_resource type="AudioStream" uid="uid://68kq1k2nwmof" path="res://Assets/ui/audio/Vent Bar GWJ 84 - big light switch click.wav" id="10_37pta"]
 [ext_resource type="PackedScene" uid="uid://cr0c38txuy1i3" path="res://Scenes/UI/loadscreen.tscn" id="11_1v4y5"]
-[ext_resource type="Script" uid="uid://w2qakk6rdxfy" path="res://Scenes/UI/credits.gd" id="11_rsl53"]
+[ext_resource type="Script" path="res://Scenes/UI/credits.gd" id="11_rsl53"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m6rdh"]
 texture = ExtResource("5_rsl53")

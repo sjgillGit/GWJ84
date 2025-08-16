@@ -47,4 +47,8 @@ bus = &"SFX"
 stream = ExtResource("7_ehnf7")
 bus = &"SFX"
 
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="9"]
+light_color = Color(0.539977, 0.00460941, 0.286919, 1)
+light_energy = 10.101
+
 [connection signal="win" from="lockpicable" to="." method="_on_lockpicable_win"]

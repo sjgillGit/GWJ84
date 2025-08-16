@@ -135,3 +135,6 @@ func move():
 func start_in_chasing():
 	current_target = player.global_position
 	state = ChaseRatState.new(self)
+
+func start_in_dead_state():
+	state = DeadRatState.new(self)

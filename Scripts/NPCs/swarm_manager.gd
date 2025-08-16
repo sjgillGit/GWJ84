@@ -7,8 +7,7 @@ var npc_list:Array = []
 @export var bear:PackedScene
 @export var beaver:PackedScene
 @onready var player = get_parent().get_node("Player")
-#var unit_ratios = [0.5,0.3,0.05,0.15]
-var unit_ratios = [0,0,1,0]
+var unit_ratios = [0.5,0.3,0.05,0.15]
 var mice_pool = []
 var rat_pool = []
 var beaver_pool = []
@@ -100,7 +99,7 @@ func add_npc(position:Vector3):
 	if npc == null:
 		return # pool empty
 
-	npc.global_position = position
+	npc.global_position =position
 	npc.visible = true
 	npc.revive()
 	npc_list.append(npc)
@@ -108,8 +107,11 @@ func add_npc(position:Vector3):
 		init_beaver(npc)
 
 func init_beaver(npc):
+	if get_parent().get_node("turrets").get_child_count()>0:
 		npc.turret = get_parent().get_node("turrets").get_child(0)
 		npc.start_in_chasing()
+	else:
+		npc.start_in_dead_state()
 
 func _fetch_from_pool(pool:Array) -> Node3D:
 	if pool.size() == 0:
@@ -136,14 +138,25 @@ func _on_npc_killed(dead_npc:Npc):
 			
 
 func increase_difficulty():
-	current_enemies = max(current_enemies+20,MAX_ENEMIES) 
+	current_enemies = min(current_enemies+20,MAX_ENEMIES) 
 
 func spawn_enemies(positon):
 	for i in range(0,current_enemies):
-		add_npc(position)
+		add_npc(player.global_position + Vector3(5,0,0))
 
 
 func _on_timer_timeout():
 	increase_difficulty()
-	spawn_enemies(player.global_position + Vector3(5,0,5))
+	spawn_enemies(player.global_position + Vector3(0,0,0))
 	pass
+
+var win=0
+@export var ammount_of_objectives_to_reach_win_state:int
+func _on_lockpicable_win():
+	add_to_win_state()
+
+func add_to_win_state():
+	win+=1
+	increase_difficulty()
+	if win==ammount_of_objectives_to_reach_win_state:
+			get_tree().change_scene_to_file("res://Scenes/UI/post_mission.tscn")

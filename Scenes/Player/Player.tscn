@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://dko2mapcxs0y3"]
+[gd_scene load_steps=68 format=4 uid="uid://dko2mapcxs0y3"]
 
 [ext_resource type="Script" uid="uid://c8akvpoxkacfl" path="res://Scripts/Player/player.gd" id="1_488fn"]
 [ext_resource type="Animation" uid="uid://dgu24qkepk5yu" path="res://Assets/characters/player/Idle.res" id="2_epg6k"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b1d7g85ltcc1v" path="res://Scripts/Player/Actions/player_melee_action.gd" id="4_ude3g"]
 [ext_resource type="PackedScene" uid="uid://b5vmy52in51ot" path="res://Scenes/UI/screen_ui.tscn" id="5_7xdrn"]
 [ext_resource type="Script" uid="uid://dih6bmq8e1vtv" path="res://Scripts/Player/Actions/player_deploy_turret_action.gd" id="5_jmcll"]
+[ext_resource type="PackedScene" uid="uid://vws68lw0flx6" path="res://dead.tscn" id="5_lw74r"]
 [ext_resource type="Script" uid="uid://bjb4np2yjqmqv" path="res://Scripts/Components/entity_health_handler.gd" id="6_4wape"]
 [ext_resource type="PackedScene" uid="uid://chxvqa83wi22n" path="res://Scenes/Turrets/gun_turret.tscn" id="6_t26db"]
 [ext_resource type="Texture2D" uid="uid://cw2g44b03ropc" path="res://Assets/characters/player/Goblin_G_body.png" id="8_g7gci"]
@@ -26,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://cm5c5k1fwyy0j" path="res://Assets/characters/player/Goblin_g_head.png" id="19_ui31c"]
 [ext_resource type="Texture2D" uid="uid://b5n34ombi22f2" path="res://Assets/characters/player/Goblin_G_coller.png" id="20_karlm"]
 [ext_resource type="Animation" uid="uid://r5ia01nrevod" path="res://Assets/characters/player/Death.res" id="21_2avfq"]
-[ext_resource type="Animation" uid="uid://drhlx6utmwwty" path="res://Assets/characters/player/Dance.res" id="21_jbjyn"]
+[ext_resource type="Animation" uid="uid://4bndpkb3ih70" path="res://Assets/characters/player/Dance.res" id="21_jbjyn"]
 [ext_resource type="Animation" uid="uid://bsht23sl8umd8" path="res://Assets/characters/player/Place_box.res" id="22_d2y64"]
 [ext_resource type="Animation" uid="uid://dc1hy15d6c0rd" path="res://Assets/characters/player/Throw_box.res" id="23_w4oha"]
 [ext_resource type="Animation" uid="uid://b3tlo783q3p1a" path="res://Assets/characters/player/Attack.res" id="24_4ribq"]
@@ -1475,6 +1476,7 @@ camera_controller = NodePath("CameraRoot")
 health_handler = NodePath("PlayerHealthHandler")
 anim_player = NodePath("MeshRoot/Goblin/AnimationPlayer")
 animations = Array[Animation]([ExtResource("2_epg6k"), ExtResource("3_0u84n"), ExtResource("4_esmjy")])
+dead_scene = ExtResource("5_lw74r")
 
 [node name="screen_ui" parent="." instance=ExtResource("5_7xdrn")]
 
@@ -2098,6 +2100,7 @@ libraries = {
 script = ExtResource("3_rlgqx")
 camera = NodePath("CameraHorizontal/CameraVertical/Camera3D")
 camera_horizontal = NodePath("CameraHorizontal")
+horizontal_sensitivity = 0.5
 camera_vertical = NodePath("CameraHorizontal/CameraVertical")
 
 [node name="CameraHorizontal" type="Node3D" parent="CameraRoot"]
