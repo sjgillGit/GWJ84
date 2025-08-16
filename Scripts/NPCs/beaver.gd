@@ -57,3 +57,8 @@ func chase_player(body_rid, body, body_shape_index, local_shape_index):
 	current_target = body.global_position
 	player = body
 	velocity = Vector3.ZERO
+
+
+func _on_turret_detector_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	turret =body 
+	state.try_chase_player(body_rid, body, body_shape_index, local_shape_index)
