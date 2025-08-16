@@ -5543,10 +5543,9 @@ transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, 
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_uth6r")
-speed = 1
-acceleration = 1
+speed = 7
+acceleration = 5
 attack_radius = 2
-attack_damage = 15
 npc_type = 1
 node_mesh = NodePath("Rat")
 

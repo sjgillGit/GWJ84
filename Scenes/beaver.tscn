@@ -2141,8 +2141,8 @@ transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, 
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_g5ip6")
-speed = 1
-acceleration = 1
+speed = 6
+acceleration = 5
 attack_radius = 3
 node_mesh = NodePath("Beaver")
 

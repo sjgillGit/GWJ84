@@ -42,6 +42,7 @@ func _ready():
 	for i in range(0,bear_cap):
 		npc = bear.instantiate()
 		_add_to_pool(npc,bear_pool)
+	spawn_enemies(player.global_position)
 
 func get_neighbors(radius,npc):
 	var neighbors = []
@@ -64,7 +65,7 @@ func _physics_process(delta):
 			npc.update_neighbors(neighbors)
 			npc.state.on_physics_process(delta)
 		else:
-			npc.move_and_slide()
+			npc.move()
 	if count==max_count:
 			count=0
 

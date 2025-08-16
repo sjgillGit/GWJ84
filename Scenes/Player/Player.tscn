@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=4 uid="uid://dko2mapcxs0y3"]
+[gd_scene load_steps=66 format=4 uid="uid://dko2mapcxs0y3"]
 
 [ext_resource type="Script" uid="uid://c8akvpoxkacfl" path="res://Scripts/Player/player.gd" id="1_488fn"]
 [ext_resource type="Animation" uid="uid://dgu24qkepk5yu" path="res://Assets/characters/player/Idle.res" id="2_epg6k"]
@@ -33,8 +33,6 @@
 [ext_resource type="Animation" uid="uid://b3tlo783q3p1a" path="res://Assets/characters/player/Attack.res" id="24_4ribq"]
 [ext_resource type="Animation" uid="uid://vui0n7qiu21y" path="res://Assets/characters/player/Looting.res" id="25_jh1yi"]
 [ext_resource type="PackedScene" uid="uid://cfkdtgu2m48vi" path="res://Assets/Models/Sack.glb" id="27_lw74r"]
-[ext_resource type="Script" uid="uid://bulnp3gptahsc" path="res://Scripts/Player/Actions/action_deploy_gas_turret.gd" id="31_6rswy"]
-[ext_resource type="PackedScene" uid="uid://iskuvl1uxgoa" path="res://Scenes/turret/gas_emmitor.tscn" id="32_jbjyn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4wape"]
 
@@ -2128,13 +2126,6 @@ player_reference = NodePath("../..")
 turret_scene = ExtResource("6_t26db")
 animations = Array[Animation]([ExtResource("23_w4oha"), ExtResource("22_d2y64")])
 metadata/_custom_type_script = "uid://dih6bmq8e1vtv"
-
-[node name="PlayerDeployGasTurrentAction" type="Node3D" parent="PlayerActions" node_paths=PackedStringArray("player_reference")]
-script = ExtResource("31_6rswy")
-deploy_cooldown = 10.0
-player_reference = NodePath("../..")
-gas_turret_scene = ExtResource("32_jbjyn")
-animations = Array[Animation]([ExtResource("23_w4oha"), ExtResource("22_d2y64")])
 
 [node name="PlayerHealthHandler" type="Node3D" parent="."]
 script = ExtResource("6_4wape")
