@@ -13,7 +13,7 @@ var rat_pool = []
 var beaver_pool = []
 var bear_pool = []
 var difficulty_level=0
-const MAX_ENEMIES = 126
+const MAX_ENEMIES = 100
 const BASE_SPAWN_COUNT= 10
 var current_enemies = BASE_SPAWN_COUNT
 var CURRENT_STAT_MULT = 1.0
@@ -140,9 +140,12 @@ func _on_npc_killed(dead_npc:Npc):
 func increase_difficulty():
 	current_enemies = min(current_enemies+20,MAX_ENEMIES) 
 
-func spawn_enemies(positon):
-	for i in range(0,current_enemies):
-		add_npc(player.global_position + Vector3(2*i,0,10))
+func spawn_enemies(position: Vector3):
+	var radius = 15.0
+	for i in range(current_enemies):
+		var angle = randf() * TAU
+		var offset = Vector3(cos(angle), 0, sin(angle)) * randf_range(5.0, radius)
+		add_npc(player.global_position + offset)
 
 
 func _on_timer_timeout():

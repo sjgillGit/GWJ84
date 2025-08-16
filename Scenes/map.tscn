@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://nbkvr20vhw44"]
+[gd_scene load_steps=60 format=4 uid="uid://nbkvr20vhw44"]
 
 [ext_resource type="Texture2D" uid="uid://bhkyckjrxcfxn" path="res://Assets/terrain_3d/Grass.webp" id="1_k63oc"]
 [ext_resource type="Texture2D" uid="uid://duqqgm7u1gkww" path="res://Assets/terrain_3d/ground037_nrm_rgh.png" id="2_j4oe2"]
@@ -15,7 +15,6 @@
 [ext_resource type="Script" uid="uid://b16weukog7005" path="res://addons/proton_scatter/src/scatter_item.gd" id="12_uus22"]
 [ext_resource type="Script" uid="uid://dp5r3h73tcqai" path="res://addons/proton_scatter/src/scatter_shape.gd" id="13_tuwt4"]
 [ext_resource type="Texture2D" uid="uid://d0b6vqc5dplma" path="res://Scenes/sky_2.webp" id="14_j4oe2"]
-[ext_resource type="Script" uid="uid://cjkq5wmew76nf" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="15_uus22"]
 [ext_resource type="PackedScene" uid="uid://cli3v3ohv5np" path="res://Scenes/mouse.tscn" id="16_vtkp8"]
 [ext_resource type="PackedScene" uid="uid://cx2rpesjr050y" path="res://Scenes/rat.tscn" id="17_rg57b"]
 [ext_resource type="PackedScene" uid="uid://m7dkc6gwcbbx" path="res://Scenes/bear.tscn" id="18_j4oe2"]
@@ -30,231 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://bm4oudxtvnv56" path="res://Assets/ui/audio/Vent Bar GWJ 84 - lock open.wav" id="28_a0h6a"]
 [ext_resource type="AudioStream" uid="uid://pijbr23ynv0o" path="res://Assets/ui/audio/menu woosh.wav" id="29_wcnou"]
 [ext_resource type="AudioStream" uid="uid://bpu7d0fn7n5al" path="res://Assets/ui/audio/Vent Bar GWJ 84 - chest opening.wav" id="30_1xwpj"]
-
-[sub_resource type="Resource" id="Resource_unquq"]
-script = ExtResource("8_vtkp8")
-amount = 7
-enabled = true
-override_global_seed = true
-custom_seed = 30
-restrict_height = false
-reference_frame = 1
-
-[sub_resource type="Resource" id="Resource_pptwf"]
-script = ExtResource("10_macow")
-iterations = 5
-offset_step = 0.1
-consecutive_step_multiplier = 0.5
-use_computeshader = true
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = true
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_ak4ow"]
-script = ExtResource("11_ltf6m")
-ray_direction = Vector3(0, -1, 0)
-ray_length = 10.0
-ray_offset = 1.0
-remove_points_on_miss = true
-align_with_collision_normal = false
-max_slope = 90.0
-collision_mask = 2
-exclude_mask = 0
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_ajvq6"]
-script = ExtResource("9_rg57b")
-position = Vector3(0, 0, 0)
-rotation = Vector3(0, 0, 0)
-scale = Vector3(3, 3, 3)
-enabled = true
-override_global_seed = true
-custom_seed = 30
-restrict_height = false
-reference_frame = 2
-
-[sub_resource type="Resource" id="Resource_cwq17"]
-script = ExtResource("6_j4oe2")
-stack = Array[ExtResource("7_riaky")]([SubResource("Resource_unquq"), SubResource("Resource_pptwf"), SubResource("Resource_ak4ow"), SubResource("Resource_ajvq6")])
-
-[sub_resource type="Resource" id="Resource_wpvg5"]
-script = ExtResource("15_uus22")
-size = Vector3(1, 1, 66.7634)
-metadata/_custom_type_script = "uid://cjkq5wmew76nf"
-
-[sub_resource type="Resource" id="Resource_a0h6a"]
-script = ExtResource("8_vtkp8")
-amount = 7
-enabled = true
-override_global_seed = true
-custom_seed = 30
-restrict_height = false
-reference_frame = 1
-
-[sub_resource type="Resource" id="Resource_wcnou"]
-script = ExtResource("10_macow")
-iterations = 5
-offset_step = 0.1
-consecutive_step_multiplier = 0.5
-use_computeshader = true
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = true
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_1xwpj"]
-script = ExtResource("11_ltf6m")
-ray_direction = Vector3(0, -1, 0)
-ray_length = 10.0
-ray_offset = 1.0
-remove_points_on_miss = true
-align_with_collision_normal = false
-max_slope = 90.0
-collision_mask = 2
-exclude_mask = 0
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_pmuo0"]
-script = ExtResource("9_rg57b")
-position = Vector3(0, 0, 0)
-rotation = Vector3(0, 0, 0)
-scale = Vector3(3, 3, 3)
-enabled = true
-override_global_seed = true
-custom_seed = 30
-restrict_height = false
-reference_frame = 2
-
-[sub_resource type="Resource" id="Resource_gg4i5"]
-script = ExtResource("6_j4oe2")
-stack = Array[ExtResource("7_riaky")]([SubResource("Resource_a0h6a"), SubResource("Resource_wcnou"), SubResource("Resource_1xwpj"), SubResource("Resource_pmuo0")])
-
-[sub_resource type="Resource" id="Resource_natfk"]
-script = ExtResource("15_uus22")
-size = Vector3(1, 1, 66.7634)
-
-[sub_resource type="Resource" id="Resource_y410r"]
-script = ExtResource("8_vtkp8")
-amount = 7
-enabled = true
-override_global_seed = true
-custom_seed = 30
-restrict_height = false
-reference_frame = 1
-
-[sub_resource type="Resource" id="Resource_pwqop"]
-script = ExtResource("10_macow")
-iterations = 5
-offset_step = 0.1
-consecutive_step_multiplier = 0.5
-use_computeshader = true
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = true
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_xvpjn"]
-script = ExtResource("11_ltf6m")
-ray_direction = Vector3(0, -1, 0)
-ray_length = 10.0
-ray_offset = 1.0
-remove_points_on_miss = true
-align_with_collision_normal = false
-max_slope = 90.0
-collision_mask = 2
-exclude_mask = 0
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_n3g5y"]
-script = ExtResource("9_rg57b")
-position = Vector3(0, 0, 0)
-rotation = Vector3(0, 0, 0)
-scale = Vector3(3, 3, 3)
-enabled = true
-override_global_seed = true
-custom_seed = 30
-restrict_height = false
-reference_frame = 2
-
-[sub_resource type="Resource" id="Resource_mjs32"]
-script = ExtResource("6_j4oe2")
-stack = Array[ExtResource("7_riaky")]([SubResource("Resource_y410r"), SubResource("Resource_pwqop"), SubResource("Resource_xvpjn"), SubResource("Resource_n3g5y")])
-
-[sub_resource type="Resource" id="Resource_ylraf"]
-script = ExtResource("15_uus22")
-size = Vector3(1, 1, 66.7634)
-
-[sub_resource type="Resource" id="Resource_6w3s7"]
-script = ExtResource("8_vtkp8")
-amount = 7
-enabled = true
-override_global_seed = true
-custom_seed = 30
-restrict_height = false
-reference_frame = 1
-
-[sub_resource type="Resource" id="Resource_wk4js"]
-script = ExtResource("10_macow")
-iterations = 5
-offset_step = 0.1
-consecutive_step_multiplier = 0.5
-use_computeshader = true
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = true
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_biwe2"]
-script = ExtResource("11_ltf6m")
-ray_direction = Vector3(0, -1, 0)
-ray_length = 10.0
-ray_offset = 1.0
-remove_points_on_miss = true
-align_with_collision_normal = false
-max_slope = 90.0
-collision_mask = 2
-exclude_mask = 0
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_7t8hk"]
-script = ExtResource("9_rg57b")
-position = Vector3(0, 0, 0)
-rotation = Vector3(0, 0, 0)
-scale = Vector3(3, 3, 3)
-enabled = true
-override_global_seed = true
-custom_seed = 30
-restrict_height = false
-reference_frame = 2
-
-[sub_resource type="Resource" id="Resource_dlwvm"]
-script = ExtResource("6_j4oe2")
-stack = Array[ExtResource("7_riaky")]([SubResource("Resource_6w3s7"), SubResource("Resource_wk4js"), SubResource("Resource_biwe2"), SubResource("Resource_7t8hk")])
-
-[sub_resource type="Resource" id="Resource_ura26"]
-script = ExtResource("15_uus22")
-size = Vector3(1, 1, 66.7634)
+[ext_resource type="Script" uid="uid://nbneoyxk8c6q" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="30_unquq"]
 
 [sub_resource type="Gradient" id="Gradient_j4oe2"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -454,189 +229,63 @@ _data = {
 &"opening": SubResource("Animation_wsojt")
 }
 
+[sub_resource type="Resource" id="Resource_unquq"]
+script = ExtResource("8_vtkp8")
+amount = 150
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_pptwf"]
+script = ExtResource("9_rg57b")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(20, 360, 20)
+scale = Vector3(0.1, 0.1, 0.1)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_ak4ow"]
+script = ExtResource("10_macow")
+iterations = 3
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+use_computeshader = true
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_ajvq6"]
+script = ExtResource("11_ltf6m")
+ray_direction = Vector3(0, -1, 0)
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+align_with_collision_normal = false
+max_slope = 90.0
+collision_mask = 1
+exclude_mask = 0
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_cwq17"]
+script = ExtResource("6_j4oe2")
+stack = Array[ExtResource("7_riaky")]([SubResource("Resource_unquq"), SubResource("Resource_pptwf"), SubResource("Resource_ak4ow"), SubResource("Resource_ajvq6")])
+
+[sub_resource type="Resource" id="Resource_g8bsm"]
+script = ExtResource("30_unquq")
+radius = 215.13
+
 [node name="map" type="Node3D"]
-
-[node name="lamps" type="Node3D" parent="."]
-process_mode = 3
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1843, 0, -0.774464)
-script = ExtResource("5_k63oc")
-show_output_in_tree = true
-render_mode = 1
-keep_static_colliders = true
-force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_cwq17")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-
-[node name="ScatterItem" type="Node3D" parent="lamps"]
-script = ExtResource("12_uus22")
-source_scale_multiplier = 0.4
-path = "uid://cp2truhn4ua6y"
-
-[node name="PathShape" type="Node3D" parent="lamps"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1319, 0, 24.1029)
-script = ExtResource("13_tuwt4")
-shape = SubResource("Resource_wpvg5")
-
-[node name="ScatterOutput" type="Marker3D" parent="lamps"]
-
-[node name="ScatterItem" type="Node3D" parent="lamps/ScatterOutput"]
-
-[node name="tree" parent="lamps/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(0.426826, 0, 0, 0, 0.426826, 0, 0, 0, 0.426826, 25.2777, 7.7486e-06, 21.5569)
-
-[node name="tree2" parent="lamps/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(1.09057, 0, 0, 0, 1.09057, 0, 0, 0, 1.09057, 24.6171, 0.0281616, 4.36194)
-
-[node name="tree3" parent="lamps/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(0.595798, 0, 0, 0, 0.595798, 0, 0, 0, 0.595798, 25.082, 0.00208402, 35.0509)
-
-[node name="tree4" parent="lamps/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(1.5169, 0, 0, 0, 1.5169, 0, 0, 0, 1.5169, 24.6447, 2.61068e-05, 28.3954)
-
-[node name="tree5" parent="lamps/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(0.883855, 0, 0, 0, 0.883855, 0, 0, 0, 0.883855, 24.7719, 0.00868899, 46.6518)
-
-[node name="tree6" parent="lamps/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(0.761036, 0, 0, 0, 0.761036, 0, 0, 0, 0.761036, 25.1908, 0.0402831, 1.42447)
-
-[node name="tree7" parent="lamps/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(1.31443, 0, 0, 0, 1.31443, 0, 0, 0, 1.31443, 25.2057, 0.0685332, -4.8998)
-
-[node name="lamps2" type="Node3D" parent="."]
-process_mode = 3
-transform = Transform3D(0.852895, 0, 0.522082, 0, 1, 0, -0.522082, 0, 0.852895, 30.3022, 0, 80.8423)
-script = ExtResource("5_k63oc")
-show_output_in_tree = true
-render_mode = 1
-keep_static_colliders = true
-force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_gg4i5")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-
-[node name="ScatterItem" type="Node3D" parent="lamps2"]
-script = ExtResource("12_uus22")
-source_scale_multiplier = 0.4
-path = "uid://cp2truhn4ua6y"
-
-[node name="PathShape" type="Node3D" parent="lamps2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1319, 0, 24.1029)
-script = ExtResource("13_tuwt4")
-shape = SubResource("Resource_natfk")
-
-[node name="ScatterOutput" type="Marker3D" parent="lamps2"]
-
-[node name="ScatterItem" type="Node3D" parent="lamps2/ScatterOutput"]
-
-[node name="tree" parent="lamps2/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(0.426826, 0, 0, 0, 0.426826, 0, 0, 0, 0.426826, 25.2777, 7.7486e-06, 21.5569)
-
-[node name="tree2" parent="lamps2/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(1.09057, 0, 0, 0, 1.09057, 0, 0, 0, 1.09057, 24.6171, 7.689e-06, 4.36195)
-
-[node name="tree3" parent="lamps2/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(0.595798, 0, 0, 0, 0.595798, 0, 0, 0, 0.595798, 25.082, 7.7486e-06, 35.0509)
-
-[node name="tree4" parent="lamps2/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(1.5169, 0, 0, 0, 1.5169, 0, 0, 0, 1.5169, 24.6447, 7.7486e-06, 28.3954)
-
-[node name="tree5" parent="lamps2/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(0.883855, 0, 0, 0, 0.883855, 0, 0, 0, 0.883855, 24.7719, 7.7486e-06, 46.6518)
-
-[node name="tree6" parent="lamps2/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(0.761036, 0, 0, 0, 0.761036, 0, 0, 0, 0.761036, 25.1908, 7.7486e-06, 1.42448)
-
-[node name="tree7" parent="lamps2/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(1.31443, 0, 0, 0, 1.31443, 0, 0, 0, 1.31443, 25.2057, 0.000740111, -4.89978)
-
-[node name="lamps3" type="Node3D" parent="."]
-process_mode = 3
-transform = Transform3D(0.902638, 1.88134e-08, 0.430401, -1.88134e-08, 1, -4.25583e-09, -0.430401, -4.25583e-09, 0.902638, 58.5921, 0, 128.035)
-script = ExtResource("5_k63oc")
-show_output_in_tree = true
-render_mode = 1
-keep_static_colliders = true
-force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_mjs32")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-
-[node name="ScatterItem" type="Node3D" parent="lamps3"]
-script = ExtResource("12_uus22")
-source_scale_multiplier = 0.4
-path = "uid://cp2truhn4ua6y"
-
-[node name="PathShape" type="Node3D" parent="lamps3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1319, 0, 24.1029)
-script = ExtResource("13_tuwt4")
-shape = SubResource("Resource_ylraf")
-
-[node name="ScatterOutput" type="Marker3D" parent="lamps3"]
-
-[node name="ScatterItem" type="Node3D" parent="lamps3/ScatterOutput"]
-
-[node name="tree" parent="lamps3/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(0.426826, 0, 0, 0, 0.426826, 0, 0, 0, 0.426826, 25.2777, 8.31591e-06, 21.5569)
-
-[node name="tree2" parent="lamps3/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(1.09057, 0, 0, 0, 1.09057, 0, 0, 0, 1.09057, 24.6171, 8.2303e-06, 4.36195)
-
-[node name="tree3" parent="lamps3/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(0.595798, 0, 0, 0, 0.595798, 0, 0, 0, 0.595798, 25.082, 9.82535e-05, 35.0509)
-
-[node name="tree4" parent="lamps3/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(1.5169, 0, 0, 0, 1.5169, 0, 0, 0, 1.5169, 24.6447, 8.3331e-06, 28.3954)
-
-[node name="tree5" parent="lamps3/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(0.883855, 0, 0, 0, 0.883855, 0, 0, 0, 0.883855, 24.7719, 7.75754e-06, 46.6518)
-
-[node name="tree6" parent="lamps3/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(0.761036, 0, 0, 0, 0.761036, 0, 0, 0, 0.761036, 25.1908, 8.22859e-06, 1.42448)
-
-[node name="tree7" parent="lamps3/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(1.31443, 0, 0, 0, 1.31443, 0, 0, 0, 1.31443, 25.2057, 8.20196e-06, -4.8998)
-
-[node name="lamps4" type="Node3D" parent="."]
-process_mode = 3
-transform = Transform3D(0.0650896, 5.47137e-09, 0.997879, -1.88134e-08, 1, -4.25583e-09, -0.997879, -1.84965e-08, 0.0650896, 153.656, 0, 186.61)
-script = ExtResource("5_k63oc")
-show_output_in_tree = true
-render_mode = 1
-keep_static_colliders = true
-force_rebuild_on_load = false
-modifier_stack = SubResource("Resource_dlwvm")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-
-[node name="ScatterItem" type="Node3D" parent="lamps4"]
-script = ExtResource("12_uus22")
-source_scale_multiplier = 0.4
-path = "uid://cp2truhn4ua6y"
-
-[node name="PathShape" type="Node3D" parent="lamps4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1319, 0, 24.1029)
-script = ExtResource("13_tuwt4")
-shape = SubResource("Resource_ura26")
-
-[node name="ScatterOutput" type="Marker3D" parent="lamps4"]
-
-[node name="ScatterItem" type="Node3D" parent="lamps4/ScatterOutput"]
-
-[node name="tree" parent="lamps4/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(0.426826, 0, 0, 0, 0.426826, 0, 0, 0, 0.426826, 24.6171, 5.01165e-06, 4.36195)
-
-[node name="tree2" parent="lamps4/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(1.09057, 0, 0, 0, 1.09057, 0, 0, 0, 1.09057, 25.082, 0.714736, 35.0509)
-
-[node name="tree3" parent="lamps4/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(0.595798, 0, 0, 0, 0.595798, 0, 0, 0, 0.595798, 24.7719, 1.56254e-05, 46.6518)
-
-[node name="tree4" parent="lamps4/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(1.5169, 0, 0, 0, 1.5169, 0, 0, 0, 1.5169, 25.1908, 5.66559e-06, 1.42448)
-
-[node name="tree5" parent="lamps4/ScatterOutput/ScatterItem" instance=ExtResource("19_riaky")]
-transform = Transform3D(0.883855, 0, 0, 0, 0.883855, 0, 0, 0, 0.883855, 25.2057, 6.235e-06, -4.8998)
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://Assets/terrain_3d"
@@ -663,9 +312,10 @@ mice = ExtResource("16_vtkp8")
 rat = ExtResource("17_rg57b")
 bear = ExtResource("18_j4oe2")
 beaver = ExtResource("19_macow")
+ammount_of_objectives_to_reach_win_state = 3
 
 [node name="Player" parent="." instance=ExtResource("7_w7jjh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.8787, 1.72818, -12.7632)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.8787, 1.72818, 109.153)
 collision_layer = 1
 collision_mask = 6
 
@@ -675,7 +325,7 @@ collision_mask = 6
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0743, 0.0427623, 14.2547)
 
 [node name="spawn_timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 31.025
 autostart = true
 
 [node name="chase_music" type="AudioStreamPlayer3D" parent="."]
@@ -692,7 +342,7 @@ max_distance = 4096.0
 [node name="turrets" type="Node3D" parent="."]
 
 [node name="treasure chest" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.4514, 1.04281, 0.553674)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.2261, 1.04281, -28.0152)
 script = ExtResource("23_unquq")
 speed = 100.0
 
@@ -748,7 +398,7 @@ stream = ExtResource("30_1xwpj")
 bus = &"SFX"
 
 [node name="treasure chest2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.4514, 1.04281, 53.5246)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 139.02, 1.04281, 83.0707)
 script = ExtResource("23_unquq")
 speed = 100.0
 
@@ -803,8 +453,83 @@ bus = &"SFX"
 stream = ExtResource("30_1xwpj")
 bus = &"SFX"
 
+[node name="treasure chest3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 139.02, 1.04281, -34.8058)
+script = ExtResource("23_unquq")
+speed = 100.0
+
+[node name="Cube" type="MeshInstance3D" parent="treasure chest3"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("ArrayMesh_jds64")
+skeleton = NodePath("")
+
+[node name="Area3D" type="StaticBody3D" parent="treasure chest3/Cube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="treasure chest3/Cube/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00584549, 0.261803, 0.0222172)
+shape = SubResource("BoxShape3D_7jop6")
+
+[node name="Armature" type="Node3D" parent="treasure chest3"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.647596, -0.373877)
+
+[node name="Skeleton3D" type="Skeleton3D" parent="treasure chest3/Armature"]
+bones/0/name = "Bone"
+bones/0/parent = -1
+bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.29396e-23, 0, -5.96046e-08)
+bones/0/enabled = true
+bones/0/position = Vector3(5.29396e-23, 0, -5.96046e-08)
+bones/0/rotation = Quaternion(0, 0, 0, 1)
+bones/0/scale = Vector3(1, 1, 1)
+
+[node name="Cube_001" type="MeshInstance3D" parent="treasure chest3/Armature/Skeleton3D"]
+mesh = SubResource("ArrayMesh_s1ni6")
+skin = SubResource("Skin_owsby")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="treasure chest3"]
+libraries = {
+&"": SubResource("AnimationLibrary_g1eat")
+}
+
+[node name="lockpicable" parent="treasure chest3" instance=ExtResource("26_ajvq6")]
+
+[node name="interact_indication" parent="treasure chest3" instance=ExtResource("27_cwq17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.279278, -0.458091, 0)
+
+[node name="lock_clock" type="AudioStreamPlayer" parent="treasure chest3"]
+stream = ExtResource("28_a0h6a")
+bus = &"SFX"
+
+[node name="reward_choose" type="CanvasLayer" parent="treasure chest3"]
+
+[node name="woosh" type="AudioStreamPlayer" parent="treasure chest3"]
+stream = ExtResource("29_wcnou")
+bus = &"SFX"
+
+[node name="chest_open" type="AudioStreamPlayer" parent="treasure chest3"]
+stream = ExtResource("30_1xwpj")
+bus = &"SFX"
+
+[node name="trees" type="Node3D" parent="."]
+transform = Transform3D(0.592206, 0, 0, 0, 1, 0, 0, 0, 0.806281, 53.443, 0, 10.2979)
+script = ExtResource("5_k63oc")
+modifier_stack = SubResource("Resource_cwq17")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://bglhvwowc0n14"
+
+[node name="ScatterItem" type="Node3D" parent="trees"]
+script = ExtResource("12_uus22")
+path = "uid://2u4sw88viuux"
+
+[node name="ScatterShape" type="Node3D" parent="trees"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 97.0744, 0, 64.6701)
+script = ExtResource("13_tuwt4")
+shape = SubResource("Resource_g8bsm")
+
 [connection signal="timeout" from="spawn_timer" to="swarm_manager" method="_on_timer_timeout"]
 [connection signal="win" from="treasure chest/lockpicable" to="swarm_manager" method="_on_lockpicable_win"]
 [connection signal="win" from="treasure chest/lockpicable" to="treasure chest" method="_on_lockpicable_win"]
 [connection signal="win" from="treasure chest2/lockpicable" to="swarm_manager" method="_on_lockpicable_win"]
 [connection signal="win" from="treasure chest2/lockpicable" to="treasure chest2" method="_on_lockpicable_win"]
+[connection signal="win" from="treasure chest3/lockpicable" to="swarm_manager" method="_on_lockpicable_win"]
+[connection signal="win" from="treasure chest3/lockpicable" to="treasure chest3" method="_on_lockpicable_win"]
