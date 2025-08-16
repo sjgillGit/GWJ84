@@ -75,9 +75,9 @@ func boid_calculation(seek_force,delta):
 	var separation_force = get_separation_force()
 	var alignment_force = get_alignment_force()
 	var avoidance_force = get_avoidance_force()
-	var total_force = (seek_force * 2.0) + (separation_force * 2.0) + (alignment_force * 1.0) + (avoidance_force * 1.5)
-	velocity.x = lerp(velocity.x, total_force.x, 0.05)
-	velocity.z = lerp(velocity.z, total_force.z, 0.05)
+	var total_force = (seek_force * 3.0) + (separation_force * 1) + (alignment_force * 1.0) + (avoidance_force * 1)
+	velocity.x = lerp(velocity.x, total_force.x, 0.1)
+	velocity.z = lerp(velocity.z, total_force.z, 0.1)
 	var look_pos = Vector3(current_target.x, global_position.y, current_target.z)
 	node_mesh.look_at(look_pos, Vector3.UP)
 	node_mesh.rotate_y(PI)
@@ -126,10 +126,7 @@ func _on_stunned_cooldown_timeout():
 	state=state.get_previous_state()
 
 func move():
-	if (player.global_position - global_position).length() > attack_radius:
-		global_position += velocity
-	else:
-		move_and_slide()
+	global_position += velocity
 	global_position.y = terrain.data.get_height(global_position)
 
 func start_in_chasing():

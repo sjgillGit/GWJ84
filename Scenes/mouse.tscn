@@ -2266,7 +2266,7 @@ slide_on_slope = true
 [node name="mice" type="CharacterBody3D" node_paths=PackedStringArray("node_mesh") groups=["Entity"]]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, 0)
 collision_layer = 4
-collision_mask = 7
+collision_mask = 3
 script = ExtResource("1_dbb7t")
 speed = 1
 acceleration = 1

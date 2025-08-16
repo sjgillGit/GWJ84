@@ -51,7 +51,7 @@ func get_neighbors(radius,npc):
 	return neighbors
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var count =0 
-var max_count = 14
+var max_count = 10
 func _physics_process(delta):
 	count +=1
 	if count==max_count:
@@ -64,7 +64,7 @@ func _physics_process(delta):
 			npc.update_neighbors(neighbors)
 			npc.state.on_physics_process(delta)
 		else:
-			npc.move()
+			npc.move_and_slide()
 	if count==max_count:
 			count=0
 
@@ -142,7 +142,7 @@ func increase_difficulty():
 
 func spawn_enemies(positon):
 	for i in range(0,current_enemies):
-		add_npc(player.global_position + Vector3(5,0,0))
+		add_npc(player.global_position + Vector3(2*i,0,10))
 
 
 func _on_timer_timeout():

@@ -674,8 +674,8 @@ collision_mask = 6
 [node name="tree" parent="." instance=ExtResource("19_riaky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0743, 0.0427623, 14.2547)
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+[node name="spawn_timer" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 
 [node name="chase_music" type="AudioStreamPlayer3D" parent="."]
@@ -803,7 +803,7 @@ bus = &"SFX"
 stream = ExtResource("30_1xwpj")
 bus = &"SFX"
 
-[connection signal="timeout" from="Timer" to="swarm_manager" method="_on_timer_timeout"]
+[connection signal="timeout" from="spawn_timer" to="swarm_manager" method="_on_timer_timeout"]
 [connection signal="win" from="treasure chest/lockpicable" to="swarm_manager" method="_on_lockpicable_win"]
 [connection signal="win" from="treasure chest/lockpicable" to="treasure chest" method="_on_lockpicable_win"]
 [connection signal="win" from="treasure chest2/lockpicable" to="swarm_manager" method="_on_lockpicable_win"]
