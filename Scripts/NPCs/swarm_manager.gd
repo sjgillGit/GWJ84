@@ -1,18 +1,49 @@
 extends Node3D
 var spatial_hash:SpatialHash 
 var npc_list:Array = []
-var leader 
+#mouse,rat,beaver,bear
+@export var mice:PackedScene
+@export var rat:PackedScene
+@export var bear:PackedScene
+@export var beaver:PackedScene
+
+
+var unit_ratios = [0.5,0.3,0.05,0.15]
+var mice_pool = []
+var rat_pool = []
+var beaver_pool = []
+var bear_pool = []
+var difficulty_level=0
+const MAX_ENEMIES = 126
+const BASE_SPAWN_COUNT= 10
+const STAT_MULTIPLIER_PER_LEVEL := 0.15  # 15% stronger per difficulty level
+var current_enemies = BASE_SPAWN_COUNT
+var CURRENT_STAT_MULT = 1.0
+func init_npc(npc):
+	npc_list.append(npc)
+	npc.killed.connect(_on_npc_killed)
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var leader_list = []
 	spatial_hash = SpatialHash.new(64)
 	for i in range(get_child_count()):
-		var npc = get_child(i)
-		npc_list.append(npc)
-		npc.update_neighbors(get_neighbors(5.0, npc))
-		npc.start_in_leader_status()
-		leader_list.append(npc)
-
+		init_npc(get_child(i))
+	var mice_cap = unit_ratios[0]*MAX_ENEMIES
+	var rat_cap  = mice_cap + unit_ratios[1]*MAX_ENEMIES
+	var beaver_cap = rat_cap + unit_ratios[2]*MAX_ENEMIES
+	var bear_cap =  unit_ratios[3]*MAX_ENEMIES
+	var npc
+	for  i in range(0,mice_cap):
+		npc = mice.instantiate()
+		_add_to_pool(npc,mice_pool)
+	for  i in range(0,rat_cap):
+		npc = rat.instantiate()
+		_add_to_pool(npc,rat_pool)
+	for i in range(0,beaver_cap):
+		npc = beaver.instantiate()
+		_add_to_pool(npc,beaver_pool)
+	for i in range(0,bear_cap):
+		npc = bear.instantiate()
+		_add_to_pool(npc,bear_pool)
 
 func get_neighbors(radius,npc):
 	var neighbors = []
@@ -39,16 +70,58 @@ func _physics_process(delta):
 	if count==max_count:
 			count=0
 
-func aaa(npc_index,delta):
-	var npc:Npc = npc_list[npc_index]
-	npc.state.on_physics_process(delta)
-
-
-func add_npc(npc,position):
+func _add_to_pool(npc:Node3D, pool:Array):
 	add_child(npc)
+	npc.global_position = Vector3(-100, -100, -100) # hidden
+	npc.visible = false
+	pool.append(npc)
+	npc.killed.connect(_on_npc_killed)
+
+
+# -------------------
+# ENEMY MANAGEMENT
+# -------------------
+
+func add_npc(position:Vector3):
+	# pick type based on ratios
+	var rnd = randf()
+	var npc
+	if rnd < unit_ratios[0]:
+		npc = _fetch_from_pool(mice_pool)
+	elif rnd < unit_ratios[0] + unit_ratios[1]:
+		npc = _fetch_from_pool(rat_pool)
+	elif rnd < unit_ratios[0] + unit_ratios[1] + unit_ratios[2]:
+		npc = _fetch_from_pool(beaver_pool)
+	else:
+		npc = _fetch_from_pool(bear_pool)
+
+	if npc == null:
+		return # pool empty
+
 	npc.global_position = position
+	npc.visible = true
 	npc_list.append(npc)
 
 
-func _on_npc_killed(dead_npc):
+func _fetch_from_pool(pool:Array) -> Node3D:
+	if pool.size() == 0:
+		return null
+	return pool.pop_back()
+
+
+func _on_npc_killed(dead_npc:Npc):
+	# remove from active list
 	npc_list.erase(dead_npc)
+
+	# send back to pool by type
+	dead_npc.visible = false
+	dead_npc.global_position = Vector3(-100, -100, -100)
+	
+	if dead_npc.npc_type ==0:
+			mice_pool.append(dead_npc)
+	if dead_npc.npc_type == 1:
+			rat_pool.append(dead_npc)
+	if dead_npc.npc_type==2:
+			beaver_pool.append(dead_npc)
+	if dead_npc.npc_type==3:
+			bear_pool.append(dead_npc)

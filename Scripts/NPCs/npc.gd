@@ -17,14 +17,14 @@ var begin_patrol_position: Vector3
 var current_target: Vector3
 var state:RatState
 var can_attack: bool = true
+@export var npc_type:int
 @onready var player = get_parent().get_parent().get_node("Player") 
-var neighbors 
+@onready var neighbors =[]
 @onready  var terrain:Terrain3D = get_parent().get_parent().get_node("Terrain3D")
 @export var node_mesh:Node3D
 
 func _ready():
 	begin_patrol_position = global_position
-	current_target = end_patrol_position.global_position
 	state = PatrolRatState.new(self)
 	$EntityHealthHandler.entity_died.connect(_on_death)
 
@@ -56,10 +56,8 @@ func get_separation_force():
 	var separation_force = Vector3.ZERO
 	var neighbor_count = 0
 	for neighbor_rat in neighbors:
-		var distance = (neighbor_rat.global_position - global_position).length()
-		if distance > 0 and distance < 7.0:
-			separation_force += (global_position - neighbor_rat.global_position).normalized()
-			neighbor_count +=1
+		separation_force += (global_position - neighbor_rat.global_position).normalized()
+		neighbor_count +=1
 	if neighbor_count > 0:
 		separation_force /= neighbor_count
 	separation_force = separation_force.normalized() *speed
@@ -70,15 +68,9 @@ func boid_calculation(seek_force,delta):
 	var separation_force = get_separation_force()
 	var alignment_force = get_alignment_force()
 	var avoidance_force = get_avoidance_force()
-	#var break_force = Vector3.ZERO
 	var total_force = (seek_force * 2.0) + (separation_force * 2.0) + (alignment_force * 1.0) + (avoidance_force * 1.5)
-	if velocity.length() > speed:
-		total_force = total_force.normalized() * speed
-	# Keep Y velocity for gravity
-	velocity.y += -10 * delta  
-	# Apply horizontal steering
-	velocity.x = lerp(velocity.x, total_force.x, 0.1)
-	velocity.z = lerp(velocity.z, total_force.z, 0.1)
+	velocity.x = lerp(velocity.x, total_force.x, 0.05)
+	velocity.z = lerp(velocity.z, total_force.z, 0.05)
 	var look_pos = Vector3(current_target.x, global_position.y, current_target.z)
 	node_mesh.look_at(look_pos, Vector3.UP)
 	node_mesh.rotate_y(PI)
@@ -101,6 +93,7 @@ func player_nearby_alert(body_rid, body, body_shape_index, local_shape_index):
 
 func start_in_leader_status():
 	state = PatrolRatState.new(self)
+	current_target = end_patrol_position.global_position
 
 func _on_cooldown_timer_timeout():
 	state.try_restart_attack()
@@ -120,8 +113,7 @@ func get_stunned():
 
 func _on_death(a,b):
 	state=DeadRatState.new(self)
-	killed.emit()
-	entity_died.emit()
+	#entity_died.emit()
 	velocity = Vector3.ZERO
 
 func _on_animation_player_death_animation_finished():

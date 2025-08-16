@@ -8,6 +8,8 @@ func _ready():
 	node_mesh.get_node("raycasts/minus_45_raycast")
 	]
 	animation_player = node_mesh.get_node("AnimationPlayer")
+	animation_player.death_animation_finished.connect(_on_animation_player_death_animation_finished)
+
 
 func flip_patrol_target():
 	if current_target==begin_patrol_position:
@@ -18,7 +20,7 @@ func flip_patrol_target():
 func patrol_behaviour(delta):
 	patrolling.emit()
 	boid_calculation((current_target - global_position).normalized() * speed,delta)
-	if abs(current_target.x + current_target.z - global_position.x - global_position.z) < 2:
+	if abs(current_target.x + current_target.z - global_position.x - global_position.z) < 1:
 		flip_patrol_target()
 
 func chase_behaviour(delta):

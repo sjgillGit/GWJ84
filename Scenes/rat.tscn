@@ -6942,6 +6942,7 @@ speed = 1
 acceleration = 1
 attack_radius = 2
 attack_damage = 15
+npc_type = 1
 node_mesh = NodePath("Rat")
 
 [node name="Rat" type="Node3D" parent="."]
@@ -7288,11 +7289,10 @@ script = ExtResource("11_ju4po")
 
 [connection signal="attacking" from="." to="Rat/AnimationPlayer" method="_on_rat_attacking"]
 [connection signal="chasing" from="." to="Rat/AnimationPlayer" method="_on_rat_chasing"]
-[connection signal="hit" from="." to="AudioStreamPlayer3D" method="_on_hit"]
+[connection signal="hit" from="." to="AudioStreamPlayer3D" method="_on_bear_hit"]
 [connection signal="killed" from="." to="Rat/AnimationPlayer" method="_on_rat_killed"]
 [connection signal="patrolling" from="." to="Rat/AnimationPlayer" method="_on_rat_patrolling"]
 [connection signal="animation_finished" from="Rat/AnimationPlayer" to="Rat/AnimationPlayer" method="_on_animation_finished"]
-[connection signal="death_animation_finished" from="Rat/AnimationPlayer" to="." method="_on_animation_player_death_animation_finished"]
 [connection signal="body_shape_entered" from="player_detector" to="." method="_on_player_detector_body_shape_entered"]
 [connection signal="timeout" from="stunned_cooldown" to="." method="_on_stunned_cooldown_timeout"]
 [connection signal="timeout" from="stunned_cooldown" to="." method="_on_attack_timer_timeout"]

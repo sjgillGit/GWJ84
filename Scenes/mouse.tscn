@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://cli3v3ohv5np"]
+[gd_scene load_steps=35 format=4 uid="uid://cli3v3ohv5np"]
 
 [ext_resource type="Script" uid="uid://bvajwkct35pyo" path="res://Scripts/NPCs/rat.gd" id="1_dbb7t"]
 [ext_resource type="Texture2D" uid="uid://clummrm884rhp" path="res://Assets/Mouse_m_shirt.png" id="2_yrs1a"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dmot101pnaeex" path="res://Assets/Mouse_m_tail.png" id="8_je5bn"]
 [ext_resource type="Script" uid="uid://bjb4np2yjqmqv" path="res://Scripts/Components/entity_health_handler.gd" id="9_lbpkc"]
 [ext_resource type="AudioStream" uid="uid://bgr7jsecj80ya" path="res://Assets/audio/rat_hit.wav" id="11_1rou4"]
+[ext_resource type="Script" uid="uid://bv6a1cjy3ylx" path="res://Scripts/NPCs/audio_stream_player_3d.gd" id="12_4pywf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15i7j"]
 resource_name = "Material.001"
@@ -2332,7 +2333,7 @@ bones/3/parent = 2
 bones/3/rest = Transform3D(0.997649, -0.0685098, -0.00193016, 0.0673056, 0.98465, -0.161042, 0.0129335, 0.160534, 0.986946, 0, 0.0333619, 0)
 bones/3/enabled = true
 bones/3/position = Vector3(0, 0.0333619, 0)
-bones/3/rotation = Quaternion(-0.0243672, -0.00053102, 0.0339554, 0.999126)
+bones/3/rotation = Quaternion(-0.0243672, -0.000531019, 0.0339554, 0.999126)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "Bone.4_R"
 bones/4/parent = 3
@@ -2430,7 +2431,7 @@ bones/17/parent = 16
 bones/17/rest = Transform3D(0.99984, 0.0178585, 7.59755e-05, -0.0178585, 0.999805, 0.00846189, 7.51557e-05, -0.0084619, 0.999964, -2.8129e-08, 0.0840625, -7.27596e-11)
 bones/17/enabled = true
 bones/17/position = Vector3(-2.8129e-08, 0.0840625, -7.27596e-11)
-bones/17/rotation = Quaternion(-0.00423114, 2.45826e-07, -0.00892965, 0.999951)
+bones/17/rotation = Quaternion(-0.00423114, 2.45818e-07, -0.00892965, 0.999951)
 bones/17/scale = Vector3(1, 1, 1)
 bones/18/name = "Bone.004_R"
 bones/18/parent = -1
@@ -2465,7 +2466,7 @@ bones/22/parent = 21
 bones/22/rest = Transform3D(0.712295, 0.695047, -0.0977048, -0.684803, 0.718718, 0.120373, 0.153887, -0.0188325, 0.987909, 2.32831e-10, 0.0210592, 5.41331e-09)
 bones/22/enabled = true
 bones/22/position = Vector3(2.32831e-10, 0.0210592, 5.41331e-09)
-bones/22/rotation = Quaternion(0.000198086, -0.0421375, -0.20671, 0.977495)
+bones/22/rotation = Quaternion(0.000198087, -0.0421375, -0.20671, 0.977495)
 bones/22/scale = Vector3(1, 1, 1)
 bones/23/name = "Bone.004_L"
 bones/23/parent = -1
@@ -2493,7 +2494,7 @@ bones/26/parent = 25
 bones/26/rest = Transform3D(0.631188, -0.764783, 0.129261, 0.770593, 0.637281, 0.00768622, -0.0882538, 0.094756, 0.991581, 3.0268e-09, 0.122797, -6.40284e-09)
 bones/26/enabled = true
 bones/26/position = Vector3(3.0268e-09, 0.122797, -6.40284e-09)
-bones/26/rotation = Quaternion(0.0896649, 0.0582869, 0.0215445, 0.994032)
+bones/26/rotation = Quaternion(0.0896648, 0.0582869, 0.0215445, 0.994031)
 bones/26/scale = Vector3(1, 1, 1)
 bones/27/name = "Bone.008_L"
 bones/27/parent = 26
@@ -2621,7 +2622,10 @@ shape = SubResource("SeparationRayShape3D_qb8n1")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("11_1rou4")
+script = ExtResource("12_4pywf")
 
+[connection signal="hit" from="." to="AudioStreamPlayer3D" method="_on_bear_hit"]
+[connection signal="animation_finished" from="Mouse/AnimationPlayer" to="Mouse/AnimationPlayer" method="_on_animation_finished"]
 [connection signal="body_shape_entered" from="player_detector" to="." method="_on_player_detector_body_shape_entered"]
 [connection signal="timeout" from="stunned_cooldown" to="." method="_on_stunned_cooldown_timeout"]
 [connection signal="timeout" from="stunned_cooldown" to="." method="_on_attack_timer_timeout"]
