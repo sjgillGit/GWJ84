@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://csbvwt2ux40d6" path="res://Assets/ui/audio/menu click.wav" id="4_eldgd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4prv8"]
-size = Vector3(4.18497, 2.32373, 3.93604)
+size = Vector3(6.63333, 2.32373, 7.66509)
 
 [node name="robbable" type="Node3D"]
 script = ExtResource("1_4prv8")
@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://bs8ndwpx6qqw4"
 [node name="Area3D" type="Area3D" parent="FieldObjectiveBase"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FieldObjectiveBase/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13213, 0.661865, 0.641032)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2039, 0.661865, 1.14255)
 shape = SubResource("BoxShape3D_4prv8")
 
 [node name="rob_layer" type="CanvasLayer" parent="."]

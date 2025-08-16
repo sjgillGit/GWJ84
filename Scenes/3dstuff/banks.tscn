@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://c10k3aue3ewne"]
+
+[ext_resource type="PackedScene" uid="uid://hywm2jse6nhv" path="res://Assets/ui/lockpick/banks.glb" id="1_15lnx"]
+[ext_resource type="ArrayMesh" uid="uid://b16ou0mxbvrtu" path="res://Scenes/3dstuff/bank_b.tres" id="2_lrga0"]
+[ext_resource type="ArrayMesh" uid="uid://7r3speycoo5p" path="res://Scenes/3dstuff/bank_a.tres" id="3_ur4rw"]
+
+[node name="banks" instance=ExtResource("1_15lnx")]
+
+[node name="Plane_002" parent="." index="0"]
+mesh = ExtResource("2_lrga0")
+
+[node name="Circle_008" parent="." index="1"]
+mesh = ExtResource("3_ur4rw")

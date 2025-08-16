@@ -148,5 +148,5 @@ func spawn_enemies(posiiton):
 
 
 func _on_timer_timeout():
-	#spawn_enemies() [FIXME]
+	spawn_enemies(player.global_position + Vector3(10,0,10))
 	pass
