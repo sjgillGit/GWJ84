@@ -40,8 +40,8 @@ environment = SubResource("Environment_cxdfn")
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.982336, 0, 0.187124, 0, 1, 0, -0.187124, 0, 0.982336, 18.4901, 0.950464, 3.44744)
 
-[node name="Goblin" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_maiub")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9344, 0, 2.20221)
+[node name="Goblin" parent="SubViewportContainer/SubViewport/Camera3D" instance=ExtResource("1_maiub")]
+transform = Transform3D(0.982336, 0, -0.187124, 0, 1, 0, 0.187124, 0, 0.982336, 0.669466, -0.950464, -1.1401)
 script = ExtResource("2_31x6l")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]

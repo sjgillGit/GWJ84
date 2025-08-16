@@ -32,30 +32,37 @@ extends Panel
 @onready var pip: AudioStreamPlayer = $pip
 var sec_temp: float = 0
 var min_temp: float = 0
+var skiped: bool = false
+@onready var tween
 func _ready() -> void:
 	timer.start()
 	await timer.timeout
-	var tween = get_tree().create_tween()
-	tween.tween_property(time,"modulate",Color(1,1,1,1),0.5)
-	couting_up = true
+	if skiped == false:
+		tween = get_tree().create_tween()
+		tween.tween_property(time,"modulate",Color(1,1,1,1),0.5)
+		couting_up = true
 	await timer.timeout
-	tween = get_tree().create_tween()
-	tween.tween_property(banks_robbed,"modulate",Color(1,1,1,1),0.5)
-	turrets_count = true
+	if skiped == false:
+		tween = get_tree().create_tween()
+		tween.tween_property(banks_robbed,"modulate",Color(1,1,1,1),0.5)
+		banks_count = true
 	await timer.timeout
-	tween = get_tree().create_tween()
-	tween.tween_property(chest_opened,"modulate",Color(1,1,1,1),0.5)
-	turrets_count = true
+	if skiped == false:
+		tween = get_tree().create_tween()
+		tween.tween_property(chest_opened,"modulate",Color(1,1,1,1),0.5)
+		chests_count = true
 	await timer.timeout
-	tween = get_tree().create_tween()
-	tween.tween_property(towers_placed,"modulate",Color(1,1,1,1),0.5)
-	turrets_count = true
+	if skiped == false:
+		tween = get_tree().create_tween()
+		tween.tween_property(towers_placed,"modulate",Color(1,1,1,1),0.5)
+		turrets_count = true
 	await timer.timeout
-	tween = get_tree().create_tween()
-	tween.tween_property(enemies_killed,"modulate",Color(1,1,1,1),0.5)
-	enemies_count = true
-		
-	
+	if skiped == false:
+		tween = get_tree().create_tween()
+		tween.tween_property(enemies_killed,"modulate",Color(1,1,1,1),0.5)
+		enemies_count = true
+			
+
 func _process(delta: float) -> void:
 	if couting_up: time_count(delta)
 	if enemies_number != enem_temp && enemies_count: 
@@ -89,3 +96,23 @@ func time_count_finished(lbl):
 	lbl.pivot_offset = Vector2(140,lbl.size.y/2)
 	var tween = get_tree().create_tween().set_parallel(true)
 	tween.tween_property(lbl,"scale",Vector2(1.4,1.4),1).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+func skip():
+	skiped = true
+	tween.kill()
+	enem_temp = enemies_number
+	enemies_lbl.text = str(int(enem_temp))
+	enemies_killed.modulate = Color(1,1,1,1)
+	turret_temp = turrets_number
+	turrets_lbl.text = str(int(turret_temp))
+	towers_placed.modulate = Color(1,1,1,1)
+	chests_temp = chests_number
+	chests_lbl.text = str(int(chests_temp))
+	chest_opened.modulate = Color(1,1,1,1)
+	banks_temp = banks_number
+	banks_lbl.text = str(int(banks_temp))
+	banks_robbed.modulate = Color(1,1,1,1)
+	min_temp = time_minutes
+	sec_temp = time_seconds
+	time_lbl.text = "%02d:%02d" % [min_temp,sec_temp]
+	time_lbl.modulate = Color(1,1,1,1)
+	
