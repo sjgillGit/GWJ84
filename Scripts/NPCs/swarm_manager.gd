@@ -142,7 +142,7 @@ func _on_npc_killed(dead_npc:Npc):
 func increase_difficulty():
 	current_enemies = max(current_enemies+20,MAX_ENEMIES) 
 
-func spawn_enemies():
+func spawn_enemies(posiiton):
 	for i in range(0,current_enemies):
 		add_npc(Vector3.ZERO)
 
