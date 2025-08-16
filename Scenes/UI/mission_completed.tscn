@@ -42,6 +42,8 @@ script = ExtResource("2_ubabg")
 mission_time = 220.0
 turrets_number = 55.0
 enemies_number = 777.0
+chests_number = 12.0
+banks_number = 6.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -61,7 +63,7 @@ layout_mode = 2
 material = SubResource("ShaderMaterial_vy2uj")
 layout_mode = 2
 theme_override_font_sizes/font_size = 88
-text = "YIPPIE!"
+text = "WOAH!!!"
 horizontal_alignment = 1
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
@@ -88,6 +90,40 @@ horizontal_alignment = 2
 [node name="separator2" type="Control" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 10)
 layout_mode = 2
+
+[node name="banks_robbed" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/banks_robbed"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Banks robbed"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/banks_robbed"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "0"
+horizontal_alignment = 2
+
+[node name="chest_opened" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/chest_opened"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Chests opened"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/chest_opened"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "0"
+horizontal_alignment = 2
 
 [node name="towers_placed" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -181,12 +217,12 @@ vertical_alignment = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 143.0
+offset_left = 11.0
 offset_top = 97.0
-offset_right = 358.0
+offset_right = 488.0
 offset_bottom = 139.0
 theme_override_font_sizes/font_size = 40
-text = "MISSION CLEARED"
+text = "YOU ACTUALLY DID IT"
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]

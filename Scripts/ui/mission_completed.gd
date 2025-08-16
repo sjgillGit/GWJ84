@@ -2,18 +2,31 @@ extends Panel
 @export var mission_time: float
 @export var turrets_number: float
 @export var enemies_number: float
+@export var chests_number: float
+@export var banks_number: float
+
 @onready var time_lbl: Label = $MarginContainer/VBoxContainer/time/Label2
 @onready var turrets_lbl: Label = $MarginContainer/VBoxContainer/towers_placed/Label2
 @onready var enemies_lbl: Label = $MarginContainer/VBoxContainer/enemies_killed/Label2
+@onready var banks_lbl: Label = $MarginContainer/VBoxContainer/banks_robbed/Label2
+@onready var chests_lbl: Label = $MarginContainer/VBoxContainer/chest_opened/Label2
+
 @onready var time_seconds: int = fmod(mission_time,60)
 @onready var time_minutes: int = mission_time/60
 @export var couting_up:bool
 @export var enemies_count:bool
 @export var turrets_count:bool
+@export var chests_count:bool
+@export var banks_count:bool
+
+@onready var chests_temp: float = 0
+@onready var banks_temp: float = 0
 @onready var enem_temp: float = 0
 @onready var turret_temp: float = 0
 @onready var timer: Timer = $Timer
 @onready var time: HBoxContainer = $MarginContainer/VBoxContainer/time
+@onready var banks_robbed: HBoxContainer = $MarginContainer/VBoxContainer/banks_robbed
+@onready var chest_opened: HBoxContainer = $MarginContainer/VBoxContainer/chest_opened
 @onready var towers_placed: HBoxContainer = $MarginContainer/VBoxContainer/towers_placed
 @onready var enemies_killed: HBoxContainer = $MarginContainer/VBoxContainer/enemies_killed
 @onready var pip: AudioStreamPlayer = $pip
@@ -25,6 +38,14 @@ func _ready() -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property(time,"modulate",Color(1,1,1,1),0.5)
 	couting_up = true
+	await timer.timeout
+	tween = get_tree().create_tween()
+	tween.tween_property(banks_robbed,"modulate",Color(1,1,1,1),0.5)
+	turrets_count = true
+	await timer.timeout
+	tween = get_tree().create_tween()
+	tween.tween_property(chest_opened,"modulate",Color(1,1,1,1),0.5)
+	turrets_count = true
 	await timer.timeout
 	tween = get_tree().create_tween()
 	tween.tween_property(towers_placed,"modulate",Color(1,1,1,1),0.5)
@@ -41,6 +62,11 @@ func _process(delta: float) -> void:
 		enem_temp = count_up(delta,enem_temp,enemies_number,enemies_lbl,enemies_count)
 	if turret_temp != turrets_number && turrets_count: 
 		turret_temp = count_up(delta,turret_temp,turrets_number,turrets_lbl,turrets_count)
+		
+	if chests_temp != chests_number && chests_count: 
+		chests_temp = count_up(delta,chests_temp,chests_number,chests_lbl,chests_count)
+	if banks_temp != banks_number && banks_count: 
+		banks_temp = count_up(delta,banks_temp,banks_number,banks_lbl,banks_count)
 func time_count(delta):
 	pip.play()
 	sec_temp = min(sec_temp+delta*(time_seconds/3),time_seconds)

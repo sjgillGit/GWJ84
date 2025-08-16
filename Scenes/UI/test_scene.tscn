@@ -42,6 +42,9 @@ mesh = SubResource("BoxMesh_q6fdj")
 [node name="Player" parent="." instance=ExtResource("1_q6fdj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.638035, 2, 28.239)
 
+[node name="Cube" parent="Player/MeshRoot/Goblin/metarig/Skeleton3D" index="0"]
+transform = Transform3D(-0.154021, 0.987698, -1.21896, -1.47288, 0.330861, 0.454194, 0.540406, 1.18327, 0.890493, 0.495944, 0.748949, 0.411835)
+
 [node name="GunTurret" parent="." instance=ExtResource("2_r5l72")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.31018, 1.13006, -1.05959)
 
