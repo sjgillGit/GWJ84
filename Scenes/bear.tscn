@@ -2715,6 +2715,6 @@ bus = &"SFX"
 [connection signal="hit" from="." to="AudioStreamPlayer3D" method="_on_bear_hit"]
 [connection signal="animation_finished" from="bear/AnimationPlayer" to="bear/AnimationPlayer" method="_on_animation_finished"]
 [connection signal="body_shape_entered" from="player_detector" to="." method="_on_player_detector_body_shape_entered"]
-[connection signal="timeout" from="stunned_cooldown" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="stunned_cooldown" to="." method="_on_stunned_cooldown_timeout"]
+[connection signal="timeout" from="stunned_cooldown" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="attack_cooldown_timer" to="." method="_on_cooldown_timer_timeout"]

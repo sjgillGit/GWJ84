@@ -158,9 +158,9 @@ var win=0
 @export var ammount_of_objectives_to_reach_win_state:int
 func _on_lockpicable_win():
 	add_to_win_state()
-
 func add_to_win_state():
 	win+=1
 	increase_difficulty()
 	if win==ammount_of_objectives_to_reach_win_state:
-			get_tree().change_scene_to_file("res://Scenes/UI/post_mission.tscn")
+			#HERE LIES THE PROBLEM TO GET TO WIN STATE, FIX!
+			get_tree().change_scene_to_file("res://Scenes/UI/post_mission.tscn") 

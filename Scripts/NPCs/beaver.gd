@@ -66,6 +66,4 @@ func _on_turret_detector_body_shape_entered(body_rid, body, body_shape_index, lo
 	state.try_chase_player(body_rid, body, body_shape_index, local_shape_index)
 
 func _on_turret_disabled():
-	if get_parent().get_node("turrets").get_child_count() >0:
-		turret = get_parent().get_node("turrets").get_child(0)
-		state.try_chase_player(0, turret, 0, 0)
+	killed.emit(self)
