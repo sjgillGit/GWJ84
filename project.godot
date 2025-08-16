@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GWJ84"
-run/main_scene="uid://nbkvr20vhw44"
+run/main_scene="uid://bfxkpfx0qgb37"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 "<<<<<<<HEAD[editor_plugins]enabled"=PackedStringArray("res://addons/terrain_3d/plugin.cfg")

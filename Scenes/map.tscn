@@ -315,7 +315,7 @@ beaver = ExtResource("19_macow")
 ammount_of_objectives_to_reach_win_state = 3
 
 [node name="Player" parent="." instance=ExtResource("7_w7jjh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.8787, 1.72818, 109.153)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.8787, 1.72818, -52.187)
 collision_layer = 1
 collision_mask = 6
 
@@ -325,7 +325,7 @@ collision_mask = 6
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0743, 0.0427623, 14.2547)
 
 [node name="spawn_timer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 1000.0
 autostart = true
 
 [node name="chase_music" type="AudioStreamPlayer3D" parent="."]
@@ -398,7 +398,7 @@ stream = ExtResource("30_1xwpj")
 bus = &"SFX"
 
 [node name="treasure chest2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 139.02, 1.04281, 83.0707)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.419, 1.04281, -54.7826)
 script = ExtResource("23_unquq")
 speed = 100.0
 
@@ -454,7 +454,7 @@ stream = ExtResource("30_1xwpj")
 bus = &"SFX"
 
 [node name="treasure chest3" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 139.02, 1.04281, -34.8058)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.391, 1.04281, -34.8058)
 script = ExtResource("23_unquq")
 speed = 100.0
 
