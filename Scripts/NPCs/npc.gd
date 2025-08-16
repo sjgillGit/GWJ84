@@ -9,7 +9,7 @@ signal patrolling
 signal chasing 
 signal attacking
 signal hit 
-@export var end_patrol_position: Marker3D
+@export var end_patrol_position: Node3D
 @export var attack_damage:int = 10
 var raycasts 
 var animation_player

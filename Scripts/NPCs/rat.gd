@@ -37,7 +37,7 @@ func attack_behaviour(delta):
 		$attack_cooldown_timer.start()
 		$attacking_sounds.play()
 		attacking.emit()
-		player.take_damage(attack_damage)
+		player.get_node("EntityHandler").take_damage(attack_damage)
 		can_attack = false
 
 func chase_player(body_rid, body, body_shape_index, local_shape_index):

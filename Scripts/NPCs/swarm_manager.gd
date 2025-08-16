@@ -6,9 +6,9 @@ var npc_list:Array = []
 @export var rat:PackedScene
 @export var bear:PackedScene
 @export var beaver:PackedScene
-
-
-var unit_ratios = [0.5,0.3,0.05,0.15]
+@onready var player = get_parent().get_node("Player")
+#var unit_ratios = [0.5,0.3,0.05,0.15]
+var unit_ratios = [0,0,1,0]
 var mice_pool = []
 var rat_pool = []
 var beaver_pool = []
@@ -75,7 +75,10 @@ func _add_to_pool(npc:Node3D, pool:Array):
 	npc.visible = false
 	pool.append(npc)
 	npc.killed.connect(_on_npc_killed)
-	npc.start_in_chasing()
+	if npc is Beaver:
+		init_beaver(npc)
+	else:
+		npc.start_in_chasing()
 
 # -------------------
 # ENEMY MANAGEMENT
@@ -101,7 +104,16 @@ func add_npc(position:Vector3):
 	npc.visible = true
 	npc.revive()
 	npc_list.append(npc)
+	if npc is Beaver:
+		init_beaver(npc)
 
+func init_beaver(npc):
+	if get_parent().get_node("turrets").get_child_count() == 0:
+		npc.end_patrol_position = player
+		npc.start_in_leader_status()
+	else:
+		npc.turret = get_parent().get_node("turrets").get_child(0)
+		npc.start_in_chasing()
 
 func _fetch_from_pool(pool:Array) -> Node3D:
 	if pool.size() == 0:

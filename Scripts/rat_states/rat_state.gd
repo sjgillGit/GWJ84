@@ -1,6 +1,6 @@
 extends Object
 class_name RatState
-var rat:Rat
+var rat:Npc
 func _init(a_rat):
 	rat=a_rat
 func on_physics_process(delta):

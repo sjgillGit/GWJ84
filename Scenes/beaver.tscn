@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=4 uid="uid://clc4yvmoumius"]
+[gd_scene load_steps=21 format=4 uid="uid://clc4yvmoumius"]
 
-[ext_resource type="Script" uid="uid://bvajwkct35pyo" path="res://Scripts/NPCs/rat.gd" id="1_tv6mq"]
+[ext_resource type="Script" uid="uid://cf2dej6cyxopf" path="res://Scripts/NPCs/beaver.gd" id="1_g5ip6"]
 [ext_resource type="Texture2D" uid="uid://bttlr0eu46t1r" path="res://Assets/characters/Beaver_BeaverAwwwMan.png" id="2_pjoip"]
-[ext_resource type="Script" uid="uid://tac8jf6pmcb2" path="res://Scripts/NPCs/beaveranimation_player.gd" id="3_jb04n"]
+[ext_resource type="Script" path="res://Scripts/NPCs/beaveranimation_player.gd" id="3_jb04n"]
+[ext_resource type="AudioStream" uid="uid://ctry55wlv7prs" path="res://Assets/audio/Vent Bar GWJ 84 - beaver hit.wav" id="5_g5ip6"]
+[ext_resource type="AudioStream" uid="uid://bxpi5rqqfxhpj" path="res://Assets/audio/Vent Bar GWJ 84 - beaver attack.wav" id="7_2a8kw"]
 [ext_resource type="Script" uid="uid://bjb4np2yjqmqv" path="res://Scripts/Components/entity_health_handler.gd" id="9_i6iia"]
-[ext_resource type="AudioStream" uid="uid://bgr7jsecj80ya" path="res://Assets/audio/rat_hit.wav" id="10_i64bk"]
 [ext_resource type="Script" uid="uid://bv6a1cjy3ylx" path="res://Scripts/NPCs/audio_stream_player_3d.gd" id="11_v8tce"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wjpja"]
@@ -2139,16 +2140,43 @@ slide_on_slope = true
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, 0)
 collision_layer = 4
 collision_mask = 7
-script = ExtResource("1_tv6mq")
+script = ExtResource("1_g5ip6")
 speed = 1
 acceleration = 1
-attack_radius = 2
-attack_damage = 15
-npc_type = 2
-node_mesh = NodePath("")
+attack_radius = 3
+node_mesh = NodePath("Beaver")
 
 [node name="Beaver" type="Node3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0239055, 1.19209e-07, 0.028506)
+
+[node name="raycasts" type="Node3D" parent="Beaver"]
+transform = Transform3D(-2.18887e-07, 0, -5.00755, 0, 5.00755, 0, 5.00755, 0, -2.18887e-07, 0.119527, 4.10103, -0.14253)
+
+[node name="minus_45_raycast" type="RayCast3D" parent="Beaver/raycasts"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)
+target_position = Vector3(2, 0, 0)
+collision_mask = 8
+collide_with_areas = true
+collide_with_bodies = false
+debug_shape_custom_color = Color(0.850928, 0, 0.476824, 1)
+debug_shape_thickness = 5
+
+[node name="positive_45_raycast" type="RayCast3D" parent="Beaver/raycasts"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+target_position = Vector3(2, 0, 0)
+collision_mask = 8
+collide_with_areas = true
+collide_with_bodies = false
+debug_shape_custom_color = Color(0.850928, 0, 0.476824, 1)
+debug_shape_thickness = 5
+
+[node name="forward_raycast" type="RayCast3D" parent="Beaver/raycasts"]
+target_position = Vector3(3, 0, 0)
+collision_mask = 8
+collide_with_areas = true
+collide_with_bodies = false
+debug_shape_custom_color = Color(0.850928, 0, 0.476824, 1)
+debug_shape_thickness = 5
 
 [node name="Armature" type="Node3D" parent="Beaver"]
 
@@ -2549,35 +2577,6 @@ libraries = {
 }
 script = ExtResource("3_jb04n")
 
-[node name="raycasts" type="Node3D" parent="."]
-transform = Transform3D(-4.37774e-08, 0, -1.00151, 0, 1.00151, 0, 1.00151, 0, -4.37774e-08, 0, 0.820207, 0)
-
-[node name="minus_45_raycast" type="RayCast3D" parent="raycasts"]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)
-target_position = Vector3(2, 0, 0)
-collision_mask = 8
-collide_with_areas = true
-collide_with_bodies = false
-debug_shape_custom_color = Color(0.850928, 0, 0.476824, 1)
-debug_shape_thickness = 5
-
-[node name="positive_45_raycast" type="RayCast3D" parent="raycasts"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
-target_position = Vector3(2, 0, 0)
-collision_mask = 8
-collide_with_areas = true
-collide_with_bodies = false
-debug_shape_custom_color = Color(0.850928, 0, 0.476824, 1)
-debug_shape_thickness = 5
-
-[node name="forward_raycast" type="RayCast3D" parent="raycasts"]
-target_position = Vector3(3, 0, 0)
-collision_mask = 8
-collide_with_areas = true
-collide_with_bodies = false
-debug_shape_custom_color = Color(0.850928, 0, 0.476824, 1)
-debug_shape_thickness = 5
-
 [node name="player_detector" type="Area3D" parent="."]
 collision_layer = 0
 collision_mask = 16
@@ -2608,8 +2607,11 @@ transform = Transform3D(1, 0, 0, 0, 0.0039096, -0.999992, 0, 0.999992, 0.0039096
 shape = SubResource("SeparationRayShape3D_qb8n1")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("10_i64bk")
+stream = ExtResource("5_g5ip6")
 script = ExtResource("11_v8tce")
+
+[node name="attacking_sounds" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_2a8kw")
 
 [connection signal="hit" from="." to="AudioStreamPlayer3D" method="_on_bear_hit"]
 [connection signal="body_shape_entered" from="player_detector" to="." method="_on_player_detector_body_shape_entered"]

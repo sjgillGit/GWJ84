@@ -33,12 +33,12 @@ func chase_behaviour(delta):
 		state = AttackRatState.new(self)
 
 func attack_behaviour(delta):
-	if can_attack:
+	if can_attack and (turret.global_position-global_position).length() <= attack_radius:
 		velocity = Vector3.ZERO
 		$attack_cooldown_timer.start()
 		$attacking_sounds.play()
 		attacking.emit()
-		turret.take_damage(attack_damage)
+		turret.get_node("EntityHealthHandler").take_damage(turret,attack_damage)
 		can_attack = false
 
 func chase_turret(body_rid, body, body_shape_index, local_shape_index):
@@ -47,3 +47,13 @@ func chase_turret(body_rid, body, body_shape_index, local_shape_index):
 	player = body
 	velocity = Vector3.ZERO
 	get_node
+
+func start_in_chasing():
+	current_target = turret.global_position
+	state = ChaseRatState.new(self)
+
+func chase_player(body_rid, body, body_shape_index, local_shape_index):
+	state = ChaseRatState.new(self)
+	current_target = body.global_position
+	player = body
+	velocity = Vector3.ZERO
