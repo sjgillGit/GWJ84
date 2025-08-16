@@ -20,11 +20,13 @@ var smash_count:= 0
 @onready var s_smash_2: AudioStreamPlayer = $Control/smash2
 @onready var s_smash_3: AudioStreamPlayer = $Control/smash3
 @onready var s_smash_4: AudioStreamPlayer = $Control/smash4
+@onready var yippie: AudioStreamPlayer = $Control/yippie
 @onready var woosh: AudioStreamPlayer = $Control/woosh
 var values = [20,-15,-20,25,17,-13]
 func _ready() -> void:
 	self.position.y = (get_viewport().get_visible_rect().size.y - self.size.y) / 2
 	origin_pos = self.position
+	yippie.play()
 func smash() -> void:
 	match smash_count:
 		0:

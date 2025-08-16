@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://27xl1cipgb3n" path="res://Scenes/finalhouses_building.png" id="1_3wyeu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_86acf"]
-size = Vector3(4.32544, 1.72852, 2.66241)
+size = Vector3(4.32544, 1.72852, 2.98213)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3lwix"]
 size = Vector3(1.9252, 1.72852, 4.27164)
@@ -55,7 +55,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115356, -0.364258, 0.224762)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115356, -0.364258, -0.0190358)
 shape = SubResource("BoxShape3D_86acf")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]

@@ -1,17 +1,18 @@
-[gd_scene load_steps=14 format=4 uid="uid://ln51xmv2t25d"]
+[gd_scene load_steps=15 format=4 uid="uid://btycvfnmfubx5"]
 
-[ext_resource type="Texture2D" uid="uid://bn124sr858b7q" path="res://Assets/ui/lockpick/WAREHOUSES_building.png" id="2_6p53r"]
-[ext_resource type="Script" uid="uid://lu8vm2fyufqf" path="res://Scenes/3dstuff/bank.gd" id="2_u0ti3"]
-[ext_resource type="PackedScene" uid="uid://bsm1p6nxcrmcm" path="res://Scenes/UI/lockpick/robbable.tscn" id="3_6p53r"]
-[ext_resource type="PackedScene" uid="uid://crcyrd566npe8" path="res://Scenes/UI/interact_indication.tscn" id="4_rckue"]
-[ext_resource type="AudioStream" uid="uid://bm4oudxtvnv56" path="res://Assets/ui/audio/Vent Bar GWJ 84 - lock open.wav" id="5_webfg"]
-[ext_resource type="AudioStream" uid="uid://c33mi5xjw2am0" path="res://Assets/ui/audio/Vent Bar GWJ 84 - door breaking.wav" id="7_6p53r"]
-[ext_resource type="AudioStream" uid="uid://pijbr23ynv0o" path="res://Assets/ui/audio/menu woosh.wav" id="7_08xe0"]
+[ext_resource type="Script" uid="uid://lu8vm2fyufqf" path="res://Scenes/3dstuff/bank.gd" id="1_3wn44"]
+[ext_resource type="Texture2D" uid="uid://bn124sr858b7q" path="res://Assets/ui/lockpick/WAREHOUSES_building.png" id="2_04aob"]
+[ext_resource type="PackedScene" uid="uid://bsm1p6nxcrmcm" path="res://Scenes/UI/lockpick/robbable.tscn" id="3_wcp6n"]
+[ext_resource type="PackedScene" uid="uid://crcyrd566npe8" path="res://Scenes/UI/interact_indication.tscn" id="4_pwof8"]
+[ext_resource type="AudioStream" uid="uid://bm4oudxtvnv56" path="res://Assets/ui/audio/Vent Bar GWJ 84 - lock open.wav" id="5_5j2m6"]
+[ext_resource type="AudioStream" uid="uid://pijbr23ynv0o" path="res://Assets/ui/audio/menu woosh.wav" id="6_m3or3"]
+[ext_resource type="AudioStream" uid="uid://c33mi5xjw2am0" path="res://Assets/ui/audio/Vent Bar GWJ 84 - door breaking.wav" id="7_bnlep"]
+[ext_resource type="PackedScene" uid="uid://cp2truhn4ua6y" path="res://Scenes/enviroment_props/lamp.tscn" id="8_xql64"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_63l1y"]
 resource_name = "Material.001"
 cull_mode = 2
-albedo_texture = ExtResource("2_6p53r")
+albedo_texture = ExtResource("2_04aob")
 texture_filter = 2
 texture_repeat = false
 
@@ -59,16 +60,17 @@ size = Vector3(7.96681, 4.30174, 6.89197)
 size = Vector3(0.454716, 1.26073, 4.03632)
 
 [node name="bank" type="Node3D"]
-script = ExtResource("2_u0ti3")
+script = ExtResource("1_3wn44")
 level = 10
 
 [node name="bank" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0139077, 0, -0.999903, 0, 1, 0, 0.999903, 0, 0.0139077, -0.579415, 0.272156, 0.257945)
+layers = 16
 mesh = SubResource("ArrayMesh_s48fp")
 skeleton = NodePath("")
 
 [node name="Area3D" type="StaticBody3D" parent="bank"]
-collision_layer = 255
+collision_layer = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bank/Area3D"]
 transform = Transform3D(1, 0, -4.65661e-09, 0, 1, 0, 4.65661e-09, 0, 1, -2.95998, 0.901422, 1.54357)
@@ -82,25 +84,31 @@ shape = SubResource("BoxShape3D_6p53r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46967, 0.114269, 2.35748)
 shape = SubResource("BoxShape3D_voqlr")
 
-[node name="robbable" parent="." instance=ExtResource("3_6p53r")]
+[node name="robbable" parent="." instance=ExtResource("3_wcp6n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0.278755)
 
-[node name="interact_indication" parent="." instance=ExtResource("4_rckue")]
+[node name="interact_indication" parent="." instance=ExtResource("4_pwof8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.52438, 0.301989, 1.47347)
 
 [node name="lock_clock" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_webfg")
+stream = ExtResource("5_5j2m6")
 bus = &"SFX"
 
 [node name="reward_choose" type="CanvasLayer" parent="."]
 visible = false
 
 [node name="woosh" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_08xe0")
+stream = ExtResource("6_m3or3")
 bus = &"SFX"
 
 [node name="door" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_6p53r")
+stream = ExtResource("7_bnlep")
 bus = &"SFX"
+
+[node name="tree" parent="." instance=ExtResource("8_xql64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64193, -4.76837e-07, -0.0162678)
+
+[node name="tree2" parent="." instance=ExtResource("8_xql64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.35807, -4.76837e-07, -0.0162678)
 
 [connection signal="win" from="robbable" to="." method="_on_robbable_win"]

@@ -34,9 +34,12 @@ func try_activate_current_action():
 	action._perform_action();
 
 func scroll_selection_action_up():
+	
 	var next_index = current_action_index - 1;
-	if next_index <= 0:
+	print(next_index)
+	if next_index < 0:
 		next_index = actions.size() - 1;
+	print(next_index)
 	update_selected_index(next_index, PlayerActionScrollType.UP);
 
 func scroll_selection_action_down():
@@ -48,5 +51,6 @@ func scroll_selection_action_down():
 func update_selected_index(next_index: int, scroll_type: PlayerActionScrollType):
 	if current_action_index == next_index:
 		return;
+	print(next_index,current_action_index)
 	current_action_index = next_index;
 	selected_action_changed.emit(actions[current_action_index], current_action_index, scroll_type);

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsm1p6nxcrmcm"]
+[gd_scene load_steps=6 format=3 uid="uid://bsm1p6nxcrmcm"]
 
 [ext_resource type="Script" uid="uid://dj7meocloc86r" path="res://Scenes/UI/lockpick/robbable_object.gd" id="1_4prv8"]
 [ext_resource type="Script" uid="uid://j1hh82g70nrw" path="res://Scripts/Components/Objectives/enter_combination_objective.gd" id="2_eldgd"]
 [ext_resource type="PackedScene" uid="uid://bv7v484uv5hjr" path="res://Scenes/UI/rob_minigame.tscn" id="3_4prv8"]
+[ext_resource type="AudioStream" uid="uid://csbvwt2ux40d6" path="res://Assets/ui/audio/menu click.wav" id="4_eldgd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4prv8"]
 size = Vector3(4.18497, 2.32373, 3.93604)
@@ -24,6 +25,9 @@ shape = SubResource("BoxShape3D_4prv8")
 visible = false
 
 [node name="robbery" parent="rob_layer" instance=ExtResource("3_4prv8")]
+
+[node name="startminigame" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_eldgd")
 
 [connection signal="player_input_error" from="FieldObjectiveBase" to="." method="_on_field_objective_base_player_input_error"]
 [connection signal="player_input_made_progress" from="FieldObjectiveBase" to="." method="_on_field_objective_base_player_input_made_progress"]

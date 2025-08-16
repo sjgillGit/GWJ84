@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ub1qjjsm3f6m"]
+[gd_scene load_steps=6 format=3 uid="uid://ub1qjjsm3f6m"]
 
 [ext_resource type="Script" uid="uid://olctk281bkdw" path="res://Scenes/UI/lockpicable_object.gd" id="1_2wnir"]
 [ext_resource type="Script" uid="uid://j1hh82g70nrw" path="res://Scripts/Components/Objectives/enter_combination_objective.gd" id="2_ug3wi"]
 [ext_resource type="PackedScene" uid="uid://bmmhya010lr13" path="res://Scenes/UI/lockpick_minigame.tscn" id="3_ug3wi"]
+[ext_resource type="AudioStream" uid="uid://csbvwt2ux40d6" path="res://Assets/ui/audio/menu click.wav" id="4_xxgj5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_olygr"]
 radius = 4.0
@@ -23,6 +24,9 @@ shape = SubResource("SphereShape3D_olygr")
 visible = false
 
 [node name="lock" parent="lock_layer" instance=ExtResource("3_ug3wi")]
+
+[node name="startminigame" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xxgj5")
 
 [connection signal="player_input_error" from="FieldObjectiveBase" to="." method="_on_field_objective_base_player_input_error"]
 [connection signal="player_input_made_progress" from="FieldObjectiveBase" to="." method="_on_field_objective_base_player_input_made_progress"]
