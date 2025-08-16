@@ -8,6 +8,8 @@ signal target_changed(entity: Node3D);
 var possible_targets: Array[Node3D] = [];
 var tracked_target: Node3D;
 
+@onready var collision: CollisionShape3D = $CollisionShape3D
+
 func _ready() -> void:
 	body_entered.connect(_on_body_entered);
 	body_exited.connect(_on_body_exited);

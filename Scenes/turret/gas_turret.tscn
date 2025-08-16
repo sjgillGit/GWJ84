@@ -1,17 +1,54 @@
-[gd_scene load_steps=14 format=4 uid="uid://iskuvl1uxgoa"]
+[gd_scene load_steps=24 format=4 uid="uid://cailosqhnn0v0"]
 
-[ext_resource type="PackedScene" uid="uid://c2nch4qcc1iuo" path="res://Assets/turret/gas emmitor.glb" id="1_0xaqf"]
-[ext_resource type="Script" uid="uid://bl8s0f0snn31l" path="res://Scripts/TURRET/gas_emmitor.gd" id="2_gpsuc"]
-[ext_resource type="ArrayMesh" uid="uid://cubumbhb61vqo" path="res://Scenes/turret/gas_emmitor.tres" id="3_euadp"]
-[ext_resource type="PackedScene" uid="uid://cq7ncscf0fq8b" path="res://Scenes/3dstuff/gas_scene.tscn" id="3_l4c48"]
-[ext_resource type="Texture2D" uid="uid://dv8s2tfo5jb2r" path="res://Assets/turret/gas emmitor_!turret.png" id="4_l4c48"]
-[ext_resource type="Material" uid="uid://30qlnr66xsmd" path="res://Assets/ui/gas_emmitor.tres" id="5_euadp"]
-[ext_resource type="Material" uid="uid://x7nyyv46elex" path="res://Assets/ui/gas_emmitor2.tres" id="6_02wff"]
+[ext_resource type="Script" uid="uid://bjb4np2yjqmqv" path="res://Scripts/Components/entity_health_handler.gd" id="1_eeju7"]
+[ext_resource type="Script" uid="uid://d0pcmdw8cllbp" path="res://Scripts/StateMachine/state_machine.gd" id="2_ahnle"]
+[ext_resource type="Script" uid="uid://b3bi1wd4xkfwq" path="res://Scripts/Turrets/GasTurret/gas_turret_idle.gd" id="3_ao0jf"]
+[ext_resource type="Script" uid="uid://t3v6impgoh38" path="res://Scripts/Turrets/entity_detect_area.gd" id="3_ytppe"]
+[ext_resource type="Script" uid="uid://c7xbuc68npsje" path="res://Scenes/turret/gas_turret_attack.gd" id="4_cxylq"]
+[ext_resource type="Script" uid="uid://cuifkq73gokv0" path="res://Scenes/turret/gas_turret_deactivated.gd" id="5_1qpxt"]
+[ext_resource type="Script" uid="uid://bl8s0f0snn31l" path="res://Scripts/TURRET/gas_emmitor.gd" id="7_n6bjt"]
+[ext_resource type="ArrayMesh" uid="uid://cubumbhb61vqo" path="res://Scenes/turret/gas_emmitor.tres" id="8_nu45k"]
+[ext_resource type="Material" uid="uid://bfwun5i27sedn" path="res://Assets/ui/gas_emmitor1.tres" id="9_n6bjt"]
+[ext_resource type="Texture2D" uid="uid://dv8s2tfo5jb2r" path="res://Assets/turret/gas emmitor_!turret.png" id="10_od5w0"]
+[ext_resource type="Material" uid="uid://30qlnr66xsmd" path="res://Assets/ui/gas_emmitor.tres" id="11_46xre"]
+[ext_resource type="Material" uid="uid://x7nyyv46elex" path="res://Assets/ui/gas_emmitor2.tres" id="12_u1ua7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ao0jf"]
+size = Vector3(1.5, 2, 1.25)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cxylq"]
+radius = 20.0
+
+[sub_resource type="FogMaterial" id="FogMaterial_gpsuc"]
+density = 0.1
+albedo = Color(0.912289, 0.912289, 0.912289, 1)
+emission = Color(0.454525, 0.454524, 0.454524, 1)
+height_falloff = 2e-05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41u0g"]
+next_pass = SubResource("FogMaterial_gpsuc")
+transparency = 3
+alpha_hash_scale = 2.0
+alpha_antialiasing_mode = 0
+blend_mode = 1
+cull_mode = 2
+shading_mode = 2
+albedo_color = Color(0.926, 0.514, 0.603, 1)
+metallic = 0.3
+metallic_specular = 0.0
+rim_tint = 0.0
+refraction_texture_channel = 3
+shadow_to_opacity = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_0q65i"]
+material = SubResource("StandardMaterial3D_41u0g")
+radius = 1.5
+height = 3.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_euadp"]
 resource_name = "Material.001"
 cull_mode = 2
-albedo_texture = ExtResource("4_l4c48")
+albedo_texture = ExtResource("10_od5w0")
 metallic = 1.0
 roughness = 0.622047
 
@@ -49,14 +86,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_02wff")
 
-[sub_resource type="FogMaterial" id="FogMaterial_gpsuc"]
+[sub_resource type="FogMaterial" id="FogMaterial_nu45k"]
 density = 0.1
 albedo = Color(0.912289, 0.912289, 0.912289, 1)
 emission = Color(0.454525, 0.454524, 0.454524, 1)
 height_falloff = 2e-05
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41u0g"]
-next_pass = SubResource("FogMaterial_gpsuc")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cl3b4"]
+next_pass = SubResource("FogMaterial_nu45k")
 transparency = 3
 alpha_hash_scale = 2.0
 alpha_antialiasing_mode = 0
@@ -70,26 +107,99 @@ rim_tint = 0.0
 refraction_texture_channel = 3
 shadow_to_opacity = true
 
-[sub_resource type="SphereMesh" id="SphereMesh_0q65i"]
-material = SubResource("StandardMaterial3D_41u0g")
+[sub_resource type="SphereMesh" id="SphereMesh_od5w0"]
+material = SubResource("StandardMaterial3D_cl3b4")
 radius = 1.5
 height = 3.0
 
-[node name="gas emmitor" instance=ExtResource("1_0xaqf")]
-script = ExtResource("2_gpsuc")
+[node name="GasTurret" type="StaticBody3D" groups=["Entity"]]
 
-[node name="Cylinder" parent="." index="0"]
-mesh = ExtResource("3_euadp")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.14)
+shape = SubResource("BoxShape3D_ao0jf")
 
-[node name="GPUParticles3D1" parent="." index="1" instance=ExtResource("3_l4c48")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00528815, 1.62968, -0.0798993)
+[node name="EntityHealthHandler" type="Node3D" parent="."]
+script = ExtResource("1_eeju7")
+max_health = 50.0
+immunity_frame_duration = 0.05
+metadata/_custom_type_script = "uid://bjb4np2yjqmqv"
 
-[node name="Cylinder2" type="MeshInstance3D" parent="." index="2"]
+[node name="StateMachine" type="Node3D" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_ahnle")
+initial_state = NodePath("GasTurretIdle")
+
+[node name="GasTurretIdle" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("entity_detector", "health_handler")]
+script = ExtResource("3_ao0jf")
+entity_detector = NodePath("../../EnemyDetectArea")
+health_handler = NodePath("../../EntityHealthHandler")
+
+[node name="GasTurretAttack" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("entity_detector", "gas_emittor", "health_handler")]
+script = ExtResource("4_cxylq")
+entity_detector = NodePath("../../EnemyDetectArea")
+gas_emittor = NodePath("../../gas emmitor")
+gas_duration = 1.0
+shoot_interval = 6.0
+health_handler = NodePath("../../EntityHealthHandler")
+
+[node name="GasTurretDeactivated" type="Node3D" parent="StateMachine"]
+script = ExtResource("5_1qpxt")
+
+[node name="EnemyDetectArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("3_ytppe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyDetectArea"]
+shape = SubResource("SphereShape3D_cxylq")
+
+[node name="gas emmitor" type="Node3D" parent="." node_paths=PackedStringArray("entity_detector", "visuals_per_level", "particle_emitters")]
+script = ExtResource("7_n6bjt")
+entity_detector = NodePath("../EnemyDetectArea")
+gas_ranges = Dictionary[int, float]({
+0: 8.0,
+1: 15.0,
+2: 20.0
+})
+visuals_per_level = {
+0: NodePath("Cylinder"),
+1: NodePath("Cylinder2"),
+2: NodePath("Cylinder3")
+}
+particle_emitters = {
+0: NodePath("Cylinder/GPUParticles3D1"),
+1: NodePath("Cylinder2/GPUParticles3D2")
+}
+
+[node name="Cylinder" type="MeshInstance3D" parent="gas emmitor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32067, 0)
+mesh = ExtResource("8_nu45k")
+skeleton = NodePath("")
+
+[node name="GPUParticles3D1" type="GPUParticles3D" parent="gas emmitor/Cylinder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00528815, 0.30901, -0.0798993)
+emitting = false
+amount = 500
+speed_scale = 0.7
+randomness = 1.0
+fixed_fps = 60
+interpolate = false
+trail_lifetime = 1.35
+process_material = ExtResource("9_n6bjt")
+draw_pass_1 = SubResource("SphereMesh_0q65i")
+
+[node name="GPUParticlesAttractorSphere3D" type="GPUParticlesAttractorSphere3D" parent="gas emmitor/Cylinder/GPUParticles3D1"]
+transform = Transform3D(0.753581, 0, 0, 0, -3.29401e-08, -0.753581, 0, 0.753581, -3.29401e-08, 0.0154143, -3.78096, 0.0151038)
+strength = 390.9
+attenuation = 3.86374
+directionality = 1.0
+radius = 10.0
+
+[node name="Cylinder2" type="MeshInstance3D" parent="gas emmitor"]
 visible = false
 mesh = SubResource("ArrayMesh_l22ug")
 skeleton = NodePath("")
 
-[node name="GPUParticles3D2" type="GPUParticles3D" parent="Cylinder2" index="0"]
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="gas emmitor/Cylinder2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00528815, 0.30901, -0.0798993)
 emitting = false
 amount = 1500
@@ -98,36 +208,37 @@ randomness = 1.0
 fixed_fps = 60
 interpolate = false
 trail_lifetime = 1.35
-process_material = ExtResource("5_euadp")
-draw_pass_1 = SubResource("SphereMesh_0q65i")
+process_material = ExtResource("11_46xre")
+draw_pass_1 = SubResource("SphereMesh_od5w0")
 
-[node name="GPUParticlesAttractorSphere3D" type="GPUParticlesAttractorSphere3D" parent="Cylinder2/GPUParticles3D2" index="0"]
+[node name="GPUParticlesAttractorSphere3D" type="GPUParticlesAttractorSphere3D" parent="gas emmitor/Cylinder2/GPUParticles3D2"]
 transform = Transform3D(0.753581, 0, 0, 0, -3.29401e-08, -0.753581, 0, 0.753581, -3.29401e-08, 0.0154143, -3.78096, 0.0151038)
 strength = 390.9
 attenuation = 3.86374
 directionality = 1.0
 radius = 15.0
 
-[node name="Cylinder3" type="MeshInstance3D" parent="." index="3"]
+[node name="Cylinder3" type="MeshInstance3D" parent="gas emmitor"]
 visible = false
 mesh = SubResource("ArrayMesh_l22ug")
 skeleton = NodePath("")
 
-[node name="GPUParticles3D2" type="GPUParticles3D" parent="Cylinder3" index="0"]
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="gas emmitor/Cylinder3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.196838, 0.30901, -0.0798993)
-emitting = false
 amount = 3000
 speed_scale = 0.7
 randomness = 1.0
 fixed_fps = 60
 interpolate = false
 trail_lifetime = 1.35
-process_material = ExtResource("6_02wff")
-draw_pass_1 = SubResource("SphereMesh_0q65i")
+process_material = ExtResource("12_u1ua7")
+draw_pass_1 = SubResource("SphereMesh_od5w0")
 
-[node name="GPUParticlesAttractorSphere3D" type="GPUParticlesAttractorSphere3D" parent="Cylinder3/GPUParticles3D2" index="0"]
+[node name="GPUParticlesAttractorSphere3D" type="GPUParticlesAttractorSphere3D" parent="gas emmitor/Cylinder3/GPUParticles3D2"]
 transform = Transform3D(0.753581, 0, 0, 0, -3.29401e-08, -0.753581, 0, 0.753581, -3.29401e-08, 0.0154143, -3.78096, 0.0151038)
 strength = 390.9
 attenuation = 3.86374
 directionality = 1.0
 radius = 20.0
+
+[node name="MeshRoot" type="Node3D" parent="."]
