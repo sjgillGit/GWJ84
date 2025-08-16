@@ -9,6 +9,7 @@ var start_angle = 150
 @onready var middle: Node3D = $SubViewportContainer/SubViewport/Camera3D/middle
 @onready var nail_parent: Node3D = $SubViewportContainer/SubViewport/Camera3D/board/nail_parent
 @onready var camera_3d: Camera3D = $SubViewportContainer/SubViewport/Camera3D
+@onready var mechanism: AudioStreamPlayer = $MECHANISM
 
 @onready var error_sfx: AudioStreamPlayer = $error
 @onready var next_step_sfx: AudioStreamPlayer = $next_step
@@ -20,6 +21,7 @@ func stop():
 	for n in nail_parent.get_children():
 		n.queue_free()
 	step = 0
+	mechanism.stop()
 func start(speed):
 	self.scale = Vector2(1,1) * GlobalSettings.multiplier
 	camera_3d.position = Vector3(0.005,-100.188,-0.076)
@@ -36,7 +38,9 @@ func start(speed):
 		nail_inst.set_nail(str(sequence[n]),spin_spped)
 	await get_tree().process_frame
 	nail_parent.get_child(0).first()
-		
+	if speed != 0:
+		mechanism.play()
+	
 func get_nail_position(angle:float):
 	angle = fmod(angle,360)
 	var x: float = lock_radius * cos(deg_to_rad(angle))

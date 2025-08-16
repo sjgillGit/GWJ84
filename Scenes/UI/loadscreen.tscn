@@ -19,7 +19,7 @@ layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 pivot_offset = Vector2(960, 540)
-color = Color(0.0419352, 0.203332, 0.0469508, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="gwj_logo" type="TextureRect" parent="."]
 layout_mode = 0
@@ -42,5 +42,5 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 1.2
 autostart = true

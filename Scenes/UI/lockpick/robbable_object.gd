@@ -9,6 +9,7 @@ var combination
 var won: bool
 signal win
 @onready var interact_indication: Node3D = $"../interact_indication"
+@onready var startminigame: AudioStreamPlayer = $startminigame
 
 func start() -> void:
 	var bonus_keys : Array[int] = [KEY_F, KEY_9, KEY_L, KEY_Z, KEY_9, KEY_Y, KEY_X, KEY_P, KEY_M, KEY_N];
@@ -21,6 +22,7 @@ func start() -> void:
 	GlobalSignals.objective_completed.connect(Callable(self, "on_win"))
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Interact") && close == true && opened == false:
+		startminigame.play()
 		interact_indication.hide_ind()
 		field_objective_base.start_objective_progress()
 		opened = true

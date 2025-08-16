@@ -5,6 +5,7 @@ extends Control
 @onready var timer: Timer = $Timer
 @onready var watch: CanvasGroup = $".."
 @onready var odliczanie: bool = false
+@onready var timeout: AudioStreamPlayer = $"../timeout"
 func _ready() -> void:
 	timer_reset()
 	timer_start(mission_time)
@@ -30,11 +31,14 @@ func timer_start(_time:float):
 	
 
 func _on_timer_timeout() -> void:
+	timeout.play()
 	odliczanie = false
 	watch.material.set_shader_parameter("hit_effect",0.5)
-	for n in 10:
+	for n in 6:
 		progressbar.visible = !progressbar.visible
 		var timer_2 = get_tree().create_timer(0.5)
 		await timer_2.timeout
+	timeout.stop()
+	
 	timer_reset()
 	timer_start(mission_time)

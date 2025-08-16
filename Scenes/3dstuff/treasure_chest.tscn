@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgqxhlqkv4776"]
+[gd_scene load_steps=9 format=3 uid="uid://cgqxhlqkv4776"]
 
 [ext_resource type="PackedScene" uid="uid://gpk77oe1cbvc" path="res://Assets/Models/chest/treasure chest.glb" id="1_fi0sf"]
 <<<<<<< HEAD
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ub1qjjsm3f6m" path="res://Scenes/UI/lockpick/lockpicable.tscn" id="2_mi2mm"]
 [ext_resource type="PackedScene" uid="uid://crcyrd566npe8" path="res://Scenes/UI/interact_indication.tscn" id="4_7jop6"]
 [ext_resource type="AudioStream" uid="uid://bm4oudxtvnv56" path="res://Assets/ui/audio/Vent Bar GWJ 84 - lock open.wav" id="5_au4no"]
+[ext_resource type="AudioStream" uid="uid://bpu7d0fn7n5al" path="res://Assets/ui/audio/Vent Bar GWJ 84 - chest opening.wav" id="7_ehnf7"]
 [ext_resource type="AudioStream" uid="uid://pijbr23ynv0o" path="res://Assets/ui/audio/menu woosh.wav" id="7_redbf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jop6"]
@@ -49,6 +50,10 @@ visible = false
 stream = ExtResource("7_redbf")
 bus = &"SFX"
 <<<<<<< HEAD
+
+[node name="chest_open" type="AudioStreamPlayer" parent="." index="8"]
+stream = ExtResource("7_ehnf7")
+bus = &"SFX"
 
 [connection signal="win" from="lockpicable" to="." method="_on_lockpicable_win"]
 =======

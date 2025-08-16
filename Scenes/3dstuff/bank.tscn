@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://ln51xmv2t25d"]
+[gd_scene load_steps=14 format=4 uid="uid://ln51xmv2t25d"]
 
 [ext_resource type="Texture2D" uid="uid://bn124sr858b7q" path="res://Assets/ui/lockpick/WAREHOUSES_building.png" id="2_6p53r"]
 [ext_resource type="Script" uid="uid://lu8vm2fyufqf" path="res://Scenes/3dstuff/bank.gd" id="2_u0ti3"]
 [ext_resource type="PackedScene" uid="uid://bsm1p6nxcrmcm" path="res://Scenes/UI/lockpick/robbable.tscn" id="3_6p53r"]
 [ext_resource type="PackedScene" uid="uid://crcyrd566npe8" path="res://Scenes/UI/interact_indication.tscn" id="4_rckue"]
 [ext_resource type="AudioStream" uid="uid://bm4oudxtvnv56" path="res://Assets/ui/audio/Vent Bar GWJ 84 - lock open.wav" id="5_webfg"]
+[ext_resource type="AudioStream" uid="uid://c33mi5xjw2am0" path="res://Assets/ui/audio/Vent Bar GWJ 84 - door breaking.wav" id="7_6p53r"]
 [ext_resource type="AudioStream" uid="uid://pijbr23ynv0o" path="res://Assets/ui/audio/menu woosh.wav" id="7_08xe0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_63l1y"]
@@ -96,6 +97,10 @@ visible = false
 
 [node name="woosh" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_08xe0")
+bus = &"SFX"
+
+[node name="door" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_6p53r")
 bus = &"SFX"
 
 [connection signal="win" from="robbable" to="." method="_on_robbable_win"]

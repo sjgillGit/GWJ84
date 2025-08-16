@@ -6,6 +6,10 @@ func _ready() -> void:
 	set_resolution()
 
 func set_resolution():
-	skill_box.position.y = get_viewport().get_visible_rect().size.y - 88 
+	skill_box.position.y = get_viewport().get_visible_rect().size.y - 93 
 	skill_box.position.x =  get_viewport().get_visible_rect().size.x - 180
 	watch.get_child(0).resolution_set()
+
+
+func _on_player_actions_selected_action_changed(action: PlayerActionBase, index: int, scroll_type: PlayerActions.PlayerActionScrollType) -> void:
+	skill_box.action_performed(action,index,scroll_type)

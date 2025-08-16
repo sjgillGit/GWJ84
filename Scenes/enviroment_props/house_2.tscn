@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://dcgmuqy766dmw"]
+[gd_scene load_steps=7 format=4 uid="uid://dcgmuqy766dmw"]
 
 [ext_resource type="Texture2D" uid="uid://27xl1cipgb3n" path="res://Scenes/finalhouses_building.png" id="1_ax8nu"]
 
@@ -44,7 +44,10 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_d0trg")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hjt1t"]
-size = Vector3(3.59958, 1.66602, 2.64822)
+size = Vector3(2.35333, 1.76612, 2.83008)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ax8nu"]
+size = Vector3(3.09014, 1.66602, 2.02856)
 
 [node name="house_2" type="StaticBody3D"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
@@ -56,5 +59,9 @@ mesh = SubResource("ArrayMesh_pdc0k")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.933968, 0, -0.357358, 0, 1, 0, 0.357358, 0, 0.933968, 0.781549, 0.711997, -1.06242)
+transform = Transform3D(0.956065, 0, 0.293156, 0, 1, 0, -0.293156, 0, 0.956065, 0.138726, 0.661949, -1.1798)
 shape = SubResource("BoxShape3D_hjt1t")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.928396, 0, -0.371595, 0, 1, 0, 0.371595, 0, 0.928396, 1.1892, 0.711997, -1.38353)
+shape = SubResource("BoxShape3D_ax8nu")

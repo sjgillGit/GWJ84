@@ -1478,9 +1478,6 @@ animations = Array[Animation]([ExtResource("2_epg6k"), ExtResource("3_0u84n"), E
 
 [node name="screen_ui" parent="." instance=ExtResource("5_7xdrn")]
 
-[node name="skill_box" parent="screen_ui" index="0" node_paths=PackedStringArray("player_actions")]
-player_actions = NodePath("../../PlayerActions")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_4wape")
@@ -2141,4 +2138,4 @@ max_health = 100.0
 immunity_frame_duration = 0.05
 animations = Array[Animation]([ExtResource("21_2avfq")])
 
-[editable path="screen_ui"]
+[connection signal="selected_action_changed" from="PlayerActions" to="screen_ui" method="_on_player_actions_selected_action_changed"]

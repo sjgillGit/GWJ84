@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddl41xrijeh6u"]
+[gd_scene load_steps=9 format=3 uid="uid://ddl41xrijeh6u"]
 
 [ext_resource type="PackedScene" uid="uid://usoe2lk6q8vf" path="res://Scenes/UI/mission_completed.tscn" id="1_j1l2h"]
 [ext_resource type="PackedScene" uid="uid://cgquenm3v3687" path="res://Scenes/UI/goblin.tscn" id="1_maiub"]
 [ext_resource type="Script" uid="uid://dkmrwxosv7v3b" path="res://Scripts/ui/post_mission.gd" id="1_tofs2"]
 [ext_resource type="Script" uid="uid://2kyj44aq7djn" path="res://Scenes/UI/goblin_dance.gd" id="2_31x6l"]
-[ext_resource type="PackedScene" uid="uid://7ypegi6l54k0" path="res://Scenes/UI/reward_menu.tscn" id="2_sj55a"]
 [ext_resource type="AudioStream" uid="uid://pijbr23ynv0o" path="res://Assets/ui/audio/menu woosh.wav" id="6_ucbds"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ucbds"]
@@ -50,14 +49,6 @@ transform = Transform3D(0.911687, 0.402323, -0.0834428, -0.326121, 0.832067, 0.4
 light_energy = 2.0
 light_indirect_energy = 5.202
 light_angular_distance = 35.45
-
-[node name="Control2" parent="." instance=ExtResource("2_sj55a")]
-visible = false
-layout_mode = 1
-offset_left = 40.0
-offset_top = 32.0
-offset_right = -613.0
-offset_bottom = -37.0
 
 [node name="Control" parent="." instance=ExtResource("1_j1l2h")]
 layout_mode = 1

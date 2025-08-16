@@ -3,6 +3,7 @@ var close: bool = false
 @onready var field_objective_base: EnterCombinationObjective = $FieldObjectiveBase
 @onready var lock: Control = $lock_layer/lock
 @onready var lock_layer: CanvasLayer = $lock_layer
+@onready var startminigame: AudioStreamPlayer = $startminigame
 @export var speed: float
 var opened: bool = false
 var combination
@@ -19,6 +20,7 @@ func start() -> void:
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Interact") && close == true && opened == false:
+		startminigame.play()
 		interact_indication.hide_ind()
 		field_objective_base.start_objective_progress()
 		opened = true
