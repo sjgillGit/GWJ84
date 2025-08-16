@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://cli3v3ohv5np"]
+[gd_scene load_steps=36 format=4 uid="uid://cli3v3ohv5np"]
 
 [ext_resource type="Script" uid="uid://bvajwkct35pyo" path="res://Scripts/NPCs/rat.gd" id="1_dbb7t"]
 [ext_resource type="Texture2D" uid="uid://clummrm884rhp" path="res://Assets/Mouse_m_shirt.png" id="2_yrs1a"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bjb4np2yjqmqv" path="res://Scripts/Components/entity_health_handler.gd" id="9_lbpkc"]
 [ext_resource type="AudioStream" uid="uid://bgr7jsecj80ya" path="res://Assets/audio/rat_hit.wav" id="11_1rou4"]
 [ext_resource type="Script" uid="uid://bv6a1cjy3ylx" path="res://Scripts/NPCs/audio_stream_player_3d.gd" id="12_4pywf"]
+[ext_resource type="AudioStream" uid="uid://c0xtvvtgn0tlc" path="res://Assets/audio/Vent Bar GWJ 84 - mouse attack.wav" id="13_jdcir"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15i7j"]
 resource_name = "Material.001"
@@ -2622,7 +2623,11 @@ shape = SubResource("SeparationRayShape3D_qb8n1")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("11_1rou4")
+bus = &"SFX"
 script = ExtResource("12_4pywf")
+
+[node name="attacking_sounds" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("13_jdcir")
 
 [connection signal="hit" from="." to="AudioStreamPlayer3D" method="_on_bear_hit"]
 [connection signal="animation_finished" from="Mouse/AnimationPlayer" to="Mouse/AnimationPlayer" method="_on_animation_finished"]

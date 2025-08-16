@@ -355,6 +355,7 @@ _data = {
 radius = 11.0
 
 [node name="GunTurret" type="StaticBody3D" groups=["Entity"]]
+collision_layer = 16
 collision_mask = 5
 
 [node name="EntityHealthHandler" type="Node3D" parent="."]

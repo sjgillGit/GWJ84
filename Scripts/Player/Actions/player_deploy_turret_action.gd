@@ -46,6 +46,6 @@ func _try_deploy_turret() -> bool:
 	if raycast.has("collider"):
 		var turret_scene_instance: Node3D = turret_scene.instantiate();
 		turret_scene_instance.position = raycast.position;
-		player_reference.get_parent().add_child(turret_scene_instance);
+		player_reference.get_parent().get_node("turrets").add_child(turret_scene_instance);
 		return true;
 	return false;

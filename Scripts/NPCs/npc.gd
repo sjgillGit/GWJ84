@@ -23,6 +23,13 @@ var can_attack: bool = true
 @onready  var terrain:Terrain3D = get_parent().get_parent().get_node("Terrain3D")
 @export var node_mesh:Node3D
 
+
+func revive():
+	$EntityHealthHandler.reset_health()
+
+
+
+
 func _ready():
 	begin_patrol_position = global_position
 	state = PatrolRatState.new(self)
@@ -84,12 +91,8 @@ func _on_player_detector_body_shape_entered(body_rid, body, body_shape_index, lo
 
 func alert_neighbors(body_rid, body, body_shape_index, local_shape_index):
 	for neighbor in neighbors:
-		neighbor.player_nearby_alert(body_rid, body, body_shape_index, local_shape_index)
+		neighbor.state.try_chase_player(body_rid, body, body_shape_index, local_shape_index)
 
-func player_nearby_alert(body_rid, body, body_shape_index, local_shape_index):
-	if state.is_threatenning_player(): return
-	else:
-		player_entered_range(body_rid, body, body_shape_index, local_shape_index)
 
 func start_in_leader_status():
 	state = PatrolRatState.new(self)
@@ -128,3 +131,7 @@ func move():
 	else:
 		move_and_slide()
 	global_position.y = terrain.data.get_height(global_position)
+
+func start_in_chasing():
+	current_target = player.global_position
+	state = ChaseRatState.new(self)

@@ -67,3 +67,6 @@ func enable_immunity():
 	is_immune_to_damage = true;
 	current_immunity_frame_timer = 0;
 	set_process(true);
+
+func reset_health():
+	health=max_health

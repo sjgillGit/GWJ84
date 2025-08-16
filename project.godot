@@ -25,10 +25,6 @@ GlobalSettings="*res://Scripts/Globals/global_settings.gd"
 
 ObjectiveTracker="*res://Scripts/Globals/objective_tracker.gd"
 
-[display]
-
-ObjectiveTracker="*res://Scripts/Globals/objective_tracker.gd"
-
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/proton_scatter/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")

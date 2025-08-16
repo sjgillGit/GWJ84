@@ -16,7 +16,6 @@ var bear_pool = []
 var difficulty_level=0
 const MAX_ENEMIES = 126
 const BASE_SPAWN_COUNT= 10
-const STAT_MULTIPLIER_PER_LEVEL := 0.15  # 15% stronger per difficulty level
 var current_enemies = BASE_SPAWN_COUNT
 var CURRENT_STAT_MULT = 1.0
 func init_npc(npc):
@@ -76,7 +75,7 @@ func _add_to_pool(npc:Node3D, pool:Array):
 	npc.visible = false
 	pool.append(npc)
 	npc.killed.connect(_on_npc_killed)
-
+	npc.start_in_chasing()
 
 # -------------------
 # ENEMY MANAGEMENT
@@ -100,6 +99,7 @@ func add_npc(position:Vector3):
 
 	npc.global_position = position
 	npc.visible = true
+	npc.revive()
 	npc_list.append(npc)
 
 
@@ -125,3 +125,15 @@ func _on_npc_killed(dead_npc:Npc):
 			beaver_pool.append(dead_npc)
 	if dead_npc.npc_type==3:
 			bear_pool.append(dead_npc)
+			
+
+func increase_difficulty():
+	current_enemies = max(current_enemies+20,MAX_ENEMIES) 
+
+func spawn_enemies():
+	for i in range(0,current_enemies):
+		add_npc(Vector3.ZERO)
+
+
+func _on_timer_timeout():
+	spawn_enemies()

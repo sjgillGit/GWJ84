@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=4 uid="uid://m7dkc6gwcbbx"]
+[gd_scene load_steps=29 format=4 uid="uid://m7dkc6gwcbbx"]
 
 [ext_resource type="Script" uid="uid://bvajwkct35pyo" path="res://Scripts/NPCs/rat.gd" id="1_txrf0"]
 [ext_resource type="Texture2D" uid="uid://w6invqvbpg8l" path="res://Assets/bear_bear.png" id="2_2imu7"]
 [ext_resource type="Script" uid="uid://6fgtcm1u5jhy" path="res://Scripts/NPCs/bear_animation_player.gd" id="3_elcei"]
 [ext_resource type="Script" uid="uid://bv6a1cjy3ylx" path="res://Scripts/NPCs/audio_stream_player_3d.gd" id="6_mlyxe"]
+[ext_resource type="AudioStream" uid="uid://cgasdpwc4aayq" path="res://Assets/audio/Vent Bar GWJ 84 - bear attack.wav" id="7_u1wsf"]
 [ext_resource type="Script" uid="uid://bjb4np2yjqmqv" path="res://Scripts/Components/entity_health_handler.gd" id="10_igqou"]
 [ext_resource type="AudioStream" uid="uid://eetw3r3qibne" path="res://Assets/audio/Vent Bar GWJ 84 - bear hit.wav" id="11_umt5h"]
 
@@ -2703,8 +2704,14 @@ shape = SubResource("SeparationRayShape3D_qb8n1")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("11_umt5h")
+bus = &"SFX"
 script = ExtResource("6_mlyxe")
 
+[node name="attacking_sounds" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_u1wsf")
+bus = &"SFX"
+
+[connection signal="attacking" from="." to="AudioStreamPlayer3D" method="_on_bear_attacking"]
 [connection signal="hit" from="." to="AudioStreamPlayer3D" method="_on_bear_hit"]
 [connection signal="animation_finished" from="bear/AnimationPlayer" to="bear/AnimationPlayer" method="_on_animation_finished"]
 [connection signal="body_shape_entered" from="player_detector" to="." method="_on_player_detector_body_shape_entered"]

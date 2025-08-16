@@ -1,5 +1,6 @@
 extends Npc
-class_name Rat
+class_name Beaver
+var turret
 func _ready():
 	super()
 	raycasts = [
@@ -26,9 +27,9 @@ func patrol_behaviour(delta):
 func chase_behaviour(delta):
 	velocity = Vector3.ZERO
 	chasing.emit()
-	current_target = player.global_position
-	boid_calculation((player.global_position - global_position).normalized()*speed,delta)
-	if (player.global_position - global_position).length() < attack_radius:
+	current_target = turret.global_position
+	boid_calculation((turret.global_position - global_position).normalized()*speed,delta)
+	if (turret.global_position - global_position).length() < attack_radius:
 		state = AttackRatState.new(self)
 
 func attack_behaviour(delta):
@@ -37,11 +38,12 @@ func attack_behaviour(delta):
 		$attack_cooldown_timer.start()
 		$attacking_sounds.play()
 		attacking.emit()
-		player.take_damage(attack_damage)
+		turret.take_damage(attack_damage)
 		can_attack = false
 
-func chase_player(body_rid, body, body_shape_index, local_shape_index):
+func chase_turret(body_rid, body, body_shape_index, local_shape_index):
 	state = ChaseRatState.new(self)
 	current_target = body.global_position
 	player = body
 	velocity = Vector3.ZERO
+	get_node

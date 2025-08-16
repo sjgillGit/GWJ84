@@ -32,7 +32,7 @@
 [ext_resource type="Animation" uid="uid://b3tlo783q3p1a" path="res://Assets/characters/player/Attack.res" id="24_4ribq"]
 [ext_resource type="Animation" uid="uid://vui0n7qiu21y" path="res://Assets/characters/player/Looting.res" id="25_jh1yi"]
 [ext_resource type="PackedScene" uid="uid://cfkdtgu2m48vi" path="res://Assets/Models/Sack.glb" id="27_lw74r"]
-[ext_resource type="Script" path="res://Scripts/Player/Actions/action_deploy_gas_turret.gd" id="31_6rswy"]
+[ext_resource type="Script" uid="uid://bulnp3gptahsc" path="res://Scripts/Player/Actions/action_deploy_gas_turret.gd" id="31_6rswy"]
 [ext_resource type="PackedScene" uid="uid://iskuvl1uxgoa" path="res://Scenes/turret/gas_emmitor.tscn" id="32_jbjyn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4wape"]
