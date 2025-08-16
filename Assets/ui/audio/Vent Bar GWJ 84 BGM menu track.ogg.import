@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dkh7nnqfg4ol4"
+path="res://.godot/imported/Vent Bar GWJ 84 BGM menu track.ogg-9c662ac4fdfc256199d176c9598e6ebc.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/ui/audio/Vent Bar GWJ 84 BGM menu track.ogg"
+dest_files=["res://.godot/imported/Vent Bar GWJ 84 BGM menu track.ogg-9c662ac4fdfc256199d176c9598e6ebc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

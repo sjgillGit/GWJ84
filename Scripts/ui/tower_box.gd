@@ -10,6 +10,7 @@ extends Control
 @onready var chosen_tower
 @onready var scroll: AudioStreamPlayer = $scroll
 const TOWERSELECT = preload("res://Scenes/UI/towerselect.tscn")
+@onready var button_show: Panel = $button_show
 
 func scroll_up():
 		scroll.play()
@@ -27,6 +28,7 @@ func scroll_down():
 		
 		#chosen_tower = towerlist.get_child(2)
 func skill_activate(cooldown: float):
+	button_show.button_clicked()
 	counting = true;
 	towerlist.get_child(1).activate_timer(cooldown);
 

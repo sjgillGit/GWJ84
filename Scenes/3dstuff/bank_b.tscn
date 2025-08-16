@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1ltd731aspp4"]
+[gd_scene load_steps=11 format=3 uid="uid://b1ltd731aspp4"]
 
 [ext_resource type="Script" uid="uid://lu8vm2fyufqf" path="res://Scenes/3dstuff/bank.gd" id="1_xiw2o"]
 [ext_resource type="ArrayMesh" uid="uid://bjm6qdaocb1qg" path="res://Assets/Models/warehouse_b.tres" id="2_xiw2o"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://crcyrd566npe8" path="res://Scenes/UI/interact_indication.tscn" id="4_b6nqy"]
 [ext_resource type="AudioStream" uid="uid://bm4oudxtvnv56" path="res://Assets/ui/audio/Vent Bar GWJ 84 - lock open.wav" id="5_mbh17"]
 [ext_resource type="AudioStream" uid="uid://pijbr23ynv0o" path="res://Assets/ui/audio/menu woosh.wav" id="6_f8hv7"]
+[ext_resource type="AudioStream" uid="uid://c33mi5xjw2am0" path="res://Assets/ui/audio/Vent Bar GWJ 84 - door breaking.wav" id="7_1he70"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u0ti3"]
 size = Vector3(3.03128, 2.63178, 3.5641)
@@ -55,6 +56,10 @@ visible = false
 
 [node name="woosh" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_f8hv7")
+bus = &"SFX"
+
+[node name="door" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_1he70")
 bus = &"SFX"
 
 [connection signal="win" from="robbable" to="." method="_on_robbable_win"]

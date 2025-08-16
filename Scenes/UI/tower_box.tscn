@@ -1,9 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://fijuc7gifjf6"]
+[gd_scene load_steps=14 format=3 uid="uid://fijuc7gifjf6"]
 
 [ext_resource type="PackedScene" uid="uid://d042hsexsntwv" path="res://Scenes/UI/towerselect.tscn" id="1_2k6yk"]
 [ext_resource type="Script" uid="uid://dykrxsjod4o6f" path="res://Scripts/ui/tower_box.gd" id="1_10edh"]
+[ext_resource type="Texture2D" uid="uid://dq8knos66o8ki" path="res://Assets/ui/textframe.png" id="2_od77g"]
 [ext_resource type="Shader" uid="uid://bceililma81gt" path="res://Scenes/UI/tower_box.gdshader" id="3_2jh5i"]
 [ext_resource type="Texture2D" uid="uid://wnd51orttw5" path="res://Assets/ui/hide.png" id="3_3k674"]
+[ext_resource type="Script" uid="uid://dmbug4tme2cqn" path="res://Scripts/ui/button_show.gd" id="3_i7yib"]
+[ext_resource type="FontFile" uid="uid://b2d7ii78bv5cw" path="res://Assets/font/Long_Shot.ttf" id="4_smy4p"]
 [ext_resource type="Texture2D" uid="uid://3cqiofs3krfl" path="res://Assets/ui/icons/wrench.png" id="5_s2xdr"]
 [ext_resource type="Texture2D" uid="uid://lyrvst3o3o" path="res://Assets/ui/button_cursed_1.png" id="6_emtg6"]
 [ext_resource type="Texture2D" uid="uid://cxe2fxdsjirmg" path="res://Assets/ui/icons/gastank.png" id="6_s2xdr"]
@@ -13,11 +16,15 @@
 shader = ExtResource("3_2jh5i")
 shader_parameter/mask = ExtResource("3_3k674")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u85eq"]
+texture = ExtResource("2_od77g")
+
 [node name="Control" type="Control"]
 clip_contents = true
 custom_minimum_size = Vector2(137, 60)
 layout_mode = 3
 anchors_preset = 0
+offset_top = -9.0
 offset_right = 137.0
 offset_bottom = 88.0
 script = ExtResource("1_10edh")
@@ -27,8 +34,9 @@ cooldown = 10.0
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_w7252")
 layout_mode = 0
+offset_top = 9.0
 offset_right = 135.0
-offset_bottom = 88.0
+offset_bottom = 97.0
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
@@ -75,6 +83,27 @@ action_icon = ExtResource("5_s2xdr")
 [node name="skillbutton2" parent="SubViewportContainer/SubViewport/fulltowerlist" instance=ExtResource("1_2k6yk")]
 layout_mode = 2
 action_icon = ExtResource("6_s2xdr")
+
+[node name="button_show" type="Panel" parent="."]
+offset_left = 46.0
+offset_top = 9.0
+offset_right = 88.0
+offset_bottom = 49.0
+pivot_offset = Vector2(21, 21)
+theme_override_styles/panel = SubResource("StyleBoxTexture_u85eq")
+script = ExtResource("3_i7yib")
+
+[node name="input_name_lbl" type="Label" parent="button_show"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 42.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("4_smy4p")
+theme_override_font_sizes/font_size = 33
+text = "LMB"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="scroll" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_17d23")

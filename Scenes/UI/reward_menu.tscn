@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://7ypegi6l54k0"]
+[gd_scene load_steps=64 format=4 uid="uid://7ypegi6l54k0"]
 
 [ext_resource type="Theme" uid="uid://dr6wcdv73nca2" path="res://Assets/ui/menu.tres" id="1_s6urc"]
 [ext_resource type="Script" uid="uid://ctxrfdcmw1k7o" path="res://Scenes/UI/reward_menu.gd" id="2_scebn"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://c0ykkhyqs8ch" path="res://Assets/ui/goblin/Goblin_g_shoes.png" id="21_ya22t"]
 [ext_resource type="Texture2D" uid="uid://bcl6o1p4hto41" path="res://Assets/ui/goblin/Goblin_G_eyes.png" id="22_ghwww"]
 [ext_resource type="Texture2D" uid="uid://jx13se0e11x" path="res://Assets/ui/goblin/Goblin_g_hair.png" id="23_hegug"]
+[ext_resource type="AudioStream" uid="uid://cegmyq3fp8l6y" path="res://Assets/ui/audio/Vent Bar GWJ 84 - goblin YIPPEE.wav" id="24_qyme5"]
 [ext_resource type="Texture2D" uid="uid://gkd40ygyvw4i" path="res://Assets/ui/goblin/Goblin_g_head.png" id="24_uchec"]
 [ext_resource type="Texture2D" uid="uid://dc4xvtvkouxka" path="res://Assets/ui/goblin/Goblin_G_coller.png" id="25_cipjo"]
 [ext_resource type="AudioStream" uid="uid://ccpdoodmiac5q" path="res://Assets/ui/audio/smash me 1.wav" id="26_qyme5"]
@@ -1505,20 +1506,29 @@ process_material = SubResource("ParticleProcessMaterial_jbpmu")
 [node name="Control" type="Control" parent="."]
 anchors_preset = 0
 
+[node name="yippie" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("24_qyme5")
+volume_db = 5.0
+bus = &"SFX"
+
 [node name="smash" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("26_qyme5")
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="smash2" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("27_iyuv5")
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="smash3" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("28_i8aym")
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="smash4" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("29_22nng")
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="woosh" type="AudioStreamPlayer" parent="Control"]

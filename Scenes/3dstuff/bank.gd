@@ -5,6 +5,7 @@ extends Node3D
 @onready var lock_clock: AudioStreamPlayer = $lock_clock
 @onready var reward_choose: CanvasLayer = $reward_choose
 @onready var woosh: AudioStreamPlayer = $woosh
+@onready var door: AudioStreamPlayer = $door
 const REWARD_MENU = preload("res://Scenes/UI/reward_menu.tscn")
 
 func _ready() -> void:
@@ -13,6 +14,7 @@ func _ready() -> void:
 	robbable.start()
 func _on_robbable_win() -> void:
 	lock_clock.play()
+	door.play()
 	var rewards = REWARD_MENU.instantiate()
 	var upgrade_list = [["GAS RANGE UP","+20 range","normal","gas"],["HEAVY DAMAGE UP","shot speed down","curse","turret"],["SPRINT SPEED UP","doubles sprint speed","normal","player"]]
 	reward_choose.add_child(rewards)
