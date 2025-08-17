@@ -16,6 +16,8 @@ mix_rate = 48000
 stereo = true
 
 [node name="Control" type="Control"]
+light_mask = 1023
+visibility_layer = 1023
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,6 +27,8 @@ grow_vertical = 2
 script = ExtResource("1_5sqr4")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+light_mask = 1023
+visibility_layer = 1023
 layout_mode = 0
 offset_left = 84.0
 offset_top = -63.0

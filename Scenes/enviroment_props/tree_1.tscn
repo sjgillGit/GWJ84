@@ -62,7 +62,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1.05042, 0, 0, 0, 1.00268, 0, 0, 0, 1.00268, -0.0642701, 0.661681, 0.0118418)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0642701, 0.661681, 0.0118418)
 shape = SubResource("CapsuleShape3D_0jmig")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]

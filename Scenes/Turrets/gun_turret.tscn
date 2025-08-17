@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=4 uid="uid://chxvqa83wi22n"]
 
-[ext_resource type="Texture2D" uid="uid://bi01rhhalam8e" path="res://Assets/Models/Turret_turret body 2.png" id="1_e14yu"]
+[ext_resource type="Texture2D" uid="uid://cyy48xfhpdqeq" path="res://Assets/Models/Turret_turret body 2.png" id="1_e14yu"]
 [ext_resource type="Script" uid="uid://bjb4np2yjqmqv" path="res://Scripts/Components/entity_health_handler.gd" id="1_tq01m"]
 [ext_resource type="Texture2D" uid="uid://bwk0jcc7xfdnu" path="res://Assets/Models/Turret_bandage.png" id="2_65jeh"]
 [ext_resource type="Script" uid="uid://d0pcmdw8cllbp" path="res://Scripts/StateMachine/state_machine.gd" id="2_kvwe8"]
@@ -355,6 +355,7 @@ _data = {
 radius = 11.0
 
 [node name="GunTurret" type="StaticBody3D" groups=["Entity"]]
+collision_layer = 16
 collision_mask = 5
 
 [node name="EntityHealthHandler" type="Node3D" parent="."]
@@ -402,7 +403,7 @@ bones/3/parent = 2
 bones/3/rest = Transform3D(0.850071, -0.524687, 0.0456412, 0.523064, 0.851199, 0.043184, -0.0615078, -0.0128362, 0.998024, -1.86265e-09, 0.277093, 3.49246e-08)
 bones/3/enabled = true
 bones/3/position = Vector3(-1.86265e-09, 0.277093, 3.49246e-08)
-bones/3/rotation = Quaternion(-0.0145631, 0.0278547, 0.272376, 0.961677)
+bones/3/rotation = Quaternion(-0.0145632, 0.0278547, 0.272376, 0.961678)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "Calf_bone02"
 bones/4/parent = 3
@@ -458,7 +459,7 @@ bones/11/parent = 10
 bones/11/rest = Transform3D(0.997533, -0.070076, -0.0040935, 0.0700755, 0.990727, 0.116405, -0.00410163, -0.116404, 0.993193, -2.63299e-09, 0.31145, 1.7375e-08)
 bones/11/enabled = true
 bones/11/position = Vector3(-2.63299e-09, 0.31145, 1.7375e-08)
-bones/11/rotation = Quaternion(-0.0583376, 2.03747e-06, 0.0351194, 0.997679)
+bones/11/rotation = Quaternion(-0.0583376, 2.03748e-06, 0.0351194, 0.997679)
 bones/11/scale = Vector3(1, 1, 1)
 bones/12/name = "Calf_bone01"
 bones/12/parent = 11
@@ -485,7 +486,7 @@ bones/15/name = "central_bone"
 bones/15/parent = -1
 bones/15/rest = Transform3D(0.999997, 0.00247822, 5.51245e-05, -0.00247878, 0.999874, 0.0156873, -1.62408e-05, -0.0156874, 0.999877, -1.37396, 1.22137, -0.00644438)
 bones/15/enabled = true
-bones/15/position = Vector3(0.0261217, 1.2179, -0.00646601)
+bones/15/position = Vector3(0.0260106, 1.17185, -0.00652181)
 bones/15/rotation = Quaternion(-0.00784394, 1.78419e-05, -0.00123929, 0.999968)
 bones/15/scale = Vector3(1, 1, 1)
 

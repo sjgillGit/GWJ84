@@ -42,6 +42,17 @@ func _ready() -> void:
 		tween.tween_property(time,"modulate",Color(1,1,1,1),0.5)
 		couting_up = true
 	await timer.timeout
+	tween = get_tree().create_tween()
+	tween.tween_property(banks_robbed,"modulate",Color(1,1,1,1),0.5)
+	turrets_count = true
+	await timer.timeout
+	tween = get_tree().create_tween()
+	tween.tween_property(chest_opened,"modulate",Color(1,1,1,1),0.5)
+	turrets_count = true
+	await timer.timeout
+	tween = get_tree().create_tween()
+	tween.tween_property(towers_placed,"modulate",Color(1,1,1,1),0.5)
+	turrets_count = true
 	if skiped == false:
 		tween = get_tree().create_tween()
 		tween.tween_property(banks_robbed,"modulate",Color(1,1,1,1),0.5)

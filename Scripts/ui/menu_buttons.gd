@@ -17,7 +17,7 @@ func _on_startgame_pressed() -> void:
 	tween.tween_property(title_music,"volume_linear",0,0.7).set_trans(Tween.TRANS_CIRC)
 	
 	await tween.finished
-	get_tree().change_scene_to_file("res://Scenes/UI/test_scene.tscn")
+	get_tree().change_scene_to_file("res://Scenes/map.tscn")
 func _on_quit_pressed() -> void:
 	click.play()
 	get_tree().quit()

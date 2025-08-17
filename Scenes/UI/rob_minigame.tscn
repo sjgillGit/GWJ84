@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bv7v484uv5hjr"]
+[gd_scene load_steps=6 format=3 uid="uid://q33hxgtdlafa"]
 
 [ext_resource type="Script" uid="uid://7inut645ftmo" path="res://Scripts/ui/rob_minigame.gd" id="1_bmsoc"]
 [ext_resource type="PackedScene" uid="uid://cnmo3p6m0xf31" path="res://Scenes/3dstuff/rectangle.tscn" id="2_8c581"]

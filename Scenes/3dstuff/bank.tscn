@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+[gd_scene load_steps=14 format=4 uid="uid://ln51xmv2t25d"]
+=======
 [gd_scene load_steps=10 format=3 uid="uid://ln51xmv2t25d"]
+>>>>>>> 5612696270685209238f8277bb028f1ca9969b26
 
 [ext_resource type="ArrayMesh" uid="uid://7r3speycoo5p" path="res://Scenes/3dstuff/bank_a.tres" id="2_6p53r"]
 [ext_resource type="Script" uid="uid://lu8vm2fyufqf" path="res://Scenes/3dstuff/bank.gd" id="2_u0ti3"]
