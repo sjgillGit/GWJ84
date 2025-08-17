@@ -25,7 +25,7 @@ func post_mission(iswin:bool):
 		spawn.add_child(panel)
 		goblin.death()
 func _input(event: InputEvent) -> void:
-	if event.is_pressed() && skiped == false:
+	if event.is_pressed() && skiped == false && panel.canbeskiped:
 			skiped = true
 			panel.skip()
 	

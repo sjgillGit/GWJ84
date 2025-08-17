@@ -36,12 +36,14 @@ extends Panel
 var sec_temp: float = 0
 var min_temp: float = 0
 var skiped: bool = false
+var canbeskiped: bool = false
 @onready var tween
 func _ready() -> void:
 	print("position: ",(get_viewport().get_visible_rect().size.y - self.size.y) / 2,"size.y: ",get_viewport().get_visible_rect().size.y)
 	self.position.y = (get_viewport().get_visible_rect().size.y - self.size.y) / 2
 	timer.start()
 	await timer.timeout
+	canbeskiped = true
 	if skiped == false:
 		tween = get_tree().create_tween()
 		tween.tween_property(time,"modulate",Color(1,1,1,1),0.5)

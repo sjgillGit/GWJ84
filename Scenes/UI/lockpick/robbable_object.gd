@@ -17,6 +17,7 @@ func start() -> void:
 	for n in min(level,10):
 		field_objective_base.possible_keys.append(bonus_keys.pop_back())
 	field_objective_base.generate_combination();
+	field_objective_base.possible_keys = [KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT]
 	GlobalSignals.enter_combination_objective_available.connect(Callable(self, "on_close_up"))
 	GlobalSignals.enter_combination_objective_unavailable.connect(Callable(self, "on_far_away"))
 	GlobalSignals.objective_completed.connect(Callable(self, "on_win"))

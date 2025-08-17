@@ -16,7 +16,7 @@ func _on_robbable_win() -> void:
 	lock_clock.play()
 	door.play()
 	var rewards = REWARD_MENU.instantiate()
-	var upgrade_list = [["GAS RANGE UP","+20 range","normal","gas"],["HEAVY DAMAGE UP","shot speed down","curse","turret"],["SPRINT SPEED UP","doubles sprint speed","normal","player"]]
+	var upgrade_list = [["GAME UPDATES RATE UP","We will add updates more frequently","normal","gas"],["COOLNESS UP","+20 to the cool stat","curse","player"],["TURRET SELFAWARENESS UP","Turret has higher chance to see itself in the mirror","normal","turret"]]
 	reward_choose.add_child(rewards)
 	rewards.scale = Vector2(0.01,0.01)
 	for n in 3:
