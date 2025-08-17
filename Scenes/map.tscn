@@ -229,7 +229,7 @@ _data = {
 &"opening": SubResource("Animation_wsojt")
 }
 
-[sub_resource type="Resource" id="Resource_pptwf"]
+[sub_resource type="Resource" id="Resource_unquq"]
 script = ExtResource("8_vtkp8")
 amount = 150
 enabled = true
@@ -238,7 +238,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_ak4ow"]
+[sub_resource type="Resource" id="Resource_pptwf"]
 script = ExtResource("9_rg57b")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
@@ -249,7 +249,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_ajvq6"]
+[sub_resource type="Resource" id="Resource_ak4ow"]
 script = ExtResource("10_macow")
 iterations = 3
 offset_step = 0.2
@@ -261,7 +261,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_cwq17"]
+[sub_resource type="Resource" id="Resource_ajvq6"]
 script = ExtResource("11_ltf6m")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -277,9 +277,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_a0h6a"]
+[sub_resource type="Resource" id="Resource_cwq17"]
 script = ExtResource("6_j4oe2")
-stack = Array[ExtResource("7_riaky")]([SubResource("Resource_pptwf"), SubResource("Resource_ak4ow"), SubResource("Resource_ajvq6"), SubResource("Resource_cwq17")])
+stack = Array[ExtResource("7_riaky")]([SubResource("Resource_unquq"), SubResource("Resource_pptwf"), SubResource("Resource_ak4ow"), SubResource("Resource_ajvq6")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("30_unquq")
@@ -624,7 +624,7 @@ bus = &"SFX"
 [node name="trees" type="Node3D" parent="."]
 transform = Transform3D(0.592206, 0, 0, 0, 1, 0, 0, 0, 0.806281, 53.443, 0, 10.2979)
 script = ExtResource("5_k63oc")
-modifier_stack = SubResource("Resource_a0h6a")
+modifier_stack = SubResource("Resource_cwq17")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://bglhvwowc0n14"
