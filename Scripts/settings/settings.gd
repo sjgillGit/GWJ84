@@ -29,6 +29,7 @@ func _ready() -> void:
 		load_buttons()
 func load_buttons():
 	GlobalSettings.camera_sensivity = save_data["camera_sensitivity"]/10
+	GlobalSettings.hotkey_help = save_data["hotkey_help"]
 	hotkeyhelpcheck.button_pressed = save_data["hotkey_help"]
 	hide_help = !save_data["hotkey_help"]
 	print(save_data["hotkey_help"])
@@ -71,6 +72,7 @@ func _input(event: InputEvent) -> void:
 
 func _on_hotkeyhelpcheck_toggled(toggled_on: bool) -> void:
 	click.play()
+	GlobalSettings.hotkey_help = toggled_on
 	hide_help = !toggled_on
 	if hide_help == true: button_show.modulate = Color(1,1,1,0)
 	else: button_show.modulate = Color(1,1,1,1)

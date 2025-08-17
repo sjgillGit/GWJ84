@@ -9,6 +9,7 @@ extends Control
 @export var stam_recuperation_breaker: float = stam_recuperation * 1.5
 @onready var player_health_handler: EntityHealthHandler = $"../../PlayerHealthHandler"
 func _ready() -> void:
+	button_show.visible = GlobalSettings.hotkey_help
 	hp_bar.max_value = player_health_handler.max_health
 	hp_bar.value = player_health_handler.max_health
 

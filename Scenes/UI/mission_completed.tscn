@@ -39,11 +39,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ex6yg")
 script = ExtResource("2_ubabg")
-mission_time = 220.0
-turrets_number = 55.0
-enemies_number = 777.0
-chests_number = 12.0
-banks_number = 6.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -167,6 +162,25 @@ horizontal_alignment = 2
 custom_minimum_size = Vector2(50, 10)
 layout_mode = 2
 
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="separator5" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="Again" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Start again"
+
+[node name="separator3" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="mainmenu" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Main menu"
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 visible = false
 material = SubResource("ShaderMaterial_3htfl")
@@ -233,3 +247,6 @@ stream = ExtResource("9_3htfl")
 volume_db = -10.0
 pitch_scale = 4.0
 bus = &"SFX"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Again" to="." method="_on_again_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/mainmenu" to="." method="_on_mainmenu_pressed"]

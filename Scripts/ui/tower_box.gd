@@ -33,6 +33,7 @@ func skill_activate(cooldown: float):
 	towerlist.get_child(1).activate_timer(cooldown);
 
 func _ready() -> void:
+	button_show.visible = GlobalSettings.hotkey_help
 	var tween = get_tree().create_tween().set_loops()
 	tween.tween_property(towerscroll,"scroll_horizontal",46,0.07).set_delay(0.01)
 	

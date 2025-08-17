@@ -85,6 +85,7 @@ layout_mode = 2
 action_icon = ExtResource("6_s2xdr")
 
 [node name="button_show" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 46.0
 offset_top = 9.0
 offset_right = 88.0
