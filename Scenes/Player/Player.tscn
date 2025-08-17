@@ -2109,8 +2109,10 @@ script = ExtResource("3_rlgqx")
 camera = NodePath("CameraHorizontal/CameraVertical/Camera3D")
 camera_horizontal = NodePath("CameraHorizontal")
 horizontal_sensitivity = 0.5
+horizontal_acceleration = 10.0
 camera_vertical = NodePath("CameraHorizontal/CameraVertical")
 vertical_sensitivity = 0.5
+vertical_acceleration = 10.0
 
 [node name="CameraHorizontal" type="Node3D" parent="CameraRoot"]
 

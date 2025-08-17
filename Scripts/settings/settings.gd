@@ -110,6 +110,7 @@ func _on_sensitive_slide_value_changed(value: float) -> void:
 	roll.play()
 	GlobalSettings.camera_sensivity = value/10
 	save_data["camera_sensitivity"] = value
+	print(value/10)
 	save()
 func _on_close_button_mouse_entered() -> void:
 	hover.play()

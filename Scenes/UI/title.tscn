@@ -664,9 +664,9 @@ text = "quit"
 [node name="settings" type="Panel" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 991.0
+offset_left = 1147.0
 offset_top = 97.0
-offset_right = 1687.0
+offset_right = 1843.0
 offset_bottom = 523.0
 theme = ExtResource("3_1r22b")
 script = ExtResource("4_1v4y5")
@@ -779,7 +779,7 @@ text = "Camera rotation"
 texture_filter = 1
 layout_mode = 2
 min_value = 0.1
-max_value = 2.0
+max_value = 4.0
 step = 0.1
 value = 0.1
 
@@ -817,9 +817,9 @@ bus = &"SFX"
 [node name="credits" type="Panel" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 991.0
+offset_left = 1147.0
 offset_top = 551.0
-offset_right = 1687.0
+offset_right = 1843.0
 offset_bottom = 977.0
 theme = ExtResource("3_1r22b")
 script = ExtResource("11_rsl53")
@@ -966,7 +966,6 @@ pitch_scale = 2.0
 bus = &"SFX"
 
 [node name="Control" parent="." instance=ExtResource("11_1v4y5")]
-visible = false
 layout_mode = 1
 
 [node name="title_music" type="AudioStreamPlayer" parent="."]

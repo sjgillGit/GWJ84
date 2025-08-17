@@ -9,7 +9,7 @@ var camera: Camera3D;
 var camera_horizontal: Node3D;
 
 @export
-var horizontal_sensitivity: float = GlobalSettings.camera_sensivity;
+var horizontal_sensitivity: float;
 
 @export
 var horizontal_acceleration: float = 15;
@@ -19,7 +19,7 @@ var horizontal_acceleration: float = 15;
 var camera_vertical: Node3D;
 
 @export
-var vertical_sensitivity: float = GlobalSettings.camera_sensivity;
+var vertical_sensitivity: float;
 
 @export
 var vertical_acceleration: float = 15;
@@ -44,8 +44,8 @@ func _input(event: InputEvent) -> void:
 	if event is not InputEventMouseMotion:
 		return;
 	event = event as InputEventMouseMotion;
-	horizontal_movement += -event.relative.x * horizontal_sensitivity;
-	vertical_movement += -event.relative.y * vertical_sensitivity;
+	horizontal_movement += -event.relative.x * GlobalSettings.camera_sensivity;
+	vertical_movement += -event.relative.y * GlobalSettings.camera_sensivity;
 	vertical_movement = clamp(vertical_movement, vertical_min, vertical_max);
 	
 
