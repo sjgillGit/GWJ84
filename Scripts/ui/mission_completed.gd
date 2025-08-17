@@ -39,7 +39,6 @@ var skiped: bool = false
 var canbeskiped: bool = false
 @onready var tween
 func _ready() -> void:
-	print("position: ",(get_viewport().get_visible_rect().size.y - self.size.y) / 2,"size.y: ",get_viewport().get_visible_rect().size.y)
 	self.position.y = (get_viewport().get_visible_rect().size.y - self.size.y) / 2
 	timer.start()
 	await timer.timeout
@@ -49,17 +48,6 @@ func _ready() -> void:
 		tween.tween_property(time,"modulate",Color(1,1,1,1),0.5)
 		couting_up = true
 	await timer.timeout
-	tween = get_tree().create_tween()
-	tween.tween_property(banks_robbed,"modulate",Color(1,1,1,1),0.5)
-	turrets_count = true
-	await timer.timeout
-	tween = get_tree().create_tween()
-	tween.tween_property(chest_opened,"modulate",Color(1,1,1,1),0.5)
-	turrets_count = true
-	await timer.timeout
-	tween = get_tree().create_tween()
-	tween.tween_property(towers_placed,"modulate",Color(1,1,1,1),0.5)
-	turrets_count = true
 	if skiped == false:
 		tween = get_tree().create_tween()
 		tween.tween_property(banks_robbed,"modulate",Color(1,1,1,1),0.5)
@@ -79,7 +67,6 @@ func _ready() -> void:
 		tween = get_tree().create_tween()
 		tween.tween_property(enemies_killed,"modulate",Color(1,1,1,1),0.5)
 		enemies_count = true
-			
 
 func _process(delta: float) -> void:
 	if couting_up: time_count(delta)
@@ -112,8 +99,8 @@ func count_up(delta,temp,_final,text_box,_iffer):
 	
 func time_count_finished(lbl):
 	lbl.pivot_offset = Vector2(140,lbl.size.y/2)
-	var tween = get_tree().create_tween().set_parallel(true)
-	tween.tween_property(lbl,"scale",Vector2(1.4,1.4),1).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	var tweend = get_tree().create_tween()
+	tweend.tween_property(lbl,"scale",Vector2(1.4,1.4),1).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 func skip():
 	skiped = true
 	tween.kill()
@@ -142,8 +129,8 @@ func _on_again_pressed() -> void:
 	GlobalSettings.time = 0
 	click.play()
 	start_run.play()
-	var tween = get_tree().create_tween().set_parallel(true)
-	tween.tween_property(fade,"modulate",Color(1,1,1,1),1).set_trans(Tween.TRANS_CIRC)
+	var tweend = get_tree().create_tween()
+	tweend.tween_property(fade,"modulate",Color(1,1,1,1),1).set_trans(Tween.TRANS_CIRC)
 	
 	await tween.finished
 	get_tree().change_scene_to_file("res://Scenes/map.tscn")

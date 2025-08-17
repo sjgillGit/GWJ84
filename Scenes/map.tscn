@@ -1,9 +1,10 @@
-[gd_scene load_steps=54 format=3 uid="uid://nbkvr20vhw44"]
+[gd_scene load_steps=55 format=3 uid="uid://nbkvr20vhw44"]
 
 [ext_resource type="Texture2D" uid="uid://bhkyckjrxcfxn" path="res://Assets/terrain_3d/Grass.webp" id="1_k63oc"]
 [ext_resource type="Texture2D" uid="uid://duqqgm7u1gkww" path="res://Assets/terrain_3d/ground037_nrm_rgh.png" id="2_j4oe2"]
 [ext_resource type="Script" uid="uid://do153pjy4so2v" path="res://Scripts/NPCs/swarm_manager.gd" id="3_qldgr"]
 [ext_resource type="Texture2D" uid="uid://d00gtml8xhkh2" path="res://Assets/terrain_3d/road.webp" id="3_uus22"]
+[ext_resource type="Environment" uid="uid://c3reqburf2ybn" path="res://Scenes/map.tres" id="4_gg4i5"]
 [ext_resource type="Script" uid="uid://bglhvwowc0n14" path="res://addons/proton_scatter/src/scatter.gd" id="5_k63oc"]
 [ext_resource type="Script" uid="uid://dv3et0qux61s" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="6_j4oe2"]
 [ext_resource type="Script" uid="uid://bybbhye7vnfbc" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="7_riaky"]
@@ -113,7 +114,7 @@ normal_texture = ExtResource("2_j4oe2")
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_ltf6m")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_1ye5v"), SubResource("Terrain3DTextureAsset_tuwt4")])
 
-[sub_resource type="Resource" id="Resource_1xwpj"]
+[sub_resource type="Resource" id="Resource_natfk"]
 script = ExtResource("8_vtkp8")
 amount = 150
 enabled = true
@@ -122,7 +123,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_pmuo0"]
+[sub_resource type="Resource" id="Resource_y410r"]
 script = ExtResource("9_rg57b")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
@@ -133,7 +134,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_gg4i5"]
+[sub_resource type="Resource" id="Resource_pwqop"]
 script = ExtResource("10_macow")
 iterations = 3
 offset_step = 0.2
@@ -145,7 +146,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_natfk"]
+[sub_resource type="Resource" id="Resource_xvpjn"]
 script = ExtResource("11_ltf6m")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -161,9 +162,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_y410r"]
+[sub_resource type="Resource" id="Resource_n3g5y"]
 script = ExtResource("6_j4oe2")
-stack = Array[ExtResource("7_riaky")]([SubResource("Resource_1xwpj"), SubResource("Resource_pmuo0"), SubResource("Resource_gg4i5"), SubResource("Resource_natfk")])
+stack = Array[ExtResource("7_riaky")]([SubResource("Resource_natfk"), SubResource("Resource_y410r"), SubResource("Resource_pwqop"), SubResource("Resource_xvpjn")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("30_unquq")
@@ -188,6 +189,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.19236, 0, 2.93053)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("4_gg4i5")
 
 [node name="swarm_manager" type="Node3D" parent="." node_paths=PackedStringArray("spawn_timer")]
 script = ExtResource("3_qldgr")
@@ -228,7 +230,7 @@ max_distance = 4096.0
 [node name="trees" type="Node3D" parent="."]
 transform = Transform3D(0.592206, 0, 0, 0, 1, 0, 0, 0, 0.806281, 53.443, 0, 10.2979)
 script = ExtResource("5_k63oc")
-modifier_stack = SubResource("Resource_y410r")
+modifier_stack = SubResource("Resource_n3g5y")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://bglhvwowc0n14"

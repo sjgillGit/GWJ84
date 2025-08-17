@@ -2053,7 +2053,7 @@ bones/77/rotation = Quaternion(0.332372, 0.624241, -0.62391, -0.332548)
 bones/77/scale = Vector3(1, 1, 1)
 
 [node name="Cube" type="BoneAttachment3D" parent="MeshRoot/Goblin/metarig/Skeleton3D"]
-transform = Transform3D(0.511171, 1.08268, -1.0255, -1.42657, 0.670846, -0.00283667, 0.434451, 0.928932, 1.19728, 0.550481, 0.92403, 0.0410438)
+transform = Transform3D(0.511169, 1.08268, -1.0255, -1.42657, 0.670844, -0.00283766, 0.434448, 0.928932, 1.19728, 0.55048, 0.924033, 0.0410433)
 bone_name = "Cube"
 bone_idx = 18
 
