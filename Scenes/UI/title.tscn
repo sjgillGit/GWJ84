@@ -614,10 +614,8 @@ transform = Transform3D(0.980185, 0, -0.198085, 0, 1, 0, 0.198085, 0, 0.980185, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.80599, 0)
 
 [node name="tree13" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_crq3r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66516, -0.876228, -9.19335)
-
-[node name="tree14" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_crq3r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0368, -0.876228, -50.1832)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74, -0.946, -9.193)
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_fgrae")

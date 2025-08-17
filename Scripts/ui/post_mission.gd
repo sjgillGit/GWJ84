@@ -4,9 +4,11 @@ const DEATH_PANEL = preload("res://Scenes/UI/death_panel.tscn")
 const MISSION_COMPLETED = preload("res://Scenes/UI/mission_completed.tscn")
 @onready var victory: AudioStreamPlayer = $victory
 @onready var goblin: Node3D = $SubViewportContainer/SubViewport/Goblin
+@onready var sub_viewport_container: SubViewportContainer = $SubViewportContainer
 var skiped:= false
 var panel
 func _ready() -> void:
+	sub_viewport_container.scale = GlobalSettings.multiplier
 	post_mission(false)
 
 func post_mission(iswin:bool):
