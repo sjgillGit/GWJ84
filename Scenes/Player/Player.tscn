@@ -2135,7 +2135,7 @@ metadata/_custom_type_script = "uid://b1d7g85ltcc1v"
 
 [node name="PlayerDeployTurrentAction" type="Node3D" parent="PlayerActions" node_paths=PackedStringArray("player_reference")]
 script = ExtResource("5_jmcll")
-deploy_cooldown = 10.0
+deploy_cooldown = 6.0
 player_reference = NodePath("../..")
 turret_scene = ExtResource("6_t26db")
 max_distance_to_place_turrets = 5.0
@@ -2144,7 +2144,7 @@ metadata/_custom_type_script = "uid://dih6bmq8e1vtv"
 
 [node name="PlayerHealthHandler" type="Node3D" parent="."]
 script = ExtResource("6_4wape")
-max_health = 100.0
+max_health = 200.0
 immunity_frame_duration = 0.05
 animations = Array[Animation]([ExtResource("21_2avfq")])
 
