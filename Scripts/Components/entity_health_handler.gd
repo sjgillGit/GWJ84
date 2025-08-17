@@ -16,7 +16,7 @@ signal entity_took_damage(entity: Node3D, handler: EntityHealthHandler);
 ## [param is_interruptible]: can this animation be interrupted while playing.
 signal state_changed(new_state: String, new_anims: Array[Animation], anim_index: int, is_interruptible: bool)
 
-@export_range(1, 100)
+@export_range(1, 200)
 var max_health: float;
 
 @export
