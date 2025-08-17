@@ -129,7 +129,17 @@ func skip():
 	time_lbl.modulate = Color(1,1,1,1)
 	
 func _on_again_pressed() -> void:
+	GlobalSettings.towers_deployed = 0
+	GlobalSettings.enemies_killed = 0
+	GlobalSettings.chests_opened = 0
+	GlobalSettings.banks_robbed = 0
+	GlobalSettings.time = 0
 	get_tree().change_scene_to_file("res://Scenes/UI/map.tscn")
 
 func _on_mainmenu_pressed() -> void:
+	GlobalSettings.towers_deployed = 0
+	GlobalSettings.enemies_killed = 0
+	GlobalSettings.chests_opened = 0
+	GlobalSettings.banks_robbed = 0
+	GlobalSettings.time = 0
 	get_tree().change_scene_to_file("res://Scenes/UI/title.tscn")

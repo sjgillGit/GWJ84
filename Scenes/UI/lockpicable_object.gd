@@ -56,6 +56,7 @@ func _on_field_objective_base_player_input_made_progress() -> void:
 func on_win(objective):
 	if objective != field_objective_base:
 		return
+	GlobalSettings.chests_opened += 1
 	won = true
 	var timer = get_tree().create_timer(0.6)
 	await timer.timeout

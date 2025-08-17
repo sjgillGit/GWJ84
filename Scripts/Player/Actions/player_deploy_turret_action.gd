@@ -33,6 +33,7 @@ func _can_perform_action() -> bool:
 func _perform_action() -> void:
 	if !_try_deploy_turret():
 		return;
+	GlobalSettings.towers_deployed += 1
 	skill_box.deploy_perform(deploy_cooldown)
 	state_changed.emit("Turret", animations, 0, false)
 	current_cooldown = deploy_cooldown;

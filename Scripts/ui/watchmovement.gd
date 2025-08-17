@@ -42,3 +42,6 @@ func _on_timer_timeout() -> void:
 	
 	timer_reset()
 	timer_start(mission_time)
+
+func _process(delta: float) -> void:
+	GlobalSettings.banks_robbed += delta
