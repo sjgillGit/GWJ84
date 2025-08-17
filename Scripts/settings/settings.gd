@@ -44,7 +44,7 @@ func create_save(savepath,namesave,fullpath):
 		"music_volume": 1,
 		"sfx_volume": 1,
 		"master_volume": 1,
-		"camera_sensitivity": 0.07,
+		"camera_sensitivity": 0.15,
 		"hotkey_help": true}
 	if not DirAccess.dir_exists_absolute(savepath):
 		DirAccess.make_dir_absolute(savepath)

@@ -26,7 +26,7 @@ offset_right = 40.0
 offset_bottom = 59.0
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_grf1r")
-mission_time = 240.0
+mission_time = 120.0
 
 [node name="TextureRect2" type="TextureRect" parent="watch"]
 layout_mode = 0

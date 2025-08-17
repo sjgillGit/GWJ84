@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cms4epxb8dh3k" path="res://Scripts/Player/camera_controller.gd" id="3_rlgqx"]
 [ext_resource type="Animation" uid="uid://cwr5oyw4btrle" path="res://Assets/characters/player/Run.res" id="4_esmjy"]
 [ext_resource type="Script" uid="uid://b1d7g85ltcc1v" path="res://Scripts/Player/Actions/player_melee_action.gd" id="4_ude3g"]
-[ext_resource type="PackedScene" uid="uid://ddl41xrijeh6u" path="res://Scenes/UI/post_mission.tscn" id="5_6rswy"]
+[ext_resource type="PackedScene" uid="uid://cwvd7du7338ou" path="res://Scenes/UI/post_mission.tscn" id="5_6rswy"]
 [ext_resource type="PackedScene" uid="uid://b5vmy52in51ot" path="res://Scenes/UI/screen_ui.tscn" id="5_7xdrn"]
 [ext_resource type="Script" uid="uid://dih6bmq8e1vtv" path="res://Scripts/Player/Actions/player_deploy_turret_action.gd" id="5_jmcll"]
 [ext_resource type="Script" uid="uid://bjb4np2yjqmqv" path="res://Scripts/Components/entity_health_handler.gd" id="6_4wape"]

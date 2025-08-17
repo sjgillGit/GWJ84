@@ -4,6 +4,9 @@ extends Panel
 @onready var enemies_number: float = GlobalSettings.enemies_killed
 @onready var chests_number: float = GlobalSettings.chests_opened
 @onready var banks_number: float = GlobalSettings.banks_robbed
+@onready var click: AudioStreamPlayer = $click
+@onready var start_run: AudioStreamPlayer = $start_run
+@onready var fade: ColorRect = $fade
 
 @onready var time_lbl: Label = $MarginContainer/VBoxContainer/time/Label2
 @onready var turrets_lbl: Label = $MarginContainer/VBoxContainer/towers_placed/Label2
@@ -35,6 +38,7 @@ var min_temp: float = 0
 var skiped: bool = false
 @onready var tween
 func _ready() -> void:
+	print("position: ",(get_viewport().get_visible_rect().size.y - self.size.y) / 2,"size.y: ",get_viewport().get_visible_rect().size.y)
 	self.position.y = (get_viewport().get_visible_rect().size.y - self.size.y) / 2
 	timer.start()
 	await timer.timeout
@@ -134,7 +138,13 @@ func _on_again_pressed() -> void:
 	GlobalSettings.chests_opened = 0
 	GlobalSettings.banks_robbed = 0
 	GlobalSettings.time = 0
-	get_tree().change_scene_to_file("res://Scenes/UI/map.tscn")
+	click.play()
+	start_run.play()
+	var tween = get_tree().create_tween().set_parallel(true)
+	tween.tween_property(fade,"modulate",Color(1,1,1,1),1).set_trans(Tween.TRANS_CIRC)
+	
+	await tween.finished
+	get_tree().change_scene_to_file("res://Scenes/map.tscn")
 
 func _on_mainmenu_pressed() -> void:
 	GlobalSettings.towers_deployed = 0

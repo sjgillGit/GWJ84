@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ddl41xrijeh6u"]
+[gd_scene load_steps=32 format=3 uid="uid://cwvd7du7338ou"]
 
 [ext_resource type="PackedScene" uid="uid://cgquenm3v3687" path="res://Scenes/UI/goblin.tscn" id="1_maiub"]
 [ext_resource type="Script" uid="uid://dkmrwxosv7v3b" path="res://Scripts/ui/post_mission.gd" id="1_tofs2"]
@@ -125,13 +125,14 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 773.0
-offset_bottom = 435.0
+offset_right = -1152.0
+offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tofs2")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
@@ -223,3 +224,9 @@ bus = &"SFX"
 [node name="victory" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_tofs2")
 bus = &"SFX"
+
+[node name="spawn" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 621.0
+offset_right = 661.0
+offset_bottom = 40.0

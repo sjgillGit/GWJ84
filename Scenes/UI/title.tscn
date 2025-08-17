@@ -966,6 +966,7 @@ pitch_scale = 2.0
 bus = &"SFX"
 
 [node name="Control" parent="." instance=ExtResource("11_1v4y5")]
+visible = false
 layout_mode = 1
 
 [node name="title_music" type="AudioStreamPlayer" parent="."]
