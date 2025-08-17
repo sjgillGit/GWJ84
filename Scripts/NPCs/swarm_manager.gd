@@ -173,6 +173,7 @@ func add_to_win_state():
 	increase_difficulty()
 	if win==ammount_of_objectives_to_reach_win_state:
 			#HERE LIES THE PROBLEM TO GET TO WIN STATE, FIX!
+			GlobalSettings.win = true
 			get_tree().change_scene_to_file("res://Scenes/UI/post_mission.tscn") 
 
 func _on_objective_completed() -> void:

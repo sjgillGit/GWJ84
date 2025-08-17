@@ -136,6 +136,7 @@ func _on_again_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/map.tscn")
 
 func _on_mainmenu_pressed() -> void:
+	click.play()
 	GlobalSettings.towers_deployed = 0
 	GlobalSettings.enemies_killed = 0
 	GlobalSettings.chests_opened = 0

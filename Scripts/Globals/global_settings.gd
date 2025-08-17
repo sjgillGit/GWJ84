@@ -10,3 +10,4 @@ var chests_opened: float = 0
 var towers_deployed: float = 0
 var banks_robbed: float = 0
 var time: float = 0
+var win: bool = false

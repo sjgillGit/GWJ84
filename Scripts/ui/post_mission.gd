@@ -11,7 +11,7 @@ var panel
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	sub_viewport_container.scale = GlobalSettings.multiplier
-	post_mission(false)
+	post_mission(GlobalSettings.win)
 
 func post_mission(iswin:bool):
 	if iswin:
