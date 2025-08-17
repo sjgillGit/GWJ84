@@ -33,7 +33,7 @@ var is_immune_to_damage: bool = false;
 func _ready() -> void:
 	health = max_health;
 	set_process(false);
-	entity_died.connect(func(): state_changed.emit("Death", animations, 0, false))
+	entity_died.connect(func _on_death(_entity, _handler): state_changed.emit("Death", animations, 0, false))
 
 func _process(delta: float) -> void:
 	current_immunity_frame_timer += delta;

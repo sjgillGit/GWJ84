@@ -37,19 +37,24 @@ var is_waiting_animation_end: bool = false
 
 var gravity: float;
 
+var is_alive: bool = true
+
 @export var dead_scene:PackedScene
 func _ready() -> void:
+	is_alive = true
 	state_changed.connect(_on_state_changed)
 	var actions: Array[PlayerActionBase] = %PlayerActions.actions
 	for i in actions:
 		i.state_changed.connect(_on_state_changed)
 	anim_player.animation_finished.connect(func _on_animation_finished(_bool): is_waiting_animation_end = false)
 	health_handler.state_changed.connect(_on_state_changed)
+	health_handler.entity_died.connect(_on_player_death)
 	anim_player.play("Idle")
 	gravity = ProjectSettings.get_setting("physics/3d/default_gravity");
 
 func _physics_process(_delta: float) -> void:
-	
+	if !is_alive:
+		return
 	var input: Vector2 = Input.get_vector("MoveLeft", "MoveRight", "MoveForward", "MoveBack");
 	var movement_direction : Vector3 = Vector3(input.x, 0.0, input.y).rotated(Vector3.UP, camera_controller.get_horizontal_rotation());
 	
@@ -75,7 +80,6 @@ func take_damage(damage: float) -> void:
 
 
 
-
 func _on_state_changed(new_state, anims, index = 0, can_be_interrupt = true) -> void:
 	if anims.is_empty():
 		printerr("The animations' array from the signal's emitter is empty.")
@@ -85,8 +89,17 @@ func _on_state_changed(new_state, anims, index = 0, can_be_interrupt = true) -> 
 	var file: String = path.right(path.length() - path.rfind("/") - 1)
 	var file_name: String = file.left(file.find("."))
 	if new_state != previous_state or file_name != anim_player.assigned_animation:
-		if is_waiting_animation_end:
+		if is_waiting_animation_end and new_state != "Death":
 			return
 		anim_player.play(file_name, 0.3)
 		previous_state = new_state
 		is_waiting_animation_end = !can_be_interrupt
+
+func _on_player_death(_entity, _handler) -> void:
+	is_alive = false
+	var death_timer := Timer.new()
+	add_child(death_timer)
+	death_timer.one_shot
+	death_timer.start(2.5)
+	death_timer.timeout.connect(func _on_timer_timeout(): get_tree().change_scene_to_packed(dead_scene))
+	
