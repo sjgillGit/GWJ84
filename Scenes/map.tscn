@@ -1,9 +1,10 @@
-[gd_scene load_steps=52 format=3 uid="uid://nbkvr20vhw44"]
+[gd_scene load_steps=53 format=3 uid="uid://nbkvr20vhw44"]
 
 [ext_resource type="Texture2D" uid="uid://bhkyckjrxcfxn" path="res://Assets/terrain_3d/Grass.webp" id="1_k63oc"]
 [ext_resource type="Texture2D" uid="uid://duqqgm7u1gkww" path="res://Assets/terrain_3d/ground037_nrm_rgh.png" id="2_j4oe2"]
 [ext_resource type="Script" uid="uid://do153pjy4so2v" path="res://Scripts/NPCs/swarm_manager.gd" id="3_qldgr"]
 [ext_resource type="Texture2D" uid="uid://d00gtml8xhkh2" path="res://Assets/terrain_3d/road.webp" id="3_uus22"]
+[ext_resource type="Environment" uid="uid://c3reqburf2ybn" path="res://Scenes/map.tres" id="4_1xwpj"]
 [ext_resource type="Script" uid="uid://bglhvwowc0n14" path="res://addons/proton_scatter/src/scatter.gd" id="5_k63oc"]
 [ext_resource type="Script" uid="uid://dv3et0qux61s" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="6_j4oe2"]
 [ext_resource type="Script" uid="uid://bybbhye7vnfbc" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="7_riaky"]
@@ -186,6 +187,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.19236, 0, 2.93053)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("4_1xwpj")
 
 [node name="swarm_manager" type="Node3D" parent="." node_paths=PackedStringArray("spawn_timer")]
 script = ExtResource("3_qldgr")
