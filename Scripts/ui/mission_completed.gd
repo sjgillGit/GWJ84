@@ -35,6 +35,7 @@ var min_temp: float = 0
 var skiped: bool = false
 @onready var tween
 func _ready() -> void:
+	self.position.y = (get_viewport().get_visible_rect().size.y - self.size.y) / 2
 	timer.start()
 	await timer.timeout
 	if skiped == false:

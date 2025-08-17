@@ -1,5 +1,7 @@
 extends Node3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-func _ready() -> void:
+func win() -> void:
 	animation_player.play("Dance")
+func death():
+	animation_player.play("Death")

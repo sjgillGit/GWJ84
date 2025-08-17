@@ -49,7 +49,6 @@ func take_damage(entity: Node3D, amount: float) -> void:
 		return;
 
 	var new_health: float = health - amount;
-
 	if new_health <= 0.0:
 		health = 0.0;
 		entity_died.emit(entity, self);
