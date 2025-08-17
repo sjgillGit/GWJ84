@@ -112,7 +112,7 @@ normal_texture = ExtResource("2_j4oe2")
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_ltf6m")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_1ye5v"), SubResource("Terrain3DTextureAsset_tuwt4")])
 
-[sub_resource type="Resource" id="Resource_cwq17"]
+[sub_resource type="Resource" id="Resource_1xwpj"]
 script = ExtResource("8_vtkp8")
 amount = 150
 enabled = true
@@ -121,7 +121,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_a0h6a"]
+[sub_resource type="Resource" id="Resource_pmuo0"]
 script = ExtResource("9_rg57b")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
@@ -132,7 +132,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_wcnou"]
+[sub_resource type="Resource" id="Resource_gg4i5"]
 script = ExtResource("10_macow")
 iterations = 3
 offset_step = 0.2
@@ -144,7 +144,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_1xwpj"]
+[sub_resource type="Resource" id="Resource_natfk"]
 script = ExtResource("11_ltf6m")
 ray_direction = Vector3(0, -1, 0)
 ray_length = 5.0
@@ -160,9 +160,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_pmuo0"]
+[sub_resource type="Resource" id="Resource_y410r"]
 script = ExtResource("6_j4oe2")
-stack = Array[ExtResource("7_riaky")]([SubResource("Resource_cwq17"), SubResource("Resource_a0h6a"), SubResource("Resource_wcnou"), SubResource("Resource_1xwpj")])
+stack = Array[ExtResource("7_riaky")]([SubResource("Resource_1xwpj"), SubResource("Resource_pmuo0"), SubResource("Resource_gg4i5"), SubResource("Resource_natfk")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("30_unquq")
@@ -228,7 +228,7 @@ max_distance = 4096.0
 [node name="trees" type="Node3D" parent="."]
 transform = Transform3D(0.592206, 0, 0, 0, 1, 0, 0, 0, 0.806281, 53.443, 0, 10.2979)
 script = ExtResource("5_k63oc")
-modifier_stack = SubResource("Resource_pmuo0")
+modifier_stack = SubResource("Resource_y410r")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://bglhvwowc0n14"
