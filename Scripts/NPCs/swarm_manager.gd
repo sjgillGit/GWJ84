@@ -25,6 +25,7 @@ func init_npc(npc):
 	npc.killed.connect(_on_npc_killed)
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GlobalSignals.objective_completed.connect(_on_lockpicable_win)
 	spatial_hash = SpatialHash.new(64)
 	difficulty_level = 0
 	GlobalSignals.objective_completed.connect(_on_objective_completed)
