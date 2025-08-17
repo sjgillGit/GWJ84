@@ -2050,7 +2050,7 @@ bones/77/rotation = Quaternion(0.332372, 0.624241, -0.62391, -0.332548)
 bones/77/scale = Vector3(1, 1, 1)
 
 [node name="Cube" type="BoneAttachment3D" parent="MeshRoot/Goblin/metarig/Skeleton3D"]
-transform = Transform3D(0.511169, 1.08268, -1.0255, -1.42657, 0.670844, -0.00283766, 0.434448, 0.928932, 1.19728, 0.55048, 0.924033, 0.0410433)
+transform = Transform3D(0.511171, 1.08268, -1.0255, -1.42657, 0.670846, -0.00283667, 0.434451, 0.928932, 1.19728, 0.550481, 0.92403, 0.0410438)
 bone_name = "Cube"
 bone_idx = 18
 
@@ -2101,6 +2101,7 @@ camera = NodePath("CameraHorizontal/CameraVertical/Camera3D")
 camera_horizontal = NodePath("CameraHorizontal")
 horizontal_sensitivity = 0.5
 camera_vertical = NodePath("CameraHorizontal/CameraVertical")
+vertical_sensitivity = 0.5
 
 [node name="CameraHorizontal" type="Node3D" parent="CameraRoot"]
 
@@ -2124,6 +2125,7 @@ script = ExtResource("5_jmcll")
 deploy_cooldown = 10.0
 player_reference = NodePath("../..")
 turret_scene = ExtResource("6_t26db")
+max_distance_to_place_turrets = 5.0
 animations = Array[Animation]([ExtResource("23_w4oha"), ExtResource("22_d2y64")])
 metadata/_custom_type_script = "uid://dih6bmq8e1vtv"
 
