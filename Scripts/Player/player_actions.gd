@@ -49,6 +49,6 @@ func scroll_selection_action_down():
 func update_selected_index(next_index: int, scroll_type: PlayerActionScrollType):
 	if current_action_index == next_index:
 		return;
-	print(next_index,current_action_index)
+	#print(next_index,current_action_index)
 	current_action_index = next_index;
 	selected_action_changed.emit(actions[current_action_index], current_action_index, scroll_type);
