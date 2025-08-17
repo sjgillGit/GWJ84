@@ -539,8 +539,9 @@ script = ExtResource("4_u6y7j")
 entity_detector = NodePath("../../EnemyDetectArea")
 animation_player = NodePath("../../MeshRoot/Turret/AnimationPlayer")
 skeleton = NodePath("../../MeshRoot/Turret/Armature/Skeleton3D")
-shoot_interval = 1.0
+shoot_interval = 0.6
 health_handler = NodePath("../../EntityHealthHandler")
+damage = 25
 
 [node name="GunTurretDeactivated" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("animation_player")]
 script = ExtResource("12_asa65")
