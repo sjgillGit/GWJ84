@@ -7,11 +7,12 @@ extends Node3D
 @onready var reward_choose: CanvasLayer = $reward_choose
 @onready var woosh: AudioStreamPlayer = $woosh
 @onready var chest_open: AudioStreamPlayer = $chest_open
+signal win
 const REWARD_MENU = preload("res://Scenes/UI/reward_menu.tscn")
 func _on_lockpicable_win() -> void:
+	win.emit()
 	animation_player.play("opening")
 	chest_open.play()
-	
 	var rewards = REWARD_MENU.instantiate()
 	var upgrade_list = [["GAS RANGE UP","+20 range","normal","gas"],["HEAVY DAMAGE UP","shot speed down","curse","turret"],["SPRINT SPEED UP","doubles sprint speed","normal","player"]]
 	reward_choose.add_child(rewards)

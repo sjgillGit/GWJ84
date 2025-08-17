@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ctjdkdfg8pbps"
+path="res://.godot/imported/Vent Bar GWJ 84 victory jingle (shorter).ogg-22a81a833758e289d591b7a08bbe7d80.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/ui/audio/Vent Bar GWJ 84 victory jingle (shorter).ogg"
+dest_files=["res://.godot/imported/Vent Bar GWJ 84 victory jingle (shorter).ogg-22a81a833758e289d591b7a08bbe7d80.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

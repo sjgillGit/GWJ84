@@ -35,6 +35,7 @@ var min_temp: float = 0
 var skiped: bool = false
 @onready var tween
 func _ready() -> void:
+	self.position.y = (get_viewport().get_visible_rect().size.y - self.size.y) / 2
 	timer.start()
 	await timer.timeout
 	if skiped == false:
@@ -128,7 +129,7 @@ func skip():
 	time_lbl.modulate = Color(1,1,1,1)
 	
 func _on_again_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/UI/test_scene.tscn")
+	get_tree().change_scene_to_file("res://Scenes/UI/map.tscn")
 
 func _on_mainmenu_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/UI/title.tscn")
