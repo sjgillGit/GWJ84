@@ -100,6 +100,5 @@ func _on_player_death(_entity, _handler) -> void:
 	var death_timer := Timer.new()
 	add_child(death_timer)
 	death_timer.one_shot
-	death_timer.start(2.5)
+	death_timer.start(2.5) # Time before loading Game Over screen
 	death_timer.timeout.connect(func _on_timer_timeout(): get_tree().change_scene_to_packed(dead_scene))
-	
