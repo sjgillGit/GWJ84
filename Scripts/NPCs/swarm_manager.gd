@@ -6,6 +6,7 @@ var npc_list:Array = []
 @export var rat:PackedScene
 @export var bear:PackedScene
 @export var beaver:PackedScene
+@export var spawn_timer: Timer
 @onready var player = get_parent().get_node("Player")
 var unit_ratios = [0.5,0.3,0.05,0.15]
 var mice_pool = []
@@ -15,14 +16,20 @@ var bear_pool = []
 var difficulty_level=0
 const MAX_ENEMIES = 100
 const BASE_SPAWN_COUNT= 10
+const BASE_SPAWN_TIMER: float = 30.0
 var current_enemies = BASE_SPAWN_COUNT
 var CURRENT_STAT_MULT = 1.0
+var mission_checkpoint = 0
 func init_npc(npc):
 	npc_list.append(npc)
 	npc.killed.connect(_on_npc_killed)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	spatial_hash = SpatialHash.new(64)
+	difficulty_level = 0
+	GlobalSignals.objective_completed.connect(_on_objective_completed)
+	mission_checkpoint = 0
+	GlobalSignals.mission_timer_checkpoint_reached.connect(func(): mission_checkpoint += 1)
 	for i in range(get_child_count()):
 		init_npc(get_child(i))
 	var mice_cap = unit_ratios[0]*MAX_ENEMIES
@@ -139,7 +146,9 @@ func _on_npc_killed(dead_npc:Npc):
 			
 
 func increase_difficulty():
-	current_enemies = min(current_enemies+20,MAX_ENEMIES) 
+	current_enemies = min(current_enemies + 2 + (20 * difficulty_level) + (30 * mission_checkpoint),MAX_ENEMIES) 
+	spawn_timer.wait_time = BASE_SPAWN_TIMER - (5.0 * difficulty_level) - (10.0 * mission_checkpoint)
+	print("Current enemies nb: ", current_enemies, " - Spawn time: ", spawn_timer.wait_time)
 
 func spawn_enemies(position: Vector3):
 	var radius = 15.0
@@ -164,3 +173,7 @@ func add_to_win_state():
 	if win==ammount_of_objectives_to_reach_win_state:
 			#HERE LIES THE PROBLEM TO GET TO WIN STATE, FIX!
 			get_tree().change_scene_to_file("res://Scenes/UI/post_mission.tscn") 
+
+func _on_objective_completed() -> void:
+	difficulty_level += 1
+	print("Difficulty level raised to level ", difficulty_level)

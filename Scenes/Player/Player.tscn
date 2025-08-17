@@ -2127,7 +2127,7 @@ script = ExtResource("3_h54ih")
 script = ExtResource("4_ude3g")
 melee_cooldown = 2.0
 shape_cast = NodePath("../../MeshRoot/MeleeShapeCast3D")
-damage = 10.0
+damage = 1000.0
 animations = Array[Animation]([ExtResource("24_4ribq")])
 metadata/_custom_type_script = "uid://b1d7g85ltcc1v"
 

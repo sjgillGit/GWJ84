@@ -6,10 +6,12 @@ extends Control
 @onready var watch: CanvasGroup = $".."
 @onready var odliczanie: bool = false
 @onready var timeout: AudioStreamPlayer = $"../timeout"
+var is_timer_checkpoint_reached: bool = false
 func _ready() -> void:
 	timer_reset()
 	timer_start(mission_time)
 	resolution_set()
+	is_timer_checkpoint_reached = false
 func resolution_set():
 	self.position.x = get_viewport().get_visible_rect().size.x - 166
 func timer_reset():
@@ -45,3 +47,10 @@ func _on_timer_timeout() -> void:
 
 func _process(delta: float) -> void:
 	GlobalSettings.banks_robbed += delta
+	if timer.time_left <= (timer.wait_time / 2):
+		_on_mission_checkpoint_reached()
+
+func _on_mission_checkpoint_reached() -> void:
+	if !is_timer_checkpoint_reached:
+		GlobalSignals.mission_timer_checkpoint_reached
+	is_timer_checkpoint_reached = true

@@ -306,12 +306,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.19236, 0, 2.93053)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4c2oa")
 
-[node name="swarm_manager" type="Node3D" parent="."]
+[node name="swarm_manager" type="Node3D" parent="." node_paths=PackedStringArray("spawn_timer")]
 script = ExtResource("3_qldgr")
 mice = ExtResource("16_vtkp8")
 rat = ExtResource("17_rg57b")
 bear = ExtResource("18_j4oe2")
 beaver = ExtResource("19_macow")
+spawn_timer = NodePath("../spawn_timer")
 ammount_of_objectives_to_reach_win_state = 3
 
 [node name="Player" parent="." instance=ExtResource("7_w7jjh")]
@@ -325,7 +326,7 @@ collision_mask = 6
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0743, 0.0427623, 14.2547)
 
 [node name="spawn_timer" type="Timer" parent="."]
-wait_time = 1000.0
+wait_time = 20.0
 autostart = true
 
 [node name="chase_music" type="AudioStreamPlayer3D" parent="."]
