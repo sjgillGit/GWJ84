@@ -1,19 +1,125 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddl41xrijeh6u"]
+[gd_scene load_steps=32 format=3 uid="uid://ddl41xrijeh6u"]
 
 [ext_resource type="PackedScene" uid="uid://cgquenm3v3687" path="res://Scenes/UI/goblin.tscn" id="1_maiub"]
 [ext_resource type="Script" uid="uid://dkmrwxosv7v3b" path="res://Scripts/ui/post_mission.gd" id="1_tofs2"]
 [ext_resource type="Script" uid="uid://2kyj44aq7djn" path="res://Scenes/UI/goblin_dance.gd" id="2_31x6l"]
+[ext_resource type="PackedScene" uid="uid://dcgmuqy766dmw" path="res://Scenes/enviroment_props/house_2.tscn" id="2_312un"]
+[ext_resource type="PackedScene" uid="uid://b40p44ahsm5p1" path="res://Scenes/enviroment_props/house_6.tscn" id="3_1wgqj"]
+[ext_resource type="Texture2D" uid="uid://cn0qutwe4ipa8" path="res://Assets/title_terrain/Grass1.webp" id="4_32t72"]
+[ext_resource type="Texture2D" uid="uid://cwyk4a8hwprsl" path="res://Assets/title_terrain/ground037_nrm_rgh1.png" id="5_aagk6"]
 [ext_resource type="AudioStream" uid="uid://ctjdkdfg8pbps" path="res://Assets/ui/audio/Vent Bar GWJ 84 victory jingle (shorter).ogg" id="5_tofs2"]
+[ext_resource type="Texture2D" uid="uid://bavlriuv12ke3" path="res://Assets/title_terrain/road1.webp" id="6_k1v3t"]
 [ext_resource type="AudioStream" uid="uid://pijbr23ynv0o" path="res://Assets/ui/audio/menu woosh.wav" id="6_ucbds"]
+[ext_resource type="Texture2D" uid="uid://cb6n66yam1ydg" path="res://Assets/title_terrain/rock023_nrm_rgh1.png" id="7_r3y3u"]
+[ext_resource type="PackedScene" uid="uid://bpivdxylvu6tj" path="res://Scenes/enviroment_props/house_7.tscn" id="8_kl8px"]
+[ext_resource type="PackedScene" uid="uid://ln51xmv2t25d" path="res://Scenes/3dstuff/bank.tscn" id="9_rmlnj"]
+[ext_resource type="PackedScene" uid="uid://cp2truhn4ua6y" path="res://Scenes/enviroment_props/lamp.tscn" id="10_1i3dw"]
+[ext_resource type="PackedScene" uid="uid://2u4sw88viuux" path="res://Scenes/enviroment_props/tree_1.tscn" id="11_85g5l"]
+[ext_resource type="PackedScene" uid="uid://dfxjgfiwevs2u" path="res://Scenes/enviroment_props/tree_3.tscn" id="12_ef688"]
+[ext_resource type="PackedScene" uid="uid://b50ha3xhpbxhv" path="res://Scenes/enviroment_props/tree_2.tscn" id="13_w0wcf"]
+[ext_resource type="Texture2D" uid="uid://d0b6vqc5dplma" path="res://Scenes/sky_2.webp" id="14_5dw7b"]
+[ext_resource type="PackedScene" uid="uid://uc7xpmfs8ik3" path="res://Scenes/enviroment_props/house_4.tscn" id="15_lj71p"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ucbds"]
+[sub_resource type="Gradient" id="Gradient_cqvgg"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="Sky" id="Sky_8smnd"]
-sky_material = SubResource("ProceduralSkyMaterial_ucbds")
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vfot3"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
 
-[sub_resource type="Environment" id="Environment_cxdfn"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_63de7"]
+seamless = true
+color_ramp = SubResource("Gradient_cqvgg")
+noise = SubResource("FastNoiseLite_vfot3")
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_nntrc"]
+_shader_parameters = {
+&"bias_distance": 512.0,
+&"blend_sharpness": 0.5,
+&"depth_blur": 0.0,
+&"enable_macro_variation": true,
+&"enable_projection": true,
+&"flat_terrain_normals": false,
+&"macro_variation1": Color(1, 1, 1, 1),
+&"macro_variation2": Color(1, 1, 1, 1),
+&"macro_variation_slope": 0.333,
+&"mipmap_bias": 1.0,
+&"noise1_angle": 0.0,
+&"noise1_offset": Vector2(0.5, 0.5),
+&"noise1_scale": 0.04,
+&"noise2_scale": 0.076,
+&"noise_texture": SubResource("NoiseTexture2D_63de7"),
+&"projection_threshold": 0.8
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvu0i"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_4h81p"]
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_rvu0i")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_byvde"]
+name = "Grass1"
+albedo_texture = ExtResource("4_32t72")
+normal_texture = ExtResource("5_aagk6")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_o5ato"]
+name = "road1"
+id = 1
+albedo_texture = ExtResource("6_k1v3t")
+normal_texture = ExtResource("7_r3y3u")
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_a5owi"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_4h81p")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_byvde"), SubResource("Terrain3DTextureAsset_o5ato")])
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_04nuj"]
+panorama = ExtResource("14_5dw7b")
+
+[sub_resource type="Sky" id="Sky_unquq"]
+sky_material = SubResource("PanoramaSkyMaterial_04nuj")
+
+[sub_resource type="Environment" id="Environment_yycs4"]
 background_mode = 2
-sky = SubResource("Sky_8smnd")
+sky = SubResource("Sky_unquq")
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_light_energy = 4.3
+fog_density = 1.0
+fog_sky_affect = 0.375
+fog_depth_curve = 0.353554
+fog_depth_begin = 0.0
+fog_depth_end = 52.6
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0394
+volumetric_fog_albedo = Color(0, 0.364309, 0.629139, 1)
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_gi_inject = 0.04
+volumetric_fog_anisotropy = -0.9
+volumetric_fog_length = 12.8
+volumetric_fog_detail_spread = 6.0
 
 [node name="post_mission" type="Control"]
 layout_mode = 3
@@ -25,30 +131,89 @@ grow_vertical = 2
 script = ExtResource("1_tofs2")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(1152, 650)
+size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="WorldEnvironment2" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
-environment = SubResource("Environment_cxdfn")
-
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.982336, 0, 0.187124, 0, 1, 0, -0.187124, 0, 0.982336, 18.4901, 0.950464, 3.44744)
-
-[node name="Goblin" parent="SubViewportContainer/SubViewport/Camera3D" instance=ExtResource("1_maiub")]
-transform = Transform3D(0.982336, 0, -0.187124, 0, 1, 0, 0.187124, 0, 0.982336, 0.669466, -0.950464, -1.1401)
+[node name="Goblin" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_maiub")]
+transform = Transform3D(1.70528, 0, -1.045, 0, 2, 0, 1.045, 0, 1.70528, 1.629, 1.63, -1.857)
 script = ExtResource("2_31x6l")
 
+[node name="house_2" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_312un")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20.2934, 1.61018, -21.1858)
+
+[node name="house_6" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_1wgqj")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 25.8507, -0.145508, -57.2605)
+
+[node name="Terrain3D" type="Terrain3D" parent="SubViewportContainer/SubViewport"]
+data_directory = "res://Assets/title_terrain"
+material = SubResource("Terrain3DMaterial_nntrc")
+assets = SubResource("Terrain3DAssets_a5owi")
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="house_7" parent="SubViewportContainer/SubViewport" instance=ExtResource("8_kl8px")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -0.966576, -0.66797, -36.0886)
+
+[node name="bank" parent="SubViewportContainer/SubViewport" instance=ExtResource("9_rmlnj")]
+transform = Transform3D(0.854323, 0, -0.519743, 0, 1, 0, 0.519743, 0, 0.854323, 25.5837, 0, -10.8704)
+
+[node name="tree" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_1i3dw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9306, -1.30902, -10.4232)
+
+[node name="tree12" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_1i3dw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.12856, -0.876228, -24.9662)
+
+[node name="tree6" parent="SubViewportContainer/SubViewport" instance=ExtResource("11_85g5l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.7192, -0.579928, -5.64836)
+
+[node name="tree11" parent="SubViewportContainer/SubViewport" instance=ExtResource("11_85g5l")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 14.9649, 0.549498, -15.8514)
+
+[node name="tree10" parent="SubViewportContainer/SubViewport" instance=ExtResource("11_85g5l")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.759689, -0.422763, -27.7456)
+
+[node name="tree7" parent="SubViewportContainer/SubViewport" instance=ExtResource("11_85g5l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9958, -0.579928, -1.45723)
+
+[node name="tree8" parent="SubViewportContainer/SubViewport" instance=ExtResource("12_ef688")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1575, -0.579928, -3.64622)
+
+[node name="tree9" parent="SubViewportContainer/SubViewport" instance=ExtResource("13_w0wcf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8297, -0.579928, -4.29531)
+
+[node name="tree2" parent="SubViewportContainer/SubViewport" instance=ExtResource("11_85g5l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38535, 0, -5.85129)
+
+[node name="tree4" parent="SubViewportContainer/SubViewport" instance=ExtResource("12_ef688")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.05291, 0, -3.84916)
+
+[node name="tree5" parent="SubViewportContainer/SubViewport" instance=ExtResource("13_w0wcf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2749, 0, -4.49825)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.980185, 0, -0.198085, 0, 1, 0, 0.198085, 0, 0.980185, 0, 3.67992, 0)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.911687, 0.402323, -0.0834428, -0.326121, 0.832067, 0.448675, 0.249942, -0.381839, 0.889791, 10.3396, 3.54818, 8.33115)
-light_energy = 2.0
-light_indirect_energy = 5.202
-light_angular_distance = 35.45
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.80599, 0)
+
+[node name="tree13" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_1i3dw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66516, -0.876228, -9.19335)
+
+[node name="tree14" parent="SubViewportContainer/SubViewport" instance=ExtResource("10_1i3dw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0368, -0.876228, -50.1832)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_yycs4")
+
+[node name="house_4" parent="SubViewportContainer/SubViewport" instance=ExtResource("15_lj71p")]
+transform = Transform3D(3.53061, 0, -1.88011, 0, 4, 0, 1.88011, 0, 3.53061, -9.50924, -0.40559, -20.7799)
+
+[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport"]
 
 [node name="woosh" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ucbds")

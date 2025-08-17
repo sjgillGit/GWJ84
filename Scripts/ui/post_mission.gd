@@ -3,7 +3,7 @@ extends Control
 const DEATH_PANEL = preload("res://Scenes/UI/death_panel.tscn")
 const MISSION_COMPLETED = preload("res://Scenes/UI/mission_completed.tscn")
 @onready var victory: AudioStreamPlayer = $victory
-@onready var goblin: Node3D = $SubViewportContainer/SubViewport/Camera3D/Goblin
+@onready var goblin: Node3D = $SubViewportContainer/SubViewport/Goblin
 var skiped:= false
 var panel
 func _ready() -> void:
