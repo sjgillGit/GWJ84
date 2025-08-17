@@ -5,6 +5,12 @@ class_name PlayerMeleeAction
 @export
 var melee_cooldown: float;
 
+@export
+var shape_cast: ShapeCast3D;
+
+@export
+var damage: float;
+
 var current_cooldown: float;
 var can_be_performed: bool = true;
 
@@ -25,5 +31,14 @@ func _perform_action() -> void:
 	state_changed.emit("Attack", animations, 0, false)
 	current_cooldown = melee_cooldown;
 	can_be_performed = false;
-	print("Melee action performed");
+
+	shape_cast.force_shapecast_update();
+
+	for shape_info: Dictionary in shape_cast.collision_result:
+		var collider = shape_info["collider"] as Node3D;
+		if collider is not Npc:
+			continue;
+		collider = collider as Npc;
+		collider.take_damage(damage);
+
 	set_process(true);

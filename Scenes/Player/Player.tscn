@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://dko2mapcxs0y3"]
+[gd_scene load_steps=67 format=4 uid="uid://dko2mapcxs0y3"]
 
 [ext_resource type="Script" uid="uid://c8akvpoxkacfl" path="res://Scripts/Player/player.gd" id="1_488fn"]
 [ext_resource type="Animation" uid="uid://dgu24qkepk5yu" path="res://Assets/characters/player/Idle.res" id="2_epg6k"]
@@ -1464,6 +1464,9 @@ _data = {
 &"Walk": ExtResource("3_0u84n")
 }
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_6rswy"]
+radius = 0.6
+
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("mesh_root", "camera_controller", "health_handler", "anim_player") groups=["Entity"]]
 collision_layer = 3
 collision_mask = 31
@@ -2095,6 +2098,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_ilka6")
 }
 
+[node name="MeleeShapeCast3D" type="ShapeCast3D" parent="MeshRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.843268, 0.823831)
+enabled = false
+shape = SubResource("SphereShape3D_6rswy")
+collision_mask = 4
+
 [node name="CameraRoot" type="Node3D" parent="." node_paths=PackedStringArray("camera", "camera_horizontal", "camera_vertical")]
 script = ExtResource("3_rlgqx")
 camera = NodePath("CameraHorizontal/CameraVertical/Camera3D")
@@ -2114,9 +2123,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08397, 2.08674)
 unique_name_in_owner = true
 script = ExtResource("3_h54ih")
 
-[node name="PlayerMeleeAction" type="Node3D" parent="PlayerActions"]
+[node name="PlayerMeleeAction" type="Node3D" parent="PlayerActions" node_paths=PackedStringArray("shape_cast")]
 script = ExtResource("4_ude3g")
 melee_cooldown = 2.0
+shape_cast = NodePath("../../MeshRoot/MeleeShapeCast3D")
+damage = 10.0
 animations = Array[Animation]([ExtResource("24_4ribq")])
 metadata/_custom_type_script = "uid://b1d7g85ltcc1v"
 
