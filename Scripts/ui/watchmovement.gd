@@ -46,7 +46,7 @@ func _on_timer_timeout() -> void:
 	timer_start(mission_time)
 
 func _process(delta: float) -> void:
-	GlobalSettings.banks_robbed += delta
+	GlobalSettings.time += delta
 	if timer.time_left <= (timer.wait_time / 2):
 		_on_mission_checkpoint_reached()
 
