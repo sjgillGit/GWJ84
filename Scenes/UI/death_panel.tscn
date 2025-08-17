@@ -256,6 +256,7 @@ bus = &"SFX"
 
 [node name="fade" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = -408.0
 offset_top = -251.0
 offset_right = 1920.0
