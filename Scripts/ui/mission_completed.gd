@@ -1,9 +1,9 @@
 extends Panel
-@export var mission_time: float
-@export var turrets_number: float
-@export var enemies_number: float
-@export var chests_number: float
-@export var banks_number: float
+@onready var mission_time: float = GlobalSettings.time
+@onready var turrets_number: float = GlobalSettings.towers_deployed
+@onready var enemies_number: float = GlobalSettings.enemies_killed
+@onready var chests_number: float = GlobalSettings.chests_opened
+@onready var banks_number: float = GlobalSettings.banks_robbed
 
 @onready var time_lbl: Label = $MarginContainer/VBoxContainer/time/Label2
 @onready var turrets_lbl: Label = $MarginContainer/VBoxContainer/towers_placed/Label2
@@ -116,3 +116,8 @@ func skip():
 	time_lbl.text = "%02d:%02d" % [min_temp,sec_temp]
 	time_lbl.modulate = Color(1,1,1,1)
 	
+func _on_again_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/UI/test_scene.tscn")
+
+func _on_mainmenu_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/UI/title.tscn")

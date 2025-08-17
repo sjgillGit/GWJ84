@@ -16,5 +16,7 @@ offset_left = 7.0
 offset_top = 7.0
 offset_right = -695.0
 offset_bottom = -567.0
+stam_recuperation = null
+stam_usage = null
 
 [node name="watch" parent="." instance=ExtResource("2_ihkuc")]
