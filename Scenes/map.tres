@@ -1,0 +1,15 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://c3reqburf2ybn"]
+
+[ext_resource type="Texture2D" uid="uid://d0b6vqc5dplma" path="res://Scenes/sky_2.webp" id="1_20p0e"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_w7jjh"]
+panorama = ExtResource("1_20p0e")
+
+[sub_resource type="Sky" id="Sky_unquq"]
+sky_material = SubResource("PanoramaSkyMaterial_w7jjh")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_unquq")
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.432487, 0.451832, 0.883396, 1)

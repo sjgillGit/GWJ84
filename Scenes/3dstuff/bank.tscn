@@ -27,11 +27,11 @@ skeleton = NodePath("")
 collision_layer = 255
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="bank2/Area3D"]
-transform = Transform3D(0.999984, 0, 0, 0, 1, -6.43041e-13, 0, 0, 0.999984, -0.989675, 2.70602, -0.73408)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.989675, 2.70602, -0.73408)
 shape = SubResource("BoxShape3D_voqlr")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="bank2/Area3D"]
-transform = Transform3D(0.999989, 0, 0, 0, 1, -4.51195e-13, 0, 0, 0.999989, 0.929116, 1.5196, 2.47188)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.929116, 1.5196, 2.47188)
 shape = SubResource("BoxShape3D_s48fp")
 
 [node name="robbable" parent="." instance=ExtResource("3_6p53r")]
