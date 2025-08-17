@@ -2130,7 +2130,8 @@ _data = {
 radius = 10.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qb8n1"]
-height = 1.0
+radius = 0.0496095
+height = 0.147887
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_qb8n1"]
 length = 0.1
@@ -2144,6 +2145,7 @@ script = ExtResource("1_g5ip6")
 speed = 6
 acceleration = 5
 attack_radius = 3
+attack_damage = 5
 node_mesh = NodePath("Beaver")
 
 [node name="Beaver" type="Node3D" parent="."]
@@ -2590,11 +2592,11 @@ wait_time = 5.0
 one_shot = true
 
 [node name="attack_cooldown_timer" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 4.0
 one_shot = true
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.575519, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0834587, 0)
 shape = SubResource("CapsuleShape3D_qb8n1")
 
 [node name="EntityHealthHandler" type="Node3D" parent="."]

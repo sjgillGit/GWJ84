@@ -2286,7 +2286,8 @@ _data = {
 radius = 10.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qb8n1"]
-height = 1.0
+radius = 0.11907
+height = 0.349048
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_qb8n1"]
 length = 0.1
@@ -2686,11 +2687,11 @@ wait_time = 5.0
 one_shot = true
 
 [node name="attack_cooldown_timer" type="Timer" parent="."]
-wait_time = 3.5
+wait_time = 5.0
 one_shot = true
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.626007, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.196805, 0)
 shape = SubResource("CapsuleShape3D_qb8n1")
 
 [node name="EntityHealthHandler" type="Node3D" parent="."]
