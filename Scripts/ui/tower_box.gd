@@ -39,13 +39,10 @@ func _ready() -> void:
 	
 	for n in towerlist.get_children():
 		n.queue_free()
-	var ile: int = 0
-	while ile <= 2:
-		for n in fulltowerlist.get_children().size():
-			var tower = TOWERSELECT.instantiate()
-			towerlist.add_child(tower)
-			tower.fill_button(fulltowerlist.get_child(n).tower,fulltowerlist.get_child(n).action_icon)
-			ile += 1
+	for n in fulltowerlist.get_children().size():
+		var tower = TOWERSELECT.instantiate()
+		towerlist.add_child(tower)
+		tower.fill_button(fulltowerlist.get_child(n).tower,fulltowerlist.get_child(n).action_icon)
 
 func _on_timer_timeout() -> void:
 	counting = false

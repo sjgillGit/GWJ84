@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://fijuc7gifjf6"]
+[gd_scene load_steps=13 format=3 uid="uid://fijuc7gifjf6"]
 
 [ext_resource type="PackedScene" uid="uid://d042hsexsntwv" path="res://Scenes/UI/towerselect.tscn" id="1_2k6yk"]
 [ext_resource type="Script" uid="uid://dykrxsjod4o6f" path="res://Scripts/ui/tower_box.gd" id="1_10edh"]
@@ -9,7 +9,6 @@
 [ext_resource type="FontFile" uid="uid://b2d7ii78bv5cw" path="res://Assets/font/Long_Shot.ttf" id="4_smy4p"]
 [ext_resource type="Texture2D" uid="uid://dkjm4fq46b26v" path="res://Assets/ui/icons/turret.png" id="5_od77g"]
 [ext_resource type="Texture2D" uid="uid://3cqiofs3krfl" path="res://Assets/ui/icons/wrench.png" id="5_s2xdr"]
-[ext_resource type="Texture2D" uid="uid://cxe2fxdsjirmg" path="res://Assets/ui/icons/gastank.png" id="6_s2xdr"]
 [ext_resource type="AudioStream" uid="uid://bpqpx4wtsplc0" path="res://Assets/ui/audio/menu rollover.wav" id="7_17d23"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w7252"]
@@ -79,10 +78,6 @@ action_icon = ExtResource("5_od77g")
 [node name="skillbutton" parent="SubViewportContainer/SubViewport/fulltowerlist" instance=ExtResource("1_2k6yk")]
 layout_mode = 2
 action_icon = ExtResource("5_s2xdr")
-
-[node name="skillbutton2" parent="SubViewportContainer/SubViewport/fulltowerlist" instance=ExtResource("1_2k6yk")]
-layout_mode = 2
-action_icon = ExtResource("6_s2xdr")
 
 [node name="button_show" type="Panel" parent="."]
 layout_mode = 0

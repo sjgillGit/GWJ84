@@ -342,9 +342,8 @@ max_distance = 4096.0
 [node name="turrets" type="Node3D" parent="."]
 
 [node name="treasure chest" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.2261, 1.04281, -28.0152)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.2261, -0.0284508, -28.0152)
 script = ExtResource("23_unquq")
-speed = 100.0
 
 [node name="Cube" type="MeshInstance3D" parent="treasure chest"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -397,66 +396,10 @@ bus = &"SFX"
 stream = ExtResource("30_1xwpj")
 bus = &"SFX"
 
-[node name="treasure chest2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.419, 1.04281, -54.7826)
-script = ExtResource("23_unquq")
-speed = 100.0
-
-[node name="Cube" type="MeshInstance3D" parent="treasure chest2"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-mesh = SubResource("ArrayMesh_jds64")
-skeleton = NodePath("")
-
-[node name="Area3D" type="StaticBody3D" parent="treasure chest2/Cube"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="treasure chest2/Cube/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00584549, 0.261803, 0.0222172)
-shape = SubResource("BoxShape3D_7jop6")
-
-[node name="Armature" type="Node3D" parent="treasure chest2"]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.647596, -0.373877)
-
-[node name="Skeleton3D" type="Skeleton3D" parent="treasure chest2/Armature"]
-bones/0/name = "Bone"
-bones/0/parent = -1
-bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.29396e-23, 0, -5.96046e-08)
-bones/0/enabled = true
-bones/0/position = Vector3(5.29396e-23, 0, -5.96046e-08)
-bones/0/rotation = Quaternion(0, 0, 0, 1)
-bones/0/scale = Vector3(1, 1, 1)
-
-[node name="Cube_001" type="MeshInstance3D" parent="treasure chest2/Armature/Skeleton3D"]
-mesh = SubResource("ArrayMesh_s1ni6")
-skin = SubResource("Skin_owsby")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="treasure chest2"]
-libraries = {
-&"": SubResource("AnimationLibrary_g1eat")
-}
-
-[node name="lockpicable" parent="treasure chest2" instance=ExtResource("26_ajvq6")]
-
-[node name="interact_indication" parent="treasure chest2" instance=ExtResource("27_cwq17")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.279278, -0.458091, 0)
-
-[node name="lock_clock" type="AudioStreamPlayer" parent="treasure chest2"]
-stream = ExtResource("28_a0h6a")
-bus = &"SFX"
-
-[node name="reward_choose" type="CanvasLayer" parent="treasure chest2"]
-
-[node name="woosh" type="AudioStreamPlayer" parent="treasure chest2"]
-stream = ExtResource("29_wcnou")
-bus = &"SFX"
-
-[node name="chest_open" type="AudioStreamPlayer" parent="treasure chest2"]
-stream = ExtResource("30_1xwpj")
-bus = &"SFX"
-
 [node name="treasure chest3" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.391, 1.04281, -34.8058)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 30.2261, -0.0284508, 10.9848)
 script = ExtResource("23_unquq")
-speed = 100.0
+speed = -20.0
 
 [node name="Cube" type="MeshInstance3D" parent="treasure chest3"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -509,6 +452,174 @@ bus = &"SFX"
 stream = ExtResource("30_1xwpj")
 bus = &"SFX"
 
+[node name="treasure chest5" type="Node3D" parent="."]
+transform = Transform3D(-0.120691, 0, 0.99269, 0, 1, 0, -0.99269, 0, -0.120691, 169.319, -0.0284508, -28.0152)
+script = ExtResource("23_unquq")
+speed = 40.0
+
+[node name="Cube" type="MeshInstance3D" parent="treasure chest5"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("ArrayMesh_jds64")
+skeleton = NodePath("")
+
+[node name="Area3D" type="StaticBody3D" parent="treasure chest5/Cube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="treasure chest5/Cube/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00584549, 0.261803, 0.0222172)
+shape = SubResource("BoxShape3D_7jop6")
+
+[node name="Armature" type="Node3D" parent="treasure chest5"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.647596, -0.373877)
+
+[node name="Skeleton3D" type="Skeleton3D" parent="treasure chest5/Armature"]
+bones/0/name = "Bone"
+bones/0/parent = -1
+bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.29396e-23, 0, -5.96046e-08)
+bones/0/enabled = true
+bones/0/position = Vector3(5.29396e-23, 0, -5.96046e-08)
+bones/0/rotation = Quaternion(0, 0, 0, 1)
+bones/0/scale = Vector3(1, 1, 1)
+
+[node name="Cube_001" type="MeshInstance3D" parent="treasure chest5/Armature/Skeleton3D"]
+mesh = SubResource("ArrayMesh_s1ni6")
+skin = SubResource("Skin_owsby")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="treasure chest5"]
+libraries = {
+&"": SubResource("AnimationLibrary_g1eat")
+}
+
+[node name="lockpicable" parent="treasure chest5" instance=ExtResource("26_ajvq6")]
+
+[node name="interact_indication" parent="treasure chest5" instance=ExtResource("27_cwq17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.279278, -0.458091, 0)
+
+[node name="lock_clock" type="AudioStreamPlayer" parent="treasure chest5"]
+stream = ExtResource("28_a0h6a")
+bus = &"SFX"
+
+[node name="reward_choose" type="CanvasLayer" parent="treasure chest5"]
+
+[node name="woosh" type="AudioStreamPlayer" parent="treasure chest5"]
+stream = ExtResource("29_wcnou")
+bus = &"SFX"
+
+[node name="chest_open" type="AudioStreamPlayer" parent="treasure chest5"]
+stream = ExtResource("30_1xwpj")
+bus = &"SFX"
+
+[node name="treasure chest4" type="Node3D" parent="."]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 88.2261, -0.0284508, -76.0152)
+script = ExtResource("23_unquq")
+speed = 20.0
+
+[node name="Cube" type="MeshInstance3D" parent="treasure chest4"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("ArrayMesh_jds64")
+skeleton = NodePath("")
+
+[node name="Area3D" type="StaticBody3D" parent="treasure chest4/Cube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="treasure chest4/Cube/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00584549, 0.261803, 0.0222172)
+shape = SubResource("BoxShape3D_7jop6")
+
+[node name="Armature" type="Node3D" parent="treasure chest4"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.647596, -0.373877)
+
+[node name="Skeleton3D" type="Skeleton3D" parent="treasure chest4/Armature"]
+bones/0/name = "Bone"
+bones/0/parent = -1
+bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.29396e-23, 0, -5.96046e-08)
+bones/0/enabled = true
+bones/0/position = Vector3(5.29396e-23, 0, -5.96046e-08)
+bones/0/rotation = Quaternion(0, 0, 0, 1)
+bones/0/scale = Vector3(1, 1, 1)
+
+[node name="Cube_001" type="MeshInstance3D" parent="treasure chest4/Armature/Skeleton3D"]
+mesh = SubResource("ArrayMesh_s1ni6")
+skin = SubResource("Skin_owsby")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="treasure chest4"]
+libraries = {
+&"": SubResource("AnimationLibrary_g1eat")
+}
+
+[node name="lockpicable" parent="treasure chest4" instance=ExtResource("26_ajvq6")]
+
+[node name="interact_indication" parent="treasure chest4" instance=ExtResource("27_cwq17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.279278, -0.458091, 0)
+
+[node name="lock_clock" type="AudioStreamPlayer" parent="treasure chest4"]
+stream = ExtResource("28_a0h6a")
+bus = &"SFX"
+
+[node name="reward_choose" type="CanvasLayer" parent="treasure chest4"]
+
+[node name="woosh" type="AudioStreamPlayer" parent="treasure chest4"]
+stream = ExtResource("29_wcnou")
+bus = &"SFX"
+
+[node name="chest_open" type="AudioStreamPlayer" parent="treasure chest4"]
+stream = ExtResource("30_1xwpj")
+bus = &"SFX"
+
+[node name="treasure chest2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.419, 0.228045, -54.7826)
+script = ExtResource("23_unquq")
+speed = 30.0
+
+[node name="Cube" type="MeshInstance3D" parent="treasure chest2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("ArrayMesh_jds64")
+skeleton = NodePath("")
+
+[node name="Area3D" type="StaticBody3D" parent="treasure chest2/Cube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="treasure chest2/Cube/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00584549, 0.261803, 0.0222172)
+shape = SubResource("BoxShape3D_7jop6")
+
+[node name="Armature" type="Node3D" parent="treasure chest2"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.647596, -0.373877)
+
+[node name="Skeleton3D" type="Skeleton3D" parent="treasure chest2/Armature"]
+bones/0/name = "Bone"
+bones/0/parent = -1
+bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.29396e-23, 0, -5.96046e-08)
+bones/0/enabled = true
+bones/0/position = Vector3(5.29396e-23, 0, -5.96046e-08)
+bones/0/rotation = Quaternion(0, 0, 0, 1)
+bones/0/scale = Vector3(1, 1, 1)
+
+[node name="Cube_001" type="MeshInstance3D" parent="treasure chest2/Armature/Skeleton3D"]
+mesh = SubResource("ArrayMesh_s1ni6")
+skin = SubResource("Skin_owsby")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="treasure chest2"]
+libraries = {
+&"": SubResource("AnimationLibrary_g1eat")
+}
+
+[node name="lockpicable" parent="treasure chest2" instance=ExtResource("26_ajvq6")]
+
+[node name="interact_indication" parent="treasure chest2" instance=ExtResource("27_cwq17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.279278, -0.458091, 0)
+
+[node name="lock_clock" type="AudioStreamPlayer" parent="treasure chest2"]
+stream = ExtResource("28_a0h6a")
+bus = &"SFX"
+
+[node name="reward_choose" type="CanvasLayer" parent="treasure chest2"]
+
+[node name="woosh" type="AudioStreamPlayer" parent="treasure chest2"]
+stream = ExtResource("29_wcnou")
+bus = &"SFX"
+
+[node name="chest_open" type="AudioStreamPlayer" parent="treasure chest2"]
+stream = ExtResource("30_1xwpj")
+bus = &"SFX"
+
 [node name="trees" type="Node3D" parent="."]
 transform = Transform3D(0.592206, 0, 0, 0, 1, 0, 0, 0, 0.806281, 53.443, 0, 10.2979)
 script = ExtResource("5_k63oc")
@@ -529,7 +640,11 @@ shape = SubResource("Resource_g8bsm")
 [connection signal="timeout" from="spawn_timer" to="swarm_manager" method="_on_timer_timeout"]
 [connection signal="win" from="treasure chest/lockpicable" to="swarm_manager" method="_on_lockpicable_win"]
 [connection signal="win" from="treasure chest/lockpicable" to="treasure chest" method="_on_lockpicable_win"]
-[connection signal="win" from="treasure chest2/lockpicable" to="swarm_manager" method="_on_lockpicable_win"]
-[connection signal="win" from="treasure chest2/lockpicable" to="treasure chest2" method="_on_lockpicable_win"]
 [connection signal="win" from="treasure chest3/lockpicable" to="swarm_manager" method="_on_lockpicable_win"]
 [connection signal="win" from="treasure chest3/lockpicable" to="treasure chest3" method="_on_lockpicable_win"]
+[connection signal="win" from="treasure chest5/lockpicable" to="swarm_manager" method="_on_lockpicable_win"]
+[connection signal="win" from="treasure chest5/lockpicable" to="treasure chest5" method="_on_lockpicable_win"]
+[connection signal="win" from="treasure chest4/lockpicable" to="swarm_manager" method="_on_lockpicable_win"]
+[connection signal="win" from="treasure chest4/lockpicable" to="treasure chest4" method="_on_lockpicable_win"]
+[connection signal="win" from="treasure chest2/lockpicable" to="swarm_manager" method="_on_lockpicable_win"]
+[connection signal="win" from="treasure chest2/lockpicable" to="treasure chest2" method="_on_lockpicable_win"]
