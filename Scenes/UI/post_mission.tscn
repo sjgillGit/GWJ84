@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddl41xrijeh6u"]
+[gd_scene load_steps=9 format=3 uid="uid://ddl41xrijeh6u"]
 
 [ext_resource type="PackedScene" uid="uid://cgquenm3v3687" path="res://Scenes/UI/goblin.tscn" id="1_maiub"]
 [ext_resource type="Script" uid="uid://dkmrwxosv7v3b" path="res://Scripts/ui/post_mission.gd" id="1_tofs2"]
 [ext_resource type="Script" uid="uid://2kyj44aq7djn" path="res://Scenes/UI/goblin_dance.gd" id="2_31x6l"]
+[ext_resource type="AudioStream" uid="uid://ctjdkdfg8pbps" path="res://Assets/ui/audio/Vent Bar GWJ 84 victory jingle (shorter).ogg" id="5_tofs2"]
 [ext_resource type="AudioStream" uid="uid://pijbr23ynv0o" path="res://Assets/ui/audio/menu woosh.wav" id="6_ucbds"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ucbds"]
@@ -51,4 +52,8 @@ light_angular_distance = 35.45
 
 [node name="woosh" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ucbds")
+bus = &"SFX"
+
+[node name="victory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_tofs2")
 bus = &"SFX"

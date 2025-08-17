@@ -1,6 +1,6 @@
-[gd_scene load_steps=17 format=4 uid="uid://bfxkpfx0qgb37"]
+[gd_scene load_steps=18 format=4 uid="uid://bfxkpfx0qgb37"]
 
-[ext_resource type="Script" path="res://Scenes/UI/startgame.gd" id="1_ddswn"]
+[ext_resource type="Script" uid="uid://xm7cu7ebwvga" path="res://Scenes/UI/startgame.gd" id="1_ddswn"]
 [ext_resource type="Script" uid="uid://dkahuk48vf0oi" path="res://Scripts/ui/menu_buttons.gd" id="1_gfgrl"]
 [ext_resource type="Theme" uid="uid://csus3mgu2hjxc" path="res://Assets/ui/button.tres" id="2_ddswn"]
 [ext_resource type="Theme" uid="uid://dr6wcdv73nca2" path="res://Assets/ui/menu.tres" id="3_1r22b"]
@@ -12,7 +12,8 @@
 [ext_resource type="AudioStream" uid="uid://bpqpx4wtsplc0" path="res://Assets/ui/audio/menu rollover.wav" id="9_1r22b"]
 [ext_resource type="AudioStream" uid="uid://68kq1k2nwmof" path="res://Assets/ui/audio/Vent Bar GWJ 84 - big light switch click.wav" id="10_37pta"]
 [ext_resource type="PackedScene" uid="uid://cr0c38txuy1i3" path="res://Scenes/UI/loadscreen.tscn" id="11_1v4y5"]
-[ext_resource type="Script" path="res://Scenes/UI/credits.gd" id="11_rsl53"]
+[ext_resource type="Script" uid="uid://w2qakk6rdxfy" path="res://Scenes/UI/credits.gd" id="11_rsl53"]
+[ext_resource type="AudioStream" uid="uid://dquibyokd31ld" path="res://Assets/ui/audio/Vent Bar GWJ 84 - run start.ogg" id="14_qnmkp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m6rdh"]
 texture = ExtResource("5_rsl53")
@@ -231,8 +232,8 @@ script = ExtResource("11_rsl53")
 layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
-offset_right = 685.0
-offset_bottom = 414.0
+offset_right = 680.0
+offset_bottom = 492.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -247,9 +248,102 @@ alignment = 1
 custom_minimum_size = Vector2(225, 0)
 layout_mode = 2
 
+[node name="Label4" type="Label" parent="credits/Container/HBoxContainer/column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Writing"
+
+[node name="separator3" type="Control" parent="credits/Container/HBoxContainer/column"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="credits/Container/HBoxContainer/column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Code
+
+"
+
+[node name="separator" type="Control" parent="credits/Container/HBoxContainer/column"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="credits/Container/HBoxContainer/column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Art
+"
+
+[node name="separator2" type="Control" parent="credits/Container/HBoxContainer/column"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="credits/Container/HBoxContainer/column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Sound 'n Music"
+
 [node name="column2" type="VBoxContainer" parent="credits/Container/HBoxContainer"]
 custom_minimum_size = Vector2(225, 0)
 layout_mode = 2
+
+[node name="Label4" type="Label" parent="credits/Container/HBoxContainer/column2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Zeteraxis"
+
+[node name="separator3" type="Control" parent="credits/Container/HBoxContainer/column2"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="credits/Container/HBoxContainer/column2"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+columns = 2
+
+[node name="Label" type="Label" parent="credits/Container/HBoxContainer/column2/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Bibkabibka"
+
+[node name="Label2" type="Label" parent="credits/Container/HBoxContainer/column2/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Dutt1ez"
+
+[node name="Label3" type="Label" parent="credits/Container/HBoxContainer/column2/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Ian"
+
+[node name="Label4" type="Label" parent="credits/Container/HBoxContainer/column2/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "MeGl"
+
+[node name="Label5" type="Label" parent="credits/Container/HBoxContainer/column2/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Tungill"
+
+[node name="separator" type="Control" parent="credits/Container/HBoxContainer/column2"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="credits/Container/HBoxContainer/column2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Foxx Player
+Mike3D"
+
+[node name="separator2" type="Control" parent="credits/Container/HBoxContainer/column2"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="credits/Container/HBoxContainer/column2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "FIberbundles"
 
 [node name="close_button" type="Button" parent="credits"]
 layout_mode = 0
@@ -282,6 +376,10 @@ layout_mode = 1
 stream = SubResource("AudioStreamOggVorbis_rsl53")
 autoplay = true
 bus = &"Music"
+
+[node name="start_run" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_qnmkp")
+bus = &"SFX"
 
 [node name="fade" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)

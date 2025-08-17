@@ -129,7 +129,7 @@ func skip():
 	time_lbl.modulate = Color(1,1,1,1)
 	
 func _on_again_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/UI/test_scene.tscn")
+	get_tree().change_scene_to_file("res://Scenes/UI/map.tscn")
 
 func _on_mainmenu_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/UI/title.tscn")

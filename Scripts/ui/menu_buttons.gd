@@ -5,6 +5,7 @@ extends VBoxContainer
 @onready var credits: Panel = $"../credits"
 @onready var fade: ColorRect = $"../fade"
 @onready var title_music: AudioStreamPlayer = $"../title_music"
+@onready var start_run: AudioStreamPlayer = $"../start_run"
 
 func _on_settings_pressed() -> void:
 	settings.visible = ! settings.visible
@@ -12,6 +13,7 @@ func _on_settings_pressed() -> void:
 	
 func _on_startgame_pressed() -> void:
 	click.play()
+	start_run.play()
 	var tween = get_tree().create_tween().set_parallel(true)
 	tween.tween_property(fade,"modulate",Color(1,1,1,1),1).set_trans(Tween.TRANS_CIRC)
 	tween.tween_property(title_music,"volume_linear",0,0.7).set_trans(Tween.TRANS_CIRC)
